@@ -1,0 +1,60 @@
+<ion-header *ngIf="identity" class="vista">
+  <ion-navbar hideBackButton="true">
+
+    <ion-grid *ngIf="!isSearchbarOpened">
+      <ion-row>
+        <ion-col col-auto>
+          <ion-buttons>
+            <button ion-button icon-only (click)="goToInicio()">
+              Home
+            </button>
+          </ion-buttons>
+        </ion-col>
+
+        <ion-col col-auto>
+          <ion-buttons>
+            <button ion-button icon-only (click)="goToPeliculas()">
+              Films
+            </button>
+          </ion-buttons>
+        </ion-col>
+
+        <ion-col col-auto>
+          <ion-buttons>
+            <button ion-button icon-only (click)="goToSeries()">
+              Series
+            </button>
+          </ion-buttons>
+        </ion-col>
+
+        <ion-col col-auto>
+          <ion-buttons>
+            <button ion-button icon-only (click)="goToPerfil()">
+              {{ identity.nickname }}
+              <ion-avatar item-start>
+                <img class="userAvatar" [src]="identity.image">
+              </ion-avatar>
+            </button>
+          </ion-buttons>
+        </ion-col>
+
+        <ion-col col-1>
+          <ion-buttons>
+            <button ion-button icon-only (click)="isSearchbarOpened=true">
+              <ion-icon name="search"></ion-icon>
+            </button>
+          </ion-buttons>
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
+
+    <ion-searchbar *ngIf="isSearchbarOpened" showCancelButton="true" (ionCancel)="isSearchbarOpened=false" (ionInput)="getItems($event)">
+    </ion-searchbar>
+    <ion-list *ngIf="isSearchbarOpened">
+      <button ion-item *ngFor="let item of items" (click)="showDetail(item)">
+        {{ item }}
+      </button>
+    </ion-list>
+  </ion-navbar>
+</ion-header>

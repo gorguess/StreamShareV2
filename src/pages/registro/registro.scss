@@ -1,0 +1,26 @@
+page-registro {
+    ion-content{
+		background: url("../assets/imgs/home.jpg");
+		background-attachment: fixed;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	.header {
+		font-size: 27px;
+		text-align: center;
+	}
+	ion-label {
+		color: black;
+	}
+	.signUp {
+		text-align: center;
+	}
+	.contenedor {
+		margin-top: 20%;
+	}
+	.vertical-align-content > * {
+		display: flex!important;
+		align-content: center!important;
+		align-items: center!important;
+	}
+}

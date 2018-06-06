@@ -1,0 +1,4 @@
+#Mon Jun 04 23:39:51 IST 2018
+base.0=/Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/build/intermediates/transforms/dexMerger/debug/0
+renamed.0=classes.dex
+file.0=/Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/build/intermediates/transforms/dexMerger/debug/0/classes.dex

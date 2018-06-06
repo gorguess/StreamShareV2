@@ -1,0 +1,135 @@
+<page-header></page-header>
+<ion-content>
+  <ion-list *ngIf="isSearchbarOpened">
+    <button ion-item *ngFor="let item of items" (click)="showDetail(item)">
+      {{ item }}
+    </button>
+  </ion-list>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-12 *ngIf="trustedUrl">
+            <ion-thumbnail item-start>
+              <img [src]="identity.image">
+              <ion-fab top right col-3 #fab (click)="showMethods()">
+                <button ion-fab mini class="background">
+                  <ion-icon ios="ios-camera" md="md-camera"></ion-icon>
+                </button>
+              </ion-fab>
+            </ion-thumbnail>
+          </ion-col>
+          <ion-col col-12 *ngIf="trustedUrl">
+            <ion-thumbnail item-start>  
+              <img  [src]="trustedUrl">
+            </ion-thumbnail>
+          </ion-col>
+        </ion-row>
+        
+        <ion-row>
+          <ion-col col-12>
+            <ion-grid class="center">
+              <ion-row>
+                <ion-col col-auto>
+                  <h2 class="bold">Name: </h2>
+                </ion-col>
+                <ion-col col-auto>
+                  <h2>{{ identity.name }} {{ identity.surname }}</h2>
+                </ion-col>
+                <ion-col col-auto>
+                  <a (click)="nameType()">
+                    <ion-icon ios="ios-create" md="md-create"></ion-icon>
+                  </a>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col col-12>
+            <ion-grid class="center">
+              <ion-row>
+                <ion-col col-auto>
+                  <h2 class="bold">Username: </h2>
+                </ion-col>
+                <ion-col col-auto>
+                  <h2>{{ identity.nickname }}</h2>
+                </ion-col>
+                <ion-col col-auto>
+                  <a (click)="userType()">
+                    <ion-icon ios="ios-create" md="md-create"></ion-icon>
+                  </a>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col col-12 class="center">
+            <ion-buttons>
+              <button ion-button icon-only clear class="center" *ngIf="!descripcion" (click)="descriptionType()">
+                Type your description
+              </button>
+            </ion-buttons>
+          </ion-col>
+        </ion-row>
+
+        <ion-row  *ngIf="descripcion">
+          <ion-col col-12>
+            <ion-grid class="center">
+              <ion-row>
+                <ion-col col-auto>
+                  <h2 class="center">{{ contenidoDescripcion }}</h2>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-col>
+        </ion-row>
+
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <mbsc-eventcalendar [data]="events" [options]="eventSettings" #mbscEventCal="mobiscroll"></mbsc-eventcalendar>
+    <ion-row class="center">
+      <ion-col col-12 *ngIf="!event">
+        <ion-buttons>
+          <button ion-button outline (click)="newEvent()">
+            New Event
+          </button>
+        </ion-buttons>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="event" col-12>
+      <mbsc-form [options]="formSettings">
+        <div class="mbsc-form-group">
+          <ion-item>
+            <ion-label color="primary">Title of the event</ion-label>
+            <ion-input [(ngModel)]="eventText">Title</ion-input>
+          </ion-item>
+          <ion-item>
+            <mbsc-datetime #fecha id="startDate" placeholder="Please select the date...">Date</mbsc-datetime>
+            <div [(ngModel)]="eventDate" mbsc-range [mbsc-options]="rangeSettings" #mbscRange="mobiscroll"></div>
+          </ion-item>
+        </div>
+      </mbsc-form>
+      <ion-col col-auto offset-2>
+        <ion-buttons>
+          <button ion-button outline (click)="addEvent()">
+            Add Event
+          </button>
+        </ion-buttons>
+      </ion-col>
+      <ion-col col-auto>
+        <ion-buttons>
+          <button ion-button outline (click)="addEvent()">
+            Cancel
+          </button>
+        </ion-buttons>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+</ion-content>

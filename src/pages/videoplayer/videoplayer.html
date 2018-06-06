@@ -1,0 +1,23 @@
+<ion-content>
+  <div id="coverPoster"></div>
+    <img [src]="movie.poster" id="backPoster" alt="">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-12>
+          <video #videoplayer preload id="videoplayer" hidden>
+            <source [src]="trustedUrl" type="video/mp4">
+          </video>
+          <button (click)="toggleVideo()" id="myBtn"><img src="assets/imgs/play.svg" alt=""></button>
+        </ion-col>
+      </ion-row>
+      <ion-row id="infoPelicula">
+        <ion-col col>
+          <h2>{{movie.title}}</h2>
+          <hr><br>
+          <p>
+            {{movie.description}}
+          </p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+</ion-content>

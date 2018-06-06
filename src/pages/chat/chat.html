@@ -1,0 +1,42 @@
+<!-- Cabecera de la pantalla donde pondremos el título, y el nombre de usuario que se ha conectado -->
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Chat Online
+      <ion-input placeholder="¿Quién eres?" [(ngModel)]="userName"></ion-input>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<!-- En el contenido de la página, crearemos un "card" con el nombre de usuario y el mensaje enviado con un 
+bucle for -->
+<ion-content #content padding>
+  <ion-card *ngFor="let message of messagesArray">
+    <ion-card-header>
+      <!-- En el header del card ponemos el nombre del usuario -->
+      {{message.nombre}}: <!-- Sacamos el contenido de la carpeta "nombre" (nombre de la carpeta guardada
+        en el repositorio), que se encuentra guardada en la variable "message", declarada en el archivo 
+        Typescript de esta vista  -->
+    </ion-card-header>
+    <ion-card-content>
+      <!-- En el contenido del card ponemos el mensaje del usuario -->
+      {{message.mensaje}}
+    </ion-card-content>
+  </ion-card>
+  <!-- Este div sirve para saber en que posición se encuentra el último mensaje enviado -->
+  <div id="content-end"></div>
+</ion-content>
+
+<!-- En el footer ponemos un input donde escribir y un botón que envía lo escrito en el input -->
+<ion-footer>
+  <ion-toolbar>
+    <!-- Lo escrito en el input lo guardamos en la variable "message" usando ngModel (jQuery) -->
+    <ion-input placeholder="Escribir mensaje" [(ngModel)]="message"></ion-input>
+    <ion-buttons end>
+      <button ion-button icon-only clear (click)="sendMessage()">
+        Enviar
+        <ion-icon name="send"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

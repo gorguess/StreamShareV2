@@ -1,0 +1,24 @@
+page-info {
+    ion-content{
+		background: url("../assets/imgs/fondo.jpg");
+		background-attachment: fixed;
+		background-repeat: no-repeat;
+		background-size: cover;
+    }
+    .vertical-align-content > * {
+		display: flex!important;
+		align-content: left!important;
+		align-items: left!important;
+    }
+    .backgroundCard {
+        background: linear-gradient(to bottom, #515A5A 0%, #D5DBDB 100%);
+    }
+    .center {
+      text-align: center;
+      align-content: center!important;
+      align-items: center!important;
+    }
+    .titulo {
+        font-weight: bolder;
+    }
+}

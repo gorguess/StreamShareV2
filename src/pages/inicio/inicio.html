@@ -1,0 +1,74 @@
+<page-header></page-header>
+<ion-content>
+  <ion-list *ngIf="isSearchbarOpened">
+    <button ion-item *ngFor="let item of items" (click)="showDetail(item)">
+      {{ item }}
+    </button>
+  </ion-list>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-12>
+            <h1 class="titulo">
+               Welcome, {{ identity.nickname }}!
+            </h1>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-12>
+            <h3 class="titulo">Movies seen:</h3>
+            <a *ngIf="seeAll" class="alinearDerecha" (click)="goToSeeAll('peliculaVista')">see all</a>
+            <ion-grid>
+              <ion-row>
+                <ion-col col-4 *ngFor="let p of listMovieVieweds">
+                <ion-row>
+                    
+                        <button (click)="goToInfo(p)" class="fotoPelicula" no-padding>
+                          <ion-thumbnail item-start>
+                            <img [src]="p.poster">
+                          </ion-thumbnail>
+                        </button>
+                      
+                </ion-row>
+                <ion-row>
+                        <h2 class="center">{{ p.title }}</h2>
+                </ion-row>
+                </ion-col>
+              </ion-row>
+
+            </ion-grid>
+
+            <h3 class="titulo2">Series seen:</h3>
+            <ion-grid>
+                <ion-row>
+                  <ion-col col-4 *ngFor="let s of listSerieVieweds">
+                  <ion-row>
+                      
+                          <button (click)="goToInfo(p)" class="fotoPelicula" no-padding>
+                            <ion-thumbnail item-start>
+                              <img [src]="s.poster">
+                            </ion-thumbnail>
+                          </button>
+                        
+                  </ion-row>
+                  <ion-row>
+                          <h2 class="center">{{ s.title }}</h2>
+                  </ion-row>
+                  </ion-col>
+                </ion-row>
+  
+              </ion-grid>
+  
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

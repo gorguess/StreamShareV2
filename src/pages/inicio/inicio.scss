@@ -1,0 +1,37 @@
+page-inicio {
+    ion-content{
+		background: url("../assets/imgs/fondo.jpg");
+		background-attachment: fixed;
+		background-repeat: no-repeat;
+        background-size: cover;
+	}
+    ion-card-header {
+        margin-left: 0px;
+        font-weight: bolder;
+    }
+    .alinearDerecha {
+        text-decoration: none;
+        color: grey;
+        float: right;
+    }
+    .titulo {
+        font-weight: bolder;
+    }
+    .titulo2 {
+        font-weight: bolder;
+        margin-top: 20px;
+    }
+    .center {
+        text-align: center;
+    }
+    .nombreUsuario{
+        color: #E57373;
+    }
+    .usuarioIcono{
+        color: white;
+    }
+    ion-card {
+        height: 100% !important;
+        margin-bottom: 15% !important;
+    }
+}

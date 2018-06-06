@@ -1,0 +1,42 @@
+<page-header></page-header>
+<ion-content>
+  <ion-card>
+    <ion-card-content class="backgroundCard">
+      <ion-row class="center">
+        <ion-col col-8 offset-2>
+          <img [src]="movie.poster">
+        </ion-col>
+        <ion-col col-6 offset-3 style="text-align: center;">
+          <h1>{{ movie.title }}</h1>
+        </ion-col>
+        <ion-col col-10>
+          <ul class="rating" (keydown)="onKeyDown($event)">
+            <li *ngFor="let starIndex of starIndexes" tappable (click)="rate(starIndex + 1)">
+              <ion-icon [name]="getStarIconName(starIndex)">
+              </ion-icon>
+            </li>
+          </ul>
+        </ion-col>
+        <ion-col col-6 offset-3>
+          <ion-buttons>
+            <button ion-button icon-only outline col-12 class="center" (click)="gotoreproductor()">
+              Watch Trailer
+            </button>
+          </ion-buttons>
+        </ion-col>
+        <ion-col col-6 style="text-align: center;">
+          <ion-label class="titulo">GENRE: </ion-label>
+          <h3>{{ movie.genre }}</h3>
+        </ion-col>
+        <ion-col col-6 style="text-align: center;">
+          <ion-label class="titulo">YEAR: </ion-label>
+          <h3>{{ movie.year }}</h3>
+        </ion-col>
+        <ion-col col-12 style="text-align: center;">
+          <ion-label class="titulo">DESCRIPTION: </ion-label>
+          <h3>{{ movie.description }}</h3>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

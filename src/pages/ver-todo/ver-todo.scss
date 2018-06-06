@@ -1,0 +1,41 @@
+page-ver-todo {
+    ion-content{
+		background: url("../assets/imgs/fondo.jpg");
+		background-attachment: fixed;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+    .vertical-align-content > * {
+		display: flex!important;
+		align-content: left!important;
+		align-items: left!important;
+    }
+
+    .bold {
+        font-weight: bolder;
+    }
+    .padding {
+        padding-right: auto;
+        padding-left: none;
+        padding-top: none;
+    }
+    .center {
+        text-align: center;
+        align-content: center!important;
+		align-items: center!important;
+    }
+    .background {
+        background: #008080;
+    }
+
+    .scroll-content {
+        background: url("../assets/imgs/fondo.jpg");
+		background-attachment: fixed;
+		background-repeat: no-repeat;
+		background-size: cover;
+    }
+
+    .has-refresher > .scroll-content{
+        border-top: 0px !important;
+    }
+}
