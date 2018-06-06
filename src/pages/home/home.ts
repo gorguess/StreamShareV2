@@ -44,7 +44,7 @@ export class HomePage {
 
     this.formularioUsuario = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')]),
-      pass: new FormControl('', [Validators.pattern(/^[a-z0-9_-]{4,18}$/)])
+      pass: new FormControl('', [Validators.pattern(/^[a-zA-Z0-9_-]{4,18}$/)])
     });
 
     this.avatarUrl = this.comprobarLogin.getImageAvatar();
