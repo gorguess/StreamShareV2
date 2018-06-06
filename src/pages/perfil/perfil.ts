@@ -80,9 +80,9 @@ export class PerfilPage implements OnInit {
     this.identity = this.comprobarLogin.getIdentity();
     this.avatarUrl = this.comprobarLogin.getImageAvatar();
     this.trustedUrl = this.sanitizer.bypassSecurityTrustUrl(this.avatarUrl);
-    if(!this.identity['image']){
-      this.identity['image'] = "assets/imgs/profileNull.png";
-    }
+    //if(!this.identity['image']){
+      //this.identity['image'] = "assets/imgs/profileNull.png";
+   // }
     console.log(this.identity);
   }
   

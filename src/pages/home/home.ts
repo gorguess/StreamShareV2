@@ -84,7 +84,7 @@ export class HomePage {
       
       this.comprobarLogin.getAvatar(this.token, contenedor.image).subscribe(response => {
         console.log(response);
-        var file = new Blob([response], {type: 'image/jpeg'});
+        var file = new Blob([response], {type:'image'});
         var fileURL = URL.createObjectURL(file);
         localStorage.setItem('avatar', fileURL);
         this.loginLoading(contenedor);

@@ -1,5 +1,5 @@
-import { FormsModule } from '@angular/forms';
 import { MbscModule } from '@mobiscroll/angular';
+import { FormsModule } from '@angular/forms';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
@@ -61,8 +61,8 @@ const firebaseAuth = {
     VideoplayerPage
   ],
   imports: [ 
+    MbscModule, 
     FormsModule, 
-    MbscModule,
     BrowserModule,
     HttpModule,
     IonicModule.forRoot(MyApp),
