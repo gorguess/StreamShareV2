@@ -17,6 +17,7 @@ export class VerTodoPage {
   contenedor;
   movie: Movie;
   listMovie: Array<Movie>;
+  list;
   allViews: any;
   iconoIOS;
   iconoAndroid;
@@ -26,8 +27,8 @@ export class VerTodoPage {
     private _movieProvider: MovieProvider
   ) {
     this.tipoContenido = navParams.data['tipo'];
-    this.contenedor = navParams.data['data'];
-    console.log('tipo: ', this.tipoContenido);
+    this.list = navParams.data['array'];
+    // this.contenedor = navParams.data['data'];
     this.movie = new Movie(
       '',
       '',
@@ -45,25 +46,8 @@ export class VerTodoPage {
   }
 
   ionViewDidLoad() {
-    if (this.tipoContenido === 'peliculaVista') {
-      this.listMovie = [];
-      this._movieProvider.getAllMovies(localStorage.getItem('token'), 1).subscribe(response => {
-        response.message.forEach(eleMovie => {
-          this.listMovie.push(eleMovie);
-        });
-      },error => {
-          console.log(error);
-      });
+    if (this.tipoContenido === 'visto') {
       this.iconoIOS ='ios-eye-off';
-      this.iconoAndroid = 'md-eye-off';
-      // this._movieProvider.getAllView(localStorage.getItem('token')).subscribe(response => {
-      //   response.message.forEach(all => {
-      //     this.allViews.push(all);
-      //   });
-      // });
-      // console.log(this.allViews);
-    } else if (this.tipoContenido === 'serieVista') {
-      this.iconoIOS = 'ios-eye-off';
       this.iconoAndroid = 'md-eye-off';
     } else if (this.tipoContenido === 'favorito') {
       this.iconoIOS = 'ios-heart';

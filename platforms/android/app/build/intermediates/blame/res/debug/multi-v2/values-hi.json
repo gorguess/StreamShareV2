@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/C:\\Users\\Usuario\\Desktop\\PROYECTO FINAL\\Proyecto\\platforms\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hi\\values-hi.xml",
+            "outputFile": "C:\\Users\\adriancejudo\\Desktop\\MergeStreamShareApp\\StreamShareAPP\\ProyectoFinalV3\\PROYECTO FINAL\\Proyecto\\platforms\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hi\\values-hi.xml",
             "map": [
                 {
-                    "source": "/Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/C:\\Users\\Usuario\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-11.8.0.aar\\71ac2a4d9b742996bbe6832181e40e3c\\res\\values-hi\\values.xml",
+                    "source": "C:\\Users\\adriancejudo\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-11.8.0.aar\\f9835992225299b7db99c37c191222e7\\res\\values-hi\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/C:\\Users\\Usuario\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.8.0.aar\\42e73dab6fbecf4d7116c833ccd5c176\\res\\values-hi\\values.xml",
+                    "source": "C:\\Users\\adriancejudo\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.8.0.aar\\e6491c5ed6a6fd8ee4f19a7ab1c2e3b8\\res\\values-hi\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -40,10 +40,10 @@
             ]
         },
         {
-            "outputFile": "/Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hi/values-hi.xml",
+            "outputFile": "C:\\Users\\adriancejudo\\Desktop\\MergeStreamShareApp\\StreamShareAPP\\ProyectoFinalV3\\PROYECTO FINAL\\Proyecto\\C:\\Users\\Usuario\\Desktop\\PROYECTO FINAL\\Proyecto\\platforms\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hi\\values-hi.xml",
             "map": [
                 {
-                    "source": "/Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/e6491c5ed6a6fd8ee4f19a7ab1c2e3b8/res/values-hi/values.xml",
+                    "source": "C:\\Users\\adriancejudo\\Desktop\\MergeStreamShareApp\\StreamShareAPP\\ProyectoFinalV3\\PROYECTO FINAL\\Proyecto\\C:\\Users\\Usuario\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.8.0.aar\\42e73dab6fbecf4d7116c833ccd5c176\\res\\values-hi\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -60,7 +60,7 @@
                     }
                 },
                 {
-                    "source": "/Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.8.0.aar/f9835992225299b7db99c37c191222e7/res/values-hi/values.xml",
+                    "source": "C:\\Users\\adriancejudo\\Desktop\\MergeStreamShareApp\\StreamShareAPP\\ProyectoFinalV3\\PROYECTO FINAL\\Proyecto\\C:\\Users\\Usuario\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-11.8.0.aar\\71ac2a4d9b742996bbe6832181e40e3c\\res\\values-hi\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -74,6 +74,45 @@
                         "startOffsets": "1277",
                         "endColumns": "205",
                         "endOffsets": "1478"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\Users\\Usuario\\Desktop\\ProyectoFinalv5\\platforms\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hi\\values-hi.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Usuario\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-11.8.0.aar\\71ac2a4d9b742996bbe6832181e40e3c\\res\\values-hi\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "283",
+                        "endColumns": "205",
+                        "endOffsets": "488"
+                    },
+                    "to": {
+                        "startLines": "10",
+                        "startColumns": "4",
+                        "startOffsets": "1277",
+                        "endColumns": "205",
+                        "endOffsets": "1478"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Usuario\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.8.0.aar\\42e73dab6fbecf4d7116c833ccd5c176\\res\\values-hi\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
+                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+                        "startOffsets": "281,387,590,715,825,1035,1163,1301,1429,1648,1755,1952,2080,2288,2468,2557,2650",
+                        "endColumns": "105,202,124,109,209,127,137,127,218,106,196,127,207,179,88,92,110",
+                        "endOffsets": "386,589,714,824,1034,1162,1300,1428,1647,1754,1951,2079,2287,2467,2556,2649,2760"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,215,418,547,661,871,1003,1145,1483,1702,1813,2010,2142,2350,2534,2627,2724",
+                        "endColumns": "109,202,128,113,209,131,141,131,218,110,196,131,207,183,92,96,114",
+                        "endOffsets": "210,413,542,656,866,998,1140,1272,1697,1808,2005,2137,2345,2529,2622,2719,2834"
                     }
                 }
             ]

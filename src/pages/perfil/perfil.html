@@ -10,19 +10,19 @@
     <ion-card-content>
       <ion-grid>
         <ion-row>
-          <ion-col col-12 *ngIf="trustedUrl">
+          <!-- <ion-col col-12 *ngIf="trustedUrl">
             <ion-thumbnail item-start>
               <img [src]="identity.image">
+            </ion-thumbnail>
+          </ion-col> -->
+          <ion-col col-12 *ngIf="trustedUrl">
+            <ion-thumbnail item-start>  
+              <img  [src]="trustedUrl">
               <ion-fab top right col-3 #fab (click)="showMethods()">
                 <button ion-fab mini class="background">
                   <ion-icon ios="ios-camera" md="md-camera"></ion-icon>
                 </button>
               </ion-fab>
-            </ion-thumbnail>
-          </ion-col>
-          <ion-col col-12 *ngIf="trustedUrl">
-            <ion-thumbnail item-start>  
-              <img  [src]="trustedUrl">
             </ion-thumbnail>
           </ion-col>
         </ion-row>

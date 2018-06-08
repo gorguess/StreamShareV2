@@ -149,12 +149,18 @@ export class PeliculasPage {
     });
   }
 
-  cambiarIconoLike(fab: FabContainer) {
-    this.iconoIOS = 'ios-heart';
-    this.iconoAndroid = 'md-heart';
-    fab.close();
-    this.mensaje = 'This film has been added to "Favourite Group"';
-    this.presentToast(this.mensaje);
+  cambiarIconoLike(fab: FabContainer, movieId) {
+    this._movieProvider.getMovieLiked(this.token, movieId).subscribe(response => {
+      console.log(response);
+      this.iconoIOS = 'ios-heart';
+      this.iconoAndroid = 'md-heart';
+      fab.close();
+      this.mensaje = 'This film has been added to "Favourite Group"';
+      this.presentToast(this.mensaje);
+    },
+      err => {
+        console.log(err);
+      });
   }
   cambiarIconoRemove(fab: FabContainer) {
     this.iconoIOS = 'ios-arrow-dropdown';

@@ -1,272 +1,272 @@
 -- Merging decision tree log ---
 provider#android.support.v4.content.FileProvider
-INJECTED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:14:9-16:20
+INJECTED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:14:9-16:20
 	android:grantUriPermissions
-		ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:14:92-126
+		ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:14:92-126
 	android:authorities
-		INJECTED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:14:19-66
+		INJECTED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:14:19-66
 	android:exported
-		ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:14:67-91
+		ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:14:67-91
 	android:name
-		ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:14:127-181
+		ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:14:127-181
 manifest
-ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:2:1-28:12
-INJECTED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:2:1-28:12
-INJECTED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:2:1-28:12
-INJECTED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:2:1-28:12
-MERGED from [:tbxml-android:] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/tbxml-android.aar/fa953f7d724e228bc009166308d6885d/AndroidManifest.xml:2:1-9:12
-MERGED from [com.google.android.gms:play-services-maps:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-maps-11.8.0.aar/47c2d261c842b529b0c7d9fc6f86d14d/AndroidManifest.xml:17:1-32:12
-MERGED from [com.google.android.gms:play-services-location:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-location-11.8.0.aar/3785d33a5670918b7a76bdf2926896bb/AndroidManifest.xml:2:1-9:12
-MERGED from [com.google.android.gms:play-services-base:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/e6491c5ed6a6fd8ee4f19a7ab1c2e3b8/AndroidManifest.xml:17:1-29:12
-MERGED from [com.google.android.gms:play-services-tasks:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.8.0.aar/1a886479933820ea00f8af86d7be7de4/AndroidManifest.xml:2:1-9:12
-MERGED from [com.google.android.gms:play-services-basement:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.8.0.aar/f9835992225299b7db99c37c191222e7/AndroidManifest.xml:17:1-28:12
-MERGED from [com.android.support:support-v4:25.2.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/support-v4-25.2.0.aar/8cf1bae3adec3f4f7ac63f0c468d1e60/AndroidManifest.xml:17:1-27:12
-MERGED from [com.android.support:support-fragment:25.2.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/support-fragment-25.2.0.aar/c315882931cd312185ef223f52ab8197/AndroidManifest.xml:17:1-27:12
-MERGED from [com.android.support:support-core-utils:25.2.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.2.0.aar/5f99e8c979d97f0adb5abc694c1dea0a/AndroidManifest.xml:17:1-27:12
-MERGED from [:CordovaLib] /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/CordovaLib/build/intermediates/manifests/full/debug/AndroidManifest.xml:20:1-27:12
-MERGED from [com.android.support:support-media-compat:25.2.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.2.0.aar/c87f167923524da7032b0e90910f47cd/AndroidManifest.xml:17:1-27:12
-MERGED from [com.android.support:support-core-ui:25.2.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.2.0.aar/67149e338257f7be984192580164250c/AndroidManifest.xml:17:1-27:12
-MERGED from [com.android.support:support-compat:25.2.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/support-compat-25.2.0.aar/d72b1b277e9c7993ea40db107f2102a0/AndroidManifest.xml:17:1-27:12
-MERGED from [com.google.android.gms:play-services-maps-license:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-maps-license-11.8.0.aar/599dc1b983603dc77472120be9b5831a/AndroidManifest.xml:2:1-6:12
-MERGED from [com.google.android.gms:play-services-location-license:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-location-license-11.8.0.aar/6ef61d79be18042efe71f9d411a72307/AndroidManifest.xml:2:1-6:12
-MERGED from [com.google.android.gms:play-services-base-license:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-base-license-11.8.0.aar/7ae16aef7c98b29162d9dee24fbbdb17/AndroidManifest.xml:2:1-6:12
-MERGED from [com.google.android.gms:play-services-basement-license:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-basement-license-11.8.0.aar/2a85742e8d8e5058f70289785845c4cb/AndroidManifest.xml:2:1-6:12
-MERGED from [com.google.android.gms:play-services-tasks-license:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-tasks-license-11.8.0.aar/7d1d875de44ebd9a45a6d9c08c613be8/AndroidManifest.xml:2:1-6:12
-INJECTED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:2:1-28:12
-INJECTED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:2:1-28:12
-INJECTED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:2:1-28:12
+ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:2:1-28:12
+INJECTED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:2:1-28:12
+INJECTED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:2:1-28:12
+INJECTED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:2:1-28:12
+MERGED from [:tbxml-android:] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\tbxml-android.aar\d2aa8789f430594e4817890765a4f6af\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-maps:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.8.0.aar\71bf67c81a4d8068fd557cca05616a4d\AndroidManifest.xml:17:1-32:12
+MERGED from [com.google.android.gms:play-services-location:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-location-11.8.0.aar\96c86b76bad04496b4de80a81df91c5d\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-base:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-base-11.8.0.aar\42e73dab6fbecf4d7116c833ccd5c176\AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.android.gms:play-services-tasks:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-tasks-11.8.0.aar\932d9f1f2128389e8cb06e8371bfad45\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-basement:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.8.0.aar\71ac2a4d9b742996bbe6832181e40e3c\AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-v4:25.2.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\support-v4-25.2.0.aar\afd910fed570c97b2e05a532a7121e15\AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:support-fragment:25.2.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\support-fragment-25.2.0.aar\f759aa47338058f25071f107c1b43410\AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:support-core-utils:25.2.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.2.0.aar\b73495fad3bd6df82147560c90d4ad69\AndroidManifest.xml:17:1-27:12
+MERGED from [:CordovaLib] C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\CordovaLib\build\intermediates\manifests\full\debug\AndroidManifest.xml:20:1-27:12
+MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.2.0.aar\42cdd1c995508f40b5e0a15816a6b562\AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:support-core-ui:25.2.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.2.0.aar\f92be7238cf9b7654d46d77edf0da537\AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:support-compat:25.2.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\support-compat-25.2.0.aar\8b010ce56cff090ffc2dd7dcc0e0bb6d\AndroidManifest.xml:17:1-27:12
+MERGED from [com.google.android.gms:play-services-maps-license:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-maps-license-11.8.0.aar\27276f92c1c9b95d44dcde91625a3785\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-location-license:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-location-license-11.8.0.aar\b14958a10591161b545c786d6521b338\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-base-license:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-base-license-11.8.0.aar\88ae4bb692460cd4304ac2ec5c8c89e9\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-basement-license:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-basement-license-11.8.0.aar\05363b1c29f8c207dc1c5533c35ccb45\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-tasks-license:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-tasks-license-11.8.0.aar\a61ae4f9e6e4e98649acc51b8b9aa233\AndroidManifest.xml:2:1-6:12
+INJECTED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:2:1-28:12
+INJECTED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:2:1-28:12
+INJECTED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:2:1-28:12
 	package
-		ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:2:98-124
-		INJECTED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml
+		ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:2:98-124
+		INJECTED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml
 	android:versionName
-		ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:2:70-97
-		INJECTED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml
+		ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:2:70-97
+		INJECTED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml
 	android:hardwareAccelerated
-		ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:2:11-45
+		ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:2:11-45
 	xmlns:android
-		ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:2:125-183
+		ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:2:125-183
 	android:versionCode
-		ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:2:46-69
-		INJECTED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml
+		ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:2:46-69
+		INJECTED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml
 supports-screens
-ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:3:5-191
+ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:3:5-191
 	android:largeScreens
-		ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:3:49-76
+		ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:3:49-76
 	android:smallScreens
-		ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:3:132-159
+		ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:3:132-159
 	android:normalScreens
-		ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:3:77-105
+		ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:3:77-105
 	android:xlargeScreens
-		ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:3:160-188
+		ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:3:160-188
 	android:resizeable
-		ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:3:106-131
+		ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:3:106-131
 	android:anyDensity
-		ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:3:23-48
+		ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:3:23-48
 uses-permission#android.permission.INTERNET
-ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:4:5-67
-MERGED from [com.google.android.gms:play-services-maps:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-maps-11.8.0.aar/47c2d261c842b529b0c7d9fc6f86d14d/AndroidManifest.xml:24:5-67
-MERGED from [com.google.android.gms:play-services-maps:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-maps-11.8.0.aar/47c2d261c842b529b0c7d9fc6f86d14d/AndroidManifest.xml:24:5-67
+ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:4:5-67
+MERGED from [com.google.android.gms:play-services-maps:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.8.0.aar\71bf67c81a4d8068fd557cca05616a4d\AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-maps:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.8.0.aar\71bf67c81a4d8068fd557cca05616a4d\AndroidManifest.xml:24:5-67
 	android:name
-		ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:4:22-64
+		ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:4:22-64
 application
-ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:5:5-19:19
-MERGED from [com.google.android.gms:play-services-maps:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-maps-11.8.0.aar/47c2d261c842b529b0c7d9fc6f86d14d/AndroidManifest.xml:30:5-20
-MERGED from [com.google.android.gms:play-services-maps:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-maps-11.8.0.aar/47c2d261c842b529b0c7d9fc6f86d14d/AndroidManifest.xml:30:5-20
-MERGED from [com.google.android.gms:play-services-location:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-location-11.8.0.aar/3785d33a5670918b7a76bdf2926896bb/AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-location:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-location-11.8.0.aar/3785d33a5670918b7a76bdf2926896bb/AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-base:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/e6491c5ed6a6fd8ee4f19a7ab1c2e3b8/AndroidManifest.xml:22:5-27:19
-MERGED from [com.google.android.gms:play-services-base:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/e6491c5ed6a6fd8ee4f19a7ab1c2e3b8/AndroidManifest.xml:22:5-27:19
-MERGED from [com.google.android.gms:play-services-tasks:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.8.0.aar/1a886479933820ea00f8af86d7be7de4/AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-tasks:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.8.0.aar/1a886479933820ea00f8af86d7be7de4/AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-basement:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.8.0.aar/f9835992225299b7db99c37c191222e7/AndroidManifest.xml:22:5-26:19
-MERGED from [com.google.android.gms:play-services-basement:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.8.0.aar/f9835992225299b7db99c37c191222e7/AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:support-v4:25.2.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/support-v4-25.2.0.aar/8cf1bae3adec3f4f7ac63f0c468d1e60/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-v4:25.2.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/support-v4-25.2.0.aar/8cf1bae3adec3f4f7ac63f0c468d1e60/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-fragment:25.2.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/support-fragment-25.2.0.aar/c315882931cd312185ef223f52ab8197/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-fragment:25.2.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/support-fragment-25.2.0.aar/c315882931cd312185ef223f52ab8197/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-utils:25.2.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.2.0.aar/5f99e8c979d97f0adb5abc694c1dea0a/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-utils:25.2.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.2.0.aar/5f99e8c979d97f0adb5abc694c1dea0a/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-media-compat:25.2.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.2.0.aar/c87f167923524da7032b0e90910f47cd/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-media-compat:25.2.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.2.0.aar/c87f167923524da7032b0e90910f47cd/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-ui:25.2.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.2.0.aar/67149e338257f7be984192580164250c/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-ui:25.2.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.2.0.aar/67149e338257f7be984192580164250c/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:25.2.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/support-compat-25.2.0.aar/d72b1b277e9c7993ea40db107f2102a0/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:25.2.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/support-compat-25.2.0.aar/d72b1b277e9c7993ea40db107f2102a0/AndroidManifest.xml:25:5-20
-MERGED from [com.google.android.gms:play-services-maps-license:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-maps-license-11.8.0.aar/599dc1b983603dc77472120be9b5831a/AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-maps-license:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-maps-license-11.8.0.aar/599dc1b983603dc77472120be9b5831a/AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-location-license:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-location-license-11.8.0.aar/6ef61d79be18042efe71f9d411a72307/AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-location-license:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-location-license-11.8.0.aar/6ef61d79be18042efe71f9d411a72307/AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-base-license:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-base-license-11.8.0.aar/7ae16aef7c98b29162d9dee24fbbdb17/AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-base-license:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-base-license-11.8.0.aar/7ae16aef7c98b29162d9dee24fbbdb17/AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-basement-license:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-basement-license-11.8.0.aar/2a85742e8d8e5058f70289785845c4cb/AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-basement-license:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-basement-license-11.8.0.aar/2a85742e8d8e5058f70289785845c4cb/AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-tasks-license:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-tasks-license-11.8.0.aar/7d1d875de44ebd9a45a6d9c08c613be8/AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-tasks-license:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-tasks-license-11.8.0.aar/7d1d875de44ebd9a45a6d9c08c613be8/AndroidManifest.xml:5:5-20
+ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:5:5-19:19
+MERGED from [com.google.android.gms:play-services-maps:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.8.0.aar\71bf67c81a4d8068fd557cca05616a4d\AndroidManifest.xml:30:5-20
+MERGED from [com.google.android.gms:play-services-maps:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.8.0.aar\71bf67c81a4d8068fd557cca05616a4d\AndroidManifest.xml:30:5-20
+MERGED from [com.google.android.gms:play-services-location:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-location-11.8.0.aar\96c86b76bad04496b4de80a81df91c5d\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-location:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-location-11.8.0.aar\96c86b76bad04496b4de80a81df91c5d\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-base:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-base-11.8.0.aar\42e73dab6fbecf4d7116c833ccd5c176\AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-base-11.8.0.aar\42e73dab6fbecf4d7116c833ccd5c176\AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-tasks:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-tasks-11.8.0.aar\932d9f1f2128389e8cb06e8371bfad45\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-tasks-11.8.0.aar\932d9f1f2128389e8cb06e8371bfad45\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-basement:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.8.0.aar\71ac2a4d9b742996bbe6832181e40e3c\AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.8.0.aar\71ac2a4d9b742996bbe6832181e40e3c\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-v4:25.2.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\support-v4-25.2.0.aar\afd910fed570c97b2e05a532a7121e15\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-v4:25.2.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\support-v4-25.2.0.aar\afd910fed570c97b2e05a532a7121e15\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-fragment:25.2.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\support-fragment-25.2.0.aar\f759aa47338058f25071f107c1b43410\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-fragment:25.2.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\support-fragment-25.2.0.aar\f759aa47338058f25071f107c1b43410\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:25.2.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.2.0.aar\b73495fad3bd6df82147560c90d4ad69\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:25.2.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.2.0.aar\b73495fad3bd6df82147560c90d4ad69\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.2.0.aar\42cdd1c995508f40b5e0a15816a6b562\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.2.0.aar\42cdd1c995508f40b5e0a15816a6b562\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:25.2.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.2.0.aar\f92be7238cf9b7654d46d77edf0da537\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:25.2.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.2.0.aar\f92be7238cf9b7654d46d77edf0da537\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:25.2.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\support-compat-25.2.0.aar\8b010ce56cff090ffc2dd7dcc0e0bb6d\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:25.2.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\support-compat-25.2.0.aar\8b010ce56cff090ffc2dd7dcc0e0bb6d\AndroidManifest.xml:25:5-20
+MERGED from [com.google.android.gms:play-services-maps-license:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-maps-license-11.8.0.aar\27276f92c1c9b95d44dcde91625a3785\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-maps-license:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-maps-license-11.8.0.aar\27276f92c1c9b95d44dcde91625a3785\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-location-license:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-location-license-11.8.0.aar\b14958a10591161b545c786d6521b338\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-location-license:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-location-license-11.8.0.aar\b14958a10591161b545c786d6521b338\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-base-license:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-base-license-11.8.0.aar\88ae4bb692460cd4304ac2ec5c8c89e9\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-base-license:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-base-license-11.8.0.aar\88ae4bb692460cd4304ac2ec5c8c89e9\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-basement-license:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-basement-license-11.8.0.aar\05363b1c29f8c207dc1c5533c35ccb45\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-basement-license:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-basement-license-11.8.0.aar\05363b1c29f8c207dc1c5533c35ccb45\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-tasks-license:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-tasks-license-11.8.0.aar\a61ae4f9e6e4e98649acc51b8b9aa233\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-tasks-license:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-tasks-license-11.8.0.aar\a61ae4f9e6e4e98649acc51b8b9aa233\AndroidManifest.xml:5:5-20
 	android:supportsRtl
-		ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:5:114-140
+		ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:5:114-140
 	android:label
-		ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:5:81-113
+		ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:5:81-113
 	android:hardwareAccelerated
-		ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:5:18-52
+		ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:5:18-52
 	android:icon
-		ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:5:53-80
+		ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:5:53-80
 activity#io.ionic.starter.MainActivity
-ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:6:9-11:20
+ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:6:9-11:20
 	android:label
-		ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:6:97-134
+		ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:6:97-134
 	android:launchMode
-		ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:6:135-165
+		ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:6:135-165
 	android:windowSoftInputMode
-		ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:6:257-299
+		ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:6:257-299
 	android:configChanges
-		ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:6:19-96
+		ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:6:19-96
 	android:theme
-		ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:6:194-256
+		ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:6:194-256
 	android:name
-		ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:6:166-193
+		ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:6:166-193
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:7:13-10:29
+ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:7:13-10:29
 	android:label
-		ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:7:28-65
+		ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:7:28-65
 action#android.intent.action.MAIN
-ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:8:17-69
+ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:8:17-69
 	android:name
-		ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:8:25-66
+		ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:8:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:9:17-77
+ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:9:17-77
 	android:name
-		ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:9:27-74
+		ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:9:27-74
 activity#com.hutchind.cordova.plugins.streamingmedia.SimpleAudioStream
-ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:12:9-181
+ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:12:9-181
 	android:label
-		ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:12:66-101
+		ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:12:66-101
 	android:configChanges
-		ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:12:19-65
+		ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:12:19-65
 	android:name
-		ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:12:102-178
+		ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:12:102-178
 activity#com.hutchind.cordova.plugins.streamingmedia.SimpleVideoStream
-ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:13:9-181
+ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:13:9-181
 	android:label
-		ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:13:66-101
+		ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:13:66-101
 	android:configChanges
-		ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:13:19-65
+		ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:13:19-65
 	android:name
-		ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:13:102-178
+		ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:13:102-178
 meta-data#com.google.android.geo.API_KEY
-ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:17:9-124
+ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:17:9-124
 	android:value
-		ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:17:66-121
+		ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:17:66-121
 	android:name
-		ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:17:20-65
+		ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:17:20-65
 meta-data#com.google.android.gms.version
-ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:18:9-122
-MERGED from [com.google.android.gms:play-services-basement:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.8.0.aar/f9835992225299b7db99c37c191222e7/AndroidManifest.xml:23:9-25:69
-MERGED from [com.google.android.gms:play-services-basement:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.8.0.aar/f9835992225299b7db99c37c191222e7/AndroidManifest.xml:23:9-25:69
+ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:18:9-122
+MERGED from [com.google.android.gms:play-services-basement:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.8.0.aar\71ac2a4d9b742996bbe6832181e40e3c\AndroidManifest.xml:23:9-25:69
+MERGED from [com.google.android.gms:play-services-basement:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.8.0.aar\71ac2a4d9b742996bbe6832181e40e3c\AndroidManifest.xml:23:9-25:69
 	android:value
-		ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:18:66-119
+		ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:18:66-119
 	android:name
-		ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:18:20-65
+		ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:18:20-65
 uses-sdk
-ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:20:5-74
-INJECTED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:20:5-74
-MERGED from [:tbxml-android:] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/tbxml-android.aar/fa953f7d724e228bc009166308d6885d/AndroidManifest.xml:7:5-43
-MERGED from [:tbxml-android:] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/tbxml-android.aar/fa953f7d724e228bc009166308d6885d/AndroidManifest.xml:7:5-43
-MERGED from [com.google.android.gms:play-services-maps:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-maps-11.8.0.aar/47c2d261c842b529b0c7d9fc6f86d14d/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-maps:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-maps-11.8.0.aar/47c2d261c842b529b0c7d9fc6f86d14d/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-location:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-location-11.8.0.aar/3785d33a5670918b7a76bdf2926896bb/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-location:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-location-11.8.0.aar/3785d33a5670918b7a76bdf2926896bb/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-base:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/e6491c5ed6a6fd8ee4f19a7ab1c2e3b8/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-base:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/e6491c5ed6a6fd8ee4f19a7ab1c2e3b8/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-tasks:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.8.0.aar/1a886479933820ea00f8af86d7be7de4/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-tasks:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.8.0.aar/1a886479933820ea00f8af86d7be7de4/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-basement:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.8.0.aar/f9835992225299b7db99c37c191222e7/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-basement:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.8.0.aar/f9835992225299b7db99c37c191222e7/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:25.2.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/support-v4-25.2.0.aar/8cf1bae3adec3f4f7ac63f0c468d1e60/AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-v4:25.2.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/support-v4-25.2.0.aar/8cf1bae3adec3f4f7ac63f0c468d1e60/AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-fragment:25.2.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/support-fragment-25.2.0.aar/c315882931cd312185ef223f52ab8197/AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-fragment:25.2.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/support-fragment-25.2.0.aar/c315882931cd312185ef223f52ab8197/AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-core-utils:25.2.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.2.0.aar/5f99e8c979d97f0adb5abc694c1dea0a/AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:support-core-utils:25.2.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.2.0.aar/5f99e8c979d97f0adb5abc694c1dea0a/AndroidManifest.xml:21:5-23:61
-MERGED from [:CordovaLib] /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/CordovaLib/build/intermediates/manifests/full/debug/AndroidManifest.xml:25:5-44
-MERGED from [:CordovaLib] /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/CordovaLib/build/intermediates/manifests/full/debug/AndroidManifest.xml:25:5-44
-MERGED from [com.android.support:support-media-compat:25.2.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.2.0.aar/c87f167923524da7032b0e90910f47cd/AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-media-compat:25.2.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.2.0.aar/c87f167923524da7032b0e90910f47cd/AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-core-ui:25.2.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.2.0.aar/67149e338257f7be984192580164250c/AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-core-ui:25.2.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.2.0.aar/67149e338257f7be984192580164250c/AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-compat:25.2.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/support-compat-25.2.0.aar/d72b1b277e9c7993ea40db107f2102a0/AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-compat:25.2.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/support-compat-25.2.0.aar/d72b1b277e9c7993ea40db107f2102a0/AndroidManifest.xml:21:5-23:58
-MERGED from [com.google.android.gms:play-services-maps-license:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-maps-license-11.8.0.aar/599dc1b983603dc77472120be9b5831a/AndroidManifest.xml:4:5-43
-MERGED from [com.google.android.gms:play-services-maps-license:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-maps-license-11.8.0.aar/599dc1b983603dc77472120be9b5831a/AndroidManifest.xml:4:5-43
-MERGED from [com.google.android.gms:play-services-location-license:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-location-license-11.8.0.aar/6ef61d79be18042efe71f9d411a72307/AndroidManifest.xml:4:5-43
-MERGED from [com.google.android.gms:play-services-location-license:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-location-license-11.8.0.aar/6ef61d79be18042efe71f9d411a72307/AndroidManifest.xml:4:5-43
-MERGED from [com.google.android.gms:play-services-base-license:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-base-license-11.8.0.aar/7ae16aef7c98b29162d9dee24fbbdb17/AndroidManifest.xml:4:5-43
-MERGED from [com.google.android.gms:play-services-base-license:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-base-license-11.8.0.aar/7ae16aef7c98b29162d9dee24fbbdb17/AndroidManifest.xml:4:5-43
-MERGED from [com.google.android.gms:play-services-basement-license:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-basement-license-11.8.0.aar/2a85742e8d8e5058f70289785845c4cb/AndroidManifest.xml:4:5-43
-MERGED from [com.google.android.gms:play-services-basement-license:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-basement-license-11.8.0.aar/2a85742e8d8e5058f70289785845c4cb/AndroidManifest.xml:4:5-43
-MERGED from [com.google.android.gms:play-services-tasks-license:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-tasks-license-11.8.0.aar/7d1d875de44ebd9a45a6d9c08c613be8/AndroidManifest.xml:4:5-43
-MERGED from [com.google.android.gms:play-services-tasks-license:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-tasks-license-11.8.0.aar/7d1d875de44ebd9a45a6d9c08c613be8/AndroidManifest.xml:4:5-43
-INJECTED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:20:5-74
+ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:20:5-74
+INJECTED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:20:5-74
+MERGED from [:tbxml-android:] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\tbxml-android.aar\d2aa8789f430594e4817890765a4f6af\AndroidManifest.xml:7:5-43
+MERGED from [:tbxml-android:] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\tbxml-android.aar\d2aa8789f430594e4817890765a4f6af\AndroidManifest.xml:7:5-43
+MERGED from [com.google.android.gms:play-services-maps:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.8.0.aar\71bf67c81a4d8068fd557cca05616a4d\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.8.0.aar\71bf67c81a4d8068fd557cca05616a4d\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-location:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-location-11.8.0.aar\96c86b76bad04496b4de80a81df91c5d\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-location:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-location-11.8.0.aar\96c86b76bad04496b4de80a81df91c5d\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-base:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-base-11.8.0.aar\42e73dab6fbecf4d7116c833ccd5c176\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-base-11.8.0.aar\42e73dab6fbecf4d7116c833ccd5c176\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-tasks:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-tasks-11.8.0.aar\932d9f1f2128389e8cb06e8371bfad45\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-tasks-11.8.0.aar\932d9f1f2128389e8cb06e8371bfad45\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-basement:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.8.0.aar\71ac2a4d9b742996bbe6832181e40e3c\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.8.0.aar\71ac2a4d9b742996bbe6832181e40e3c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:25.2.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\support-v4-25.2.0.aar\afd910fed570c97b2e05a532a7121e15\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:25.2.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\support-v4-25.2.0.aar\afd910fed570c97b2e05a532a7121e15\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.2.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\support-fragment-25.2.0.aar\f759aa47338058f25071f107c1b43410\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-fragment:25.2.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\support-fragment-25.2.0.aar\f759aa47338058f25071f107c1b43410\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-core-utils:25.2.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.2.0.aar\b73495fad3bd6df82147560c90d4ad69\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-utils:25.2.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.2.0.aar\b73495fad3bd6df82147560c90d4ad69\AndroidManifest.xml:21:5-23:61
+MERGED from [:CordovaLib] C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\CordovaLib\build\intermediates\manifests\full\debug\AndroidManifest.xml:25:5-44
+MERGED from [:CordovaLib] C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\CordovaLib\build\intermediates\manifests\full\debug\AndroidManifest.xml:25:5-44
+MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.2.0.aar\42cdd1c995508f40b5e0a15816a6b562\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.2.0.aar\42cdd1c995508f40b5e0a15816a6b562\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-ui:25.2.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.2.0.aar\f92be7238cf9b7654d46d77edf0da537\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-ui:25.2.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.2.0.aar\f92be7238cf9b7654d46d77edf0da537\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:25.2.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\support-compat-25.2.0.aar\8b010ce56cff090ffc2dd7dcc0e0bb6d\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:25.2.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\support-compat-25.2.0.aar\8b010ce56cff090ffc2dd7dcc0e0bb6d\AndroidManifest.xml:21:5-23:58
+MERGED from [com.google.android.gms:play-services-maps-license:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-maps-license-11.8.0.aar\27276f92c1c9b95d44dcde91625a3785\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-maps-license:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-maps-license-11.8.0.aar\27276f92c1c9b95d44dcde91625a3785\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-location-license:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-location-license-11.8.0.aar\b14958a10591161b545c786d6521b338\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-location-license:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-location-license-11.8.0.aar\b14958a10591161b545c786d6521b338\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-base-license:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-base-license-11.8.0.aar\88ae4bb692460cd4304ac2ec5c8c89e9\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-base-license:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-base-license-11.8.0.aar\88ae4bb692460cd4304ac2ec5c8c89e9\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-basement-license:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-basement-license-11.8.0.aar\05363b1c29f8c207dc1c5533c35ccb45\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-basement-license:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-basement-license-11.8.0.aar\05363b1c29f8c207dc1c5533c35ccb45\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-tasks-license:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-tasks-license-11.8.0.aar\a61ae4f9e6e4e98649acc51b8b9aa233\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-tasks-license:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-tasks-license-11.8.0.aar\a61ae4f9e6e4e98649acc51b8b9aa233\AndroidManifest.xml:4:5-43
+INJECTED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:20:5-74
 	tools:overrideLibrary
-		ADDED from [com.android.support:support-v4:25.2.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/support-v4-25.2.0.aar/8cf1bae3adec3f4f7ac63f0c468d1e60/AndroidManifest.xml:23:9-51
+		ADDED from [com.android.support:support-v4:25.2.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\support-v4-25.2.0.aar\afd910fed570c97b2e05a532a7121e15\AndroidManifest.xml:23:9-51
 	android:targetSdkVersion
-		ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:20:42-71
-		INJECTED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml
+		ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:20:42-71
+		INJECTED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:20:15-41
+		ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:20:15-41
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:21:5-81
+ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:21:5-81
 	android:name
-		ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:21:22-78
+		ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:21:22-78
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:22:5-79
-MERGED from [com.google.android.gms:play-services-maps:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-maps-11.8.0.aar/47c2d261c842b529b0c7d9fc6f86d14d/AndroidManifest.xml:23:5-79
-MERGED from [com.google.android.gms:play-services-maps:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-maps-11.8.0.aar/47c2d261c842b529b0c7d9fc6f86d14d/AndroidManifest.xml:23:5-79
+ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:22:5-79
+MERGED from [com.google.android.gms:play-services-maps:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.8.0.aar\71bf67c81a4d8068fd557cca05616a4d\AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-maps:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.8.0.aar\71bf67c81a4d8068fd557cca05616a4d\AndroidManifest.xml:23:5-79
 	android:name
-		ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:22:22-76
+		ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:22:22-76
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:23:5-81
+ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:23:5-81
 	android:name
-		ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:23:22-78
+		ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:23:22-78
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:24:5-79
+ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:24:5-79
 	android:name
-		ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:24:22-76
+		ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:24:22-76
 uses-feature#0x00020000
-ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:25:5-78
-MERGED from [com.google.android.gms:play-services-maps:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-maps-11.8.0.aar/47c2d261c842b529b0c7d9fc6f86d14d/AndroidManifest.xml:26:5-28:35
-MERGED from [com.google.android.gms:play-services-maps:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-maps-11.8.0.aar/47c2d261c842b529b0c7d9fc6f86d14d/AndroidManifest.xml:26:5-28:35
+ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:25:5-78
+MERGED from [com.google.android.gms:play-services-maps:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.8.0.aar\71bf67c81a4d8068fd557cca05616a4d\AndroidManifest.xml:26:5-28:35
+MERGED from [com.google.android.gms:play-services-maps:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.8.0.aar\71bf67c81a4d8068fd557cca05616a4d\AndroidManifest.xml:26:5-28:35
 	android:glEsVersion
-		ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:25:19-51
+		ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:25:19-51
 	android:required
-		ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:25:52-75
+		ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:25:52-75
 uses-feature#android.hardware.location
-ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:26:5-62
+ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:26:5-62
 	android:name
-		ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:26:19-59
+		ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:26:19-59
 uses-feature#android.hardware.location.gps
-ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:27:5-66
+ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:27:5-66
 	android:name
-		ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:27:19-63
+		ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:27:19-63
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:15:13-116
+ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:15:13-116
 	android:resource
-		ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:15:75-113
+		ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:15:75-113
 	android:name
-		ADDED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:15:24-74
+		ADDED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:15:24-74
 uses-permission#android.permission.READ_PHONE_STATE
-IMPLIED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:2:1-28:12 reason: za.co.twyst has a targetSdkVersion < 4
+IMPLIED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:2:1-28:12 reason: za.co.twyst has a targetSdkVersion < 4
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-IMPLIED from /Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/src/main/AndroidManifest.xml:2:1-28:12 reason: za.co.twyst requested WRITE_EXTERNAL_STORAGE
+IMPLIED from C:\Users\Usuario\Desktop\ProyectoFinalv5\platforms\android\app\src\main\AndroidManifest.xml:2:1-28:12 reason: za.co.twyst requested WRITE_EXTERNAL_STORAGE
 activity#com.google.android.gms.common.api.GoogleApiActivity
-ADDED from [com.google.android.gms:play-services-base:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/e6491c5ed6a6fd8ee4f19a7ab1c2e3b8/AndroidManifest.xml:23:9-26:75
+ADDED from [com.google.android.gms:play-services-base:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-base-11.8.0.aar\42e73dab6fbecf4d7116c833ccd5c176\AndroidManifest.xml:23:9-26:75
 	android:exported
-		ADDED from [com.google.android.gms:play-services-base:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/e6491c5ed6a6fd8ee4f19a7ab1c2e3b8/AndroidManifest.xml:25:13-37
+		ADDED from [com.google.android.gms:play-services-base:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-base-11.8.0.aar\42e73dab6fbecf4d7116c833ccd5c176\AndroidManifest.xml:25:13-37
 	android:theme
-		ADDED from [com.google.android.gms:play-services-base:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/e6491c5ed6a6fd8ee4f19a7ab1c2e3b8/AndroidManifest.xml:26:13-72
+		ADDED from [com.google.android.gms:play-services-base:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-base-11.8.0.aar\42e73dab6fbecf4d7116c833ccd5c176\AndroidManifest.xml:26:13-72
 	android:name
-		ADDED from [com.google.android.gms:play-services-base:11.8.0] /Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/e6491c5ed6a6fd8ee4f19a7ab1c2e3b8/AndroidManifest.xml:24:13-79
+		ADDED from [com.google.android.gms:play-services-base:11.8.0] C:\Users\Usuario\.gradle\caches\transforms-1\files-1.1\play-services-base-11.8.0.aar\42e73dab6fbecf4d7116c833ccd5c176\AndroidManifest.xml:24:13-79

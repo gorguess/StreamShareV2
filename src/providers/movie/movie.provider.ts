@@ -36,4 +36,15 @@ export class MovieProvider {
 
         return this._http.get(this.url + 'getallviewing/movie' + movieId,  {headers: headers});
     }
+
+    getLikedMovie(token: any): Observable<any> {
+        let headers = new HttpHeaders().set('Content-type', 'application/json').set('Authorization', token);
+
+        return this._http.get(this.url + 'getlikeds', { headers: headers });
+    }
+    getMovieLiked(token: any, movieId): Observable<any> {
+        let headers = new HttpHeaders().set('Content-type', 'application/json').set('Authorization', token);
+
+        return this._http.post(this.url + 'liked/movie/' + movieId, { headers: headers });
+    }
 }

@@ -25,13 +25,13 @@ export class HeaderPage implements OnInit, DoCheck{
 
   ngOnInit(){
     this.identity = this.comprobarLogin.getIdentity();
-    // this.avatarUrl = this.comprobarLogin.getImageAvatar();
+    this.avatarUrl = this.comprobarLogin.getImageAvatar();
     console.log('Primera ', this.identity['image']);
     if (!this.identity['image']) {
       this.identity['image'] = "assets/imgs/profileNull.png";
     }
     console.log('Segunda ', this.identity['image']);
-    // this.trustedUrl = this.sanitizer.bypassSecurityTrustUrl(this.avatarUrl);
+    this.trustedUrl = this.sanitizer.bypassSecurityTrustUrl(this.avatarUrl);
     }
   
   

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/C:\\Users\\Usuario\\Desktop\\PROYECTO FINAL\\Proyecto\\platforms\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sr\\values-sr.xml",
+            "outputFile": "C:\\Users\\adriancejudo\\Desktop\\MergeStreamShareApp\\StreamShareAPP\\ProyectoFinalV3\\PROYECTO FINAL\\Proyecto\\platforms\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sr\\values-sr.xml",
             "map": [
                 {
-                    "source": "/Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/C:\\Users\\Usuario\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-11.8.0.aar\\71ac2a4d9b742996bbe6832181e40e3c\\res\\values-sr\\values.xml",
+                    "source": "C:\\Users\\adriancejudo\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-11.8.0.aar\\f9835992225299b7db99c37c191222e7\\res\\values-sr\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/C:\\Users\\Usuario\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.8.0.aar\\42e73dab6fbecf4d7116c833ccd5c176\\res\\values-sr\\values.xml",
+                    "source": "C:\\Users\\adriancejudo\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.8.0.aar\\e6491c5ed6a6fd8ee4f19a7ab1c2e3b8\\res\\values-sr\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -40,10 +40,10 @@
             ]
         },
         {
-            "outputFile": "/Users/adriancejudo/Desktop/MergeStreamShareApp/StreamShareAPP/ProyectoFinalV3/PROYECTO FINAL/Proyecto/platforms/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sr/values-sr.xml",
+            "outputFile": "C:\\Users\\Usuario\\Desktop\\ProyectoFinalv5\\platforms\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sr\\values-sr.xml",
             "map": [
                 {
-                    "source": "/Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.8.0.aar/f9835992225299b7db99c37c191222e7/res/values-sr/values.xml",
+                    "source": "C:\\Users\\Usuario\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-11.8.0.aar\\71ac2a4d9b742996bbe6832181e40e3c\\res\\values-sr\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -60,7 +60,46 @@
                     }
                 },
                 {
-                    "source": "/Users/adriancejudo/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/e6491c5ed6a6fd8ee4f19a7ab1c2e3b8/res/values-sr/values.xml",
+                    "source": "C:\\Users\\Usuario\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.8.0.aar\\42e73dab6fbecf4d7116c833ccd5c176\\res\\values-sr\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
+                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+                        "startOffsets": "281,385,573,697,805,1018,1143,1281,1408,1616,1721,1912,2037,2245,2413,2507,2598",
+                        "endColumns": "103,187,123,107,212,124,137,126,207,104,190,124,207,167,93,90,104",
+                        "endOffsets": "384,572,696,804,1017,1142,1280,1407,1615,1720,1911,2036,2244,2412,2506,2597,2702"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,213,401,529,641,854,983,1125,1445,1653,1762,1953,2082,2290,2462,2560,2655",
+                        "endColumns": "107,187,127,111,212,128,141,130,207,108,190,128,207,171,97,94,108",
+                        "endOffsets": "208,396,524,636,849,978,1120,1251,1648,1757,1948,2077,2285,2457,2555,2650,2759"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\Users\\adriancejudo\\Desktop\\MergeStreamShareApp\\StreamShareAPP\\ProyectoFinalV3\\PROYECTO FINAL\\Proyecto\\C:\\Users\\Usuario\\Desktop\\PROYECTO FINAL\\Proyecto\\platforms\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sr\\values-sr.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\adriancejudo\\Desktop\\MergeStreamShareApp\\StreamShareAPP\\ProyectoFinalV3\\PROYECTO FINAL\\Proyecto\\C:\\Users\\Usuario\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-11.8.0.aar\\71ac2a4d9b742996bbe6832181e40e3c\\res\\values-sr\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "283",
+                        "endColumns": "188",
+                        "endOffsets": "471"
+                    },
+                    "to": {
+                        "startLines": "10",
+                        "startColumns": "4",
+                        "startOffsets": "1256",
+                        "endColumns": "188",
+                        "endOffsets": "1440"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\adriancejudo\\Desktop\\MergeStreamShareApp\\StreamShareAPP\\ProyectoFinalV3\\PROYECTO FINAL\\Proyecto\\C:\\Users\\Usuario\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.8.0.aar\\42e73dab6fbecf4d7116c833ccd5c176\\res\\values-sr\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",

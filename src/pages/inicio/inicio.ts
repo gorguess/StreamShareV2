@@ -32,16 +32,25 @@ export class InicioPage implements OnInit, DoCheck{
   titulo3;
   titulo4;
   titulo5;
-  cont = 4;
-  seeAll: boolean = false;
+  contMovies = 0;
+  contSeries = 0;
+  seeAllMovies: boolean = false;
+  seeAllSeries: boolean = false;
+  mensajeSeries: boolean = false;
+  mensajePeliculas: boolean = false;
+  mensajeViewP = 'There are not films in this group';
+  mensajeViewS = 'There are not series in this group';
+  mostrarPeliculas: Array<Movie>;
+  mostrarPeliculasF: Array<Movie>;
+  mostrarSeries: Array<Serie>;
   nombreUsuario;
   contenedor;
   movie: Movie;
   listMovieVieweds: Array<Movie>;
+  listMovieLikeds: Array<Movie>;
   serie: Serie;
   listSerieVieweds: Array<Serie>;
   token;
-  mensajeView;
 
   public isSearchbarOpened = false;
   constructor(
@@ -102,72 +111,120 @@ export class InicioPage implements OnInit, DoCheck{
     });
   }
 
-  // goToPerfil() {
-  //   this.navCtrl.push(PerfilPage, {
-  //     data: this.contenedor
-  //   });
-  // }
-
-  goToSeeAll(contenido: string){
+  goToSeeAll(contenido: string, lista: Array<any>){
     this.navCtrl.push(VerTodoPage, {
-      tipo: contenido
+      tipo: contenido,
+      array: lista
     });
   }
-
-  // goToPeliculas() {
-  //   this.navCtrl.push(PeliculasPage, {
-  //     data: this.contenedor
-  //   });
-  // }
 
   ionViewDidLoad() {
     this.identity = this.comprobarLogin.getIdentity();
     this.avatarUrl = this.comprobarLogin.getImageAvatar();
-    this.trustedUrl = this.sanitizer.bypassSecurityTrustUrl(this.avatarUrl)
+    this.trustedUrl = this.sanitizer.bypassSecurityTrustUrl(this.avatarUrl);
+  }
 
-    if (this.cont > 3) {
-      this.seeAll = true;
-    }
+  ngOnInit(){
+    this.identity = this.comprobarLogin.getIdentity();
+    this.avatarUrl = this.comprobarLogin.getImageAvatar();
+    this.trustedUrl = this.sanitizer.bypassSecurityTrustUrl(this.avatarUrl);
 
     this._movieProvider.getViewedMovie(this.token).subscribe(response => {
       this.listMovieVieweds = [];
       response.views.forEach(eleMovie => {
-        if(eleMovie.movieViewed){
-      this.movie = eleMovie.movieViewed;
-      this.listMovieVieweds.push(this.movie);
-        } else { 
-          this.mensajeView = 'No hay peliculas en este momento';
+        if (eleMovie.movieViewed) {
+          this.movie = eleMovie.movieViewed;
+          this.listMovieVieweds.push(this.movie);
         }
       });
+
+      if (this.listMovieVieweds.length > 0) {
+        if (this.listMovieVieweds.length > 3) {
+          this.mostrarPeliculas = [];
+          for (let index = 0; index < 3; index++) {
+            this.mostrarPeliculas.push(this.listMovieVieweds[index]);
+          }
+          this.seeAllMovies = true;
+        } else {
+          this.mostrarPeliculas = [];
+          for (let index = 0; index < this.listMovieVieweds.length; index++) {
+            this.mostrarPeliculas.push(this.listMovieVieweds[index]);
+          }
+        }
+      } else {
+        this.mensajePeliculas = true;
+      }
     },
-    err => {
-      console.log(err);
-    });
+      err => {
+        console.log(err);
+      });
+
     this._serieProvider.getViewedSerie(this.token).subscribe(response => {
       this.listSerieVieweds = [];
-      response.views.forEach(eleSerie=> {
-        if(eleSerie.chapter){
+      response.views.forEach(eleSerie => {
+        if (eleSerie.chapter) {
           this.serie = eleSerie.chapter;
           this.listSerieVieweds.push(this.serie);
-        } else {
-          this.mensajeView = 'No hay series en este momento';
         }
       });
-    },
-    err => {
-      console.log(err);
-    });
-  }
 
-ngOnInit(){
-  this.identity = this.comprobarLogin.getIdentity();
-  this.avatarUrl = this.comprobarLogin.getImageAvatar();
-  this.trustedUrl = this.sanitizer.bypassSecurityTrustUrl(this.avatarUrl)
+      if (this.listSerieVieweds.length > 0) {
+        if (this.listSerieVieweds.length > 3) {
+          this.mostrarSeries = [];
+          for (let index = 0; index < 3; index++) {
+            this.mostrarSeries.push(this.listSerieVieweds[index]);
+          }
+          this.seeAllSeries = true;
+        } else {
+          this.mostrarSeries = [];
+          for (let index = 0; index < this.listSerieVieweds.length; index++) {
+            this.mostrarSeries.push(this.listSerieVieweds[index]);
+          }
+        }
+      } else {
+        this.mensajeSeries = true;
+      }
+
+    },
+      err => {
+        console.log(err);
+      });
+
+    this._movieProvider.getLikedMovie(this.token).subscribe(response => {
+      this.listMovieLikeds = [];
+      response.views.forEach(eleSerie => {
+        if (eleSerie.chapter) {
+          this.serie = eleSerie.chapter;
+          this.listMovieLikeds.push(this.serie);
+        }
+      });
+
+      if (this.listMovieLikeds.length > 0) {
+        if (this.listMovieLikeds.length > 3) {
+          this.mostrarPeliculasF = [];
+          for (let index = 0; index < 3; index++) {
+            this.mostrarPeliculasF.push(this.listMovieLikeds[index]);
+          }
+          this.seeAllSeries = true;
+        } else {
+          this.mostrarPeliculasF = [];
+          for (let index = 0; index < this.listMovieLikeds.length; index++) {
+            this.mostrarPeliculasF.push(this.listMovieLikeds[index]);
+          }
+        }
+      } else {
+        this.mensajePeliculas = true;
+      }
+
+    },
+      err => {
+        console.log(err);
+      });
   }
 
 
   ngDoCheck(){
-    //this.identity = this.comprobarLogin.getIdentity();
+    this.identity = this.comprobarLogin.getIdentity();
     this.avatarUrl = this.comprobarLogin.getImageAvatar();
     this.trustedUrl = this.sanitizer.bypassSecurityTrustUrl(this.avatarUrl)
   }

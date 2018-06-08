@@ -24,10 +24,10 @@
         <ion-row>
           <ion-col col-12>
             <h3 class="titulo">Movies seen:</h3>
-            <a *ngIf="seeAll" class="alinearDerecha" (click)="goToSeeAll('peliculaVista')">see all</a>
+            <a *ngIf="seeAllMovies" class="alinearDerecha" (click)="goToSeeAll('visto', listMovieVieweds)">see all</a>
             <ion-grid>
               <ion-row>
-                <ion-col col-4 *ngFor="let p of listMovieVieweds">
+                <ion-col col-4 *ngFor="let p of mostrarPeliculas">
                 <ion-row>
                     
                         <button (click)="goToInfo(p)" class="fotoPelicula" no-padding>
@@ -42,16 +42,21 @@
                 </ion-row>
                 </ion-col>
               </ion-row>
-
+              <ion-row *ngIf="mensajePeliculas">
+                <ion-col>
+                  <h2 class="center">{{ mensajeViewP }}</h2>
+                </ion-col>
+              </ion-row>
             </ion-grid>
 
             <h3 class="titulo2">Series seen:</h3>
+            <a *ngIf="seeAllSeries" class="alinearDerecha" (click)="goToSeeAll('visto', listSerieVieweds)">see all</a>
             <ion-grid>
                 <ion-row>
-                  <ion-col col-4 *ngFor="let s of listSerieVieweds">
+                  <ion-col col-4 *ngFor="let s of mostrarSeries">
                   <ion-row>
                       
-                          <button (click)="goToInfo(p)" class="fotoPelicula" no-padding>
+                          <button (click)="goToInfo(s)" class="fotoPelicula" no-padding>
                             <ion-thumbnail item-start>
                               <img [src]="s.poster">
                             </ion-thumbnail>
@@ -63,8 +68,40 @@
                   </ion-row>
                   </ion-col>
                 </ion-row>
+                <ion-row *ngIf="mensajeSeries">
+                  <ion-col>
+                    <h2 class="center">{{ mensajeViewS }}</h2>
+                  </ion-col>
+                </ion-row>
   
               </ion-grid>
+          
+          <h3 class="titulo2">Favourites films:</h3>
+          <a *ngIf="seeAllSeries" class="alinearDerecha" (click)="goToSeeAll('favorito', listSerieVieweds)">see all</a>
+          <ion-grid>
+            <ion-row>
+              <ion-col col-4 *ngFor="let p of mostrarPeliculasF">
+                <ion-row>
+          
+                  <button (click)="goToInfo(p)" class="fotoPelicula" no-padding>
+                    <ion-thumbnail item-start>
+                      <img [src]="p.poster">
+                    </ion-thumbnail>
+                  </button>
+          
+                </ion-row>
+                <ion-row>
+                  <h2 class="center">{{ p.title }}</h2>
+                </ion-row>
+              </ion-col>
+            </ion-row>
+            <ion-row *ngIf="mensajeSeries">
+              <ion-col>
+                <h2 class="center">{{ mensajeViewP }}</h2>
+              </ion-col>
+            </ion-row>
+          
+          </ion-grid>
   
           </ion-col>
         </ion-row>
