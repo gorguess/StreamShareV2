@@ -22,4 +22,12 @@ page-perfil {
     .background {
         background: #008080;
     }
+    .label * {
+        color: #020202 !important; 
+        padding-left: 0.5em !important;
+    }
+    .label2 * {
+        color: #020202 !important; 
+        padding-left: 0.3em !important;
+    }
 }

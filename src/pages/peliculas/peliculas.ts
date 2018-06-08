@@ -82,18 +82,6 @@ export class PeliculasPage {
       });
   }
 
-  // goToPerfil() {
-  //   this.navCtrl.push(PerfilPage, {
-  //     data: this.contenedor
-  //   });
-  // }
-
-  // goToInicio() {
-  //   this.navCtrl.push(InicioPage, {
-  //     data: this.contenedor
-  //   });
-  // }
-
   goToInfo(p: Array<any>) {
     this.navCtrl.push(InfoPage, {
       contenido: p,

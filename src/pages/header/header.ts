@@ -6,6 +6,8 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { PeliculasPage } from '../peliculas/peliculas';
 import { SeriesPage } from '../series/series';
 import { InicioPage } from '../inicio/inicio';
+import { MovieProvider } from '../../providers/movie/movie.provider';
+import { SerieProvider } from '../../providers/serie/serie.provider';
 
 @IonicPage()
 @Component({
@@ -16,73 +18,64 @@ import { InicioPage } from '../inicio/inicio';
 export class HeaderPage implements OnInit, DoCheck{
 
   contenedor: any;
+  items1: Array<any>;
   items: string[];
   trustedUrl: any;
   avatarUrl: any;
   identity: any;
-  constructor(public navCtrl: NavController, public navParams: NavParams, private comprobarLogin: LoginProvider,
-    private sanitizer: DomSanitizer){}
+  list: boolean = false;
+  index;
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    private comprobarLogin: LoginProvider,
+    private sanitizer: DomSanitizer,
+    private _movieProvider: MovieProvider,
+    private _serieProvider: SerieProvider
+  ){}
 
   ngOnInit(){
     this.identity = this.comprobarLogin.getIdentity();
     this.avatarUrl = this.comprobarLogin.getImageAvatar();
-    //console.log('Primera ', this.identity['image']);
-    //if (!this.identity['image']) {
-    //this.identity['image'] = "assets/imgs/profileNull.png";
-    //}
-    //console.log('Segunda ', this.identity['image']);
     this.trustedUrl = this.sanitizer.bypassSecurityTrustUrl(this.avatarUrl);
-    }
+  }
   
   
     ngDoCheck(){
       this.identity = this.comprobarLogin.getIdentity();
       this.avatarUrl = this.comprobarLogin.getImageAvatar();
       this.trustedUrl = this.sanitizer.bypassSecurityTrustUrl(this.avatarUrl);
+
+      this.items1 = [];
+
+      this._movieProvider.getAllMovies(localStorage.getItem('token'), this.page).subscribe(response => {
+        if (response.message.length !== 0) {
+          response.message.forEach(eleMovie => {
+            this.index = eleMovie["title"];
+            this.items1.push(this.index);
+          });
+        }
+
+      },
+        error => {
+          console.log(error);
+        });
+
+      this._serieProvider.getAllSeries(localStorage.getItem('token'), this.page).subscribe(response => {
+        if (response.message.length !== 0) {
+          response.message.forEach(eleSerie => {
+            this.index = eleSerie["title"];
+            this.items1.push(this.index);
+          });
+        }
+      },
+        error => {
+          console.log(error);
+        });
     }
 
     listado() {
-      console.log('Header');
-      this.items = [
-        'Amsterdam',
-        'Bogota',
-        'Buenos Aires',
-        'Cairo',
-        'Dhaka',
-        'Edinburgh',
-        'Geneva',
-        'Genoa',
-        'Glasglow',
-        'Hanoi',
-        'Hong Kong',
-        'Islamabad',
-        'Istanbul',
-        'Jakarta',
-        'Kiel',
-        'Kyoto',
-        'Le Havre',
-        'Lebanon',
-        'Lhasa',
-        'Lima',
-        'London',
-        'Los Angeles',
-        'Madrid',
-        'Manila',
-        'New York',
-        'Olympia',
-        'Oslo',
-        'Panama City',
-        'Peking',
-        'Philadelphia',
-        'San Francisco',
-        'Seoul',
-        'Taipeh',
-        'Tel Aviv',
-        'Tokio',
-        'Uelzen',
-        'Washington'
-      ];
-      console.log(this.items);
+      this.items = this.items1;
     }
 
   getItems(ev) {
@@ -90,6 +83,7 @@ export class HeaderPage implements OnInit, DoCheck{
 
     if (val && val.trim() != '') {
       this.listado();
+      console.log(this.items);
       this.items = this.items.filter((item) => {
         return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
       },

@@ -106,12 +106,12 @@
     <ion-row *ngIf="event" col-12>
       <mbsc-form [options]="formSettings">
         <div class="mbsc-form-group">
-          <ion-item>
-            <ion-label color="primary">Title of the event</ion-label>
+          <ion-item class="label">
+            <ion-label>Title of the event</ion-label>
             <ion-input [(ngModel)]="eventText">Title</ion-input>
           </ion-item>
-          <ion-item>
-            <mbsc-datetime #fecha id="startDate" placeholder="Please select the date...">Date</mbsc-datetime>
+          <ion-item class="label2">
+            <mbsc-datetime #fecha id="startDate">Date</mbsc-datetime>
             <div [(ngModel)]="eventDate" mbsc-range [mbsc-options]="rangeSettings" #mbscRange="mobiscroll"></div>
           </ion-item>
         </div>

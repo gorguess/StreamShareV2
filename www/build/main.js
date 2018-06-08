@@ -76,7 +76,7 @@ var Movie = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChatPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase__ = __webpack_require__(229);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase__ = __webpack_require__(233);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_firebase__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -682,59 +682,59 @@ webpackEmptyAsyncContext.id = 183;
 
 var map = {
 	"../pages/add-event/add-event.module": [
-		735,
+		734,
 		13
 	],
 	"../pages/chat/chat.module": [
-		722,
+		735,
 		12
 	],
 	"../pages/edit-event/edit-event.module": [
-		723,
+		722,
 		11
 	],
 	"../pages/header/header.module": [
-		724,
+		723,
 		10
 	],
 	"../pages/home/home.module": [
-		725,
+		724,
 		9
 	],
 	"../pages/info/info.module": [
-		726,
+		725,
 		8
 	],
 	"../pages/inicio/inicio.module": [
-		727,
+		726,
 		7
 	],
 	"../pages/menu/menu.module": [
-		728,
+		727,
 		6
 	],
 	"../pages/peliculas/peliculas.module": [
-		729,
+		728,
 		5
 	],
 	"../pages/perfil/perfil.module": [
-		730,
+		729,
 		4
 	],
 	"../pages/registro/registro.module": [
-		731,
+		730,
 		3
 	],
 	"../pages/series/series.module": [
-		732,
+		731,
 		2
 	],
 	"../pages/ver-todo/ver-todo.module": [
-		733,
+		732,
 		1
 	],
 	"../pages/videoplayer/videoplayer.module": [
-		734,
+		733,
 		0
 	]
 };
@@ -872,6 +872,8 @@ var EditEventPage = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__peliculas_peliculas__ = __webpack_require__(68);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__series_series__ = __webpack_require__(168);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__inicio_inicio__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_movie_movie_provider__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_serie_serie_provider__ = __webpack_require__(130);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -889,75 +891,58 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var HeaderPage = (function () {
-    function HeaderPage(navCtrl, navParams, comprobarLogin, sanitizer) {
+    function HeaderPage(navCtrl, navParams, comprobarLogin, sanitizer, _movieProvider, _serieProvider) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.comprobarLogin = comprobarLogin;
         this.sanitizer = sanitizer;
+        this._movieProvider = _movieProvider;
+        this._serieProvider = _serieProvider;
+        this.list = false;
     }
     HeaderPage.prototype.ngOnInit = function () {
         this.identity = this.comprobarLogin.getIdentity();
         this.avatarUrl = this.comprobarLogin.getImageAvatar();
-        //console.log('Primera ', this.identity['image']);
-        //if (!this.identity['image']) {
-        //this.identity['image'] = "assets/imgs/profileNull.png";
-        //}
-        //console.log('Segunda ', this.identity['image']);
         this.trustedUrl = this.sanitizer.bypassSecurityTrustUrl(this.avatarUrl);
     };
     HeaderPage.prototype.ngDoCheck = function () {
+        var _this = this;
         this.identity = this.comprobarLogin.getIdentity();
         this.avatarUrl = this.comprobarLogin.getImageAvatar();
         this.trustedUrl = this.sanitizer.bypassSecurityTrustUrl(this.avatarUrl);
+        this.items1 = [];
+        this._movieProvider.getAllMovies(localStorage.getItem('token'), this.page).subscribe(function (response) {
+            if (response.message.length !== 0) {
+                response.message.forEach(function (eleMovie) {
+                    _this.index = eleMovie["title"];
+                    _this.items1.push(_this.index);
+                });
+            }
+        }, function (error) {
+            console.log(error);
+        });
+        this._serieProvider.getAllSeries(localStorage.getItem('token'), this.page).subscribe(function (response) {
+            if (response.message.length !== 0) {
+                response.message.forEach(function (eleSerie) {
+                    _this.index = eleSerie["title"];
+                    _this.items1.push(_this.index);
+                });
+            }
+        }, function (error) {
+            console.log(error);
+        });
     };
     HeaderPage.prototype.listado = function () {
-        console.log('Header');
-        this.items = [
-            'Amsterdam',
-            'Bogota',
-            'Buenos Aires',
-            'Cairo',
-            'Dhaka',
-            'Edinburgh',
-            'Geneva',
-            'Genoa',
-            'Glasglow',
-            'Hanoi',
-            'Hong Kong',
-            'Islamabad',
-            'Istanbul',
-            'Jakarta',
-            'Kiel',
-            'Kyoto',
-            'Le Havre',
-            'Lebanon',
-            'Lhasa',
-            'Lima',
-            'London',
-            'Los Angeles',
-            'Madrid',
-            'Manila',
-            'New York',
-            'Olympia',
-            'Oslo',
-            'Panama City',
-            'Peking',
-            'Philadelphia',
-            'San Francisco',
-            'Seoul',
-            'Taipeh',
-            'Tel Aviv',
-            'Tokio',
-            'Uelzen',
-            'Washington'
-        ];
-        console.log(this.items);
+        this.items = this.items1;
     };
     HeaderPage.prototype.getItems = function (ev) {
         var val = ev.target.value;
         if (val && val.trim() != '') {
             this.listado();
+            console.log(this.items);
             this.items = this.items.filter(function (item) {
                 return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
             }, console.log(this.items));
@@ -983,10 +968,10 @@ var HeaderPage = (function () {
             selector: 'page-header',template:/*ion-inline-start:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\header\header.html"*/'<ion-header *ngIf="identity" class="vista">\n\n  <ion-navbar hideBackButton="true">\n\n\n\n    <ion-grid *ngIf="!isSearchbarOpened">\n\n      <ion-row>\n\n        <ion-col col-auto>\n\n          <ion-buttons>\n\n            <button ion-button icon-only (click)="goToInicio()">\n\n              Home\n\n            </button>\n\n          </ion-buttons>\n\n        </ion-col>\n\n\n\n        <ion-col col-auto>\n\n          <ion-buttons>\n\n            <button ion-button icon-only (click)="goToPeliculas()">\n\n              Films\n\n            </button>\n\n          </ion-buttons>\n\n        </ion-col>\n\n\n\n        <ion-col col-auto>\n\n          <ion-buttons>\n\n            <button ion-button icon-only (click)="goToSeries()">\n\n              Series\n\n            </button>\n\n          </ion-buttons>\n\n        </ion-col>\n\n\n\n        <ion-col col-auto>\n\n          <ion-buttons>\n\n            <button ion-button icon-only (click)="goToPerfil()">\n\n              {{ identity.nickname }}\n\n              <ion-avatar item-start>\n\n                <img class="userAvatar" [src]="trustedUrl">\n\n              </ion-avatar>\n\n            </button>\n\n          </ion-buttons>\n\n        </ion-col>\n\n\n\n        <ion-col col-1>\n\n          <ion-buttons>\n\n            <button ion-button icon-only (click)="isSearchbarOpened=true">\n\n              <ion-icon name="search"></ion-icon>\n\n            </button>\n\n          </ion-buttons>\n\n        </ion-col>\n\n\n\n      </ion-row>\n\n    </ion-grid>\n\n\n\n    <ion-searchbar *ngIf="isSearchbarOpened" showCancelButton="true" (ionCancel)="isSearchbarOpened=false" (ionInput)="getItems($event)">\n\n    </ion-searchbar>\n\n    <ion-list *ngIf="isSearchbarOpened">\n\n      <button ion-item *ngFor="let item of items" (click)="showDetail(item)">\n\n        {{ item }}\n\n      </button>\n\n    </ion-list>\n\n  </ion-navbar>\n\n</ion-header>'/*ion-inline-end:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\header\header.html"*/,
             providers: [__WEBPACK_IMPORTED_MODULE_3__providers_login_login__["a" /* LoginProvider */]]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__providers_login_login__["a" /* LoginProvider */],
-            __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["c" /* DomSanitizer */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__providers_login_login__["a" /* LoginProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_login_login__["a" /* LoginProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["c" /* DomSanitizer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["c" /* DomSanitizer */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_8__providers_movie_movie_provider__["a" /* MovieProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_8__providers_movie_movie_provider__["a" /* MovieProvider */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_9__providers_serie_serie_provider__["a" /* SerieProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_9__providers_serie_serie_provider__["a" /* SerieProvider */]) === "function" && _f || Object])
     ], HeaderPage);
     return HeaderPage;
+    var _a, _b, _c, _d, _e, _f;
 }());
 
 //# sourceMappingURL=header.js.map
@@ -1133,7 +1118,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_status_bar__ = __webpack_require__(280);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_splash_screen__ = __webpack_require__(281);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__angular_http__ = __webpack_require__(721);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_native_camera__ = __webpack_require__(232);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_native_camera__ = __webpack_require__(229);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_home_home__ = __webpack_require__(93);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_registro_registro__ = __webpack_require__(170);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_inicio_inicio__ = __webpack_require__(50);
@@ -1224,7 +1209,6 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_14__angular_http__["a" /* HttpModule */],
                 __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */], {}, {
                     links: [
-                        { loadChildren: '../pages/chat/chat.module#ChatPageModule', name: 'ChatPage', segment: 'chat', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/edit-event/edit-event.module#EditEventPageModule', name: 'EditEventPage', segment: 'edit-event', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/header/header.module#HeaderPageModule', name: 'HeaderPage', segment: 'header', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/home/home.module#HomePageModule', name: 'HomePage', segment: 'home', priority: 'low', defaultHistory: [] },
@@ -1237,7 +1221,8 @@ var AppModule = (function () {
                         { loadChildren: '../pages/series/series.module#SeriesPageModule', name: 'SeriesPage', segment: 'series', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/ver-todo/ver-todo.module#VerTodoPageModule', name: 'VerTodoPage', segment: 'ver-todo', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/videoplayer/videoplayer.module#VideoplayerPageModule', name: 'VideoplayerPage', segment: 'videoplayer', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/add-event/add-event.module#AddEventPageModule', name: 'AddEventPage', segment: 'add-event', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/add-event/add-event.module#AddEventPageModule', name: 'AddEventPage', segment: 'add-event', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/chat/chat.module#ChatPageModule', name: 'ChatPage', segment: 'chat', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_6_angularfire2__["a" /* AngularFireModule */].initializeApp(firebaseAuth),
@@ -1454,7 +1439,7 @@ var UserLogin = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(280);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(281);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_firebase__ = __webpack_require__(229);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_firebase__ = __webpack_require__(233);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_firebase__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_home_home__ = __webpack_require__(93);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -2293,7 +2278,7 @@ var PeliculasPage = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PerfilPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_camera__ = __webpack_require__(232);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_camera__ = __webpack_require__(229);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__chat_chat__ = __webpack_require__(166);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mobiscroll_angular__ = __webpack_require__(184);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_login_login__ = __webpack_require__(42);
@@ -2575,7 +2560,7 @@ var PerfilPage = (function () {
     ], PerfilPage.prototype, "fecha", void 0);
     PerfilPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-perfil',template:/*ion-inline-start:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\perfil\perfil.html"*/'<page-header></page-header>\n\n<ion-content>\n\n  <ion-list *ngIf="isSearchbarOpened">\n\n    <button ion-item *ngFor="let item of items" (click)="showDetail(item)">\n\n      {{ item }}\n\n    </button>\n\n  </ion-list>\n\n\n\n  <ion-card>\n\n    <ion-card-content>\n\n      <ion-grid>\n\n        <ion-row>\n\n          <!-- <ion-col col-12 *ngIf="trustedUrl">\n\n            <ion-thumbnail item-start>\n\n              <img [src]="identity.image">\n\n            </ion-thumbnail>\n\n          </ion-col> -->\n\n          <ion-col col-12 *ngIf="trustedUrl">\n\n            <ion-thumbnail item-start>  \n\n              <img  [src]="trustedUrl">\n\n              <ion-fab top right col-3 #fab (click)="showMethods()">\n\n                <button ion-fab mini class="background">\n\n                  <ion-icon ios="ios-camera" md="md-camera"></ion-icon>\n\n                </button>\n\n              </ion-fab>\n\n            </ion-thumbnail>\n\n          </ion-col>\n\n        </ion-row>\n\n        \n\n        <ion-row>\n\n          <ion-col col-12>\n\n            <ion-grid class="center">\n\n              <ion-row>\n\n                <ion-col col-auto>\n\n                  <h2 class="bold">Name: </h2>\n\n                </ion-col>\n\n                <ion-col col-auto>\n\n                  <h2>{{ identity.name }} {{ identity.surname }}</h2>\n\n                </ion-col>\n\n                <ion-col col-auto>\n\n                  <a (click)="nameType()">\n\n                    <ion-icon ios="ios-create" md="md-create"></ion-icon>\n\n                  </a>\n\n                </ion-col>\n\n              </ion-row>\n\n            </ion-grid>\n\n          </ion-col>\n\n        </ion-row>\n\n\n\n        <ion-row>\n\n          <ion-col col-12>\n\n            <ion-grid class="center">\n\n              <ion-row>\n\n                <ion-col col-auto>\n\n                  <h2 class="bold">Username: </h2>\n\n                </ion-col>\n\n                <ion-col col-auto>\n\n                  <h2>{{ identity.nickname }}</h2>\n\n                </ion-col>\n\n                <ion-col col-auto>\n\n                  <a (click)="userType()">\n\n                    <ion-icon ios="ios-create" md="md-create"></ion-icon>\n\n                  </a>\n\n                </ion-col>\n\n              </ion-row>\n\n            </ion-grid>\n\n          </ion-col>\n\n        </ion-row>\n\n\n\n        <ion-row>\n\n          <ion-col col-12 class="center">\n\n            <ion-buttons>\n\n              <button ion-button icon-only clear class="center" *ngIf="!descripcion" (click)="descriptionType()">\n\n                Type your description\n\n              </button>\n\n            </ion-buttons>\n\n          </ion-col>\n\n        </ion-row>\n\n\n\n        <ion-row  *ngIf="descripcion">\n\n          <ion-col col-12>\n\n            <ion-grid class="center">\n\n              <ion-row>\n\n                <ion-col col-auto>\n\n                  <h2 class="center">{{ contenidoDescripcion }}</h2>\n\n                </ion-col>\n\n              </ion-row>\n\n            </ion-grid>\n\n          </ion-col>\n\n        </ion-row>\n\n\n\n      </ion-grid>\n\n    </ion-card-content>\n\n  </ion-card>\n\n  <ion-card>\n\n    <mbsc-eventcalendar [data]="events" [options]="eventSettings" #mbscEventCal="mobiscroll"></mbsc-eventcalendar>\n\n    <ion-row class="center">\n\n      <ion-col col-12 *ngIf="!event">\n\n        <ion-buttons>\n\n          <button ion-button outline (click)="newEvent()">\n\n            New Event\n\n          </button>\n\n        </ion-buttons>\n\n      </ion-col>\n\n    </ion-row>\n\n    <ion-row *ngIf="event" col-12>\n\n      <mbsc-form [options]="formSettings">\n\n        <div class="mbsc-form-group">\n\n          <ion-item>\n\n            <ion-label color="primary">Title of the event</ion-label>\n\n            <ion-input [(ngModel)]="eventText">Title</ion-input>\n\n          </ion-item>\n\n          <ion-item>\n\n            <mbsc-datetime #fecha id="startDate" placeholder="Please select the date...">Date</mbsc-datetime>\n\n            <div [(ngModel)]="eventDate" mbsc-range [mbsc-options]="rangeSettings" #mbscRange="mobiscroll"></div>\n\n          </ion-item>\n\n        </div>\n\n      </mbsc-form>\n\n      <ion-col col-auto offset-2>\n\n        <ion-buttons>\n\n          <button ion-button outline (click)="addEvent()">\n\n            Add Event\n\n          </button>\n\n        </ion-buttons>\n\n      </ion-col>\n\n      <ion-col col-auto>\n\n        <ion-buttons>\n\n          <button ion-button outline (click)="addEvent()">\n\n            Cancel\n\n          </button>\n\n        </ion-buttons>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\perfil\perfil.html"*/,
+            selector: 'page-perfil',template:/*ion-inline-start:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\perfil\perfil.html"*/'<page-header></page-header>\n\n<ion-content>\n\n  <ion-list *ngIf="isSearchbarOpened">\n\n    <button ion-item *ngFor="let item of items" (click)="showDetail(item)">\n\n      {{ item }}\n\n    </button>\n\n  </ion-list>\n\n\n\n  <ion-card>\n\n    <ion-card-content>\n\n      <ion-grid>\n\n        <ion-row>\n\n          <!-- <ion-col col-12 *ngIf="trustedUrl">\n\n            <ion-thumbnail item-start>\n\n              <img [src]="identity.image">\n\n            </ion-thumbnail>\n\n          </ion-col> -->\n\n          <ion-col col-12 *ngIf="trustedUrl">\n\n            <ion-thumbnail item-start>  \n\n              <img  [src]="trustedUrl">\n\n              <ion-fab top right col-3 #fab (click)="showMethods()">\n\n                <button ion-fab mini class="background">\n\n                  <ion-icon ios="ios-camera" md="md-camera"></ion-icon>\n\n                </button>\n\n              </ion-fab>\n\n            </ion-thumbnail>\n\n          </ion-col>\n\n        </ion-row>\n\n        \n\n        <ion-row>\n\n          <ion-col col-12>\n\n            <ion-grid class="center">\n\n              <ion-row>\n\n                <ion-col col-auto>\n\n                  <h2 class="bold">Name: </h2>\n\n                </ion-col>\n\n                <ion-col col-auto>\n\n                  <h2>{{ identity.name }} {{ identity.surname }}</h2>\n\n                </ion-col>\n\n                <ion-col col-auto>\n\n                  <a (click)="nameType()">\n\n                    <ion-icon ios="ios-create" md="md-create"></ion-icon>\n\n                  </a>\n\n                </ion-col>\n\n              </ion-row>\n\n            </ion-grid>\n\n          </ion-col>\n\n        </ion-row>\n\n\n\n        <ion-row>\n\n          <ion-col col-12>\n\n            <ion-grid class="center">\n\n              <ion-row>\n\n                <ion-col col-auto>\n\n                  <h2 class="bold">Username: </h2>\n\n                </ion-col>\n\n                <ion-col col-auto>\n\n                  <h2>{{ identity.nickname }}</h2>\n\n                </ion-col>\n\n                <ion-col col-auto>\n\n                  <a (click)="userType()">\n\n                    <ion-icon ios="ios-create" md="md-create"></ion-icon>\n\n                  </a>\n\n                </ion-col>\n\n              </ion-row>\n\n            </ion-grid>\n\n          </ion-col>\n\n        </ion-row>\n\n\n\n        <ion-row>\n\n          <ion-col col-12 class="center">\n\n            <ion-buttons>\n\n              <button ion-button icon-only clear class="center" *ngIf="!descripcion" (click)="descriptionType()">\n\n                Type your description\n\n              </button>\n\n            </ion-buttons>\n\n          </ion-col>\n\n        </ion-row>\n\n\n\n        <ion-row  *ngIf="descripcion">\n\n          <ion-col col-12>\n\n            <ion-grid class="center">\n\n              <ion-row>\n\n                <ion-col col-auto>\n\n                  <h2 class="center">{{ contenidoDescripcion }}</h2>\n\n                </ion-col>\n\n              </ion-row>\n\n            </ion-grid>\n\n          </ion-col>\n\n        </ion-row>\n\n\n\n      </ion-grid>\n\n    </ion-card-content>\n\n  </ion-card>\n\n  <ion-card>\n\n    <mbsc-eventcalendar [data]="events" [options]="eventSettings" #mbscEventCal="mobiscroll"></mbsc-eventcalendar>\n\n    <ion-row class="center">\n\n      <ion-col col-12 *ngIf="!event">\n\n        <ion-buttons>\n\n          <button ion-button outline (click)="newEvent()">\n\n            New Event\n\n          </button>\n\n        </ion-buttons>\n\n      </ion-col>\n\n    </ion-row>\n\n    <ion-row *ngIf="event" col-12>\n\n      <mbsc-form [options]="formSettings">\n\n        <div class="mbsc-form-group">\n\n          <ion-item class="label">\n\n            <ion-label>Title of the event</ion-label>\n\n            <ion-input [(ngModel)]="eventText">Title</ion-input>\n\n          </ion-item>\n\n          <ion-item class="label2">\n\n            <mbsc-datetime #fecha id="startDate">Date</mbsc-datetime>\n\n            <div [(ngModel)]="eventDate" mbsc-range [mbsc-options]="rangeSettings" #mbscRange="mobiscroll"></div>\n\n          </ion-item>\n\n        </div>\n\n      </mbsc-form>\n\n      <ion-col col-auto offset-2>\n\n        <ion-buttons>\n\n          <button ion-button outline (click)="addEvent()">\n\n            Add Event\n\n          </button>\n\n        </ion-buttons>\n\n      </ion-col>\n\n      <ion-col col-auto>\n\n        <ion-buttons>\n\n          <button ion-button outline (click)="addEvent()">\n\n            Cancel\n\n          </button>\n\n        </ion-buttons>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\perfil\perfil.html"*/,
             providers: [__WEBPACK_IMPORTED_MODULE_5__providers_login_login__["a" /* LoginProvider */], __WEBPACK_IMPORTED_MODULE_7__providers_user_provider__["a" /* UserProvider */]]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
