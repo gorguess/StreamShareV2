@@ -22,16 +22,6 @@ export class InicioPage implements OnInit, DoCheck{
   avatarUrl: any;
   identity: any;
   items;
-  peli1;
-  peli2;
-  peli3;
-  serie1;
-  serie2;
-  titulo1;
-  titulo2;
-  titulo3;
-  titulo4;
-  titulo5;
   contMovies = 0;
   contSeries = 0;
   seeAllMovies: boolean = false;
@@ -66,17 +56,6 @@ export class InicioPage implements OnInit, DoCheck{
     private _movieProvider: MovieProvider,
     private _serieProvider: SerieProvider
   ) {
-    this.peli1 = "assets/imgs/peli1.jpg";
-    this.peli2 = "assets/imgs/peli2.jpg";
-    this.peli3 = "assets/imgs/peli3.jpg";
-    this.serie1 = "assets/imgs/serie1.jpg";
-    this.serie2 = "assets/imgs/serie2.jpg";
-    this.titulo1 = "Deadpool";
-    this.titulo2 = "Avengers 2";
-    this.titulo3 = "Hasta el último Hombre";
-    this.titulo4 = "Breaking Bad";
-    this.titulo5 = "Prison Break";
-    //this.contenedor = navParams.data['data'];
     this.token = localStorage.getItem('token');
     this.movie = new Movie(
       '',
@@ -111,6 +90,7 @@ export class InicioPage implements OnInit, DoCheck{
   goToInfo(p: Array<any>) {
     this.navCtrl.push(InfoPage, {
       contenido: p,
+      tipo: 'movie'
     });
   }
 
@@ -132,7 +112,8 @@ export class InicioPage implements OnInit, DoCheck{
     this.avatarUrl = this.comprobarLogin.getImageAvatar();
     this.trustedUrl = this.sanitizer.bypassSecurityTrustUrl(this.avatarUrl);
 
-    this._movieProvider.getViewedMovie(this.token).subscribe(response => {
+    this._movieProvider.getViewedNMovie(this.token).subscribe(response => {
+      console.log(response);
       this.listMovieVieweds = [];
       response.views.forEach(eleMovie => {
         if (eleMovie.movieViewed) {
@@ -141,18 +122,11 @@ export class InicioPage implements OnInit, DoCheck{
         }
       });
 
-      if (this.listMovieVieweds.length > 0) {
-        if (this.listMovieVieweds.length > 3) {
-          this.mostrarPeliculas = [];
-          for (let index = 0; index < 3; index++) {
-            this.mostrarPeliculas.push(this.listMovieVieweds[index]);
-          }
+      if (response.contador > 0) {
+        if ( response.contador> 3) {
           this.seeAllMovies = true;
         } else {
-          this.mostrarPeliculas = [];
-          for (let index = 0; index < this.listMovieVieweds.length; index++) {
-            this.mostrarPeliculas.push(this.listMovieVieweds[index]);
-          }
+          
         }
       } else {
         this.mensajePeliculas = true;
@@ -162,7 +136,7 @@ export class InicioPage implements OnInit, DoCheck{
         console.log(err);
       });
 
-    this._serieProvider.getViewedSerie(this.token).subscribe(response => {
+    /*this._serieProvider.getViewedSerie(this.token).subscribe(response => {
       this.listSerieVieweds = [];
       response.views.forEach(eleSerie => {
         if (eleSerie.chapter) {
@@ -191,7 +165,7 @@ export class InicioPage implements OnInit, DoCheck{
     },
       err => {
         console.log(err);
-      });
+      });*/
 
     this._movieProvider.getLikedMovie(this.token).subscribe(response => {
       console.log(response);
@@ -199,9 +173,9 @@ export class InicioPage implements OnInit, DoCheck{
         this.mensajeF = true;
       } else {
         this.listMovieLikeds = [];
-        response.views.forEach(eleMovie => {
+        response.likeds.forEach(eleMovie => {
           if (eleMovie) {
-            this.movie = eleMovie.chapter;
+            this.movie = eleMovie.movieLiked;
             this.listMovieLikeds.push(this.movie);
           }
         });

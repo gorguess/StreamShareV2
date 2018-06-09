@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Movie } from '../../providers/movie/movie';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { LinkProvider } from '../../providers/links/link.provider';
+import { FullvideoPage } from '../fullvideo/fullvideo';
 
 @IonicPage()
 @Component({
@@ -44,32 +45,9 @@ export class VideoplayerPage implements OnInit{
  }
 
   toggleVideo(event: any) {
-    if(this.status=='play'){
-      this.videoOut=false;
-      this.playPause();
-      this.status = 'pause';
-    } else {
-      this.playPause();
-      this.status = 'play';
-    }
+    this.navCtrl.push(FullvideoPage, {video: this.trustedUrl});
   }
-
-  playPause(){
-    if(this.status==='play'){
-      this.videoplayer.nativeElement.play();
-      if (this.videoplayer.nativeElement.requestFullscreen) {
-        this.videoplayer.nativeElement.requestFullscreen();
-      }
-      else if (this.videoplayer.nativeElement.mozRequestFullScreen) {
-        this.videoplayer.nativeElement.nativeElement.mozRequestFullScreen();
-      }
-      else if (this.videoplayer.nativeElement.webkitRequestFullScreen) {
-        this.videoplayer.nativeElement.webkitRequestFullScreen();
-      }
-    }else{
-      this.videoplayer.nativeElement.pause();
-    }
-    
+  goToBack(){
+    this.navCtrl.pop();
   }
-
 }

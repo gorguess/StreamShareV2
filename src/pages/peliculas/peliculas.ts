@@ -138,7 +138,7 @@ export class PeliculasPage {
   }
 
   cambiarIconoLike(fab: FabContainer, movieId) {
-    this._movieProvider.getMovieLiked(this.token, movieId).subscribe(response => {
+    this._movieProvider.likedMovie(this.token, movieId).subscribe(response => {
       console.log(response);
       this.iconoIOS = 'ios-heart';
       this.iconoAndroid = 'md-heart';

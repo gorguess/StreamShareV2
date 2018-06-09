@@ -6,14 +6,15 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { PeliculasPage } from '../peliculas/peliculas';
 import { SeriesPage } from '../series/series';
 import { InicioPage } from '../inicio/inicio';
-// import { MovieProvider } from '../../providers/movie/movie.provider';
-// import { SerieProvider } from '../../providers/serie/serie.provider';
+import { MovieProvider } from '../../providers/movie/movie.provider';
+import { SerieProvider } from '../../providers/serie/serie.provider';
+import { InfoPage } from '../info/info';
 
 @IonicPage()
 @Component({
   selector: 'page-header',
   templateUrl: 'header.html',
-  providers: [LoginProvider]
+  providers: [LoginProvider,SerieProvider, MovieProvider]
 })
 export class HeaderPage implements OnInit, DoCheck{
 
@@ -25,14 +26,18 @@ export class HeaderPage implements OnInit, DoCheck{
   identity: any;
   list: boolean = false;
   index;
+  searchRes: any;
+  token: any;
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams, 
     private comprobarLogin: LoginProvider,
-    private sanitizer: DomSanitizer
-    // private _movieProvider: MovieProvider,
-    // private _serieProvider: SerieProvider
-  ){}
+    private sanitizer: DomSanitizer,
+    private _movieProvider: MovieProvider,
+    private _serieProvider: SerieProvider
+  ){
+    this.token= localStorage.getItem('token');
+  }
 
   ngOnInit(){
     this.identity = this.comprobarLogin.getIdentity();
@@ -43,27 +48,25 @@ export class HeaderPage implements OnInit, DoCheck{
   
   ngDoCheck(){
     this.identity = this.comprobarLogin.getIdentity();
-    this.avatarUrl = this.comprobarLogin.getImageAvatar();
-    this.trustedUrl = this.sanitizer.bypassSecurityTrustUrl(this.avatarUrl);
+    //this.avatarUrl = this.comprobarLogin.getImageAvatar();
+    //this.trustedUrl = this.sanitizer.bypassSecurityTrustUrl(this.avatarUrl);
   }
 
   listado() {
     this.items = this.items1;
   }
 
-  getItems(ev) {
-    var val = ev.target.value;
-
-    if (val && val.trim() != '') {
-      this.listado();
-      console.log(this.items);
-      this.items = this.items.filter((item) => {
-        return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
-      },
-      console.log(this.items)
-    )
-    } else {
-      return;
+  getItems(varIn: any){
+    if(varIn.target.value===''){
+      this.searchRes=null;
+    }else{
+      this._movieProvider.getSearchedMovie(this.token, varIn.target.value).subscribe(response=>{
+        console.log(response);
+        this.searchRes = response;
+      }, 
+      err=>{
+        console.log(err);
+      });
     }
   }
   
@@ -81,6 +84,13 @@ export class HeaderPage implements OnInit, DoCheck{
 
   goToSeries() {
     this.navCtrl.push(SeriesPage);
+  }
+
+  goToInfo(p: Array<any>) {
+    this.navCtrl.push(InfoPage, {
+      contenido: p,
+      tipo: 'movie'
+    });
   }
 
 }

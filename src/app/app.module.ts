@@ -32,6 +32,9 @@ import { SeriesPage } from '../pages/series/series';
 import { LoginProvider } from '../providers/login/login';
 import { HeaderPage } from '../pages/header/header';
 import { VideoplayerPage } from '../pages/videoplayer/videoplayer';
+import { ListPage } from '../pages/list/list';
+import { FullvideoPage } from '../pages/fullvideo/fullvideo';
+import { ScreenOrientation } from '@ionic-native/screen-orientation';
 
 const firebaseAuth = {
   apiKey: "AIzaSyDk2H5Yzy8mp8Q6OOwDQ8gptAFYYbP7x5Y",
@@ -58,7 +61,9 @@ const firebaseAuth = {
     InfoPage,
     VerTodoPage,
     HeaderPage,
-    VideoplayerPage
+    VideoplayerPage,
+    ListPage,
+    FullvideoPage
   ],
   imports: [ 
     MbscModule, 
@@ -87,7 +92,9 @@ const firebaseAuth = {
     InfoPage,
     VerTodoPage,
     HeaderPage,
-    VideoplayerPage
+    VideoplayerPage,
+    ListPage,
+    FullvideoPage
   ],
   providers: [
     StatusBar,
@@ -96,7 +103,8 @@ const firebaseAuth = {
     Camera,
     StreamingMedia,
     LoginProvider,
-    MovieProvider
+    MovieProvider,
+    ScreenOrientation
   ]
 })
 export class AppModule {}

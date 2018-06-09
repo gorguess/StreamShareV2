@@ -33366,6 +33366,50 @@ ion-header {
   z-index: 3 !important;
 }
 
+page-fullvideo ion-content {
+  background: #000 !important;
+}
+
+page-fullvideo .vertical-align-content > * {
+  display: -webkit-box !important;
+  display: -webkit-flex !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-align-content: center !important;
+  -ms-flex-line-pack: center !important;
+  align-content: center !important;
+  -webkit-box-align: center !important;
+  -webkit-align-items: center !important;
+  -ms-flex-align: center !important;
+  align-items: center !important;
+}
+
+page-fullvideo video {
+  width: 100%;
+}
+
+page-fullvideo #backArrow {
+  background: #353535;
+}
+
+page-header #posSearch {
+  max-height: 48px;
+  width: auto;
+}
+
+page-header #listSearch {
+  max-height: calc(80vh);
+  overflow-y: auto;
+  width: 100%;
+  z-index: 10;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5) !important;
+}
+
+page-header #listSearch > a {
+  cursor: pointer;
+}
+
 page-home ion-content {
   background: url("../assets/imgs/home.jpg");
   background-attachment: fixed;
@@ -33796,4 +33840,8 @@ page-videoplayer hr {
 
 page-videoplayer p {
   color: white;
+}
+
+page-videoplayer #backArrow {
+  background: #353535;
 }

@@ -65,19 +65,19 @@
         <ion-row>
           <ion-col col-12 class="center">
             <ion-buttons>
-              <button ion-button icon-only clear class="center" *ngIf="!descripcion" (click)="descriptionType()">
+              <button ion-button icon-only clear class="center" *ngIf="!identity.description" (click)="descriptionType()">
                 Type your description
               </button>
             </ion-buttons>
           </ion-col>
         </ion-row>
 
-        <ion-row  *ngIf="descripcion">
+        <ion-row  *ngIf="identity.description">
           <ion-col col-12>
             <ion-grid class="center">
               <ion-row>
                 <ion-col col-auto>
-                  <h2 class="center">{{ contenidoDescripcion }}</h2>
+                  <h2 class="center">{{ identity.description }}</h2>
                 </ion-col>
               </ion-row>
             </ion-grid>

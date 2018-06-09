@@ -20,7 +20,7 @@ export class MovieProvider {
         return this._http.get(this.url + 'getallmovies/'+pagina,  {headers: headers});
     }
     viewMovie(token: any, movieId): Observable<any> {
-        console.log(token);
+        
         let headers = new HttpHeaders().set('Content-type', 'application/json').set('Authorization', token);
 
         return this._http.post(this.url + 'viewing/movie/' + movieId, null, {headers: headers});
@@ -30,6 +30,11 @@ export class MovieProvider {
         let headers = new HttpHeaders().set('Content-type', 'application/json').set('Authorization', token);
 
         return this._http.get(this.url + 'getallviewing/movie',  {headers: headers});
+    }
+    getViewedNMovie(token:any): Observable<any>{
+        let headers = new HttpHeaders().set('Content-type', 'application/json').set('Authorization', token);
+
+        return this._http.get(this.url + 'get-n-views/movie/3',  {headers: headers});
     }
     getMovieViewing(token: any, movieId): Observable<any>{
         let headers = new HttpHeaders().set('Content-type', 'application/json').set('Authorization', token);
@@ -42,9 +47,26 @@ export class MovieProvider {
 
         return this._http.get(this.url + 'getlikeds', { headers: headers });
     }
+
+    likedMovie(token, movieId): Observable<any>{
+        let headers = new HttpHeaders().set('Content-type', 'application/json').set('Authorization', token);
+
+        return this._http.post(this.url + 'liked/movie/' + movieId, null, {headers: headers});
+    }
+
     getMovieLiked(token: any, movieId): Observable<any> {
         let headers = new HttpHeaders().set('Content-type', 'application/json').set('Authorization', token);
 
         return this._http.post(this.url + 'liked/movie/' + movieId, { headers: headers });
+    }
+    getSearchedMovie(token: any, title): Observable<any>{
+        let headers = new HttpHeaders().set('Content-type', 'application/json').set('Authorization', token);
+
+        return this._http.get(this.url + 'search-movie/' + title, { headers: headers });
+    }
+    deleteViewed(token, movieId): Observable<any>{
+        let headers = new HttpHeaders().set('Content-type', 'application/json').set('Authorization', token);
+
+        return this._http.delete(this.url+'delete-view/'+movieId, { headers: headers });
     }
 }

@@ -22,7 +22,7 @@
                 <button ion-fab>
                   <ion-icon [ios]="iconoIOS2" [md]="iconoAndroid2" (click)="cambiarIcono(fab, p._id)"></ion-icon>
                 </button>
-                <button ion-fab>
+                <button ion-fab (click)="deleteView(p._id)">
                   <ion-icon ios="ios-trash" md="md-trash" (click)="cambiarIconoRemove(fab, p._id)"></ion-icon>
                 </button>
               </ion-fab-list>

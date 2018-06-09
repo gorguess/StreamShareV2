@@ -19,4 +19,16 @@ constructor(private http: HttpClient) {
         console.log(userUp);
         return this.http.put(this.url + 'update-user/' + id, userUp, {headers: headers});
     }
+
+    uploadAvatar(token, userId, image): Observable<any>{
+        let headers = new HttpHeaders().set('Content-type', 'application/json').set('Authorization', token);
+
+        return this.http.post(this.url + 'upload-image-user/'+userId, image, {headers: headers});
+    }
+
+    getMyLikes(token): Observable<any>{
+        let headers = new HttpHeaders().set('Content-type', 'application/json').set('Authorization', token);
+
+        return this.http.get(this.url + 'getlikeds', { headers: headers });
+    }
 }

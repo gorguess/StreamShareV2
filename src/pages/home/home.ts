@@ -67,6 +67,7 @@ export class HomePage {
     this.login = [{ emailNick: this.emailAddress.value, password: this.currentPassword.value, gettoken: null}];
     this.comprobarLogin.loginUsers(this.login).subscribe(datos => {
       var contenedor = datos["user"];
+      console.log(contenedor);
       //Modificacion LOGIN Persistencia del usuario y recogida del token Parte I
       localStorage.setItem('user', JSON.stringify(contenedor));
       this.getToken(contenedor, this.login);

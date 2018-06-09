@@ -58,3 +58,11 @@
     </ion-list>
   </ion-navbar>
 </ion-header>
+
+<ion-list id="listSearch" *ngIf="searchRes">
+  <a (click)="goToInfo(m)" *ngFor="let m of searchRes.movies">
+    <ion-item>
+      <img [src]="m.poster" id="posSearch">  {{m.title}}
+    </ion-item>
+  </a>
+</ion-list>

@@ -27,7 +27,7 @@
             <a *ngIf="seeAllMovies" class="alinearDerecha" (click)="goToSeeAll('visto', listMovieVieweds)">see all</a>
             <ion-grid>
               <ion-row>
-                <ion-col col-4 *ngFor="let p of mostrarPeliculas">
+                <ion-col col-4 *ngFor="let p of listMovieVieweds">
                 <ion-row>
                     
                         <button (click)="goToInfo(p)" class="fotoPelicula" no-padding>

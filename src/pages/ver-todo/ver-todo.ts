@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component , OnInit} from '@angular/core';
 import { IonicPage, NavController, NavParams, FabContainer,
          ToastController } from 'ionic-angular';
 import { PerfilPage } from '../perfil/perfil';
@@ -12,8 +12,9 @@ import { Movie } from '../../providers/movie/movie';
 @Component({
   selector: 'page-ver-todo',
   templateUrl: 'ver-todo.html',
+  providers: [MovieProvider]
 })
-export class VerTodoPage {
+export class VerTodoPage implements OnInit{
   tipoContenido;
   contenedor;
   movie: Movie;
@@ -26,12 +27,14 @@ export class VerTodoPage {
   iconoAndroid2;
   mensaje;
   token;
+  listMovieVieweds: Array<Movie>;
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     private _movieProvider: MovieProvider,
     public toastCtrl: ToastController
   ) {
+    this.token=localStorage.getItem('token');
     this.tipoContenido = navParams.data['tipo'];
     this.list = navParams.data['array'];
     // this.contenedor = navParams.data['data'];
@@ -71,6 +74,20 @@ export class VerTodoPage {
     }
   }
 
+  ngOnInit() {
+    this._movieProvider.getViewedMovie(this.token).subscribe(response => {
+      console.log(response);
+      this.listMovieVieweds = [];
+      response.views.forEach(eleMovie => {
+        if (eleMovie.movieViewed) {
+          this.movie = eleMovie.movieViewed;
+          this.listMovieVieweds.push(this.movie);
+        }
+      });
+    });
+
+    console.log(this.listMovieVieweds);
+  }
   // cambiarIconoSeen(fab, movieId) {
   //   this._movieProvider.viewMovie(this.token, movieId).subscribe(response => {
   //     console.log(response);
@@ -167,6 +184,15 @@ export class VerTodoPage {
 
   goToInicio() {
     this.navCtrl.push(InicioPage);
+  }
+
+  deleteView(movieId){
+    this._movieProvider.deleteViewed(this.token, movieId).subscribe(response=>{
+      console.log(response);
+    },
+    err=>{
+      console.log(err);
+    });
   }
 
 }

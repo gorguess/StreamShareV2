@@ -2,14 +2,9 @@ import { Component, ViewChild, OnInit, DoCheck } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController, ToastController } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { ChatPage } from '../chat/chat';
-import { Subject } from 'rxjs';
-import { PeliculasPage } from '../peliculas/peliculas';
-import { InicioPage } from '../inicio/inicio';
-import { IMobiscroll } from '@mobiscroll/angular/src/js/core/core';
+
 import {
-  mobiscroll,
   MbscEventcalendarOptions,
-  MbscRangeOptions,
   MbscFormOptions,
   MbscRange,
   MbscEventcalendar
@@ -100,6 +95,11 @@ export class PerfilPage implements OnInit {
       destinationType: this.camera.DestinationType.DATA_URL
     }).then((imageData) => {
       this.perfilImg = 'data:image/jpeg;base64,' + imageData;
+      this._userProvider.uploadAvatar(localStorage.getItem('token'), this.identity._id, {image: imageData}).subscribe(response=>{
+        console.log(response);
+      },err=>{
+        console.log(err);
+      });
       this.trustedUrl = this.sanitizer.bypassSecurityTrustUrl(this.perfilImg);
     }, (err) => {
       console.log(err);
@@ -207,8 +207,8 @@ export class PerfilPage implements OnInit {
             this.contenidoDescripcion = [];
             for (var key in data) {
               this.contenidoDescripcion.push(data[key]);
-              //this.nuevoUser = [{description: this.contenidoDescripcion}];
-              //this.updateUser(this.nuevoUser);
+              this.nuevoUser = [{description: this.contenidoDescripcion}];
+              this.updateUser(this.nuevoUser);
             }
           }
         }
