@@ -18,14 +18,14 @@
               <button ion-fab mini class="background">
                 <ion-icon [ios]="iconoIOS" [md]="iconoAndroid"></ion-icon>
               </button>
-              <!-- <ion-fab-list>
+              <ion-fab-list>
                 <button ion-fab>
-                  <ion-icon ios="ios-eye-off" md="md-eye-off" (click)="cambiarIconoSeen(fab)" selected></ion-icon>
+                  <ion-icon [ios]="iconoIOS2" [md]="iconoAndroid2" (click)="cambiarIcono(fab, p._id)"></ion-icon>
                 </button>
                 <button ion-fab>
-                  <ion-icon ios="ios-heart" md="md-heart" (click)="cambiarIconoLike(fab)"></ion-icon>
+                  <ion-icon ios="ios-trash" md="md-trash" (click)="cambiarIconoRemove(fab, p._id)"></ion-icon>
                 </button>
-              </ion-fab-list> -->
+              </ion-fab-list>
             </ion-fab>
           </h5>
         </ion-thumbnail>

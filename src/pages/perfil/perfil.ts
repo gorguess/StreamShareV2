@@ -1,5 +1,5 @@
 import { Component, ViewChild, OnInit, DoCheck } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, ToastController } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { ChatPage } from '../chat/chat';
 import { Subject } from 'rxjs';
@@ -67,31 +67,16 @@ export class PerfilPage implements OnInit {
     private comprobarLogin: LoginProvider,
     private sanitizer: DomSanitizer,
     private _userProvider: UserProvider,
+    public toastCtrl: ToastController,
     private camera: Camera
   ) {
-    // this.contenedor = navParams.data['data'];
-    // this.nombreUsuario = this.contenedor['nickname'];
-    // this.nombre = this.contenedor['name'];
-    // this.apellido = this.contenedor['surname'];
-    // this.perfilImg = this.contenedor['image'];
   }
 
   ngOnInit(){
     this.identity = this.comprobarLogin.getIdentity();
     this.avatarUrl = this.comprobarLogin.getImageAvatar();
     this.trustedUrl = this.sanitizer.bypassSecurityTrustUrl(this.avatarUrl);
-    //if(!this.identity['image']){
-      //this.identity['image'] = "assets/imgs/profileNull.png";
-   // }
-    console.log(this.identity);
   }
-  
-  
-    /*ngDoCheck(){
-      this.identity = this.comprobarLogin.getIdentity();
-      this.avatarUrl = this.comprobarLogin.getImageAvatar();
-      this.trustedUrl = this.sanitizer.bypassSecurityTrustUrl(this.avatarUrl)
-    }*/
 
   actionCamera() {
     const options: CameraOptions = {
@@ -103,6 +88,7 @@ export class PerfilPage implements OnInit {
     this.camera.getPicture(options).then((imageData) => {
       //la imagen va a estar codificada (base64)
       this.perfilImg = 'data:image/png;base64,' + imageData;
+      this.trustedUrl = this.sanitizer.bypassSecurityTrustUrl(this.perfilImg);
     }, (err) => {
       console.log(err);
     })
@@ -114,6 +100,7 @@ export class PerfilPage implements OnInit {
       destinationType: this.camera.DestinationType.DATA_URL
     }).then((imageData) => {
       this.perfilImg = 'data:image/jpeg;base64,' + imageData;
+      this.trustedUrl = this.sanitizer.bypassSecurityTrustUrl(this.perfilImg);
     }, (err) => {
       console.log(err);
     });
@@ -255,6 +242,8 @@ export class PerfilPage implements OnInit {
               this.nuevoUser = [{name: this.nombre}];
               this.updateUser(this.nuevoUser);
             }
+            var mensaje = 'Your name will be updated when you login in our APP again';
+            this.presentToast(mensaje);
           }
         }
       ]
@@ -287,6 +276,8 @@ export class PerfilPage implements OnInit {
               this.nuevoUser = [{nickname: this.nombreUsuario}];
               this.updateUser(this.nuevoUser);
             }
+            var mensaje = 'Your nickname will be updated when you login in our APP again';
+            this.presentToast(mensaje);
           }
         }
       ]
@@ -303,5 +294,19 @@ export class PerfilPage implements OnInit {
       err=>{
         console.log(err);
     });
+  }
+
+  presentToast(mensaje: string) {
+    let toast = this.toastCtrl.create({
+      message: mensaje,
+      duration: 4000,
+      position: 'bottom'
+    });
+
+    toast.onDidDismiss(() => {
+      console.log('Dismissed toast');
+    });
+
+    toast.present();
   }
 }

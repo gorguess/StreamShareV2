@@ -76,8 +76,8 @@
   
               </ion-grid>
           
-          <h3 class="titulo2">Favourites films:</h3>
-          <a *ngIf="seeAllSeries" class="alinearDerecha" (click)="goToSeeAll('favorito', listSerieVieweds)">see all</a>
+          <h3 class="titulo2">Favourites films and series:</h3>
+          <a *ngIf="seeAllF" class="alinearDerecha" (click)="goToSeeAll('favorito', listSerieVieweds)">see all</a>
           <ion-grid>
             <ion-row>
               <ion-col col-4 *ngFor="let p of mostrarPeliculasF">
@@ -95,9 +95,9 @@
                 </ion-row>
               </ion-col>
             </ion-row>
-            <ion-row *ngIf="mensajeSeries">
+            <ion-row *ngIf="mensajeF">
               <ion-col>
-                <h2 class="center">{{ mensajeViewP }}</h2>
+                <h2 class="center">{{ mensajeViewPS }}</h2>
               </ion-col>
             </ion-row>
           

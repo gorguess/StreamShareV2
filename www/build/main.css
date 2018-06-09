@@ -33597,6 +33597,10 @@ page-perfil .label2 * {
   padding-left: 0.3em !important;
 }
 
+page-perfil #bottom {
+  padding-bottom: 19%;
+}
+
 page-registro ion-content {
   background: url("../assets/imgs/home.jpg");
   background-attachment: fixed;

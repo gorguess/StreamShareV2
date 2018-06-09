@@ -6,8 +6,8 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { PeliculasPage } from '../peliculas/peliculas';
 import { SeriesPage } from '../series/series';
 import { InicioPage } from '../inicio/inicio';
-import { MovieProvider } from '../../providers/movie/movie.provider';
-import { SerieProvider } from '../../providers/serie/serie.provider';
+// import { MovieProvider } from '../../providers/movie/movie.provider';
+// import { SerieProvider } from '../../providers/serie/serie.provider';
 
 @IonicPage()
 @Component({
@@ -29,9 +29,9 @@ export class HeaderPage implements OnInit, DoCheck{
     public navCtrl: NavController, 
     public navParams: NavParams, 
     private comprobarLogin: LoginProvider,
-    private sanitizer: DomSanitizer,
-    private _movieProvider: MovieProvider,
-    private _serieProvider: SerieProvider
+    private sanitizer: DomSanitizer
+    // private _movieProvider: MovieProvider,
+    // private _serieProvider: SerieProvider
   ){}
 
   ngOnInit(){
@@ -41,42 +41,15 @@ export class HeaderPage implements OnInit, DoCheck{
   }
   
   
-    ngDoCheck(){
-      this.identity = this.comprobarLogin.getIdentity();
-      this.avatarUrl = this.comprobarLogin.getImageAvatar();
-      this.trustedUrl = this.sanitizer.bypassSecurityTrustUrl(this.avatarUrl);
+  ngDoCheck(){
+    this.identity = this.comprobarLogin.getIdentity();
+    this.avatarUrl = this.comprobarLogin.getImageAvatar();
+    this.trustedUrl = this.sanitizer.bypassSecurityTrustUrl(this.avatarUrl);
+  }
 
-      this.items1 = [];
-
-      this._movieProvider.getAllMovies(localStorage.getItem('token'), this.page).subscribe(response => {
-        if (response.message.length !== 0) {
-          response.message.forEach(eleMovie => {
-            this.index = eleMovie["title"];
-            this.items1.push(this.index);
-          });
-        }
-
-      },
-        error => {
-          console.log(error);
-        });
-
-      this._serieProvider.getAllSeries(localStorage.getItem('token'), this.page).subscribe(response => {
-        if (response.message.length !== 0) {
-          response.message.forEach(eleSerie => {
-            this.index = eleSerie["title"];
-            this.items1.push(this.index);
-          });
-        }
-      },
-        error => {
-          console.log(error);
-        });
-    }
-
-    listado() {
-      this.items = this.items1;
-    }
+  listado() {
+    this.items = this.items1;
+  }
 
   getItems(ev) {
     var val = ev.target.value;

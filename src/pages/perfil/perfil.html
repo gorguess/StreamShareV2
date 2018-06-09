@@ -10,11 +10,6 @@
     <ion-card-content>
       <ion-grid>
         <ion-row>
-          <!-- <ion-col col-12 *ngIf="trustedUrl">
-            <ion-thumbnail item-start>
-              <img [src]="identity.image">
-            </ion-thumbnail>
-          </ion-col> -->
           <ion-col col-12 *ngIf="trustedUrl">
             <ion-thumbnail item-start>  
               <img  [src]="trustedUrl">
@@ -92,7 +87,7 @@
       </ion-grid>
     </ion-card-content>
   </ion-card>
-  <ion-card>
+  <ion-card id="bottom">
     <mbsc-eventcalendar [data]="events" [options]="eventSettings" #mbscEventCal="mobiscroll"></mbsc-eventcalendar>
     <ion-row class="center">
       <ion-col col-12 *ngIf="!event">
