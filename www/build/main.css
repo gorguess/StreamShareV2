@@ -33410,6 +33410,20 @@ page-header #listSearch > a {
   cursor: pointer;
 }
 
+page-header .center {
+  display: -webkit-box !important;
+  display: -webkit-flex !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-align-content: center !important;
+  -ms-flex-line-pack: center !important;
+  align-content: center !important;
+  -webkit-box-align: center !important;
+  -webkit-align-items: center !important;
+  -ms-flex-align: center !important;
+  align-items: center !important;
+}
+
 page-home ion-content {
   background: url("../assets/imgs/home.jpg");
   background-attachment: fixed;
@@ -33526,7 +33540,7 @@ page-inicio .usuarioIcono {
 
 page-inicio ion-card {
   height: 100% !important;
-  margin-bottom: 15% !important;
+  margin-bottom: 19% !important;
 }
 
 page-peliculas ion-content {

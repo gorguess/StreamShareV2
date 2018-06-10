@@ -21,9 +21,6 @@ export class InicioPage implements OnInit, DoCheck{
   trustedUrl: any;
   avatarUrl: any;
   identity: any;
-  items;
-  contMovies = 0;
-  contSeries = 0;
   seeAllMovies: boolean = false;
   seeAllSeries: boolean = false;
   mensajeSeries: boolean = false;
@@ -32,12 +29,9 @@ export class InicioPage implements OnInit, DoCheck{
   mensajeViewS = 'There are not series in this group';
   mensajeViewPS = 'There are not films and series in this group';
   mensajeF;
-  mostrarPeliculas: Array<Movie>;
   mostrarPeliculasF: Array<Movie>;
   seeAllF;
   mostrarSeries: Array<Serie>;
-  nombreUsuario;
-  contenedor;
   movie: Movie;
   listMovieVieweds: Array<Movie>;
   listMovieLikeds: Array<Movie>;
@@ -101,11 +95,11 @@ export class InicioPage implements OnInit, DoCheck{
     });
   }
 
-  ionViewDidLoad() {
-    this.identity = this.comprobarLogin.getIdentity();
-    this.avatarUrl = this.comprobarLogin.getImageAvatar();
-    this.trustedUrl = this.sanitizer.bypassSecurityTrustUrl(this.avatarUrl);
-  }
+  // ionViewDidLoad() {
+  //   this.identity = this.comprobarLogin.getIdentity();
+  //   this.avatarUrl = this.comprobarLogin.getImageAvatar();
+  //   this.trustedUrl = this.sanitizer.bypassSecurityTrustUrl(this.avatarUrl);
+  // }
 
   ngOnInit(){
     this.identity = this.comprobarLogin.getIdentity();
@@ -132,9 +126,10 @@ export class InicioPage implements OnInit, DoCheck{
     },
       err => {
         this.mensajePeliculas = true;
+        console.log(err);
       });
 
-    /*this._serieProvider.getViewedSerie(this.token).subscribe(response => {
+    this._serieProvider.getViewedSerie(this.token).subscribe(response => {
       this.listSerieVieweds = [];
       response.views.forEach(eleSerie => {
         if (eleSerie.chapter) {
@@ -163,7 +158,9 @@ export class InicioPage implements OnInit, DoCheck{
     },
       err => {
         console.log(err);
-      });*/
+      });
+
+
 
     this._movieProvider.getLikedMovie(this.token).subscribe(response => {
       console.log(response);
@@ -207,6 +204,6 @@ export class InicioPage implements OnInit, DoCheck{
   ngDoCheck(){
     this.identity = this.comprobarLogin.getIdentity();
     this.avatarUrl = this.comprobarLogin.getImageAvatar();
-    this.trustedUrl = this.sanitizer.bypassSecurityTrustUrl(this.avatarUrl)
+    this.trustedUrl = this.sanitizer.bypassSecurityTrustUrl(this.avatarUrl);
   }
 }

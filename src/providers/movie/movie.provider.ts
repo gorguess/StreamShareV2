@@ -67,6 +67,11 @@ export class MovieProvider {
     deleteViewed(token, movieId): Observable<any>{
         let headers = new HttpHeaders().set('Content-type', 'application/json').set('Authorization', token);
 
-        return this._http.delete(this.url+'delete-view/'+movieId, { headers: headers });
+        return this._http.delete(this.url + 'delete-view/' + movieId, { headers: headers });
+    }
+    dislikeMovie(token, movieId): Observable<any> {
+        let headers = new HttpHeaders().set('Content-type', 'application/json').set('Authorization', token);
+
+        return this._http.delete(this.url + 'dislikeds/' + movieId, { headers: headers });
     }
 }

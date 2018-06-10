@@ -27,14 +27,13 @@ export class VerTodoPage implements OnInit{
   iconoAndroid2;
   mensaje;
   token;
-  listMovieVieweds: Array<Movie>;
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     private _movieProvider: MovieProvider,
     public toastCtrl: ToastController
   ) {
-    this.token=localStorage.getItem('token');
+    this.token = localStorage.getItem('token');
     this.tipoContenido = navParams.data['tipo'];
     this.list = navParams.data['array'];
     // this.contenedor = navParams.data['data'];
@@ -62,6 +61,17 @@ export class VerTodoPage implements OnInit{
       // Ponemos, que la segunda opción sea cambiarla a favoritos
       this.iconoIOS2 = 'ios-heart';
       this.iconoAndroid2 = 'md-heart';
+
+      this._movieProvider.getViewedMovie(this.token).subscribe(response => {
+        console.log(response);
+        this.list = [];
+        response.views.forEach(eleMovie => {
+          if (eleMovie.movieViewed) {
+            this.movie = eleMovie.movieViewed;
+            this.list.push(this.movie);
+          }
+        });
+      });
     } else if (this.tipoContenido === 'favorito') {
       // Ponemos por defecto, el icono de favoritos
       this.iconoIOS = 'ios-heart';
@@ -69,59 +79,31 @@ export class VerTodoPage implements OnInit{
       // Ponemos, que la segunda opción sea cambiarla a visto
       this.iconoIOS2 = 'ios-eye-off';
       this.iconoAndroid2 = 'md-eye-off';
-    } else {
-      console.log('Ha ocurrido un error');
+
+      this._movieProvider.getLikedMovie(this.token).subscribe(response => {
+        this.list = [];
+        response.likeds.forEach(eleMovie => {
+          if (eleMovie) {
+            this.movie = eleMovie.movieLiked;
+            this.list.push(this.movie);
+          }
+        });
+      },
+      err => {
+        console.log(err);
+      });
     }
   }
 
   ngOnInit() {
-    this._movieProvider.getViewedMovie(this.token).subscribe(response => {
-      console.log(response);
-      this.listMovieVieweds = [];
-      response.views.forEach(eleMovie => {
-        if (eleMovie.movieViewed) {
-          this.movie = eleMovie.movieViewed;
-          this.listMovieVieweds.push(this.movie);
-        }
-      });
-    });
-
-    console.log(this.listMovieVieweds);
+    
   }
-  // cambiarIconoSeen(fab, movieId) {
-  //   this._movieProvider.viewMovie(this.token, movieId).subscribe(response => {
-  //     console.log(response);
-  //     this.iconoIOS = 'ios-eye-off';
-  //     this.iconoAndroid = 'md-eye-off';
-  //     fab.close();
-  //     this.mensaje = 'This film has been added to "Seen Group"';
-  //     this.presentToast(this.mensaje);
-  //   },
-  //     err => {
-  //       console.log(err);
-  //     });
-  // }
 
-  // cambiarIconoLike(fab: FabContainer, movieId) {
-  //   this._movieProvider.getMovieLiked(this.token, movieId).subscribe(response => {
-  //     console.log(response);
-  //     this.iconoIOS = 'ios-heart';
-  //     this.iconoAndroid = 'md-heart';
-  //     fab.close();
-  //     this.mensaje = 'This film has been added to "Favourite Group"';
-  //     this.presentToast(this.mensaje);
-  //   },
-  //     err => {
-  //       console.log(err);
-  //     });
-  // }
-
-  cambiarIcono(fab: FabContainer, movieId){
+  cambiarIcono(fab, movieId){
+    console.log(movieId);
     if (this.iconoIOS2 === "ios-eye-off" && this.iconoAndroid2 === "md-eye-off") {
       this._movieProvider.viewMovie(this.token, movieId).subscribe(response => {
         console.log(response);
-        this.iconoIOS = 'ios-eye-off';
-        this.iconoAndroid = 'md-eye-off';
         fab.close();
         this.mensaje = 'This film has been added to "Seen Group"';
         this.presentToast(this.mensaje);
@@ -130,10 +112,8 @@ export class VerTodoPage implements OnInit{
           console.log(err);
         });
     } else {
-      this._movieProvider.getMovieLiked(this.token, movieId).subscribe(response => {
+      this._movieProvider.likedMovie(this.token, movieId).subscribe(response => {
         console.log(response);
-        this.iconoIOS = 'ios-heart';
-        this.iconoAndroid = 'md-heart';
         fab.close();
         this.mensaje = 'This film has been added to "Favourite Group"';
         this.presentToast(this.mensaje);
@@ -145,20 +125,20 @@ export class VerTodoPage implements OnInit{
   }
 
 
-  cambiarIconoRemove(fab: FabContainer, movieId) {
-    if (this.tipoContenido === 'visto') {
-      this._movieProvider.deleteViewed(this.token, movieId).subscribe(response => {
-        this.iconoIOS = 'ios-arrow-dropdown';
-        this.iconoAndroid = 'md-arrow-dropdown';
-        fab.close();
-        this.mensaje = 'This film has been removed of his old group';
-        this.presentToast(this.mensaje);
-      },
-        err => {
-          console.log(err);
-        });
-    }
-  }
+  // cambiarIconoRemove(fab: FabContainer, movieId) {
+  //   if (this.tipoContenido === 'visto') {
+  //     this._movieProvider.deleteViewed(this.token, movieId).subscribe(response => {
+  //       this.iconoIOS = 'ios-arrow-dropdown';
+  //       this.iconoAndroid = 'md-arrow-dropdown';
+  //       fab.close();
+  //       this.mensaje = 'This film has been removed of his old group';
+  //       this.presentToast(this.mensaje);
+  //     },
+  //       err => {
+  //         console.log(err);
+  //       });
+  //   }
+  // }
 
   presentToast(mensaje: string) {
     let toast = this.toastCtrl.create({
@@ -181,25 +161,31 @@ export class VerTodoPage implements OnInit{
     });
   }
 
-  goToPerfil() {
-    this.navCtrl.push(PerfilPage);
-  }
-
-  goToPeliculas() {
-    this.navCtrl.push(PeliculasPage);
-  }
-
-  goToInicio() {
-    this.navCtrl.push(InicioPage);
-  }
-
-  deleteView(movieId){
-    this._movieProvider.deleteViewed(this.token, movieId).subscribe(response=>{
-      console.log(response);
-    },
-    err=>{
-      console.log(err);
-    });
+  deleteView(fab, movieId){
+    if (this.tipoContenido === 'visto') {
+      this._movieProvider.deleteViewed(this.token, movieId).subscribe(response=>{
+        console.log('Movie ID: ', movieId);
+        this.iconoIOS = 'ios-arrow-dropdown';
+        this.iconoAndroid = 'md-arrow-dropdown';
+        fab.close();
+        this.mensaje = 'This film has been removed of his old group';
+        this.presentToast(this.mensaje);
+      },
+      err=>{
+        console.log(err);
+      });
+    } else if (this.tipoContenido === 'favorito') {
+      this._movieProvider.dislikeMovie(this.token, movieId).subscribe(response => {
+        this.iconoIOS = 'ios-arrow-dropdown';
+        this.iconoAndroid = 'md-arrow-dropdown';
+        // fab.close();
+        this.mensaje = 'This film has been removed of his old group';
+        this.presentToast(this.mensaje);
+      },
+        err => {
+          console.log(err);
+        });
+    }
   }
 
 }

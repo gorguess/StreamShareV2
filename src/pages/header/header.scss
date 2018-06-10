@@ -14,4 +14,9 @@ page-header {
     #listSearch > a{
         cursor: pointer;
     }
+    .center{
+        display: flex!important;
+		align-content: center!important;
+		align-items: center!important;
+    }
 }

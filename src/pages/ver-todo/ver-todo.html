@@ -7,7 +7,7 @@
   </ion-refresher>
   <ion-card>
     <ion-row>
-      <ion-col col-6 class="center" *ngFor="let p of listMovieVieweds" style="padding-top: 5px">
+      <ion-col col-6 class="center" *ngFor="let p of list" style="padding-top: 5px">
         <ion-thumbnail item-start col-12>
           <button (click)="goToInfo(p)" class="fotoPelicula" no-padding>
             <img [src]="p.poster">
@@ -19,11 +19,11 @@
                 <ion-icon [ios]="iconoIOS" [md]="iconoAndroid"></ion-icon>
               </button>
               <ion-fab-list>
-                <button ion-fab>
-                  <ion-icon [ios]="iconoIOS2" [md]="iconoAndroid2" (click)="cambiarIcono(fab, p._id)"></ion-icon>
+                <button ion-fab (click)="cambiarIcono(fab, p._id)">
+                  <ion-icon [ios]="iconoIOS2" [md]="iconoAndroid2"></ion-icon>
                 </button>
                 <button ion-fab (click)="deleteView(p._id)">
-                  <ion-icon ios="ios-trash" md="md-trash" (click)="cambiarIconoRemove(fab, p._id)"></ion-icon>
+                  <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
                 </button>
               </ion-fab-list>
             </ion-fab>
