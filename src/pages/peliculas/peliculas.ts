@@ -106,6 +106,21 @@ export class PeliculasPage {
       dismissOnPageChange: true
     });
 
+    this._movieProvider.getMoviesGenre(this.token, this.genre).subscribe(response=>{
+        this.listMovie = [];
+        if(response.movie.length===0){
+          this.mensajeVacio = 'No hay peliculas aún';
+        }else{
+          response.movie.forEach(eleMovie => {
+          this.listMovie.push(eleMovie);
+          });
+          console.log(this.listMovie);
+        }
+      },
+        err=>{
+        console.log(err);
+      });
+
     loading.present();
     setTimeout(() => {
       

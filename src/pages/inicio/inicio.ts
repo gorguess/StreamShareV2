@@ -161,8 +161,15 @@ export class InicioPage implements OnInit, DoCheck{
       });
 
 
+      this._movieProvider.getLikedNMovie(this.token).subscribe(response=>{
+        console.log(response);
+      }, 
+      err=>{
+        console.log(err);
+      });
 
-    this._movieProvider.getLikedMovie(this.token).subscribe(response => {
+
+    this._movieProvider.getLikedNMovie(this.token).subscribe(response=>{
       console.log(response);
       if (response.message) {
         this.mensajeF = true;
@@ -176,26 +183,16 @@ export class InicioPage implements OnInit, DoCheck{
         });
         console.log('Primero: ', this.listMovieLikeds);
 
-        if (this.listMovieLikeds.length > 0) {
-          if (this.listMovieLikeds.length > 3) {
-            this.mostrarPeliculasF = [];
-            for (let index = 0; index < 3; index++) {
-              this.mostrarPeliculasF.push(this.listMovieLikeds[index]);
-            }
+        if (response.contador > 0) {
+          if (response.contador > 3) {
             this.seeAllF = true;
-          } else {
-            this.mostrarPeliculasF = [];
-            for (let index = 0; index < this.listMovieLikeds.length; index++) {
-              this.mostrarPeliculasF.push(this.listMovieLikeds[index]);
-            }
           }
-        } else {
-          this.mensajeF = true;
-        }
+        } 
       }
 
     },
       err => {
+        this.mensajeF = true;
         console.log(err);
       });
   }
