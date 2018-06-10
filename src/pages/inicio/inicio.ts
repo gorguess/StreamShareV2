@@ -122,18 +122,16 @@ export class InicioPage implements OnInit, DoCheck{
         }
       });
 
+      console.log('Contador: ', response.contador);
+
       if (response.contador > 0) {
         if ( response.contador> 3) {
           this.seeAllMovies = true;
-        } else {
-          
         }
-      } else {
-        this.mensajePeliculas = true;
       }
     },
       err => {
-        console.log(err);
+        this.mensajePeliculas = true;
       });
 
     /*this._serieProvider.getViewedSerie(this.token).subscribe(response => {
@@ -179,6 +177,7 @@ export class InicioPage implements OnInit, DoCheck{
             this.listMovieLikeds.push(this.movie);
           }
         });
+        console.log('Primero: ', this.listMovieLikeds);
 
         if (this.listMovieLikeds.length > 0) {
           if (this.listMovieLikeds.length > 3) {
