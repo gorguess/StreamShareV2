@@ -79,10 +79,10 @@ export class MovieProvider {
 
         return this._http.get(this.url + 'get-n-likes/movie/3',  {headers: headers});
     }
-    getMoviesGenre(token: any, genre): Observable<any>{
+    getMoviesGenre(token: any, genre, yearf, yearl): Observable<any>{
         let headers = new HttpHeaders().set('Content-type', 'application/json').set('Authorization', token);
 
-        return this._http.get(this.url + 'get-movie-genre/' + genre,  {headers: headers});
+        return this._http.get(this.url + 'get-movie-genre/' + genre+'/'+yearf+'/'+yearl,  {headers: headers});
     }
     getMoviesYear(token: any, year): Observable<any>{
         let headers = new HttpHeaders().set('Content-type', 'application/json').set('Authorization', token);

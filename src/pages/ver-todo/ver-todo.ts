@@ -140,6 +140,15 @@ export class VerTodoPage implements OnInit{
         fab.close();
         this.mensaje = 'This film has been removed of "Seen Group"';
         this.presentToast(this.mensaje);
+        var index = 0
+        this.list.forEach(element => {
+          if(element._id===movieId){
+            console.log(index);
+            this.list.splice(index,1);
+            console.log(this.list);
+          }
+          index++;
+        });
       },
         err => {
           fab.close();
@@ -151,6 +160,15 @@ export class VerTodoPage implements OnInit{
         fab.close();
         this.mensaje = 'This film has been removed of "Favourite Group"';
         this.presentToast(this.mensaje);
+        var index = 0
+        this.list.forEach(element => {
+          if(element._id===movieId){
+            console.log(index);
+            this.list.splice(index,1);
+            console.log(this.list);
+          }
+          index++;
+        });
       },
         err => {
           fab.close();

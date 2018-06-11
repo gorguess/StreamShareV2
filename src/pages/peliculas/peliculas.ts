@@ -106,7 +106,7 @@ export class PeliculasPage {
       dismissOnPageChange: true
     });
 
-    this._movieProvider.getMoviesGenre(this.token, this.genre).subscribe(response=>{
+    this._movieProvider.getMoviesGenre(this.token, this.genre, this.structure.lower, this.structure.upper).subscribe(response=>{
         this.listMovie = [];
         if(response.movie.length===0){
           this.mensajeVacio = 'No hay peliculas aún';

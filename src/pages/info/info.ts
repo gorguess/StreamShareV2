@@ -142,7 +142,42 @@ export class InfoPage implements OnInit {
 
     console.log('Primero: ', this.primerError);
     console.log('Segundo: ', this.segundoError);
+      this.errores(this.primerError, this.segundoError);
+    /*if (this.primerError) {
+      if (this.segundoError) {
+        this.mensaje = 'This film have not got a group. You can not remove a film of non-existent group.';
+        this.presentToast(this.mensaje);
+      } else {
+        this.mensaje = 'This film has been removed of "Favourite Group"';
+        this.presentToast(this.mensaje);
+      }
+    } else if (!this.primerError) {
+      if (this.segundoError) {
+        this.mensaje = 'This film has been removed of "Seen Group"';
+        this.presentToast(this.mensaje);
+      } else {
+        this.mensaje = 'This film has been removed of "Favourite Group" and "Seen Group"';
+        this.presentToast(this.mensaje);
+      }
+    }*/
 
+
+    // if (this.primerError == true && this.segundoError == true) {
+    //   this.mensaje = 'This film have not got a group. You can not remove a film of non-existent group.';
+    //   this.presentToast(this.mensaje);
+    // } else if (!this.primerError == false && this.segundoError == true) {
+    //   this.mensaje = 'This film has been removed of "Seen Group"';
+    //   this.presentToast(this.mensaje);
+    // } else if (this.primerError == true && !this.segundoError == false) {
+    //   this.mensaje = 'This film has been removed of "Favourite Group"';
+    //   this.presentToast(this.mensaje);
+    // } else {
+    //   this.mensaje = 'This film has been removed of "Favourite Group" and "Seen Group"';
+    //   this.presentToast(this.mensaje);
+    // }
+  }
+
+  errores(primerError = null, segundoError = null){
     if (this.primerError) {
       if (this.segundoError) {
         this.mensaje = 'This film have not got a group. You can not remove a film of non-existent group.';
@@ -160,22 +195,6 @@ export class InfoPage implements OnInit {
         this.presentToast(this.mensaje);
       }
     }
-
-
-
-    // if (this.primerError == true && this.segundoError == true) {
-    //   this.mensaje = 'This film have not got a group. You can not remove a film of non-existent group.';
-    //   this.presentToast(this.mensaje);
-    // } else if (!this.primerError == false && this.segundoError == true) {
-    //   this.mensaje = 'This film has been removed of "Seen Group"';
-    //   this.presentToast(this.mensaje);
-    // } else if (this.primerError == true && !this.segundoError == false) {
-    //   this.mensaje = 'This film has been removed of "Favourite Group"';
-    //   this.presentToast(this.mensaje);
-    // } else {
-    //   this.mensaje = 'This film has been removed of "Favourite Group" and "Seen Group"';
-    //   this.presentToast(this.mensaje);
-    // }
   }
 
   gotoreproductor(){
