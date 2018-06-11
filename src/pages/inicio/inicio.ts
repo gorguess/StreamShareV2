@@ -27,7 +27,7 @@ export class InicioPage implements OnInit, DoCheck{
   mensajePeliculas: boolean = false;
   mensajeViewP = 'There are not films in this group';
   mensajeViewS = 'There are not series in this group';
-  mensajeViewPS = 'There are not films and series in this group';
+  mensajeViewPS = 'There are not films or series in this group';
   mensajeF;
   mostrarPeliculasF: Array<Movie>;
   seeAllF;
@@ -97,8 +97,6 @@ export class InicioPage implements OnInit, DoCheck{
         }
       });
 
-      console.log('Contador: ', response.contador);
-
       if (response.contador > 0) {
         if (response.contador > 3) {
           this.seeAllMovies = true;
@@ -142,8 +140,16 @@ export class InicioPage implements OnInit, DoCheck{
         console.log(err);
       });
 
-    // Sacamos las peliculas y series favoritas
-    this._movieProvider.getLikedMovie(this.token).subscribe(response => {
+
+      this._movieProvider.getLikedNMovie(this.token).subscribe(response=>{
+        console.log(response);
+      }, 
+      err=>{
+        console.log(err);
+      });
+
+
+    this._movieProvider.getLikedNMovie(this.token).subscribe(response=>{
       console.log(response);
       if (response.message) {
         this.mensajeF = true;
@@ -155,28 +161,17 @@ export class InicioPage implements OnInit, DoCheck{
             this.listMovieLikeds.push(this.movie);
           }
         });
-        console.log('Primero: ', this.listMovieLikeds);
 
-        if (this.listMovieLikeds.length > 0) {
-          if (this.listMovieLikeds.length > 3) {
-            this.mostrarPeliculasF = [];
-            for (let index = 0; index < 3; index++) {
-              this.mostrarPeliculasF.push(this.listMovieLikeds[index]);
-            }
+        if (response.contador > 0) {
+          if (response.contador > 3) {
             this.seeAllF = true;
-          } else {
-            this.mostrarPeliculasF = [];
-            for (let index = 0; index < this.listMovieLikeds.length; index++) {
-              this.mostrarPeliculasF.push(this.listMovieLikeds[index]);
-            }
           }
-        } else {
-          this.mensajeF = true;
-        }
+        } 
       }
 
     },
       err => {
+        this.mensajeF = true;
         console.log(err);
       });
   }
