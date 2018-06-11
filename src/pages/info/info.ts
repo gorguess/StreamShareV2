@@ -1,5 +1,5 @@
 import { Component, forwardRef, Input, OnInit } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController, AlertController, FabContainer } from 'ionic-angular';
 import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-media';
 import { PerfilPage } from '../perfil/perfil';
 import { InicioPage } from '../inicio/inicio';
@@ -33,6 +33,8 @@ export class InfoPage implements OnInit {
   type;
   mensaje;
   links: Array<any>;
+  primerError: boolean = false;
+  segundoError: boolean = false;
 
   constructor(
     public navCtrl: NavController,
@@ -74,6 +76,106 @@ export class InfoPage implements OnInit {
     if (this.movie['description'] == 'N/A') {
       this.movie['description'] = 'Not available';
     }
+  }
+
+  cambiarIconoSeen(fab, movieId) {
+    this._movieProvider.viewMovie(this.token, movieId).subscribe(response => {
+      if (response.message === "Ya estás viendo esta película") {
+        fab.close();
+        this.mensaje = 'This film is already in "Seen Group';
+        this.presentToast(this.mensaje);
+      } else {
+        fab.close();
+        this.mensaje = 'This film has been added to "Seen Group"';
+        this.presentToast(this.mensaje);
+      }
+    },
+      err => {
+        console.log(err);
+      });
+  }
+
+  cambiarIconoLike(fab: FabContainer, movieId) {
+    this._movieProvider.likedMovie(this.token, movieId).subscribe(response => {
+      if (response.message === "Ya estás viendo esta película") {
+        fab.close();
+        this.mensaje = 'This film is already in "Favourite Group';
+        this.presentToast(this.mensaje);
+      } else {
+        fab.close();
+        this.mensaje = 'This film has been added to "Favourite Group"';
+        this.presentToast(this.mensaje);
+      }
+    },
+      err => {
+        console.log(err);
+      });
+  }
+
+  deleteView(fab, movieId) {
+    this._movieProvider.deleteViewed(this.token, movieId).subscribe(response => {
+      fab.close();
+      console.log('Primero: ', response);
+      // this.mensaje = 'This film has been removed of "Seen Group"';
+      // this.presentToast(this.mensaje);
+    },
+      err => {
+        console.log('Error1', err);
+        this.primerError = true;
+        fab.close();
+        // this.mensaje = 'This film has already been removed of "Seen Group". Please refresh this view.';
+        // this.presentToast(this.mensaje);
+      });
+    this._movieProvider.dislikeMovie(this.token, movieId).subscribe(response => {
+      fab.close();
+      console.log('Segundo: ', response);
+      // this.mensaje = 'This film has been removed of "Favourite Group"';
+      // this.presentToast(this.mensaje);
+    },
+      err => {
+        console.log('Error2', err);
+        this.segundoError = true;
+        fab.close();
+        // this.mensaje = 'This film has already been removed of "Favourite Group". Please refresh this view.';
+        // this.presentToast(this.mensaje);
+      });
+
+    console.log('Primero: ', this.primerError);
+    console.log('Segundo: ', this.segundoError);
+
+    if (this.primerError) {
+      if (this.segundoError) {
+        this.mensaje = 'This film have not got a group. You can not remove a film of non-existent group.';
+        this.presentToast(this.mensaje);
+      } else {
+        this.mensaje = 'This film has been removed of "Favourite Group"';
+        this.presentToast(this.mensaje);
+      }
+    } else if (!this.primerError) {
+      if (this.segundoError) {
+        this.mensaje = 'This film has been removed of "Seen Group"';
+        this.presentToast(this.mensaje);
+      } else {
+        this.mensaje = 'This film has been removed of "Favourite Group" and "Seen Group"';
+        this.presentToast(this.mensaje);
+      }
+    }
+
+
+
+    // if (this.primerError == true && this.segundoError == true) {
+    //   this.mensaje = 'This film have not got a group. You can not remove a film of non-existent group.';
+    //   this.presentToast(this.mensaje);
+    // } else if (!this.primerError == false && this.segundoError == true) {
+    //   this.mensaje = 'This film has been removed of "Seen Group"';
+    //   this.presentToast(this.mensaje);
+    // } else if (this.primerError == true && !this.segundoError == false) {
+    //   this.mensaje = 'This film has been removed of "Favourite Group"';
+    //   this.presentToast(this.mensaje);
+    // } else {
+    //   this.mensaje = 'This film has been removed of "Favourite Group" and "Seen Group"';
+    //   this.presentToast(this.mensaje);
+    // }
   }
 
   gotoreproductor(){

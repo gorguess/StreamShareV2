@@ -1996,6 +1996,8 @@ var InfoPage = (function () {
         this._linkProvider = _linkProvider;
         this._movieProvider = _movieProvider;
         this._serieProvider = _serieProvider;
+        this.primerError = false;
+        this.segundoError = false;
         this.type = navParams.data['tipo'];
         if (this.type === 'movie') {
             this.movie = navParams.data['contenido'];
@@ -2025,6 +2027,102 @@ var InfoPage = (function () {
         if (this.movie['description'] == 'N/A') {
             this.movie['description'] = 'Not available';
         }
+    };
+    InfoPage.prototype.cambiarIconoSeen = function (fab, movieId) {
+        var _this = this;
+        this._movieProvider.viewMovie(this.token, movieId).subscribe(function (response) {
+            if (response.message === "Ya estás viendo esta película") {
+                fab.close();
+                _this.mensaje = 'This film is already in "Seen Group';
+                _this.presentToast(_this.mensaje);
+            }
+            else {
+                fab.close();
+                _this.mensaje = 'This film has been added to "Seen Group"';
+                _this.presentToast(_this.mensaje);
+            }
+        }, function (err) {
+            console.log(err);
+        });
+    };
+    InfoPage.prototype.cambiarIconoLike = function (fab, movieId) {
+        var _this = this;
+        this._movieProvider.likedMovie(this.token, movieId).subscribe(function (response) {
+            if (response.message === "Ya estás viendo esta película") {
+                fab.close();
+                _this.mensaje = 'This film is already in "Favourite Group';
+                _this.presentToast(_this.mensaje);
+            }
+            else {
+                fab.close();
+                _this.mensaje = 'This film has been added to "Favourite Group"';
+                _this.presentToast(_this.mensaje);
+            }
+        }, function (err) {
+            console.log(err);
+        });
+    };
+    InfoPage.prototype.deleteView = function (fab, movieId) {
+        var _this = this;
+        this._movieProvider.deleteViewed(this.token, movieId).subscribe(function (response) {
+            fab.close();
+            console.log('Primero: ', response);
+            // this.mensaje = 'This film has been removed of "Seen Group"';
+            // this.presentToast(this.mensaje);
+        }, function (err) {
+            console.log('Error1', err);
+            _this.primerError = true;
+            fab.close();
+            // this.mensaje = 'This film has already been removed of "Seen Group". Please refresh this view.';
+            // this.presentToast(this.mensaje);
+        });
+        this._movieProvider.dislikeMovie(this.token, movieId).subscribe(function (response) {
+            fab.close();
+            console.log('Segundo: ', response);
+            // this.mensaje = 'This film has been removed of "Favourite Group"';
+            // this.presentToast(this.mensaje);
+        }, function (err) {
+            console.log('Error2', err);
+            _this.segundoError = true;
+            fab.close();
+            // this.mensaje = 'This film has already been removed of "Favourite Group". Please refresh this view.';
+            // this.presentToast(this.mensaje);
+        });
+        console.log('Primero: ', this.primerError);
+        console.log('Segundo: ', this.segundoError);
+        if (this.primerError) {
+            if (this.segundoError) {
+                this.mensaje = 'This film have not got a group. You can not remove a film of non-existent group.';
+                this.presentToast(this.mensaje);
+            }
+            else {
+                this.mensaje = 'This film has been removed of "Favourite Group"';
+                this.presentToast(this.mensaje);
+            }
+        }
+        else if (!this.primerError) {
+            if (this.segundoError) {
+                this.mensaje = 'This film has been removed of "Seen Group"';
+                this.presentToast(this.mensaje);
+            }
+            else {
+                this.mensaje = 'This film has been removed of "Favourite Group" and "Seen Group"';
+                this.presentToast(this.mensaje);
+            }
+        }
+        // if (this.primerError == true && this.segundoError == true) {
+        //   this.mensaje = 'This film have not got a group. You can not remove a film of non-existent group.';
+        //   this.presentToast(this.mensaje);
+        // } else if (!this.primerError == false && this.segundoError == true) {
+        //   this.mensaje = 'This film has been removed of "Seen Group"';
+        //   this.presentToast(this.mensaje);
+        // } else if (this.primerError == true && !this.segundoError == false) {
+        //   this.mensaje = 'This film has been removed of "Favourite Group"';
+        //   this.presentToast(this.mensaje);
+        // } else {
+        //   this.mensaje = 'This film has been removed of "Favourite Group" and "Seen Group"';
+        //   this.presentToast(this.mensaje);
+        // }
     };
     InfoPage.prototype.gotoreproductor = function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__videoplayer_videoplayer__["a" /* VideoplayerPage */], { movie: this.content, video: this.video });
@@ -2079,7 +2177,7 @@ var InfoPage = (function () {
     };
     InfoPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-info',template:/*ion-inline-start:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\info\info.html"*/'<page-header></page-header>\n\n<ion-content>\n\n  <ion-card>\n\n    <ion-card-content class="backgroundCard">\n\n      <ion-row class="center">\n\n        <ion-col col-8 offset-2>\n\n          <img [src]="movie.poster">\n\n        </ion-col>\n\n        <ion-col col-6 offset-3 style="text-align: center;">\n\n          <h1>{{ movie.title }}</h1>\n\n        </ion-col>\n\n        <ion-col col-10>\n\n          <ul class="rating" (keydown)="onKeyDown($event)">\n\n            <li *ngFor="let starIndex of starIndexes" tappable (click)="rate(starIndex + 1)">\n\n              <ion-icon [name]="getStarIconName(starIndex)">\n\n              </ion-icon>\n\n            </li>\n\n          </ul>\n\n        </ion-col>\n\n        <ion-col col-6 offset-3>\n\n          <ion-buttons>\n\n            <button ion-button icon-only outline col-12 class="center" (click)="gotoreproductor()">\n\n              Watch Trailer\n\n            </button>\n\n            <button ion-button icon-only outline col-12 class="center" (click)="obtenerLinks(movie._id)">\n\n              See Links\n\n            </button>\n\n          </ion-buttons>\n\n        </ion-col>\n\n        <ion-col col-6 style="text-align: center;">\n\n          <ion-label class="titulo">GENRE: </ion-label>\n\n          <h3>{{ movie.genre }}</h3>\n\n        </ion-col>\n\n        <ion-col col-6 style="text-align: center;">\n\n          <ion-label class="titulo">YEAR: </ion-label>\n\n          <h3>{{ movie.year }}</h3>\n\n        </ion-col>\n\n        <ion-col col-12 style="text-align: center;">\n\n          <ion-label class="titulo">DESCRIPTION: </ion-label>\n\n          <h3>{{ movie.description }}</h3>\n\n        </ion-col>\n\n      </ion-row>\n\n      <div class="bottom"></div>\n\n    </ion-card-content>\n\n  </ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\info\info.html"*/,
+            selector: 'page-info',template:/*ion-inline-start:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\info\info.html"*/'<page-header></page-header>\n\n<ion-content>\n\n  <ion-card>\n\n    <ion-card-content class="backgroundCard">\n\n      <ion-row class="center">\n\n        <ion-col col-8 offset-2>\n\n          <img [src]="movie.poster">\n\n          <ion-fab top right col-4 #fab>\n\n            <button ion-fab mini class="background">\n\n              <ion-icon ios="ios-arrow-dropdown" md="md-arrow-dropdown"></ion-icon>\n\n            </button>\n\n            <ion-fab-list>\n\n              <button ion-fab (click)="cambiarIconoSeen(fab, movie._id)">\n\n                <ion-icon ios="ios-eye-off" md="md-eye-off"></ion-icon>\n\n              </button>\n\n              <button ion-fab (click)="cambiarIconoLike(fab, movie._id)">\n\n                <ion-icon ios="ios-heart" md="md-heart"></ion-icon>\n\n              </button>\n\n              <button ion-fab (click)="deleteView(fab, movie._id)">\n\n                <ion-icon ios="ios-trash" md="md-trash"></ion-icon>\n\n              </button>\n\n            </ion-fab-list>\n\n          </ion-fab>\n\n        </ion-col>\n\n        <ion-col col-6 offset-3 style="text-align: center;">\n\n          <h1>{{ movie.title }}</h1>\n\n        </ion-col>\n\n        <ion-col col-10>\n\n          <ul class="rating" (keydown)="onKeyDown($event)">\n\n            <li *ngFor="let starIndex of starIndexes" tappable (click)="rate(starIndex + 1)">\n\n              <ion-icon [name]="getStarIconName(starIndex)">\n\n              </ion-icon>\n\n            </li>\n\n          </ul>\n\n        </ion-col>\n\n        <ion-col col-6 offset-3>\n\n          <ion-buttons>\n\n            <button ion-button icon-only outline col-12 class="center" (click)="gotoreproductor()">\n\n              Watch Trailer\n\n            </button>\n\n            <button ion-button icon-only outline col-12 class="center" (click)="obtenerLinks(movie._id)">\n\n              See Links\n\n            </button>\n\n          </ion-buttons>\n\n        </ion-col>\n\n        <ion-col col-6 style="text-align: center;">\n\n          <ion-label class="titulo">GENRE: </ion-label>\n\n          <h3>{{ movie.genre }}</h3>\n\n        </ion-col>\n\n        <ion-col col-6 style="text-align: center;">\n\n          <ion-label class="titulo">YEAR: </ion-label>\n\n          <h3>{{ movie.year }}</h3>\n\n        </ion-col>\n\n        <ion-col col-12 style="text-align: center;">\n\n          <ion-label class="titulo">DESCRIPTION: </ion-label>\n\n          <h3>{{ movie.description }}</h3>\n\n        </ion-col>\n\n      </ion-row>\n\n      <div class="bottom"></div>\n\n    </ion-card-content>\n\n  </ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\info\info.html"*/,
             providers: [__WEBPACK_IMPORTED_MODULE_4__providers_links_link_provider__["a" /* LinkProvider */], __WEBPACK_IMPORTED_MODULE_5__providers_movie_movie_provider__["a" /* MovieProvider */], __WEBPACK_IMPORTED_MODULE_6__providers_serie_serie_provider__["a" /* SerieProvider */]]
         }),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_streaming_media__["a" /* StreamingMedia */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_streaming_media__["a" /* StreamingMedia */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_4__providers_links_link_provider__["a" /* LinkProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__providers_links_link_provider__["a" /* LinkProvider */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_5__providers_movie_movie_provider__["a" /* MovieProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__providers_movie_movie_provider__["a" /* MovieProvider */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_6__providers_serie_serie_provider__["a" /* SerieProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__providers_serie_serie_provider__["a" /* SerieProvider */]) === "function" && _h || Object])

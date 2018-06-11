@@ -33503,6 +33503,10 @@ page-info .bottom {
   padding-bottom: 19% !important;
 }
 
+page-info .background {
+  background: #008080;
+}
+
 page-inicio ion-content {
   background: url("../assets/imgs/fondo.jpg");
   background-attachment: fixed;
