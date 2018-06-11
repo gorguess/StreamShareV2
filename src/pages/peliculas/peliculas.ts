@@ -140,12 +140,15 @@ export class PeliculasPage {
 
   cambiarIconoSeen(fab, movieId) {
     this._movieProvider.viewMovie(this.token, movieId).subscribe(response=>{
-      console.log(response);
-      this.iconoIOS = 'ios-eye-off';
-      this.iconoAndroid = 'md-eye-off';
-      fab.close();
-      this.mensaje = 'This film has been added to "Seen Group"';
-      this.presentToast(this.mensaje);
+      if (response.message === "Ya estás viendo esta película") {
+        fab.close();
+        this.mensaje = 'This film is already in "Seen Group';
+        this.presentToast(this.mensaje);
+      } else {
+        fab.close();
+        this.mensaje = 'This film has been added to "Seen Group"';
+        this.presentToast(this.mensaje);
+      }      
     },
     err => {
       console.log(err);
@@ -154,23 +157,19 @@ export class PeliculasPage {
 
   cambiarIconoLike(fab: FabContainer, movieId) {
     this._movieProvider.likedMovie(this.token, movieId).subscribe(response => {
-      console.log(response);
-      this.iconoIOS = 'ios-heart';
-      this.iconoAndroid = 'md-heart';
-      fab.close();
-      this.mensaje = 'This film has been added to "Favourite Group"';
-      this.presentToast(this.mensaje);
+      if (response.message === "Ya estás viendo esta película") {
+        fab.close();
+        this.mensaje = 'This film is already in "Favourite Group';
+        this.presentToast(this.mensaje);
+      } else {
+        fab.close();
+        this.mensaje = 'This film has been added to "Favourite Group"';
+        this.presentToast(this.mensaje);
+      }  
     },
       err => {
         console.log(err);
       });
-  }
-  cambiarIconoRemove(fab: FabContainer) {
-    this.iconoIOS = 'ios-arrow-dropdown';
-    this.iconoAndroid = 'md-arrow-dropdown';
-    fab.close();
-    this.mensaje = 'This film has been removed of his old group';
-    this.presentToast(this.mensaje);
   }
 
   presentToast(mensaje: string) {

@@ -70,7 +70,7 @@ export class SeriesPage {
     this._serieProvider.getAllSeries(localStorage.getItem('token'), this.page).subscribe(response => {
       this.listSerie = [];
       if(this.page===1 && response.message.length===0){
-        this.mensajeVacio = 'Aún no hay series';
+        this.mensajeVacio = 'There are not series yet';
       }else{
         response.message.forEach(eleSerie => {
         this.listSerie.push(eleSerie);

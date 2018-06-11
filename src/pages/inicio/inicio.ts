@@ -101,6 +101,8 @@ export class InicioPage implements OnInit, DoCheck{
         if (response.contador > 3) {
           this.seeAllMovies = true;
         }
+      } else {
+        this.mensajePeliculas = true;
       }
     },
       err => {
@@ -166,7 +168,9 @@ export class InicioPage implements OnInit, DoCheck{
           if (response.contador > 3) {
             this.seeAllF = true;
           }
-        } 
+        } else {
+          this.mensajeF = true;
+        }
       }
 
     },

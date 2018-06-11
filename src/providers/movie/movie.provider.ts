@@ -89,4 +89,9 @@ export class MovieProvider {
 
         return this._http.get(this.url + 'get-movie-year/' + year,  {headers: headers});
     }
+    getLinks(token, movieId): Observable<any> {
+        let headers = new HttpHeaders().set('Content-type', 'application/json').set('Authorization', token);
+
+        return this._http.get(this.url + 'get-content/' + movieId, { headers: headers });
+    }
 }
