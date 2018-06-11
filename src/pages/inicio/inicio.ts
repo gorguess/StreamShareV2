@@ -39,7 +39,7 @@ export class InicioPage implements OnInit, DoCheck{
   listSerieVieweds: Array<Serie>;
   token;
 
-  public isSearchbarOpened = false;
+  // public isSearchbarOpened = false;
   constructor(
     public navCtrl: NavController, 
     public modalCtrl: ModalController,
@@ -81,31 +81,12 @@ export class InicioPage implements OnInit, DoCheck{
     );
   }
 
-  goToInfo(p: Array<any>) {
-    this.navCtrl.push(InfoPage, {
-      contenido: p,
-      tipo: 'movie'
-    });
-  }
-
-  goToSeeAll(contenido: string, lista: Array<any>){
-    this.navCtrl.push(VerTodoPage, {
-      tipo: contenido,
-      array: lista
-    });
-  }
-
-  // ionViewDidLoad() {
-  //   this.identity = this.comprobarLogin.getIdentity();
-  //   this.avatarUrl = this.comprobarLogin.getImageAvatar();
-  //   this.trustedUrl = this.sanitizer.bypassSecurityTrustUrl(this.avatarUrl);
-  // }
-
-  ngOnInit(){
+  ngOnInit() {
     this.identity = this.comprobarLogin.getIdentity();
     this.avatarUrl = this.comprobarLogin.getImageAvatar();
     this.trustedUrl = this.sanitizer.bypassSecurityTrustUrl(this.avatarUrl);
 
+    // Sacamos las películas vistas
     this._movieProvider.getViewedNMovie(this.token).subscribe(response => {
       console.log(response);
       this.listMovieVieweds = [];
@@ -119,7 +100,7 @@ export class InicioPage implements OnInit, DoCheck{
       console.log('Contador: ', response.contador);
 
       if (response.contador > 0) {
-        if ( response.contador> 3) {
+        if (response.contador > 3) {
           this.seeAllMovies = true;
         }
       }
@@ -129,6 +110,7 @@ export class InicioPage implements OnInit, DoCheck{
         console.log(err);
       });
 
+    // Sacamos las series vistas
     this._serieProvider.getViewedSerie(this.token).subscribe(response => {
       this.listSerieVieweds = [];
       response.views.forEach(eleSerie => {
@@ -160,8 +142,7 @@ export class InicioPage implements OnInit, DoCheck{
         console.log(err);
       });
 
-
-
+    // Sacamos las peliculas y series favoritas
     this._movieProvider.getLikedMovie(this.token).subscribe(response => {
       console.log(response);
       if (response.message) {
@@ -200,10 +181,25 @@ export class InicioPage implements OnInit, DoCheck{
       });
   }
 
-
-  ngDoCheck(){
+  // Se encuentra continuamente ejecutándose para ver si ha cambiado el username o su imagen
+  ngDoCheck() {
     this.identity = this.comprobarLogin.getIdentity();
     this.avatarUrl = this.comprobarLogin.getImageAvatar();
     this.trustedUrl = this.sanitizer.bypassSecurityTrustUrl(this.avatarUrl);
   }
+
+  goToInfo(p: Array<any>) {
+    this.navCtrl.push(InfoPage, {
+      contenido: p,
+      tipo: 'movie'
+    });
+  }
+
+  goToSeeAll(contenido: string, lista: Array<any>){
+    this.navCtrl.push(VerTodoPage, {
+      tipo: contenido,
+      array: lista
+    });
+  }
+
 }

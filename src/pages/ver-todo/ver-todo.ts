@@ -163,10 +163,11 @@ export class VerTodoPage implements OnInit{
 
   deleteView(fab, movieId){
     if (this.tipoContenido === 'visto') {
+      console.log(movieId);
       this._movieProvider.deleteViewed(this.token, movieId).subscribe(response=>{
         console.log('Movie ID: ', movieId);
-        this.iconoIOS = 'ios-arrow-dropdown';
-        this.iconoAndroid = 'md-arrow-dropdown';
+        // this.iconoIOS = 'ios-arrow-dropdown';
+        // this.iconoAndroid = 'md-arrow-dropdown';
         fab.close();
         this.mensaje = 'This film has been removed of his old group';
         this.presentToast(this.mensaje);
@@ -176,9 +177,9 @@ export class VerTodoPage implements OnInit{
       });
     } else if (this.tipoContenido === 'favorito') {
       this._movieProvider.dislikeMovie(this.token, movieId).subscribe(response => {
-        this.iconoIOS = 'ios-arrow-dropdown';
-        this.iconoAndroid = 'md-arrow-dropdown';
-        // fab.close();
+        // this.iconoIOS = 'ios-arrow-dropdown';
+        // this.iconoAndroid = 'md-arrow-dropdown';
+        fab.close();
         this.mensaje = 'This film has been removed of his old group';
         this.presentToast(this.mensaje);
       },
