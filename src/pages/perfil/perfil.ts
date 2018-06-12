@@ -1,5 +1,5 @@
 import { Component, ViewChild, OnInit, DoCheck } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController, ToastController } from 'ionic-angular';
+import { App, IonicPage, NavController, NavParams, AlertController, ToastController } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { ChatPage } from '../chat/chat';
 
@@ -12,6 +12,7 @@ import {
 import { LoginProvider } from '../../providers/login/login';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { UserProvider } from '../../providers/user.provider';
+import { HomePage } from '../home/home';
 
 let now = new Date();
 
@@ -63,7 +64,8 @@ export class PerfilPage implements OnInit {
     private sanitizer: DomSanitizer,
     private _userProvider: UserProvider,
     public toastCtrl: ToastController,
-    private camera: Camera
+    private camera: Camera,
+    private app: App
   ) {
   }
 
@@ -308,5 +310,10 @@ export class PerfilPage implements OnInit {
     });
 
     toast.present();
+  }
+
+  cerrarSesion(){
+    localStorage.clear();
+    this.navCtrl.setRoot(HomePage);
   }
 }
