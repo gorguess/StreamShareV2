@@ -28,8 +28,8 @@
       <ion-item>
         <ion-label>Films Genre: </ion-label>
         <ion-select [(ngModel)]="genre" interface="popover">
-          <ion-option value="All" selected="true">All</ion-option>
-          <ion-option value="Action" selected="true">Action</ion-option>
+          <ion-option value="all" selected="true">All</ion-option>
+          <ion-option value="Action">Action</ion-option>
           <ion-option value="Adventure">Adventure</ion-option>
           <ion-option value="Comedy">Comedy</ion-option>
           <ion-option value="Documentary">Documentary</ion-option>
@@ -94,6 +94,7 @@
       <ion-col col-12 class="center" id="moreButton" *ngIf="more">
         <button ion-button outline (click)="moreFilms()" col-auto>More</button>
       </ion-col>
+      <div id="moreButton"></div>
     </ion-row>
   </ion-card>
 </ion-content>

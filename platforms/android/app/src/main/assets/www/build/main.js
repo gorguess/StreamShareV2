@@ -1,6 +1,6 @@
-webpackJsonp([14],{
+webpackJsonp([16],{
 
-/***/ 131:
+/***/ 130:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -15,14 +15,14 @@ var Movie = (function () {
 
 /***/ }),
 
-/***/ 166:
+/***/ 165:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChatPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase__ = __webpack_require__(229);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase__ = __webpack_require__(230);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_firebase__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -95,15 +95,13 @@ var ChatPage = (function () {
 
 /***/ }),
 
-/***/ 167:
+/***/ 166:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VideoplayerPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FullvideoPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_links_link_provider__ = __webpack_require__(239);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -113,6 +111,369 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
+
+var FullvideoPage = (function () {
+    function FullvideoPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.movie = navParams.data['video'];
+    }
+    FullvideoPage.prototype.ionViewDidLoad = function () {
+    };
+    FullvideoPage.prototype.goToBack = function () {
+        this.navCtrl.pop();
+    };
+    FullvideoPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-fullvideo',template:/*ion-inline-start:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\fullvideo\fullvideo.html"*/'<ion-fab>\n\n  <button ion-fab mini (click)="goToBack()" id="backArrow"><ion-icon name="md-arrow-back"></ion-icon></button>\n\n</ion-fab>\n\n<ion-content class="vertical-align-content">\n\n  <video #videoplayer preload autoplay controls id="videoplayer">\n\n    <source [src]="movie" type="video/mp4">\n\n  </video>\n\n</ion-content>'/*ion-inline-end:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\fullvideo\fullvideo.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
+    ], FullvideoPage);
+    return FullvideoPage;
+}());
+
+//# sourceMappingURL=fullvideo.js.map
+
+/***/ }),
+
+/***/ 167:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PerfilPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_camera__ = __webpack_require__(233);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__chat_chat__ = __webpack_require__(165);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mobiscroll_angular__ = __webpack_require__(185);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_login_login__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_platform_browser__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_user_provider__ = __webpack_require__(421);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+var now = new Date();
+var PerfilPage = (function () {
+    function PerfilPage(navCtrl, navParams, alertCtrl, comprobarLogin, sanitizer, _userProvider, toastCtrl, camera) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.alertCtrl = alertCtrl;
+        this.comprobarLogin = comprobarLogin;
+        this.sanitizer = sanitizer;
+        this._userProvider = _userProvider;
+        this.toastCtrl = toastCtrl;
+        this.camera = camera;
+        this.descripcion = false;
+        this.contenidoDescripcion = [];
+        this.eventDate = [now, new Date(now.getFullYear(), now.getMonth(), now.getDate(), now.getHours() + 2)];
+        this.isBusy = 'busy';
+        this.eventText = '';
+        this.events = [{
+                d: new Date(),
+                text: 'New chapter of Mr Robot'
+            }];
+        this.event = false;
+        this.isSearchbarOpened = false;
+        this.eventSettings = {
+            theme: 'material',
+            lang: 'en',
+            display: 'inline',
+            layout: 'liquid',
+            view: {
+                calendar: { type: 'month' },
+                eventList: { type: 'month' }
+            }
+        };
+        this.formSettings = {
+            theme: 'ios'
+        };
+    }
+    PerfilPage.prototype.ngOnInit = function () {
+        this.identity = this.comprobarLogin.getIdentity();
+        this.avatarUrl = this.comprobarLogin.getImageAvatar();
+        this.trustedUrl = this.sanitizer.bypassSecurityTrustUrl(this.avatarUrl);
+    };
+    PerfilPage.prototype.actionCamera = function () {
+        var _this = this;
+        var options = {
+            quality: 100,
+            destinationType: this.camera.DestinationType.DATA_URL,
+            encodingType: this.camera.EncodingType.PNG,
+            mediaType: this.camera.MediaType.PICTURE
+        };
+        this.camera.getPicture(options).then(function (imageData) {
+            //la imagen va a estar codificada (base64)
+            _this.perfilImg = 'data:image/png;base64,' + imageData;
+            _this.trustedUrl = _this.sanitizer.bypassSecurityTrustUrl(_this.perfilImg);
+        }, function (err) {
+            console.log(err);
+        });
+    };
+    PerfilPage.prototype.accessGallery = function () {
+        var _this = this;
+        this.camera.getPicture({
+            sourceType: this.camera.PictureSourceType.SAVEDPHOTOALBUM,
+            destinationType: this.camera.DestinationType.DATA_URL
+        }).then(function (imageData) {
+            _this.perfilImg = 'data:image/jpeg;base64,' + imageData;
+            _this._userProvider.uploadAvatar(localStorage.getItem('token'), _this.identity._id, { image: imageData }).subscribe(function (response) {
+                console.log(response);
+            }, function (err) {
+                console.log(err);
+            });
+            _this.trustedUrl = _this.sanitizer.bypassSecurityTrustUrl(_this.perfilImg);
+        }, function (err) {
+            console.log(err);
+        });
+    };
+    PerfilPage.prototype.showMethods = function () {
+        var _this = this;
+        var confirm = this.alertCtrl.create({
+            title: 'Choose one method',
+            message: "Do you want to choose the photo from your mobile's galery or you prefer take a photo?",
+            buttons: [
+                {
+                    text: 'Galery',
+                    handler: function () {
+                        _this.accessGallery();
+                    }
+                },
+                {
+                    text: 'Take a Photo',
+                    handler: function () {
+                        _this.actionCamera();
+                    }
+                }
+            ]
+        });
+        confirm.present();
+    };
+    PerfilPage.prototype.ionViewDidLoad = function () {
+        if (!this.perfilImg) {
+            this.perfilImg = "assets/imgs/profileNull.png";
+        }
+    };
+    PerfilPage.prototype.newEvent = function () {
+        this.event = true;
+    };
+    PerfilPage.prototype.addEvent = function () {
+        this.events.push({
+            start: new Date(this.fecha.element.value),
+            text: this.eventText || 'New Event',
+        });
+        this.eventText = '';
+        this.eventCal.instance.setVal(new Date(this.fecha.element.value));
+        this.event = false;
+    };
+    ;
+    PerfilPage.prototype.closeEvent = function () {
+        this.event = false;
+    };
+    // goToPeliculas() {
+    //   this.navCtrl.push(PeliculasPage, {
+    //     data: this.contenedor
+    //   });
+    // }
+    // goToInicio() {
+    //   this.navCtrl.push(InicioPage, {
+    //     data: this.contenedor
+    //   });
+    // }
+    PerfilPage.prototype.goToChat = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__chat_chat__["a" /* ChatPage */]);
+    };
+    PerfilPage.prototype.descriptionType = function () {
+        var _this = this;
+        var prompt = this.alertCtrl.create({
+            title: 'Description',
+            message: "Enter a description of yourself to add it to your profile",
+            inputs: [
+                {
+                    name: 'Description:',
+                    placeholder: 'Description'
+                },
+            ],
+            buttons: [
+                {
+                    text: 'Cancel',
+                    handler: function (data) {
+                        console.log('Cancel clicked');
+                    }
+                },
+                {
+                    text: 'Save',
+                    handler: function (data) {
+                        _this.descripcion = true;
+                        _this.contenidoDescripcion = [];
+                        for (var key in data) {
+                            _this.contenidoDescripcion.push(data[key]);
+                            _this.nuevoUser = [{ description: _this.contenidoDescripcion }];
+                            _this.updateUser(_this.nuevoUser);
+                        }
+                    }
+                }
+            ]
+        });
+        prompt.present();
+    };
+    PerfilPage.prototype.nameType = function () {
+        var _this = this;
+        var prompt = this.alertCtrl.create({
+            title: 'Name',
+            message: "Enter your new name to add it to your profile",
+            inputs: [
+                {
+                    name: 'Name:',
+                    placeholder: 'Name'
+                },
+            ],
+            buttons: [
+                {
+                    text: 'Cancel',
+                    handler: function (data) {
+                        console.log('Cancel clicked');
+                    }
+                },
+                {
+                    text: 'Save',
+                    handler: function (data) {
+                        _this.nombre = [];
+                        for (var key in data) {
+                            _this.nombre.push(data[key]);
+                            _this.nuevoUser = [{ name: _this.nombre }];
+                            _this.updateUser(_this.nuevoUser);
+                        }
+                        var mensaje = 'Your name will be updated when you login in our APP again';
+                        _this.presentToast(mensaje);
+                    }
+                }
+            ]
+        });
+        prompt.present();
+    };
+    PerfilPage.prototype.userType = function () {
+        var _this = this;
+        var prompt = this.alertCtrl.create({
+            title: 'Username',
+            message: "Enter your new username to add it to your profile",
+            inputs: [
+                {
+                    name: 'Username:',
+                    placeholder: 'Username'
+                },
+            ],
+            buttons: [
+                {
+                    text: 'Cancel',
+                    handler: function (data) {
+                        console.log('Cancel clicked');
+                    }
+                },
+                {
+                    text: 'Save',
+                    handler: function (data) {
+                        _this.nombreUsuario = [];
+                        for (var key in data) {
+                            _this.nombreUsuario.push(data[key]);
+                            _this.nuevoUser = [{ nickname: _this.nombreUsuario }];
+                            _this.updateUser(_this.nuevoUser);
+                        }
+                        var mensaje = 'Your nickname will be updated when you login in our APP again';
+                        _this.presentToast(mensaje);
+                    }
+                }
+            ]
+        });
+        prompt.present();
+    };
+    PerfilPage.prototype.updateUser = function (user) {
+        console.log(user[0]);
+        this._userProvider.updateUser(user[0], localStorage.getItem('token'), this.comprobarLogin.getIdentity()._id)
+            .subscribe(function (response) {
+            console.log(response);
+        }, function (err) {
+            console.log(err);
+        });
+    };
+    PerfilPage.prototype.presentToast = function (mensaje) {
+        var toast = this.toastCtrl.create({
+            message: mensaje,
+            duration: 4000,
+            position: 'bottom'
+        });
+        toast.onDidDismiss(function () {
+            console.log('Dismissed toast');
+        });
+        toast.present();
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])('mbscRange'),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_4__mobiscroll_angular__["c" /* MbscRange */])
+    ], PerfilPage.prototype, "range", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])('mbscEventCal'),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_4__mobiscroll_angular__["a" /* MbscEventcalendar */])
+    ], PerfilPage.prototype, "eventCal", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])('fecha'),
+        __metadata("design:type", Object)
+    ], PerfilPage.prototype, "fecha", void 0);
+    PerfilPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-perfil',template:/*ion-inline-start:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\perfil\perfil.html"*/'<page-header></page-header>\n\n<ion-content>\n\n  <ion-list *ngIf="isSearchbarOpened">\n\n    <button ion-item *ngFor="let item of items" (click)="showDetail(item)">\n\n      {{ item }}\n\n    </button>\n\n  </ion-list>\n\n\n\n  <ion-card>\n\n    <ion-card-content>\n\n      <ion-grid>\n\n        <ion-row>\n\n          <ion-col col-12 *ngIf="trustedUrl">\n\n            <ion-thumbnail item-start>  \n\n              <img  [src]="trustedUrl">\n\n              <ion-fab top right col-3 #fab (click)="showMethods()">\n\n                <button ion-fab mini class="background">\n\n                  <ion-icon ios="ios-camera" md="md-camera"></ion-icon>\n\n                </button>\n\n              </ion-fab>\n\n            </ion-thumbnail>\n\n          </ion-col>\n\n        </ion-row>\n\n        \n\n        <ion-row>\n\n          <ion-col col-12>\n\n            <ion-grid class="center">\n\n              <ion-row>\n\n                <ion-col col-auto>\n\n                  <h2 class="bold">Name: </h2>\n\n                </ion-col>\n\n                <ion-col col-auto>\n\n                  <h2>{{ identity.name }} {{ identity.surname }}</h2>\n\n                </ion-col>\n\n                <ion-col col-auto>\n\n                  <a (click)="nameType()">\n\n                    <ion-icon ios="ios-create" md="md-create"></ion-icon>\n\n                  </a>\n\n                </ion-col>\n\n              </ion-row>\n\n            </ion-grid>\n\n          </ion-col>\n\n        </ion-row>\n\n\n\n        <ion-row>\n\n          <ion-col col-12>\n\n            <ion-grid class="center">\n\n              <ion-row>\n\n                <ion-col col-auto>\n\n                  <h2 class="bold">Username: </h2>\n\n                </ion-col>\n\n                <ion-col col-auto>\n\n                  <h2>{{ identity.nickname }}</h2>\n\n                </ion-col>\n\n                <ion-col col-auto>\n\n                  <a (click)="userType()">\n\n                    <ion-icon ios="ios-create" md="md-create"></ion-icon>\n\n                  </a>\n\n                </ion-col>\n\n              </ion-row>\n\n            </ion-grid>\n\n          </ion-col>\n\n        </ion-row>\n\n\n\n        <ion-row>\n\n          <ion-col col-12 class="center">\n\n            <ion-buttons>\n\n              <button ion-button icon-only clear class="center" *ngIf="!identity.description" (click)="descriptionType()">\n\n                Type your description\n\n              </button>\n\n            </ion-buttons>\n\n          </ion-col>\n\n        </ion-row>\n\n\n\n        <ion-row  *ngIf="identity.description">\n\n          <ion-col col-12>\n\n            <ion-grid class="center">\n\n              <ion-row>\n\n                <ion-col col-auto>\n\n                  <h2 class="center">{{ identity.description }}</h2>\n\n                </ion-col>\n\n              </ion-row>\n\n            </ion-grid>\n\n          </ion-col>\n\n        </ion-row>\n\n\n\n      </ion-grid>\n\n    </ion-card-content>\n\n  </ion-card>\n\n  <ion-card id="bottom">\n\n    <mbsc-eventcalendar [data]="events" [options]="eventSettings" #mbscEventCal="mobiscroll"></mbsc-eventcalendar>\n\n    <ion-row class="center">\n\n      <ion-col col-12 *ngIf="!event">\n\n        <ion-buttons>\n\n          <button ion-button outline (click)="newEvent()">\n\n            New Event\n\n          </button>\n\n        </ion-buttons>\n\n      </ion-col>\n\n    </ion-row>\n\n    <ion-row *ngIf="event" col-12>\n\n      <mbsc-form [options]="formSettings">\n\n        <div class="mbsc-form-group">\n\n          <ion-item class="label">\n\n            <ion-label>Title of the event</ion-label>\n\n            <ion-input [(ngModel)]="eventText">Title</ion-input>\n\n          </ion-item>\n\n          <ion-item class="label2">\n\n            <mbsc-datetime #fecha id="startDate">Date</mbsc-datetime>\n\n            <div [(ngModel)]="eventDate" mbsc-range [mbsc-options]="rangeSettings" #mbscRange="mobiscroll"></div>\n\n          </ion-item>\n\n        </div>\n\n      </mbsc-form>\n\n      <ion-col col-auto offset-2>\n\n        <ion-buttons>\n\n          <button ion-button outline (click)="addEvent()">\n\n            Add Event\n\n          </button>\n\n        </ion-buttons>\n\n      </ion-col>\n\n      <ion-col col-auto>\n\n        <ion-buttons>\n\n          <button ion-button outline (click)="addEvent()">\n\n            Cancel\n\n          </button>\n\n        </ion-buttons>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\perfil\perfil.html"*/,
+            providers: [__WEBPACK_IMPORTED_MODULE_5__providers_login_login__["a" /* LoginProvider */], __WEBPACK_IMPORTED_MODULE_7__providers_user_provider__["a" /* UserProvider */]]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
+            __WEBPACK_IMPORTED_MODULE_5__providers_login_login__["a" /* LoginProvider */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_platform_browser__["c" /* DomSanitizer */],
+            __WEBPACK_IMPORTED_MODULE_7__providers_user_provider__["a" /* UserProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_2__ionic_native_camera__["a" /* Camera */]])
+    ], PerfilPage);
+    return PerfilPage;
+}());
+
+//# sourceMappingURL=perfil.js.map
+
+/***/ }),
+
+/***/ 168:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VideoplayerPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_links_link_provider__ = __webpack_require__(240);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__fullvideo_fullvideo__ = __webpack_require__(166);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
 
 
 
@@ -142,32 +503,10 @@ var VideoplayerPage = (function () {
         });
     };
     VideoplayerPage.prototype.toggleVideo = function (event) {
-        if (this.status == 'play') {
-            this.videoOut = false;
-            this.playPause();
-            this.status = 'pause';
-        }
-        else {
-            this.playPause();
-            this.status = 'play';
-        }
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__fullvideo_fullvideo__["a" /* FullvideoPage */], { video: this.trustedUrl });
     };
-    VideoplayerPage.prototype.playPause = function () {
-        if (this.status === 'play') {
-            this.videoplayer.nativeElement.play();
-            if (this.videoplayer.nativeElement.requestFullscreen) {
-                this.videoplayer.nativeElement.requestFullscreen();
-            }
-            else if (this.videoplayer.nativeElement.mozRequestFullScreen) {
-                this.videoplayer.nativeElement.nativeElement.mozRequestFullScreen();
-            }
-            else if (this.videoplayer.nativeElement.webkitRequestFullScreen) {
-                this.videoplayer.nativeElement.webkitRequestFullScreen();
-            }
-        }
-        else {
-            this.videoplayer.nativeElement.pause();
-        }
+    VideoplayerPage.prototype.goToBack = function () {
+        this.navCtrl.pop();
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])('videoplayer'),
@@ -175,7 +514,7 @@ var VideoplayerPage = (function () {
     ], VideoplayerPage.prototype, "videoplayer", void 0);
     VideoplayerPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-videoplayer',template:/*ion-inline-start:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\videoplayer\videoplayer.html"*/'<ion-content>\n\n  <div id="coverPoster"></div>\n\n    <img [src]="movie.poster" id="backPoster" alt="">\n\n    <ion-grid>\n\n      <ion-row>\n\n        <ion-col col-12>\n\n          <video #videoplayer preload id="videoplayer" hidden>\n\n            <source [src]="trustedUrl" type="video/mp4">\n\n          </video>\n\n          <button (click)="toggleVideo()" id="myBtn"><img src="assets/imgs/play.svg" alt=""></button>\n\n        </ion-col>\n\n      </ion-row>\n\n      <ion-row id="infoPelicula">\n\n        <ion-col col>\n\n          <h2>{{movie.title}}</h2>\n\n          <hr><br>\n\n          <p>\n\n            {{movie.description}}\n\n          </p>\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-grid>\n\n</ion-content>'/*ion-inline-end:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\videoplayer\videoplayer.html"*/,
+            selector: 'page-videoplayer',template:/*ion-inline-start:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\videoplayer\videoplayer.html"*/'<ion-content>\n\n<ion-fab>\n\n  <button ion-fab mini (click)="goToBack()" id="backArrow"><ion-icon name="md-arrow-back"></ion-icon></button>\n\n</ion-fab>\n\n  <div id="coverPoster"></div>\n\n    <img [src]="movie.poster" id="backPoster" alt="">\n\n    <ion-grid>\n\n      <ion-row>\n\n        <ion-col col-12>\n\n          <video #videoplayer preload id="videoplayer" hidden>\n\n            <source [src]="trustedUrl" type="video/mp4">\n\n          </video>\n\n          <button (click)="toggleVideo()" id="myBtn"><img src="assets/imgs/play.svg" alt=""></button>\n\n        </ion-col>\n\n      </ion-row>\n\n      <ion-row id="infoPelicula">\n\n        <ion-col col>\n\n          <h2>{{movie.title}}</h2>\n\n          <hr><br>\n\n          <p>\n\n            {{movie.description}}\n\n          </p>\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-grid>\n\n</ion-content>'/*ion-inline-end:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\videoplayer\videoplayer.html"*/,
             providers: [__WEBPACK_IMPORTED_MODULE_3__providers_links_link_provider__["a" /* LinkProvider */]]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["c" /* DomSanitizer */], __WEBPACK_IMPORTED_MODULE_3__providers_links_link_provider__["a" /* LinkProvider */]])
@@ -187,17 +526,17 @@ var VideoplayerPage = (function () {
 
 /***/ }),
 
-/***/ 168:
+/***/ 169:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SeriesPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_login_login__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__info_info__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_serie_serie_provider__ = __webpack_require__(80);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_serie_serie__ = __webpack_require__(240);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__info_info__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_serie_serie_provider__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_serie_serie__ = __webpack_require__(241);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -243,7 +582,7 @@ var SeriesPage = (function () {
         this._serieProvider.getAllSeries(localStorage.getItem('token'), this.page).subscribe(function (response) {
             _this.listSerie = [];
             if (_this.page === 1 && response.message.length === 0) {
-                _this.mensajeVacio = 'Aún no hay series';
+                _this.mensajeVacio = 'There are not series yet';
             }
             else {
                 response.message.forEach(function (eleSerie) {
@@ -382,19 +721,16 @@ var SeriesPage = (function () {
 
 /***/ }),
 
-/***/ 169:
+/***/ 170:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VerTodoPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__perfil_perfil__ = __webpack_require__(93);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__peliculas_peliculas__ = __webpack_require__(68);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__inicio_inicio__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__info_info__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_movie_movie_provider__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_movie_movie__ = __webpack_require__(131);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__info_info__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_movie_movie_provider__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_movie_movie__ = __webpack_require__(130);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -409,65 +745,181 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
-
-
 var VerTodoPage = (function () {
     function VerTodoPage(navCtrl, navParams, _movieProvider, toastCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this._movieProvider = _movieProvider;
         this.toastCtrl = toastCtrl;
+        this.token = localStorage.getItem('token');
         this.tipoContenido = navParams.data['tipo'];
         this.list = navParams.data['array'];
-        // this.contenedor = navParams.data['data'];
-        this.movie = new __WEBPACK_IMPORTED_MODULE_7__providers_movie_movie__["a" /* Movie */]('', '', '', '', '', '', '', '', '', '', '', '');
+        this.movie = new __WEBPACK_IMPORTED_MODULE_4__providers_movie_movie__["a" /* Movie */]('', '', '', '', '', '', '', '', '', '', '', '');
     }
     VerTodoPage.prototype.ionViewDidLoad = function () {
+        var _this = this;
         if (this.tipoContenido === 'visto') {
+            // Ponemos por defecto, el icono de visto
             this.iconoIOS = 'ios-eye-off';
             this.iconoAndroid = 'md-eye-off';
+            // Ponemos, que la segunda opción sea cambiarla a favoritos
+            this.iconoIOS2 = 'ios-heart';
+            this.iconoAndroid2 = 'md-heart';
+            this._movieProvider.getViewedMovie(this.token).subscribe(function (response) {
+                console.log(response);
+                _this.list = [];
+                response.views.forEach(function (eleMovie) {
+                    if (eleMovie.movieViewed) {
+                        _this.movie = eleMovie.movieViewed;
+                        _this.list.push(_this.movie);
+                    }
+                });
+            });
         }
         else if (this.tipoContenido === 'favorito') {
+            // Ponemos por defecto, el icono de favoritos
             this.iconoIOS = 'ios-heart';
             this.iconoAndroid = 'md-heart';
+            // Ponemos, que la segunda opción sea cambiarla a visto
+            this.iconoIOS2 = 'ios-eye-off';
+            this.iconoAndroid2 = 'md-eye-off';
+            this._movieProvider.getLikedMovie(this.token).subscribe(function (response) {
+                _this.list = [];
+                response.likeds.forEach(function (eleMovie) {
+                    if (eleMovie) {
+                        _this.movie = eleMovie.movieLiked;
+                        _this.list.push(_this.movie);
+                    }
+                });
+            }, function (err) {
+                console.log(err);
+            });
+        }
+    };
+    VerTodoPage.prototype.ngOnInit = function () { };
+    VerTodoPage.prototype.cambiarIcono = function (fab, movieId) {
+        var _this = this;
+        console.log(movieId);
+        if (this.iconoIOS2 === "ios-eye-off" && this.iconoAndroid2 === "md-eye-off") {
+            this._movieProvider.viewMovie(this.token, movieId).subscribe(function (response) {
+                if (response.message === "Ya estás viendo esta película") {
+                    fab.close();
+                    _this.mensaje = 'This film is already in "Seen Group"';
+                    _this.presentToast(_this.mensaje);
+                }
+                else {
+                    console.log(response);
+                    fab.close();
+                    _this.mensaje = 'This film has been added to "Seen Group"';
+                    _this.presentToast(_this.mensaje);
+                }
+            }, function (err) {
+                console.log(err);
+            });
         }
         else {
-            console.log('Ha ocurrido un error');
+            this._movieProvider.likedMovie(this.token, movieId).subscribe(function (response) {
+                if (response.message === "Ya estás viendo esta película") {
+                    fab.close();
+                    _this.mensaje = 'This film is already in "Favourite Group"';
+                    _this.presentToast(_this.mensaje);
+                }
+                else {
+                    console.log(response);
+                    fab.close();
+                    _this.mensaje = 'This film has been added to "Favourite Group"';
+                    _this.presentToast(_this.mensaje);
+                }
+            }, function (err) {
+                console.log(err);
+            });
         }
     };
-    VerTodoPage.prototype.cambiarIconoSeen = function (fab, movieId) {
+    VerTodoPage.prototype.deleteView = function (fab, movieId) {
         var _this = this;
-        this._movieProvider.viewMovie(this.token, movieId).subscribe(function (response) {
-            console.log(response);
-            _this.iconoIOS = 'ios-eye-off';
-            _this.iconoAndroid = 'md-eye-off';
-            fab.close();
-            _this.mensaje = 'This film has been added to "Seen Group"';
-            _this.presentToast(_this.mensaje);
-        }, function (err) {
-            console.log(err);
-        });
+        if (this.tipoContenido === 'visto') {
+            console.log(movieId);
+            this._movieProvider.deleteViewed(this.token, movieId).subscribe(function (response) {
+                fab.close();
+                _this.mensaje = 'This film has been removed of "Seen Group"';
+                _this.presentToast(_this.mensaje);
+                var index = 0;
+                _this.list.forEach(function (element) {
+                    if (element._id === movieId) {
+                        console.log(index);
+                        _this.list.splice(index, 1);
+                        console.log(_this.list);
+                    }
+                    index++;
+                });
+            }, function (err) {
+                fab.close();
+                _this.mensaje = 'This film has already been removed of "Seen Group". Please refresh this view.';
+                _this.presentToast(_this.mensaje);
+            });
+        }
+        else if (this.tipoContenido === 'favorito') {
+            this._movieProvider.dislikeMovie(this.token, movieId).subscribe(function (response) {
+                fab.close();
+                _this.mensaje = 'This film has been removed of "Favourite Group"';
+                _this.presentToast(_this.mensaje);
+                var index = 0;
+                _this.list.forEach(function (element) {
+                    if (element._id === movieId) {
+                        console.log(index);
+                        _this.list.splice(index, 1);
+                        console.log(_this.list);
+                    }
+                    index++;
+                });
+            }, function (err) {
+                fab.close();
+                _this.mensaje = 'This film has already been removed of "Favourite Group". Please refresh this view.';
+                _this.presentToast(_this.mensaje);
+            });
+        }
     };
-    VerTodoPage.prototype.cambiarIconoLike = function (fab, movieId) {
+    VerTodoPage.prototype.doRefresh = function (refresher) {
         var _this = this;
-        this._movieProvider.getMovieLiked(this.token, movieId).subscribe(function (response) {
-            console.log(response);
-            _this.iconoIOS = 'ios-heart';
-            _this.iconoAndroid = 'md-heart';
-            fab.close();
-            _this.mensaje = 'This film has been added to "Favourite Group"';
-            _this.presentToast(_this.mensaje);
-        }, function (err) {
-            console.log(err);
-        });
-    };
-    VerTodoPage.prototype.cambiarIconoRemove = function (fab) {
-        this.iconoIOS = 'ios-arrow-dropdown';
-        this.iconoAndroid = 'md-arrow-dropdown';
-        fab.close();
-        this.mensaje = 'This film has been removed of his old group';
-        this.presentToast(this.mensaje);
+        if (this.tipoContenido === 'visto') {
+            // Ponemos por defecto, el icono de visto
+            this.iconoIOS = 'ios-eye-off';
+            this.iconoAndroid = 'md-eye-off';
+            // Ponemos, que la segunda opción sea cambiarla a favoritos
+            this.iconoIOS2 = 'ios-heart';
+            this.iconoAndroid2 = 'md-heart';
+            this._movieProvider.getViewedMovie(this.token).subscribe(function (response) {
+                console.log(response);
+                _this.list = [];
+                response.views.forEach(function (eleMovie) {
+                    if (eleMovie.movieViewed) {
+                        _this.movie = eleMovie.movieViewed;
+                        _this.list.push(_this.movie);
+                    }
+                });
+            });
+            refresher.complete();
+        }
+        else if (this.tipoContenido === 'favorito') {
+            // Ponemos por defecto, el icono de favoritos
+            this.iconoIOS = 'ios-heart';
+            this.iconoAndroid = 'md-heart';
+            // Ponemos, que la segunda opción sea cambiarla a visto
+            this.iconoIOS2 = 'ios-eye-off';
+            this.iconoAndroid2 = 'md-eye-off';
+            this._movieProvider.getLikedMovie(this.token).subscribe(function (response) {
+                _this.list = [];
+                response.likeds.forEach(function (eleMovie) {
+                    if (eleMovie) {
+                        _this.movie = eleMovie.movieLiked;
+                        _this.list.push(_this.movie);
+                    }
+                });
+            }, function (err) {
+                console.log(err);
+            });
+            refresher.complete();
+        }
     };
     VerTodoPage.prototype.presentToast = function (mensaje) {
         var toast = this.toastCtrl.create({
@@ -481,27 +933,19 @@ var VerTodoPage = (function () {
         toast.present();
     };
     VerTodoPage.prototype.goToInfo = function (p) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__info_info__["a" /* InfoPage */], {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__info_info__["a" /* InfoPage */], {
             contenido: p,
             data: this.contenedor
         });
     };
-    VerTodoPage.prototype.goToPerfil = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__perfil_perfil__["a" /* PerfilPage */]);
-    };
-    VerTodoPage.prototype.goToPeliculas = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__peliculas_peliculas__["a" /* PeliculasPage */]);
-    };
-    VerTodoPage.prototype.goToInicio = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__inicio_inicio__["a" /* InicioPage */]);
-    };
     VerTodoPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-ver-todo',template:/*ion-inline-start:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\ver-todo\ver-todo.html"*/'<page-header></page-header>\n\n\n\n<ion-content>\n\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n\n    <ion-refresher-content refreshingText="Refreshing...">\n\n    </ion-refresher-content>\n\n  </ion-refresher>\n\n  <ion-card>\n\n    <ion-row>\n\n      <ion-col col-6 class="center" *ngFor="let p of list" style="padding-top: 5px">\n\n        <ion-thumbnail item-start col-12>\n\n          <button (click)="goToInfo(p)" class="fotoPelicula" no-padding>\n\n            <img [src]="p.poster">\n\n          </button>\n\n          <h5 class="center">\n\n            {{ p.title }}\n\n            <ion-fab top right col-4 #fab>\n\n              <button ion-fab mini class="background">\n\n                <ion-icon [ios]="iconoIOS" [md]="iconoAndroid"></ion-icon>\n\n              </button>\n\n              <ion-fab-list>\n\n                <button ion-fab>\n\n                  <ion-icon ios="ios-eye-off" md="md-eye-off" (click)="cambiarIconoSeen(fab, p._id)" selected></ion-icon>\n\n                </button>\n\n                <button ion-fab>\n\n                  <ion-icon ios="ios-heart" md="md-heart" (click)="cambiarIconoLike(fab, p._id)"></ion-icon>\n\n                </button>\n\n              </ion-fab-list>\n\n            </ion-fab>\n\n          </h5>\n\n        </ion-thumbnail>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-card>\n\n</ion-content>\n\n\n\n'/*ion-inline-end:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\ver-todo\ver-todo.html"*/,
+            selector: 'page-ver-todo',template:/*ion-inline-start:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\ver-todo\ver-todo.html"*/'<page-header></page-header>\n\n\n\n<ion-content>\n\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n\n    <ion-refresher-content refreshingText="Refreshing...">\n\n    </ion-refresher-content>\n\n  </ion-refresher>\n\n  <ion-card>\n\n    <ion-row>\n\n      <ion-col col-6 class="center" *ngFor="let p of list" style="padding-top: 5px">\n\n        <ion-thumbnail item-start col-12>\n\n          <button (click)="goToInfo(p)" class="fotoPelicula" no-padding>\n\n            <img [src]="p.poster">\n\n          </button>\n\n          <h5 class="center">\n\n            {{ p.title }}\n\n            <ion-fab top right col-4 #fab>\n\n              <button ion-fab mini class="background">\n\n                <ion-icon [ios]="iconoIOS" [md]="iconoAndroid"></ion-icon>\n\n              </button>\n\n              <ion-fab-list>\n\n                <button ion-fab (click)="cambiarIcono(fab, p._id)">\n\n                  <ion-icon [ios]="iconoIOS2" [md]="iconoAndroid2"></ion-icon>\n\n                </button>\n\n                <button ion-fab (click)="deleteView(fab, p._id)">\n\n                  <ion-icon ios="ios-trash" md="md-trash"></ion-icon>\n\n                </button>\n\n              </ion-fab-list>\n\n            </ion-fab>\n\n          </h5>\n\n        </ion-thumbnail>\n\n      </ion-col>\n\n    </ion-row>\n\n    <div class="bottom"></div>\n\n  </ion-card>\n\n</ion-content>\n\n\n\n'/*ion-inline-end:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\ver-todo\ver-todo.html"*/,
+            providers: [__WEBPACK_IMPORTED_MODULE_3__providers_movie_movie_provider__["a" /* MovieProvider */]]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_6__providers_movie_movie_provider__["a" /* MovieProvider */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_movie_movie_provider__["a" /* MovieProvider */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */]])
     ], VerTodoPage);
     return VerTodoPage;
@@ -511,16 +955,16 @@ var VerTodoPage = (function () {
 
 /***/ }),
 
-/***/ 170:
+/***/ 171:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegistroPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_login_login__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home_home__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home_home__ = __webpack_require__(93);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -652,7 +1096,7 @@ var RegistroPage = (function () {
 
 /***/ }),
 
-/***/ 183:
+/***/ 184:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -665,68 +1109,76 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 183;
+webpackEmptyAsyncContext.id = 184;
 
 /***/ }),
 
-/***/ 228:
+/***/ 229:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
 	"../pages/add-event/add-event.module": [
-		722,
-		13
+		725,
+		15
 	],
 	"../pages/chat/chat.module": [
-		723,
-		12
+		726,
+		14
 	],
 	"../pages/edit-event/edit-event.module": [
-		724,
-		11
+		727,
+		13
+	],
+	"../pages/fullvideo/fullvideo.module": [
+		728,
+		12
 	],
 	"../pages/header/header.module": [
-		725,
-		10
+		729,
+		11
 	],
 	"../pages/home/home.module": [
-		726,
-		9
+		730,
+		10
 	],
 	"../pages/info/info.module": [
 		731,
-		8
+		9
 	],
 	"../pages/inicio/inicio.module": [
-		727,
+		732,
+		8
+	],
+	"../pages/list/list.module": [
+		733,
 		7
 	],
 	"../pages/menu/menu.module": [
-		728,
+		734,
 		6
 	],
 	"../pages/peliculas/peliculas.module": [
-		729,
+		735,
 		5
 	],
 	"../pages/perfil/perfil.module": [
-		730,
+		736,
 		4
 	],
 	"../pages/registro/registro.module": [
-		733,
+		737,
 		3
 	],
 	"../pages/series/series.module": [
-		734,
+		738,
 		2
 	],
 	"../pages/ver-todo/ver-todo.module": [
-		732,
+		739,
 		1
 	],
 	"../pages/videoplayer/videoplayer.module": [
-		735,
+		740,
 		0
 	]
 };
@@ -741,17 +1193,17 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 228;
+webpackAsyncContext.id = 229;
 module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 239:
+/***/ 240:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LinkProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__global_global__ = __webpack_require__(61);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -791,7 +1243,7 @@ var LinkProvider = (function () {
 
 /***/ }),
 
-/***/ 240:
+/***/ 241:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -806,13 +1258,13 @@ var Serie = (function () {
 
 /***/ }),
 
-/***/ 375:
+/***/ 376:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddEventPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -851,13 +1303,13 @@ var AddEventPage = (function () {
 
 /***/ }),
 
-/***/ 376:
+/***/ 377:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EditEventPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -896,21 +1348,22 @@ var EditEventPage = (function () {
 
 /***/ }),
 
-/***/ 377:
+/***/ 378:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HeaderPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__perfil_perfil__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__perfil_perfil__ = __webpack_require__(167);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_login_login__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__peliculas_peliculas__ = __webpack_require__(68);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__series_series__ = __webpack_require__(168);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__inicio_inicio__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_movie_movie_provider__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_serie_serie_provider__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__peliculas_peliculas__ = __webpack_require__(92);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__series_series__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__inicio_inicio__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_movie_movie_provider__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_serie_serie_provider__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__info_info__ = __webpack_require__(47);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -930,6 +1383,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var HeaderPage = (function () {
     function HeaderPage(navCtrl, navParams, comprobarLogin, sanitizer, _movieProvider, _serieProvider) {
         this.navCtrl = navCtrl;
@@ -939,6 +1393,7 @@ var HeaderPage = (function () {
         this._movieProvider = _movieProvider;
         this._serieProvider = _serieProvider;
         this.list = false;
+        this.token = localStorage.getItem('token');
     }
     HeaderPage.prototype.ngOnInit = function () {
         this.identity = this.comprobarLogin.getIdentity();
@@ -947,23 +1402,24 @@ var HeaderPage = (function () {
     };
     HeaderPage.prototype.ngDoCheck = function () {
         this.identity = this.comprobarLogin.getIdentity();
-        this.avatarUrl = this.comprobarLogin.getImageAvatar();
-        this.trustedUrl = this.sanitizer.bypassSecurityTrustUrl(this.avatarUrl);
+        //this.avatarUrl = this.comprobarLogin.getImageAvatar();
+        //this.trustedUrl = this.sanitizer.bypassSecurityTrustUrl(this.avatarUrl);
     };
     HeaderPage.prototype.listado = function () {
         this.items = this.items1;
     };
-    HeaderPage.prototype.getItems = function (ev) {
-        var val = ev.target.value;
-        if (val && val.trim() != '') {
-            this.listado();
-            console.log(this.items);
-            this.items = this.items.filter(function (item) {
-                return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
-            }, console.log(this.items));
+    HeaderPage.prototype.getItems = function (varIn) {
+        var _this = this;
+        if (varIn.target.value === '') {
+            this.searchRes = null;
         }
         else {
-            return;
+            this._movieProvider.getSearchedMovie(this.token, varIn.target.value).subscribe(function (response) {
+                console.log(response);
+                _this.searchRes = response;
+            }, function (err) {
+                console.log(err);
+            });
         }
     };
     HeaderPage.prototype.goToPerfil = function () {
@@ -978,10 +1434,16 @@ var HeaderPage = (function () {
     HeaderPage.prototype.goToSeries = function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_6__series_series__["a" /* SeriesPage */]);
     };
+    HeaderPage.prototype.goToInfo = function (p) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_10__info_info__["a" /* InfoPage */], {
+            contenido: p,
+            tipo: 'movie'
+        });
+    };
     HeaderPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-header',template:/*ion-inline-start:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\header\header.html"*/'<ion-header *ngIf="identity" class="vista">\n\n  <ion-navbar hideBackButton="true">\n\n\n\n    <ion-grid *ngIf="!isSearchbarOpened">\n\n      <ion-row>\n\n        <ion-col col-auto>\n\n          <ion-buttons>\n\n            <button ion-button icon-only (click)="goToInicio()">\n\n              Home\n\n            </button>\n\n          </ion-buttons>\n\n        </ion-col>\n\n\n\n        <ion-col col-auto>\n\n          <ion-buttons>\n\n            <button ion-button icon-only (click)="goToPeliculas()">\n\n              Films\n\n            </button>\n\n          </ion-buttons>\n\n        </ion-col>\n\n\n\n        <ion-col col-auto>\n\n          <ion-buttons>\n\n            <button ion-button icon-only (click)="goToSeries()">\n\n              Series\n\n            </button>\n\n          </ion-buttons>\n\n        </ion-col>\n\n\n\n        <ion-col col-auto>\n\n          <ion-buttons>\n\n            <button ion-button icon-only (click)="goToPerfil()">\n\n              {{ identity.nickname }}\n\n              <ion-avatar item-start>\n\n                <img class="userAvatar" [src]="trustedUrl">\n\n              </ion-avatar>\n\n            </button>\n\n          </ion-buttons>\n\n        </ion-col>\n\n\n\n        <ion-col col-1>\n\n          <ion-buttons>\n\n            <button ion-button icon-only (click)="isSearchbarOpened=true">\n\n              <ion-icon name="search"></ion-icon>\n\n            </button>\n\n          </ion-buttons>\n\n        </ion-col>\n\n\n\n      </ion-row>\n\n    </ion-grid>\n\n\n\n    <ion-searchbar *ngIf="isSearchbarOpened" showCancelButton="true" (ionCancel)="isSearchbarOpened=false" (ionInput)="getItems($event)">\n\n    </ion-searchbar>\n\n    <ion-list *ngIf="isSearchbarOpened">\n\n      <button ion-item *ngFor="let item of items" (click)="showDetail(item)">\n\n        {{ item }}\n\n      </button>\n\n    </ion-list>\n\n  </ion-navbar>\n\n</ion-header>'/*ion-inline-end:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\header\header.html"*/,
-            providers: [__WEBPACK_IMPORTED_MODULE_3__providers_login_login__["a" /* LoginProvider */]]
+            selector: 'page-header',template:/*ion-inline-start:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\header\header.html"*/'<ion-header *ngIf="identity" class="vista">\n\n  <ion-navbar hideBackButton="true">\n\n\n\n    <ion-grid *ngIf="!isSearchbarOpened">\n\n      <ion-row>\n\n        <ion-col col-auto>\n\n          <ion-buttons>\n\n            <button ion-button icon-only (click)="goToInicio()">\n\n              Home\n\n            </button>\n\n          </ion-buttons>\n\n        </ion-col>\n\n\n\n        <ion-col col-auto>\n\n          <ion-buttons>\n\n            <button ion-button icon-only (click)="goToPeliculas()">\n\n              Films\n\n            </button>\n\n          </ion-buttons>\n\n        </ion-col>\n\n\n\n        <ion-col col-auto>\n\n          <ion-buttons>\n\n            <button ion-button icon-only (click)="goToSeries()">\n\n              Series\n\n            </button>\n\n          </ion-buttons>\n\n        </ion-col>\n\n\n\n        <ion-col col-auto>\n\n          <ion-buttons>\n\n            <button ion-button icon-only (click)="goToPerfil()">\n\n              {{ identity.nickname }}\n\n              <ion-avatar item-start>\n\n                <img class="userAvatar" [src]="trustedUrl">\n\n              </ion-avatar>\n\n            </button>\n\n          </ion-buttons>\n\n        </ion-col>\n\n\n\n        <ion-col col-1>\n\n          <ion-buttons>\n\n            <button ion-button icon-only (click)="isSearchbarOpened=true">\n\n              <ion-icon name="search"></ion-icon>\n\n            </button>\n\n          </ion-buttons>\n\n        </ion-col>\n\n\n\n      </ion-row>\n\n    </ion-grid>\n\n\n\n    <ion-searchbar *ngIf="isSearchbarOpened" showCancelButton="true" (ionCancel)="isSearchbarOpened=false" (ionInput)="getItems($event)">\n\n    </ion-searchbar>\n\n    <ion-list *ngIf="isSearchbarOpened">\n\n      <button ion-item *ngFor="let item of items" (click)="showDetail(item)">\n\n        {{ item }}\n\n      </button>\n\n    </ion-list>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-list id="listSearch" *ngIf="searchRes">\n\n  <a (click)="goToInfo(m)" *ngFor="let m of searchRes.movies">\n\n    <ion-item>\n\n      <ion-row>\n\n        <ion-col col-auto>\n\n          <img [src]="m.poster" id="posSearch">\n\n        </ion-col>\n\n        <ion-col col-auto class="center">\n\n          <p>{{m.title}}</p>\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-item>\n\n  </a>\n\n</ion-list>'/*ion-inline-end:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\header\header.html"*/,
+            providers: [__WEBPACK_IMPORTED_MODULE_3__providers_login_login__["a" /* LoginProvider */], __WEBPACK_IMPORTED_MODULE_9__providers_serie_serie_provider__["a" /* SerieProvider */], __WEBPACK_IMPORTED_MODULE_8__providers_movie_movie_provider__["a" /* MovieProvider */]]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
@@ -997,15 +1459,51 @@ var HeaderPage = (function () {
 
 /***/ }),
 
-/***/ 378:
+/***/ 379:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ListPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var ListPage = (function () {
+    function ListPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+    }
+    ListPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-list',template:/*ion-inline-start:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\list\list.html"*/''/*ion-inline-end:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\list\list.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
+    ], ListPage);
+    return ListPage;
+}());
+
+//# sourceMappingURL=list.js.map
+
+/***/ }),
+
+/***/ 380:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MenuPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__inicio_inicio__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__peliculas_peliculas__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__inicio_inicio__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__peliculas_peliculas__ = __webpack_require__(92);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1058,13 +1556,13 @@ var MenuPage = (function () {
 
 /***/ }),
 
-/***/ 379:
+/***/ 381:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(380);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(384);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(382);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(386);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -1072,42 +1570,45 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 384:
+/***/ 386:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mobiscroll_angular__ = __webpack_require__(184);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mobiscroll_angular__ = __webpack_require__(185);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(438);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angularfire2__ = __webpack_require__(282);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_angularfire2_auth__ = __webpack_require__(716);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_streaming_media__ = __webpack_require__(238);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_ionic2_rating__ = __webpack_require__(719);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__angular_common_http__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__providers_movie_movie_provider__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_status_bar__ = __webpack_require__(280);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_splash_screen__ = __webpack_require__(281);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__angular_http__ = __webpack_require__(721);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_native_camera__ = __webpack_require__(232);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_home_home__ = __webpack_require__(94);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_registro_registro__ = __webpack_require__(170);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_inicio_inicio__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_menu_menu__ = __webpack_require__(378);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_ver_todo_ver_todo__ = __webpack_require__(169);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_peliculas_peliculas__ = __webpack_require__(68);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_perfil_perfil__ = __webpack_require__(93);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_chat_chat__ = __webpack_require__(166);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_add_event_add_event__ = __webpack_require__(375);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_edit_event_edit_event__ = __webpack_require__(376);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_info_info__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_series_series__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(440);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angularfire2__ = __webpack_require__(283);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_angularfire2_auth__ = __webpack_require__(718);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_streaming_media__ = __webpack_require__(239);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_ionic2_rating__ = __webpack_require__(721);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__angular_common_http__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__providers_movie_movie_provider__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_status_bar__ = __webpack_require__(281);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_splash_screen__ = __webpack_require__(282);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__angular_http__ = __webpack_require__(723);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_native_camera__ = __webpack_require__(233);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_home_home__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_registro_registro__ = __webpack_require__(171);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_inicio_inicio__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_menu_menu__ = __webpack_require__(380);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_ver_todo_ver_todo__ = __webpack_require__(170);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_peliculas_peliculas__ = __webpack_require__(92);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_perfil_perfil__ = __webpack_require__(167);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_chat_chat__ = __webpack_require__(165);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_add_event_add_event__ = __webpack_require__(376);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_edit_event_edit_event__ = __webpack_require__(377);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_info_info__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_series_series__ = __webpack_require__(169);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__providers_login_login__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_header_header__ = __webpack_require__(377);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_videoplayer_videoplayer__ = __webpack_require__(167);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_header_header__ = __webpack_require__(378);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_videoplayer_videoplayer__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__pages_list_list__ = __webpack_require__(379);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__pages_fullvideo_fullvideo__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__ionic_native_screen_orientation__ = __webpack_require__(724);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1127,6 +1628,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 // import { CalendarModule } from 'ionic3-calendar';
+
+
+
 
 
 
@@ -1174,7 +1678,9 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_26__pages_info_info__["a" /* InfoPage */],
                 __WEBPACK_IMPORTED_MODULE_20__pages_ver_todo_ver_todo__["a" /* VerTodoPage */],
                 __WEBPACK_IMPORTED_MODULE_29__pages_header_header__["a" /* HeaderPage */],
-                __WEBPACK_IMPORTED_MODULE_30__pages_videoplayer_videoplayer__["a" /* VideoplayerPage */]
+                __WEBPACK_IMPORTED_MODULE_30__pages_videoplayer_videoplayer__["a" /* VideoplayerPage */],
+                __WEBPACK_IMPORTED_MODULE_31__pages_list_list__["a" /* ListPage */],
+                __WEBPACK_IMPORTED_MODULE_32__pages_fullvideo_fullvideo__["a" /* FullvideoPage */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__mobiscroll_angular__["b" /* MbscModule */],
@@ -1186,16 +1692,18 @@ var AppModule = (function () {
                         { loadChildren: '../pages/add-event/add-event.module#AddEventPageModule', name: 'AddEventPage', segment: 'add-event', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/chat/chat.module#ChatPageModule', name: 'ChatPage', segment: 'chat', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/edit-event/edit-event.module#EditEventPageModule', name: 'EditEventPage', segment: 'edit-event', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/fullvideo/fullvideo.module#FullvideoPageModule', name: 'FullvideoPage', segment: 'fullvideo', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/header/header.module#HeaderPageModule', name: 'HeaderPage', segment: 'header', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/home/home.module#HomePageModule', name: 'HomePage', segment: 'home', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/info/info.module#InfoPageModule', name: 'InfoPage', segment: 'info', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/inicio/inicio.module#InicioPageModule', name: 'InicioPage', segment: 'inicio', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/list/list.module#ListPageModule', name: 'ListPage', segment: 'list', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/menu/menu.module#MenuPageModule', name: 'MenuPage', segment: 'menu', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/peliculas/peliculas.module#PeliculasPageModule', name: 'PeliculasPage', segment: 'peliculas', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/perfil/perfil.module#PerfilPageModule', name: 'PerfilPage', segment: 'perfil', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/info/info.module#InfoPageModule', name: 'InfoPage', segment: 'info', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/ver-todo/ver-todo.module#VerTodoPageModule', name: 'VerTodoPage', segment: 'ver-todo', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/registro/registro.module#RegistroPageModule', name: 'RegistroPage', segment: 'registro', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/series/series.module#SeriesPageModule', name: 'SeriesPage', segment: 'series', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/ver-todo/ver-todo.module#VerTodoPageModule', name: 'VerTodoPage', segment: 'ver-todo', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/videoplayer/videoplayer.module#VideoplayerPageModule', name: 'VideoplayerPage', segment: 'videoplayer', priority: 'low', defaultHistory: [] }
                     ]
                 }),
@@ -1220,7 +1728,9 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_26__pages_info_info__["a" /* InfoPage */],
                 __WEBPACK_IMPORTED_MODULE_20__pages_ver_todo_ver_todo__["a" /* VerTodoPage */],
                 __WEBPACK_IMPORTED_MODULE_29__pages_header_header__["a" /* HeaderPage */],
-                __WEBPACK_IMPORTED_MODULE_30__pages_videoplayer_videoplayer__["a" /* VideoplayerPage */]
+                __WEBPACK_IMPORTED_MODULE_30__pages_videoplayer_videoplayer__["a" /* VideoplayerPage */],
+                __WEBPACK_IMPORTED_MODULE_31__pages_list_list__["a" /* ListPage */],
+                __WEBPACK_IMPORTED_MODULE_32__pages_fullvideo_fullvideo__["a" /* FullvideoPage */]
             ],
             providers: [
                 __WEBPACK_IMPORTED_MODULE_12__ionic_native_status_bar__["a" /* StatusBar */],
@@ -1229,7 +1739,8 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_15__ionic_native_camera__["a" /* Camera */],
                 __WEBPACK_IMPORTED_MODULE_8__ionic_native_streaming_media__["a" /* StreamingMedia */],
                 __WEBPACK_IMPORTED_MODULE_28__providers_login_login__["a" /* LoginProvider */],
-                __WEBPACK_IMPORTED_MODULE_11__providers_movie_movie_provider__["a" /* MovieProvider */]
+                __WEBPACK_IMPORTED_MODULE_11__providers_movie_movie_provider__["a" /* MovieProvider */],
+                __WEBPACK_IMPORTED_MODULE_33__ionic_native_screen_orientation__["a" /* ScreenOrientation */]
             ]
         })
     ], AppModule);
@@ -1240,53 +1751,12 @@ var AppModule = (function () {
 
 /***/ }),
 
-/***/ 419:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__global_global__ = __webpack_require__(61);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var UserProvider = (function () {
-    function UserProvider(http) {
-        this.http = http;
-        this.url = __WEBPACK_IMPORTED_MODULE_2__global_global__["a" /* GLOBAL */].url;
-    }
-    UserProvider.prototype.updateUser = function (userUp, token, id) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["c" /* HttpHeaders */]().set('Authorization', token).set('Content-type', 'application/json');
-        console.log(userUp);
-        return this.http.put(this.url + 'update-user/' + id, userUp, { headers: headers });
-    };
-    UserProvider = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["B" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]])
-    ], UserProvider);
-    return UserProvider;
-}());
-
-//# sourceMappingURL=user.provider.js.map
-
-/***/ }),
-
 /***/ 42:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__global_global__ = __webpack_require__(61);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1385,7 +1855,56 @@ var LoginProvider = (function () {
 
 /***/ }),
 
-/***/ 420:
+/***/ 421:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__global_global__ = __webpack_require__(61);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var UserProvider = (function () {
+    function UserProvider(http) {
+        this.http = http;
+        this.url = __WEBPACK_IMPORTED_MODULE_2__global_global__["a" /* GLOBAL */].url;
+    }
+    UserProvider.prototype.updateUser = function (userUp, token, id) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["c" /* HttpHeaders */]().set('Authorization', token).set('Content-type', 'application/json');
+        console.log(userUp);
+        return this.http.put(this.url + 'update-user/' + id, userUp, { headers: headers });
+    };
+    UserProvider.prototype.uploadAvatar = function (token, userId, image) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["c" /* HttpHeaders */]().set('Content-type', 'application/json').set('Authorization', token);
+        return this.http.post(this.url + 'upload-image-user/' + userId, image, { headers: headers });
+    };
+    UserProvider.prototype.getMyLikes = function (token) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["c" /* HttpHeaders */]().set('Content-type', 'application/json').set('Authorization', token);
+        return this.http.get(this.url + 'getlikeds', { headers: headers });
+    };
+    UserProvider = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["B" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]])
+    ], UserProvider);
+    return UserProvider;
+}());
+
+//# sourceMappingURL=user.provider.js.map
+
+/***/ }),
+
+/***/ 422:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1404,18 +1923,18 @@ var UserLogin = (function () {
 
 /***/ }),
 
-/***/ 438:
+/***/ 440:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(280);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(281);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_firebase__ = __webpack_require__(229);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(281);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(282);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_firebase__ = __webpack_require__(230);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_firebase__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_home_home__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_home_home__ = __webpack_require__(93);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1464,13 +1983,273 @@ var MyApp = (function () {
 
 /***/ }),
 
-/***/ 49:
+/***/ 47:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InfoPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_streaming_media__ = __webpack_require__(239);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__videoplayer_videoplayer__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_links_link_provider__ = __webpack_require__(240);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_movie_movie_provider__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_serie_serie_provider__ = __webpack_require__(79);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+var InfoPage = (function () {
+    function InfoPage(navCtrl, navParams, toastCtrl, alertCtrl, streamingMedia, _linkProvider, _movieProvider, _serieProvider) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.toastCtrl = toastCtrl;
+        this.alertCtrl = alertCtrl;
+        this.streamingMedia = streamingMedia;
+        this._linkProvider = _linkProvider;
+        this._movieProvider = _movieProvider;
+        this._serieProvider = _serieProvider;
+        this.primerError = false;
+        this.segundoError = false;
+        this.type = navParams.data['tipo'];
+        if (this.type === 'movie') {
+            this.movie = navParams.data['contenido'];
+            this.content = this.movie;
+        }
+        else if (this.type === 'serie') {
+            this.serie = navParams.data['contenido'];
+            this.content = this.serie;
+        }
+        this.token = localStorage.getItem('token');
+    }
+    InfoPage.prototype.ngOnInit = function () {
+        var _this = this;
+        this._linkProvider.getLinks(this.token, this.movie["_id"]).subscribe(function (response) {
+            _this.video = response.link[0].url;
+        }, function (err) {
+            console.log(err);
+        });
+    };
+    InfoPage.prototype.ionViewDidLoad = function () {
+        if (this.movie['genre'] == 'N/A') {
+            this.movie['genre'] = 'Not available';
+        }
+        if (this.movie['year'] == 'N/A') {
+            this.movie['year'] = 'Not available';
+        }
+        if (this.movie['description'] == 'N/A') {
+            this.movie['description'] = 'Not available';
+        }
+    };
+    InfoPage.prototype.cambiarIconoSeen = function (fab, movieId) {
+        var _this = this;
+        this._movieProvider.viewMovie(this.token, movieId).subscribe(function (response) {
+            if (response.message === "Ya estás viendo esta película") {
+                fab.close();
+                _this.mensaje = 'This film is already in "Seen Group';
+                _this.presentToast(_this.mensaje);
+            }
+            else {
+                fab.close();
+                _this.mensaje = 'This film has been added to "Seen Group"';
+                _this.presentToast(_this.mensaje);
+            }
+        }, function (err) {
+            console.log(err);
+        });
+    };
+    InfoPage.prototype.cambiarIconoLike = function (fab, movieId) {
+        var _this = this;
+        this._movieProvider.likedMovie(this.token, movieId).subscribe(function (response) {
+            if (response.message === "Ya estás viendo esta película") {
+                fab.close();
+                _this.mensaje = 'This film is already in "Favourite Group';
+                _this.presentToast(_this.mensaje);
+            }
+            else {
+                fab.close();
+                _this.mensaje = 'This film has been added to "Favourite Group"';
+                _this.presentToast(_this.mensaje);
+            }
+        }, function (err) {
+            console.log(err);
+        });
+    };
+    InfoPage.prototype.deleteView = function (fab, movieId) {
+        var _this = this;
+        this._movieProvider.deleteViewed(this.token, movieId).subscribe(function (response) {
+            fab.close();
+            console.log('Primero: ', response);
+            // this.mensaje = 'This film has been removed of "Seen Group"';
+            // this.presentToast(this.mensaje);
+        }, function (err) {
+            console.log('Error1', err);
+            _this.primerError = true;
+            fab.close();
+            // this.mensaje = 'This film has already been removed of "Seen Group". Please refresh this view.';
+            // this.presentToast(this.mensaje);
+        });
+        this._movieProvider.dislikeMovie(this.token, movieId).subscribe(function (response) {
+            fab.close();
+            console.log('Segundo: ', response);
+            // this.mensaje = 'This film has been removed of "Favourite Group"';
+            // this.presentToast(this.mensaje);
+        }, function (err) {
+            console.log('Error2', err);
+            _this.segundoError = true;
+            fab.close();
+            // this.mensaje = 'This film has already been removed of "Favourite Group". Please refresh this view.';
+            // this.presentToast(this.mensaje);
+        });
+        this.errores(this.primerError, this.segundoError);
+        /*if (this.primerError) {
+          if (this.segundoError) {
+            this.mensaje = 'This film have not got a group. You can not remove a film of non-existent group.';
+            this.presentToast(this.mensaje);
+          } else {
+            this.mensaje = 'This film has been removed of "Favourite Group"';
+            this.presentToast(this.mensaje);
+          }
+        } else if (!this.primerError) {
+          if (this.segundoError) {
+            this.mensaje = 'This film has been removed of "Seen Group"';
+            this.presentToast(this.mensaje);
+          } else {
+            this.mensaje = 'This film has been removed of "Favourite Group" and "Seen Group"';
+            this.presentToast(this.mensaje);
+          }
+        }*/
+        // if (this.primerError == true && this.segundoError == true) {
+        //   this.mensaje = 'This film have not got a group. You can not remove a film of non-existent group.';
+        //   this.presentToast(this.mensaje);
+        // } else if (!this.primerError == false && this.segundoError == true) {
+        //   this.mensaje = 'This film has been removed of "Seen Group"';
+        //   this.presentToast(this.mensaje);
+        // } else if (this.primerError == true && !this.segundoError == false) {
+        //   this.mensaje = 'This film has been removed of "Favourite Group"';
+        //   this.presentToast(this.mensaje);
+        // } else {
+        //   this.mensaje = 'This film has been removed of "Favourite Group" and "Seen Group"';
+        //   this.presentToast(this.mensaje);
+        // }
+    };
+    InfoPage.prototype.errores = function (primerError, segundoError) {
+        if (primerError === void 0) { primerError = null; }
+        if (segundoError === void 0) { segundoError = null; }
+        console.log('Primero: ', this.primerError);
+        console.log('Segundo: ', this.segundoError);
+        if (this.primerError) {
+            if (this.segundoError) {
+                this.mensaje = 'This film have not got a group. You can not remove a film of non-existent group.';
+                this.presentToast(this.mensaje);
+            }
+            else {
+                this.mensaje = 'This film has been removed of "Favourite Group"';
+                this.presentToast(this.mensaje);
+            }
+        }
+        else if (!this.primerError) {
+            if (this.segundoError) {
+                this.mensaje = 'This film has been removed of "Seen Group"';
+                this.presentToast(this.mensaje);
+            }
+            else {
+                this.mensaje = 'This film has been removed of "Favourite Group" and "Seen Group"';
+                this.presentToast(this.mensaje);
+            }
+        }
+    };
+    InfoPage.prototype.gotoreproductor = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__videoplayer_videoplayer__["a" /* VideoplayerPage */], { movie: this.content, video: this.video });
+    };
+    InfoPage.prototype.obtenerLinks = function (movieId) {
+        var _this = this;
+        this._movieProvider.getLinks(this.token, movieId).subscribe(function (response) {
+            if (response.message === "No existe el contenido") {
+                _this.mensaje = "There are not links of this content yet";
+                _this.presentToast(_this.mensaje);
+            }
+            else {
+                response.message.forEach(function (link) {
+                    _this.links.push(link);
+                });
+                _this.showLinks(_this.links);
+            }
+        }, function (err) {
+            console.log(err);
+        });
+    };
+    InfoPage.prototype.presentToast = function (mensaje) {
+        var toast = this.toastCtrl.create({
+            message: mensaje,
+            duration: 4000,
+            position: 'bottom'
+        });
+        toast.onDidDismiss(function () {
+            console.log('Dismissed toast');
+        });
+        toast.present();
+    };
+    InfoPage.prototype.showLinks = function (links) {
+        var alert = this.alertCtrl.create();
+        alert.setTitle('Select the link');
+        for (var index = 0; index < this.links.length; index++) {
+            alert.addInput({
+                type: 'radio',
+                label: 'Blue',
+                value: links[index].value
+            });
+        }
+        alert.addButton('Cancel');
+        alert.addButton({
+            text: 'OK',
+            handler: function (data) {
+                // this.testRadioOpen = false;
+                // this.testRadioResult = data;
+            }
+        });
+        alert.present();
+    };
+    InfoPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-info',template:/*ion-inline-start:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\info\info.html"*/'<page-header></page-header>\n\n<ion-content>\n\n  <ion-card>\n\n    <ion-card-content class="backgroundCard">\n\n      <ion-row class="center">\n\n        <ion-col col-8 offset-2>\n\n          <img [src]="movie.poster">\n\n          <ion-fab top right col-4 #fab>\n\n            <button ion-fab mini class="background">\n\n              <ion-icon ios="ios-arrow-dropdown" md="md-arrow-dropdown"></ion-icon>\n\n            </button>\n\n            <ion-fab-list>\n\n              <button ion-fab (click)="cambiarIconoSeen(fab, movie._id)">\n\n                <ion-icon ios="ios-eye-off" md="md-eye-off"></ion-icon>\n\n              </button>\n\n              <button ion-fab (click)="cambiarIconoLike(fab, movie._id)">\n\n                <ion-icon ios="ios-heart" md="md-heart"></ion-icon>\n\n              </button>\n\n              <button ion-fab (click)="deleteView(fab, movie._id)">\n\n                <ion-icon ios="ios-trash" md="md-trash"></ion-icon>\n\n              </button>\n\n            </ion-fab-list>\n\n          </ion-fab>\n\n        </ion-col>\n\n        <ion-col col-6 offset-3 style="text-align: center;">\n\n          <h1>{{ movie.title }}</h1>\n\n        </ion-col>\n\n        <ion-col col-10>\n\n          <ul class="rating" (keydown)="onKeyDown($event)">\n\n            <li *ngFor="let starIndex of starIndexes" tappable (click)="rate(starIndex + 1)">\n\n              <ion-icon [name]="getStarIconName(starIndex)">\n\n              </ion-icon>\n\n            </li>\n\n          </ul>\n\n        </ion-col>\n\n        <ion-col col-6 offset-3>\n\n          <ion-buttons>\n\n            <button ion-button icon-only outline col-12 class="center" (click)="gotoreproductor()">\n\n              Watch Trailer\n\n            </button>\n\n            <button ion-button icon-only outline col-12 class="center" (click)="obtenerLinks(movie._id)">\n\n              See Links\n\n            </button>\n\n          </ion-buttons>\n\n        </ion-col>\n\n        <ion-col col-6 style="text-align: center;">\n\n          <ion-label class="titulo">GENRE: </ion-label>\n\n          <h3>{{ movie.genre }}</h3>\n\n        </ion-col>\n\n        <ion-col col-6 style="text-align: center;">\n\n          <ion-label class="titulo">YEAR: </ion-label>\n\n          <h3>{{ movie.year }}</h3>\n\n        </ion-col>\n\n        <ion-col col-12 style="text-align: center;">\n\n          <ion-label class="titulo">DESCRIPTION: </ion-label>\n\n          <h3>{{ movie.description }}</h3>\n\n        </ion-col>\n\n      </ion-row>\n\n      <div class="bottom"></div>\n\n    </ion-card-content>\n\n  </ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\info\info.html"*/,
+            providers: [__WEBPACK_IMPORTED_MODULE_4__providers_links_link_provider__["a" /* LinkProvider */], __WEBPACK_IMPORTED_MODULE_5__providers_movie_movie_provider__["a" /* MovieProvider */], __WEBPACK_IMPORTED_MODULE_6__providers_serie_serie_provider__["a" /* SerieProvider */]]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
+            __WEBPACK_IMPORTED_MODULE_2__ionic_native_streaming_media__["a" /* StreamingMedia */],
+            __WEBPACK_IMPORTED_MODULE_4__providers_links_link_provider__["a" /* LinkProvider */],
+            __WEBPACK_IMPORTED_MODULE_5__providers_movie_movie_provider__["a" /* MovieProvider */],
+            __WEBPACK_IMPORTED_MODULE_6__providers_serie_serie_provider__["a" /* SerieProvider */]])
+    ], InfoPage);
+    return InfoPage;
+}());
+
+//# sourceMappingURL=info.js.map
+
+/***/ }),
+
+/***/ 50:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MovieProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__global_global__ = __webpack_require__(61);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1495,13 +2274,16 @@ var MovieProvider = (function () {
         return this._http.get(this.url + 'getallmovies/' + pagina, { headers: headers });
     };
     MovieProvider.prototype.viewMovie = function (token, movieId) {
-        console.log(token);
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]().set('Content-type', 'application/json').set('Authorization', token);
         return this._http.post(this.url + 'viewing/movie/' + movieId, null, { headers: headers });
     };
     MovieProvider.prototype.getViewedMovie = function (token) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]().set('Content-type', 'application/json').set('Authorization', token);
         return this._http.get(this.url + 'getallviewing/movie', { headers: headers });
+    };
+    MovieProvider.prototype.getViewedNMovie = function (token) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]().set('Content-type', 'application/json').set('Authorization', token);
+        return this._http.get(this.url + 'get-n-views/movie/3', { headers: headers });
     };
     MovieProvider.prototype.getMovieViewing = function (token, movieId) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]().set('Content-type', 'application/json').set('Authorization', token);
@@ -1511,9 +2293,41 @@ var MovieProvider = (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]().set('Content-type', 'application/json').set('Authorization', token);
         return this._http.get(this.url + 'getlikeds', { headers: headers });
     };
+    MovieProvider.prototype.likedMovie = function (token, movieId) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]().set('Content-type', 'application/json').set('Authorization', token);
+        return this._http.post(this.url + 'liked/movie/' + movieId, null, { headers: headers });
+    };
     MovieProvider.prototype.getMovieLiked = function (token, movieId) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]().set('Content-type', 'application/json').set('Authorization', token);
         return this._http.post(this.url + 'liked/movie/' + movieId, { headers: headers });
+    };
+    MovieProvider.prototype.getSearchedMovie = function (token, title) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]().set('Content-type', 'application/json').set('Authorization', token);
+        return this._http.get(this.url + 'search-movie/' + title, { headers: headers });
+    };
+    MovieProvider.prototype.deleteViewed = function (token, movieId) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]().set('Content-type', 'application/json').set('Authorization', token);
+        return this._http.delete(this.url + 'delete-view/' + movieId, { headers: headers });
+    };
+    MovieProvider.prototype.dislikeMovie = function (token, movieId) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]().set('Content-type', 'application/json').set('Authorization', token);
+        return this._http.delete(this.url + 'dislikeds/' + movieId, { headers: headers });
+    };
+    MovieProvider.prototype.getLikedNMovie = function (token) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]().set('Content-type', 'application/json').set('Authorization', token);
+        return this._http.get(this.url + 'get-n-likes/movie/3', { headers: headers });
+    };
+    MovieProvider.prototype.getMoviesGenre = function (token, genre, yearf, yearl) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]().set('Content-type', 'application/json').set('Authorization', token);
+        return this._http.get(this.url + 'get-movie-genre/' + genre + '/' + yearf + '/' + yearl, { headers: headers });
+    };
+    MovieProvider.prototype.getMoviesYear = function (token, year) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]().set('Content-type', 'application/json').set('Authorization', token);
+        return this._http.get(this.url + 'get-movie-year/' + year, { headers: headers });
+    };
+    MovieProvider.prototype.getLinks = function (token, movieId) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]().set('Content-type', 'application/json').set('Authorization', token);
+        return this._http.get(this.url + 'get-content/' + movieId, { headers: headers });
     };
     MovieProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
@@ -1526,327 +2340,33 @@ var MovieProvider = (function () {
 
 /***/ }),
 
-/***/ 50:
+/***/ 61:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* unused harmony export RATING_CONTROL_VALUE_ACCESSOR */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InfoPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_streaming_media__ = __webpack_require__(238);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__videoplayer_videoplayer__ = __webpack_require__(167);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_links_link_provider__ = __webpack_require__(239);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_movie_movie_provider__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_serie_serie_provider__ = __webpack_require__(80);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GLOBAL; });
+var GLOBAL = {
+    url: 'http://ec2-18-217-133-241.us-east-2.compute.amazonaws.com:9000/api/'
 };
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-
-
-var noop = function () {
-};
-var RATING_CONTROL_VALUE_ACCESSOR = {
-    provide: __WEBPACK_IMPORTED_MODULE_3__angular_forms__["d" /* NG_VALUE_ACCESSOR */],
-    useExisting: Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* forwardRef */])(function () { return InfoPage; }),
-    multi: true
-};
-var InfoPage = (function () {
-    function InfoPage(navCtrl, navParams, streamingMedia, _linkProvider, _movieProvider, _serieProvider) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.streamingMedia = streamingMedia;
-        this._linkProvider = _linkProvider;
-        this._movieProvider = _movieProvider;
-        this._serieProvider = _serieProvider;
-        this._max = 10;
-        this._readOnly = false;
-        this._emptyStarIconName = 'star-outline';
-        this._halfStarIconName = 'star-half';
-        this._starIconName = 'star';
-        this._nullable = false;
-        this.onChangeCallback = noop;
-        //this.movie = navParams.data['contenido'];
-        this.type = navParams.data['tipo'];
-        if (this.type === 'movie') {
-            this.movie = navParams.data['contenido'];
-            this.content = this.movie;
-            console.log('hola');
-        }
-        else if (this.type === 'serie') {
-            this.serie = navParams.data['contenido'];
-            this.content = this.serie;
-        }
-        this.token = localStorage.getItem('token');
-    }
-    Object.defineProperty(InfoPage.prototype, "max", {
-        get: function () {
-            return this._max;
-        },
-        set: function (val) {
-            var newValue = this.getNumberPropertyValue(val);
-            if (newValue !== this._max) {
-                this._max = newValue;
-                this.createStarIndexes();
-            }
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(InfoPage.prototype, "readOnly", {
-        get: function () {
-            return this._readOnly;
-        },
-        set: function (val) {
-            this._readOnly = this.isTrueProperty(val);
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(InfoPage.prototype, "emptyStarIconName", {
-        get: function () {
-            return this._emptyStarIconName;
-        },
-        set: function (val) {
-            this._emptyStarIconName = val;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(InfoPage.prototype, "halfStarIconName", {
-        get: function () {
-            return this._halfStarIconName;
-        },
-        set: function (val) {
-            this._halfStarIconName = val;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(InfoPage.prototype, "starIconName", {
-        get: function () {
-            return this._starIconName;
-        },
-        set: function (val) {
-            this._starIconName = val;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(InfoPage.prototype, "nullable", {
-        get: function () {
-            return this._nullable;
-        },
-        set: function (val) {
-            this._nullable = this.isTrueProperty(val);
-        },
-        enumerable: true,
-        configurable: true
-    });
-    InfoPage.prototype.ngOnInit = function () {
-        var _this = this;
-        // ngFor needs an array
-        this.createStarIndexes();
-        this._linkProvider.getLinks(this.token, this.movie["_id"]).subscribe(function (response) {
-            _this.video = response.link[0].url;
-        }, function (err) {
-            console.log(err);
-        });
-    };
-    InfoPage.prototype.createStarIndexes = function () {
-        this.starIndexes = Array(this.max).fill(1).map(function (x, i) { return i; });
-    };
-    InfoPage.prototype.getStarIconName = function (starIndex) {
-        if (this.value === undefined) {
-            return this.emptyStarIconName;
-        }
-        if (this.value > starIndex) {
-            if (this.value < starIndex + 1) {
-                return this.halfStarIconName;
-            }
-            else {
-                return this.starIconName;
-            }
-        }
-        else {
-            return this.emptyStarIconName;
-        }
-    };
-    Object.defineProperty(InfoPage.prototype, "value", {
-        get: function () {
-            return this.innerValue;
-        },
-        set: function (value) {
-            if (value !== this.innerValue) {
-                this.innerValue = value;
-                this.onChangeCallback(value);
-            }
-        },
-        enumerable: true,
-        configurable: true
-    });
-    InfoPage.prototype.writeValue = function (value) {
-        if (value !== this.innerValue) {
-            this.innerValue = value;
-        }
-    };
-    InfoPage.prototype.registerOnChange = function (fn) {
-        this.onChangeCallback = fn;
-    };
-    InfoPage.prototype.registerOnTouched = function (fn) {
-    };
-    InfoPage.prototype.onKeyDown = function (event) {
-        if (/(37|38|39|40)/.test(event.which)) {
-            event.preventDefault();
-            event.stopPropagation();
-            var newValue = this.value + ((event.which == 38 || event.which == 39) ? 1 : -1);
-            return this.rate(newValue);
-        }
-    };
-    InfoPage.prototype.rate = function (value) {
-        if (this.readOnly || value < 0 || value > this.max) {
-            return;
-        }
-        if (value === this.value && this.nullable) {
-            value = null;
-        }
-        this.value = value;
-    };
-    InfoPage.prototype.isTrueProperty = function (val) {
-        if (typeof val === 'string') {
-            val = val.toLowerCase().trim();
-            return (val === 'true' || val === 'on');
-        }
-        return !!val;
-    };
-    InfoPage.prototype.getNumberPropertyValue = function (val) {
-        if (typeof val === 'string') {
-            return parseInt(val.trim());
-        }
-        return val;
-    };
-    InfoPage.prototype.ionViewDidLoad = function () {
-        if (this.movie['genre'] == 'N/A') {
-            this.movie['genre'] = 'Not available';
-        }
-        if (this.movie['year'] == 'N/A') {
-            this.movie['year'] = 'Not available';
-        }
-        if (this.movie['description'] == 'N/A') {
-            this.movie['description'] = 'Not available';
-        }
-    };
-    // goToPerfil() {
-    //   this.navCtrl.push(PerfilPage, {
-    //     data: this.contenedor
-    //   });
-    // }
-    // goToInicio() {
-    //   this.navCtrl.push(InicioPage, {
-    //     data: this.contenedor
-    //   });
-    // }
-    // goToPeliculas() {
-    //   this.navCtrl.push(PeliculasPage, {
-    //     data: this.contenedor
-    //   });
-    // }
-    InfoPage.prototype.gotoreproductor = function () {
-        /*if(this.type==='movie'){
-           this._movieProvider.viewMovie(this.token, this.content["_id"]).subscribe(response=>{
-           console.log(response);
-           },
-           err => {
-             console.log(err);
-           });
-         }else if(this.type==='serie'){
-           this._serieProvider.viewSerie(this.token, this.content["_id"]).subscribe(response=>{
-             console.log(response);
-           },
-           err => {
-             console.log(err);
-           });
-         }*/
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__videoplayer_videoplayer__["a" /* VideoplayerPage */], { movie: this.content, video: this.video });
-    };
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
-        __metadata("design:type", Object),
-        __metadata("design:paramtypes", [Object])
-    ], InfoPage.prototype, "max", null);
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
-        __metadata("design:type", Object),
-        __metadata("design:paramtypes", [Object])
-    ], InfoPage.prototype, "readOnly", null);
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
-        __metadata("design:type", Object),
-        __metadata("design:paramtypes", [Object])
-    ], InfoPage.prototype, "emptyStarIconName", null);
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
-        __metadata("design:type", Object),
-        __metadata("design:paramtypes", [Object])
-    ], InfoPage.prototype, "halfStarIconName", null);
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
-        __metadata("design:type", Object),
-        __metadata("design:paramtypes", [Object])
-    ], InfoPage.prototype, "starIconName", null);
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
-        __metadata("design:type", Object),
-        __metadata("design:paramtypes", [Object])
-    ], InfoPage.prototype, "nullable", null);
-    InfoPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-info',
-            styles: ["\n    ul.rating li {\n      display: inline;\n      border: 0px;\n      background: none;\n      padding: 5px 1px;\n    }\n    ul.rating li i {\n      font-size: 30px;\n    }\n  "],template:/*ion-inline-start:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\info\info.html"*/'<page-header></page-header>\n\n<ion-content>\n\n  <ion-card>\n\n    <ion-card-content class="backgroundCard">\n\n      <ion-row class="center">\n\n        <ion-col col-8 offset-2>\n\n          <img [src]="movie.poster">\n\n        </ion-col>\n\n        <ion-col col-6 offset-3 style="text-align: center;">\n\n          <h1>{{ movie.title }}</h1>\n\n        </ion-col>\n\n        <ion-col col-10>\n\n          <ul class="rating" (keydown)="onKeyDown($event)">\n\n            <li *ngFor="let starIndex of starIndexes" tappable (click)="rate(starIndex + 1)">\n\n              <ion-icon [name]="getStarIconName(starIndex)">\n\n              </ion-icon>\n\n            </li>\n\n          </ul>\n\n        </ion-col>\n\n        <ion-col col-6 offset-3>\n\n          <ion-buttons>\n\n            <button ion-button icon-only outline col-12 class="center" (click)="gotoreproductor()">\n\n              Watch Trailer\n\n            </button>\n\n          </ion-buttons>\n\n        </ion-col>\n\n        <ion-col col-6 style="text-align: center;">\n\n          <ion-label class="titulo">GENRE: </ion-label>\n\n          <h3>{{ movie.genre }}</h3>\n\n        </ion-col>\n\n        <ion-col col-6 style="text-align: center;">\n\n          <ion-label class="titulo">YEAR: </ion-label>\n\n          <h3>{{ movie.year }}</h3>\n\n        </ion-col>\n\n        <ion-col col-12 style="text-align: center;">\n\n          <ion-label class="titulo">DESCRIPTION: </ion-label>\n\n          <h3>{{ movie.description }}</h3>\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-card-content>\n\n  </ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\info\info.html"*/,
-            providers: [RATING_CONTROL_VALUE_ACCESSOR, __WEBPACK_IMPORTED_MODULE_5__providers_links_link_provider__["a" /* LinkProvider */], __WEBPACK_IMPORTED_MODULE_6__providers_movie_movie_provider__["a" /* MovieProvider */], __WEBPACK_IMPORTED_MODULE_7__providers_serie_serie_provider__["a" /* SerieProvider */]]
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2__ionic_native_streaming_media__["a" /* StreamingMedia */],
-            __WEBPACK_IMPORTED_MODULE_5__providers_links_link_provider__["a" /* LinkProvider */],
-            __WEBPACK_IMPORTED_MODULE_6__providers_movie_movie_provider__["a" /* MovieProvider */],
-            __WEBPACK_IMPORTED_MODULE_7__providers_serie_serie_provider__["a" /* SerieProvider */]])
-    ], InfoPage);
-    return InfoPage;
-}());
-
-//# sourceMappingURL=info.js.map
+//# sourceMappingURL=global.js.map
 
 /***/ }),
 
-/***/ 51:
+/***/ 68:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InicioPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ver_todo_ver_todo__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ver_todo_ver_todo__ = __webpack_require__(170);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_login_login__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__info_info__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_movie_movie_provider__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_movie_movie__ = __webpack_require__(131);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_serie_serie_provider__ = __webpack_require__(80);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_serie_serie__ = __webpack_require__(240);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__info_info__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_movie_movie_provider__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_movie_movie__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_serie_serie_provider__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_serie_serie__ = __webpack_require__(241);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1867,6 +2387,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var InicioPage = (function () {
+    // public isSearchbarOpened = false;
     function InicioPage(navCtrl, modalCtrl, navParams, menuCtrl, comprobarLogin, sanitizer, _movieProvider, _serieProvider) {
         this.navCtrl = navCtrl;
         this.modalCtrl = modalCtrl;
@@ -1876,53 +2397,25 @@ var InicioPage = (function () {
         this.sanitizer = sanitizer;
         this._movieProvider = _movieProvider;
         this._serieProvider = _serieProvider;
-        this.contMovies = 0;
-        this.contSeries = 0;
         this.seeAllMovies = false;
         this.seeAllSeries = false;
         this.mensajeSeries = false;
         this.mensajePeliculas = false;
         this.mensajeViewP = 'There are not films in this group';
         this.mensajeViewS = 'There are not series in this group';
-        this.mensajeViewPS = 'There are not films and series in this group';
-        this.isSearchbarOpened = false;
-        this.peli1 = "assets/imgs/peli1.jpg";
-        this.peli2 = "assets/imgs/peli2.jpg";
-        this.peli3 = "assets/imgs/peli3.jpg";
-        this.serie1 = "assets/imgs/serie1.jpg";
-        this.serie2 = "assets/imgs/serie2.jpg";
-        this.titulo1 = "Deadpool";
-        this.titulo2 = "Avengers 2";
-        this.titulo3 = "Hasta el último Hombre";
-        this.titulo4 = "Breaking Bad";
-        this.titulo5 = "Prison Break";
-        //this.contenedor = navParams.data['data'];
+        this.mensajeViewPS = 'There are not films or series in this group';
         this.token = localStorage.getItem('token');
         this.movie = new __WEBPACK_IMPORTED_MODULE_7__providers_movie_movie__["a" /* Movie */]('', '', '', '', '', '', '', '', '', '', '', '');
         this.serie = new __WEBPACK_IMPORTED_MODULE_9__providers_serie_serie__["a" /* Serie */]('', '', '', '', '', '', '', '', '', '', '');
     }
-    InicioPage.prototype.goToInfo = function (p) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__info_info__["a" /* InfoPage */], {
-            contenido: p,
-        });
-    };
-    InicioPage.prototype.goToSeeAll = function (contenido, lista) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__ver_todo_ver_todo__["a" /* VerTodoPage */], {
-            tipo: contenido,
-            array: lista
-        });
-    };
-    InicioPage.prototype.ionViewDidLoad = function () {
-        this.identity = this.comprobarLogin.getIdentity();
-        this.avatarUrl = this.comprobarLogin.getImageAvatar();
-        this.trustedUrl = this.sanitizer.bypassSecurityTrustUrl(this.avatarUrl);
-    };
     InicioPage.prototype.ngOnInit = function () {
         var _this = this;
         this.identity = this.comprobarLogin.getIdentity();
         this.avatarUrl = this.comprobarLogin.getImageAvatar();
         this.trustedUrl = this.sanitizer.bypassSecurityTrustUrl(this.avatarUrl);
-        this._movieProvider.getViewedMovie(this.token).subscribe(function (response) {
+        // Sacamos las películas vistas
+        this._movieProvider.getViewedNMovie(this.token).subscribe(function (response) {
+            console.log(response);
             _this.listMovieVieweds = [];
             response.views.forEach(function (eleMovie) {
                 if (eleMovie.movieViewed) {
@@ -1930,27 +2423,19 @@ var InicioPage = (function () {
                     _this.listMovieVieweds.push(_this.movie);
                 }
             });
-            if (_this.listMovieVieweds.length > 0) {
-                if (_this.listMovieVieweds.length > 3) {
-                    _this.mostrarPeliculas = [];
-                    for (var index = 0; index < 3; index++) {
-                        _this.mostrarPeliculas.push(_this.listMovieVieweds[index]);
-                    }
+            if (response.contador > 0) {
+                if (response.contador > 3) {
                     _this.seeAllMovies = true;
-                }
-                else {
-                    _this.mostrarPeliculas = [];
-                    for (var index = 0; index < _this.listMovieVieweds.length; index++) {
-                        _this.mostrarPeliculas.push(_this.listMovieVieweds[index]);
-                    }
                 }
             }
             else {
                 _this.mensajePeliculas = true;
             }
         }, function (err) {
+            _this.mensajePeliculas = true;
             console.log(err);
         });
+        // Sacamos las series vistas
         this._serieProvider.getViewedSerie(this.token).subscribe(function (response) {
             _this.listSerieVieweds = [];
             response.views.forEach(function (eleSerie) {
@@ -1980,32 +2465,27 @@ var InicioPage = (function () {
         }, function (err) {
             console.log(err);
         });
-        this._movieProvider.getLikedMovie(this.token).subscribe(function (response) {
+        this._movieProvider.getLikedNMovie(this.token).subscribe(function (response) {
+            console.log(response);
+        }, function (err) {
+            console.log(err);
+        });
+        this._movieProvider.getLikedNMovie(this.token).subscribe(function (response) {
             console.log(response);
             if (response.message) {
                 _this.mensajeF = true;
             }
             else {
                 _this.listMovieLikeds = [];
-                response.views.forEach(function (eleMovie) {
+                response.likeds.forEach(function (eleMovie) {
                     if (eleMovie) {
-                        _this.movie = eleMovie.chapter;
+                        _this.movie = eleMovie.movieLiked;
                         _this.listMovieLikeds.push(_this.movie);
                     }
                 });
-                if (_this.listMovieLikeds.length > 0) {
-                    if (_this.listMovieLikeds.length > 3) {
-                        _this.mostrarPeliculasF = [];
-                        for (var index = 0; index < 3; index++) {
-                            _this.mostrarPeliculasF.push(_this.listMovieLikeds[index]);
-                        }
+                if (response.contador > 0) {
+                    if (response.contador > 3) {
                         _this.seeAllF = true;
-                    }
-                    else {
-                        _this.mostrarPeliculasF = [];
-                        for (var index = 0; index < _this.listMovieLikeds.length; index++) {
-                            _this.mostrarPeliculasF.push(_this.listMovieLikeds[index]);
-                        }
                     }
                 }
                 else {
@@ -2013,17 +2493,31 @@ var InicioPage = (function () {
                 }
             }
         }, function (err) {
+            _this.mensajeF = true;
             console.log(err);
         });
     };
+    // Se encuentra continuamente ejecutándose para ver si ha cambiado el username o su imagen
     InicioPage.prototype.ngDoCheck = function () {
         this.identity = this.comprobarLogin.getIdentity();
         this.avatarUrl = this.comprobarLogin.getImageAvatar();
         this.trustedUrl = this.sanitizer.bypassSecurityTrustUrl(this.avatarUrl);
     };
+    InicioPage.prototype.goToInfo = function (p) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__info_info__["a" /* InfoPage */], {
+            contenido: p,
+            tipo: 'movie'
+        });
+    };
+    InicioPage.prototype.goToSeeAll = function (contenido, lista) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__ver_todo_ver_todo__["a" /* VerTodoPage */], {
+            tipo: contenido,
+            array: lista
+        });
+    };
     InicioPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-inicio',template:/*ion-inline-start:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\inicio\inicio.html"*/'<page-header></page-header>\n\n<ion-content>\n\n  <ion-list *ngIf="isSearchbarOpened">\n\n    <button ion-item *ngFor="let item of items" (click)="showDetail(item)">\n\n      {{ item }}\n\n    </button>\n\n  </ion-list>\n\n\n\n  <ion-card>\n\n    <ion-card-header>\n\n      <ion-grid>\n\n        <ion-row>\n\n          <ion-col col-12>\n\n            <h1 class="titulo">\n\n               Welcome, {{ identity.nickname }}!\n\n            </h1>\n\n          </ion-col>\n\n        </ion-row>\n\n      </ion-grid>\n\n    </ion-card-header>\n\n\n\n    <ion-card-content>\n\n      <ion-grid>\n\n        <ion-row>\n\n          <ion-col col-12>\n\n            <h3 class="titulo">Movies seen:</h3>\n\n            <a *ngIf="seeAllMovies" class="alinearDerecha" (click)="goToSeeAll(\'visto\', listMovieVieweds)">see all</a>\n\n            <ion-grid>\n\n              <ion-row>\n\n                <ion-col col-4 *ngFor="let p of mostrarPeliculas">\n\n                <ion-row>\n\n                    \n\n                        <button (click)="goToInfo(p)" class="fotoPelicula" no-padding>\n\n                          <ion-thumbnail item-start>\n\n                            <img [src]="p.poster">\n\n                          </ion-thumbnail>\n\n                        </button>\n\n                      \n\n                </ion-row>\n\n                <ion-row>\n\n                        <h2 class="center">{{ p.title }}</h2>\n\n                </ion-row>\n\n                </ion-col>\n\n              </ion-row>\n\n              <ion-row *ngIf="mensajePeliculas">\n\n                <ion-col>\n\n                  <h2 class="center">{{ mensajeViewP }}</h2>\n\n                </ion-col>\n\n              </ion-row>\n\n            </ion-grid>\n\n\n\n            <h3 class="titulo2">Series seen:</h3>\n\n            <a *ngIf="seeAllSeries" class="alinearDerecha" (click)="goToSeeAll(\'visto\', listSerieVieweds)">see all</a>\n\n            <ion-grid>\n\n                <ion-row>\n\n                  <ion-col col-4 *ngFor="let s of mostrarSeries">\n\n                  <ion-row>\n\n                      \n\n                          <button (click)="goToInfo(s)" class="fotoPelicula" no-padding>\n\n                            <ion-thumbnail item-start>\n\n                              <img [src]="s.poster">\n\n                            </ion-thumbnail>\n\n                          </button>\n\n                        \n\n                  </ion-row>\n\n                  <ion-row>\n\n                          <h2 class="center">{{ s.title }}</h2>\n\n                  </ion-row>\n\n                  </ion-col>\n\n                </ion-row>\n\n                <ion-row *ngIf="mensajeSeries">\n\n                  <ion-col>\n\n                    <h2 class="center">{{ mensajeViewS }}</h2>\n\n                  </ion-col>\n\n                </ion-row>\n\n  \n\n              </ion-grid>\n\n          \n\n          <h3 class="titulo2">Favourites films and series:</h3>\n\n          <a *ngIf="seeAllF" class="alinearDerecha" (click)="goToSeeAll(\'favorito\', listSerieVieweds)">see all</a>\n\n          <ion-grid>\n\n            <ion-row>\n\n              <ion-col col-4 *ngFor="let p of mostrarPeliculasF">\n\n                <ion-row>\n\n          \n\n                  <button (click)="goToInfo(p)" class="fotoPelicula" no-padding>\n\n                    <ion-thumbnail item-start>\n\n                      <img [src]="p.poster">\n\n                    </ion-thumbnail>\n\n                  </button>\n\n          \n\n                </ion-row>\n\n                <ion-row>\n\n                  <h2 class="center">{{ p.title }}</h2>\n\n                </ion-row>\n\n              </ion-col>\n\n            </ion-row>\n\n            <ion-row *ngIf="mensajeF">\n\n              <ion-col>\n\n                <h2 class="center">{{ mensajeViewPS }}</h2>\n\n              </ion-col>\n\n            </ion-row>\n\n          \n\n          </ion-grid>\n\n  \n\n          </ion-col>\n\n        </ion-row>\n\n      </ion-grid>\n\n    </ion-card-content>\n\n  </ion-card>\n\n</ion-content>'/*ion-inline-end:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\inicio\inicio.html"*/,
+            selector: 'page-inicio',template:/*ion-inline-start:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\inicio\inicio.html"*/'<page-header></page-header>\n\n<ion-content>\n\n  <ion-list *ngIf="isSearchbarOpened">\n\n    <button ion-item *ngFor="let item of items" (click)="showDetail(item)">\n\n      {{ item }}\n\n    </button>\n\n  </ion-list>\n\n\n\n  <ion-card id="bottom">\n\n    <ion-card-header>\n\n      <ion-grid>\n\n        <ion-row>\n\n          <ion-col col-12>\n\n            <h1 class="titulo">\n\n               Welcome, {{ identity.nickname }}!\n\n            </h1>\n\n          </ion-col>\n\n        </ion-row>\n\n      </ion-grid>\n\n    </ion-card-header>\n\n\n\n    <ion-card-content>\n\n      <ion-grid>\n\n        <ion-row>\n\n          <ion-col col-12>\n\n            <h3 class="titulo">Movies seen:</h3>\n\n            <a *ngIf="seeAllMovies" class="alinearDerecha" (click)="goToSeeAll(\'visto\', listMovieVieweds)">see all</a>\n\n            <ion-grid>\n\n              <ion-row>\n\n                <ion-col col-4 *ngFor="let p of listMovieVieweds">\n\n                <ion-row>\n\n                    \n\n                        <button (click)="goToInfo(p)" class="fotoPelicula" no-padding>\n\n                          <ion-thumbnail item-start>\n\n                            <img [src]="p.poster">\n\n                          </ion-thumbnail>\n\n                        </button>\n\n                      \n\n                </ion-row>\n\n                <ion-row>\n\n                        <h4 class="center">{{ p.title }}</h4>\n\n                </ion-row>\n\n                </ion-col>\n\n              </ion-row>\n\n              <ion-row *ngIf="mensajePeliculas">\n\n                <ion-col>\n\n                  <h2 class="center">{{ mensajeViewP }}</h2>\n\n                </ion-col>\n\n              </ion-row>\n\n            </ion-grid>\n\n\n\n            <h3 class="titulo2">Series seen:</h3>\n\n            <a *ngIf="seeAllSeries" class="alinearDerecha" (click)="goToSeeAll(\'visto\', listMovieLikeds)">see all</a>\n\n            <ion-grid>\n\n                <ion-row>\n\n                  <ion-col col-4 *ngFor="let s of mostrarSeries">\n\n                  <ion-row>\n\n                      \n\n                          <button (click)="goToInfo(s)" class="fotoPelicula" no-padding>\n\n                            <ion-thumbnail item-start>\n\n                              <img [src]="s.poster">\n\n                            </ion-thumbnail>\n\n                          </button>\n\n                        \n\n                  </ion-row>\n\n                  <ion-row>\n\n                          <h4 class="center">{{ s.title }}</h4>\n\n                  </ion-row>\n\n                  </ion-col>\n\n                </ion-row>\n\n                <ion-row *ngIf="mensajeSeries">\n\n                  <ion-col>\n\n                    <h2 class="center">{{ mensajeViewS }}</h2>\n\n                  </ion-col>\n\n                </ion-row>\n\n  \n\n              </ion-grid>\n\n          \n\n          <h3 class="titulo2">Favourites films and series:</h3>\n\n          <a *ngIf="seeAllF" class="alinearDerecha" (click)="goToSeeAll(\'favorito\', listMovieLikeds)">see all</a>\n\n          <ion-grid>\n\n            <ion-row>\n\n              <ion-col col-4 *ngFor="let p of listMovieLikeds">\n\n                <ion-row>\n\n          \n\n                  <button (click)="goToInfo(p)" class="fotoPelicula" no-padding>\n\n                    <ion-thumbnail item-start>\n\n                      <img [src]="p.poster">\n\n                    </ion-thumbnail>\n\n                  </button>\n\n          \n\n                </ion-row>\n\n                <ion-row>\n\n                  <h4 class="center">{{ p.title }}</h4>\n\n                </ion-row>\n\n              </ion-col>\n\n            </ion-row>\n\n            <ion-row *ngIf="mensajeF">\n\n              <ion-col>\n\n                <h2 class="center">{{ mensajeViewPS }}</h2>\n\n              </ion-col>\n\n            </ion-row>\n\n          \n\n          </ion-grid>\n\n  \n\n          </ion-col>\n\n        </ion-row>\n\n      </ion-grid>\n\n    </ion-card-content>\n\n    <div class="bottom"></div>\n\n  </ion-card>\n\n</ion-content>'/*ion-inline-end:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\inicio\inicio.html"*/,
             providers: [__WEBPACK_IMPORTED_MODULE_3__providers_login_login__["a" /* LoginProvider */], __WEBPACK_IMPORTED_MODULE_6__providers_movie_movie_provider__["a" /* MovieProvider */], __WEBPACK_IMPORTED_MODULE_8__providers_serie_serie_provider__["a" /* SerieProvider */]]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
@@ -2042,213 +2536,13 @@ var InicioPage = (function () {
 
 /***/ }),
 
-/***/ 61:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GLOBAL; });
-var GLOBAL = {
-    url: 'http://ec2-18-217-133-241.us-east-2.compute.amazonaws.com:9000/api/'
-};
-//# sourceMappingURL=global.js.map
-
-/***/ }),
-
-/***/ 68:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PeliculasPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_login_login__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__info_info__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_movie_movie_provider__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_movie_movie__ = __webpack_require__(131);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-var PeliculasPage = (function () {
-    function PeliculasPage(navCtrl, loadingCtrl, navParams, alertCtrl, toastCtrl, contenedorFilms, _movieProvider) {
-        this.navCtrl = navCtrl;
-        this.loadingCtrl = loadingCtrl;
-        this.navParams = navParams;
-        this.alertCtrl = alertCtrl;
-        this.toastCtrl = toastCtrl;
-        this.contenedorFilms = contenedorFilms;
-        this._movieProvider = _movieProvider;
-        this.structure = { lower: 1990, upper: 2018 };
-        this.filter = false;
-        this.genre = 'Genre: All';
-        this.videoLanguage = 'Video Language: All';
-        this.subtitleLanguage = 'Subtitle Language: All';
-        this.page = 1;
-        this.isSearchbarOpened = false;
-        this.iconoIOS1 = 'ios-arrow-dropdown';
-        this.iconoAndroid1 = 'md-arrow-dropdown';
-        this.iconoIOS = 'ios-arrow-dropdown';
-        this.iconoAndroid = 'md-arrow-dropdown';
-        this.movie = new __WEBPACK_IMPORTED_MODULE_5__providers_movie_movie__["a" /* Movie */]('', '', '', '', '', '', '', '', '', '', '', '');
-        this.token = localStorage.getItem('token');
-    }
-    PeliculasPage.prototype.ngOnInit = function () {
-        var _this = this;
-        this._movieProvider.getAllMovies(localStorage.getItem('token'), this.page).subscribe(function (response) {
-            _this.listMovie = [];
-            if (response.message.length === 0) {
-                _this.mensajeVacio = 'No hay peliculas aún';
-            }
-            else {
-                response.message.forEach(function (eleMovie) {
-                    _this.listMovie.push(eleMovie);
-                });
-                console.log(_this.listMovie);
-            }
-        }, function (error) {
-            console.log(error);
-        });
-    };
-    PeliculasPage.prototype.goToInfo = function (p) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__info_info__["a" /* InfoPage */], {
-            contenido: p,
-            tipo: 'movie'
-        });
-    };
-    PeliculasPage.prototype.filterType = function () {
-        this.filter = true;
-    };
-    PeliculasPage.prototype.filterType2 = function () {
-        this.filter = false;
-    };
-    PeliculasPage.prototype.loginLoading = function () {
-        this.filter = false;
-        var loading = this.loadingCtrl.create({
-            content: 'Years between ' + this.structure.lower + ' and ' + this.structure.upper +
-                '<br>' + this.genre + '<br>' + this.videoLanguage + '<br>' + this.subtitleLanguage,
-            duration: 5000,
-            dismissOnPageChange: true
-        });
-        loading.present();
-        setTimeout(function () {
-        }, 2000);
-    };
-    PeliculasPage.prototype.doRefresh = function (refresher) {
-        var _this = this;
-        this._movieProvider.getAllMovies(localStorage.getItem('token'), this.page).subscribe(function (response) {
-            _this.listMovie = [];
-            response.message.forEach(function (eleMovie) {
-                _this.listMovie.push(eleMovie);
-            });
-            refresher.complete();
-        });
-    };
-    PeliculasPage.prototype.cambiarIconoSeen = function (fab, movieId) {
-        var _this = this;
-        this._movieProvider.viewMovie(this.token, movieId).subscribe(function (response) {
-            console.log(response);
-            _this.iconoIOS = 'ios-eye-off';
-            _this.iconoAndroid = 'md-eye-off';
-            fab.close();
-            _this.mensaje = 'This film has been added to "Seen Group"';
-            _this.presentToast(_this.mensaje);
-        }, function (err) {
-            console.log(err);
-        });
-    };
-    PeliculasPage.prototype.cambiarIconoLike = function (fab, movieId) {
-        var _this = this;
-        this._movieProvider.getMovieLiked(this.token, movieId).subscribe(function (response) {
-            console.log(response);
-            _this.iconoIOS = 'ios-heart';
-            _this.iconoAndroid = 'md-heart';
-            fab.close();
-            _this.mensaje = 'This film has been added to "Favourite Group"';
-            _this.presentToast(_this.mensaje);
-        }, function (err) {
-            console.log(err);
-        });
-    };
-    PeliculasPage.prototype.cambiarIconoRemove = function (fab) {
-        this.iconoIOS = 'ios-arrow-dropdown';
-        this.iconoAndroid = 'md-arrow-dropdown';
-        fab.close();
-        this.mensaje = 'This film has been removed of his old group';
-        this.presentToast(this.mensaje);
-    };
-    PeliculasPage.prototype.presentToast = function (mensaje) {
-        var toast = this.toastCtrl.create({
-            message: mensaje,
-            duration: 4000,
-            position: 'bottom'
-        });
-        toast.onDidDismiss(function () {
-            console.log('Dismissed toast');
-        });
-        toast.present();
-    };
-    PeliculasPage.prototype.moreFilms = function () {
-        var _this = this;
-        console.log('Array de peliculas1: ', this.listMovie.length);
-        this.page = this.page + 1;
-        this._movieProvider.getAllMovies(localStorage.getItem('token'), this.page).subscribe(function (response) {
-            response.message.forEach(function (eleMovie) {
-                _this.listMovie.push(eleMovie);
-            });
-            if (response.message.length === 0) {
-                _this.alert();
-            }
-        });
-        console.log('Array de peliculas2: ', this.listMovie.length);
-        console.log('Contenido que trae el server: ', this.contador);
-        /*if(this.listMovie.length == this.contador){
-          this.alert();
-        }*/
-    };
-    PeliculasPage.prototype.alert = function () {
-        this.alertCtrl.create({
-            title: 'There was a problem!',
-            subTitle: 'There are not more films in our Database',
-            buttons: ['OK']
-        }).present();
-    };
-    PeliculasPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-peliculas',template:/*ion-inline-start:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\peliculas\peliculas.html"*/'<page-header></page-header>\n\n<ion-content>\n\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n\n    <ion-refresher-content refreshingText="Refreshing...">\n\n    </ion-refresher-content>\n\n  </ion-refresher>\n\n  <ion-card >\n\n    <ion-row>\n\n      <ion-col col-12 class="center">\n\n        <ion-buttons padding-bottom>\n\n          <button ion-button icon-only outline *ngIf="!filter" (click)="filterType()" col-5>\n\n            Show Filters\n\n          </button>\n\n        </ion-buttons>\n\n      </ion-col>\n\n    </ion-row>\n\n\n\n    <ion-card *ngIf="filter">\n\n\n\n      <ion-item>\n\n        <ion-label>Year: </ion-label>\n\n        <ion-range dualKnobs="true" pin="true" min="1900" max="2020" step="5" snaps="true" [(ngModel)]="structure">\n\n          <ion-icon range-left small ios="ios-time" md="md-time"></ion-icon>\n\n          <ion-icon range-right ios="ios-time" md="md-time"></ion-icon>\n\n        </ion-range>\n\n      </ion-item>\n\n      \n\n      <ion-item>\n\n        <ion-label>Films Genre: </ion-label>\n\n        <ion-select [(ngModel)]="genre" interface="popover">\n\n          <ion-option value="Genre: All" selected="true">All</ion-option>\n\n          <ion-option value="Genre: Action and adventure">Action and adventure</ion-option>\n\n          <ion-option value="Genre: Cartoon">Cartoon</ion-option>\n\n          <ion-option value="Genre: Comedy">Comedy</ion-option>\n\n          <ion-option value="Genre: Crime">Crime</ion-option>\n\n          <ion-option value="Genre: Documentary film">Documentary film</ion-option>\n\n          <ion-option value="Genre: Drama">Drama</ion-option>\n\n          <ion-option value="Genre: Fantasy">Fantasy</ion-option>\n\n          <ion-option value="Genre: Mistery">Mistery</ion-option>\n\n          <ion-option value="Genre: Science fiction">Science fiction</ion-option>\n\n          <ion-option value="Genre: Sports">Sports</ion-option>\n\n          <ion-option value="Genre: Terror">Terror</ion-option>\n\n          <ion-option value="Genre: Thriller">Thriller</ion-option>\n\n        </ion-select>\n\n      </ion-item>\n\n      \n\n      <ion-item>\n\n        <ion-label>Video Language: </ion-label>\n\n        <ion-select [(ngModel)]="videoLanguage" interface="popover">\n\n          <ion-option value="Video Language: All" selected="true">All</ion-option>\n\n          <ion-option value="Video Language: English">English</ion-option>\n\n          <ion-option value="Video Language: French">French</ion-option>\n\n          <ion-option value="Video Language: German">German</ion-option>\n\n          <ion-option value="Video Language: Greek">Greek</ion-option>\n\n          <ion-option value="Video Language: Italian">Italian</ion-option>\n\n          <ion-option value="Video Language: Portuguese">Portuguese</ion-option>\n\n          <ion-option value="Video Language: Russian">Russian</ion-option>\n\n          <ion-option value="Video Language: Spanish">Spanish</ion-option>\n\n          <ion-option value="Video Language: Others">Others</ion-option>\n\n        </ion-select>\n\n      </ion-item>\n\n      \n\n      <ion-item>\n\n        <ion-label>Subtitle Language: </ion-label>\n\n        <ion-select [(ngModel)]="subtitleLanguage" interface="popover">\n\n          <ion-option value="Subtitle Language: All" selected="true">All</ion-option>\n\n          <ion-option value="Subtitle Language: English">English</ion-option>\n\n          <ion-option value="Subtitle Language: French">French</ion-option>\n\n          <ion-option value="Subtitle Language: German">German</ion-option>\n\n          <ion-option value="Subtitle Language: Greek">Greek</ion-option>\n\n          <ion-option value="Subtitle Language: Italian">Italian</ion-option>\n\n          <ion-option value="Subtitle Language: Portuguese">Portuguese</ion-option>\n\n          <ion-option value="Subtitle Language: Russian">Russian</ion-option>\n\n          <ion-option value="Subtitle Language: Spanish">Spanish</ion-option>\n\n          <ion-option value="Subtitle Language: Others">Others</ion-option>\n\n        </ion-select>\n\n      </ion-item>\n\n      \n\n      <ion-row>\n\n        <ion-col col-12 class="center">\n\n          <ion-buttons>\n\n            <button ion-button icon-only outline class="center" *ngIf="filter" (click)="loginLoading()" col-5>\n\n              Accept\n\n            </button>\n\n          </ion-buttons>\n\n        </ion-col>\n\n      </ion-row>\n\n\n\n      <ion-row>\n\n        <ion-col col-12 class="center">\n\n          <ion-buttons>\n\n            <button ion-button icon-only outline class="center" *ngIf="filter" (click)="filterType2()" col-5>\n\n              Hide Filters\n\n            </button>\n\n          </ion-buttons>\n\n        </ion-col>\n\n      </ion-row>\n\n\n\n    </ion-card>\n\n    <ion-row>\n\n        <ion-col col-12 class="center" padding-bottom *ngIf="mensajeVacio">\n\n          <h4>{{mensajeVacio}}</h4>\n\n        </ion-col>\n\n      <ion-col col-6 class="center" *ngFor="let p of listMovie">\n\n        <ion-thumbnail item-start col-12>\n\n          <button (click)="goToInfo(p)" class="fotoPelicula" no-padding>\n\n            <img [src]="p.poster">\n\n          </button>\n\n          <h5 class="center">\n\n            {{ p.title }}\n\n            <ion-fab top right edge col-4 #fab>\n\n              <button ion-fab mini class="background">\n\n                <ion-icon [ios]="iconoIOS1" [md]="iconoAndroid1"></ion-icon>\n\n              </button>\n\n              <ion-fab-list>\n\n                <button ion-fab (click)="cambiarIconoSeen(fab, p._id)">\n\n                  <ion-icon ios="ios-eye-off" md="md-eye-off"></ion-icon>\n\n                </button>\n\n                <button ion-fab (click)="cambiarIconoLike(fab, p._id)">\n\n                  <ion-icon ios="ios-heart" md="md-heart"></ion-icon>\n\n                </button>\n\n              </ion-fab-list>\n\n            </ion-fab>\n\n          </h5>\n\n        </ion-thumbnail>\n\n      </ion-col>\n\n      <ion-col col-12 class="center" id="moreButton" *ngIf="!mensajeVacio">\n\n        <button ion-button outline (click)="moreFilms()" col-auto>More</button>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\peliculas\peliculas.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */],
-            __WEBPACK_IMPORTED_MODULE_2__providers_login_login__["a" /* LoginProvider */],
-            __WEBPACK_IMPORTED_MODULE_4__providers_movie_movie_provider__["a" /* MovieProvider */]])
-    ], PeliculasPage);
-    return PeliculasPage;
-}());
-
-//# sourceMappingURL=peliculas.js.map
-
-/***/ }),
-
-/***/ 80:
+/***/ 79:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SerieProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__global_global__ = __webpack_require__(61);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2296,19 +2590,17 @@ var SerieProvider = (function () {
 
 /***/ }),
 
-/***/ 93:
+/***/ 92:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PerfilPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PeliculasPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_camera__ = __webpack_require__(232);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__chat_chat__ = __webpack_require__(166);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mobiscroll_angular__ = __webpack_require__(184);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_login_login__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_platform_browser__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_user_provider__ = __webpack_require__(419);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_login_login__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__info_info__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_movie_movie_provider__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_movie_movie__ = __webpack_require__(130);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2324,285 +2616,199 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
-
-var now = new Date();
-var PerfilPage = (function () {
-    function PerfilPage(navCtrl, navParams, alertCtrl, comprobarLogin, sanitizer, _userProvider, camera) {
+var PeliculasPage = (function () {
+    function PeliculasPage(navCtrl, loadingCtrl, navParams, alertCtrl, toastCtrl, contenedorFilms, _movieProvider) {
         this.navCtrl = navCtrl;
+        this.loadingCtrl = loadingCtrl;
         this.navParams = navParams;
         this.alertCtrl = alertCtrl;
-        this.comprobarLogin = comprobarLogin;
-        this.sanitizer = sanitizer;
-        this._userProvider = _userProvider;
-        this.camera = camera;
-        this.descripcion = false;
-        this.contenidoDescripcion = [];
-        this.eventDate = [now, new Date(now.getFullYear(), now.getMonth(), now.getDate(), now.getHours() + 2)];
-        this.isBusy = 'busy';
-        this.eventText = '';
-        this.events = [{
-                d: new Date(),
-                text: 'New chapter of Mr Robot'
-            }];
-        this.event = false;
+        this.toastCtrl = toastCtrl;
+        this.contenedorFilms = contenedorFilms;
+        this._movieProvider = _movieProvider;
+        this.structure = { lower: 1990, upper: 2018 };
+        this.filter = false;
+        this.genre = 'Genre: All';
+        this.videoLanguage = 'Video Language: All';
+        this.subtitleLanguage = 'Subtitle Language: All';
+        this.page = 1;
+        this.more = true;
         this.isSearchbarOpened = false;
-        this.eventSettings = {
-            theme: 'material',
-            lang: 'en',
-            display: 'inline',
-            layout: 'liquid',
-            view: {
-                calendar: { type: 'month' },
-                eventList: { type: 'month' }
-            }
-        };
-        this.formSettings = {
-            theme: 'ios'
-        };
+        this.iconoIOS1 = 'ios-arrow-dropdown';
+        this.iconoAndroid1 = 'md-arrow-dropdown';
+        this.iconoIOS = 'ios-arrow-dropdown';
+        this.iconoAndroid = 'md-arrow-dropdown';
+        this.movie = new __WEBPACK_IMPORTED_MODULE_5__providers_movie_movie__["a" /* Movie */]('', '', '', '', '', '', '', '', '', '', '', '');
+        this.token = localStorage.getItem('token');
     }
-    PerfilPage.prototype.ngOnInit = function () {
-        this.identity = this.comprobarLogin.getIdentity();
-        this.avatarUrl = this.comprobarLogin.getImageAvatar();
-        this.trustedUrl = this.sanitizer.bypassSecurityTrustUrl(this.avatarUrl);
-    };
-    PerfilPage.prototype.actionCamera = function () {
+    PeliculasPage.prototype.ngOnInit = function () {
         var _this = this;
-        var options = {
-            quality: 100,
-            destinationType: this.camera.DestinationType.DATA_URL,
-            encodingType: this.camera.EncodingType.PNG,
-            mediaType: this.camera.MediaType.PICTURE
-        };
-        this.camera.getPicture(options).then(function (imageData) {
-            //la imagen va a estar codificada (base64)
-            _this.perfilImg = 'data:image/png;base64,' + imageData;
-            _this.trustedUrl = _this.sanitizer.bypassSecurityTrustUrl(_this.perfilImg);
+        this._movieProvider.getAllMovies(localStorage.getItem('token'), this.page).subscribe(function (response) {
+            _this.listMovie = [];
+            if (response.message.length === 0) {
+                _this.mensajeVacio = 'No hay peliculas aún';
+            }
+            else {
+                response.message.forEach(function (eleMovie) {
+                    _this.listMovie.push(eleMovie);
+                });
+                console.log(_this.listMovie);
+            }
+        }, function (error) {
+            console.log(error);
+        });
+    };
+    PeliculasPage.prototype.goToInfo = function (p) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__info_info__["a" /* InfoPage */], {
+            contenido: p,
+            tipo: 'movie'
+        });
+    };
+    PeliculasPage.prototype.filterType = function () {
+        this.filter = true;
+    };
+    PeliculasPage.prototype.filterType2 = function () {
+        this.filter = false;
+    };
+    PeliculasPage.prototype.loginLoading = function () {
+        var _this = this;
+        this.filter = false;
+        this.more = false;
+        this.mensajeVacio = '';
+        var loading = this.loadingCtrl.create({
+            content: 'Years between ' + this.structure.lower + ' and ' + this.structure.upper +
+                '<br>' + 'Genre: ' + this.genre,
+            duration: 4000,
+            dismissOnPageChange: true
+        });
+        this._movieProvider.getMoviesGenre(this.token, this.genre, this.structure.lower, this.structure.upper).subscribe(function (response) {
+            _this.listMovie = [];
+            if (response.movie.length === 0) {
+                _this.mensajeVacio = 'There are not films of your filter parameters.';
+            }
+            else {
+                response.movie.forEach(function (eleMovie) {
+                    _this.listMovie.push(eleMovie);
+                });
+                console.log(response);
+            }
+        }, function (err) {
+            console.log(err);
+        });
+        loading.present();
+        setTimeout(function () {
+        }, 2000);
+    };
+    PeliculasPage.prototype.doRefresh = function (refresher) {
+        var _this = this;
+        this._movieProvider.getAllMovies(localStorage.getItem('token'), this.page).subscribe(function (response) {
+            _this.listMovie = [];
+            response.message.forEach(function (eleMovie) {
+                _this.listMovie.push(eleMovie);
+            });
+            refresher.complete();
+        });
+    };
+    PeliculasPage.prototype.cambiarIconoSeen = function (fab, movieId) {
+        var _this = this;
+        this._movieProvider.viewMovie(this.token, movieId).subscribe(function (response) {
+            if (response.message === "Ya estás viendo esta película") {
+                fab.close();
+                _this.mensaje = 'This film is already in "Seen Group';
+                _this.presentToast(_this.mensaje);
+            }
+            else {
+                fab.close();
+                _this.mensaje = 'This film has been added to "Seen Group"';
+                _this.presentToast(_this.mensaje);
+            }
         }, function (err) {
             console.log(err);
         });
     };
-    PerfilPage.prototype.accessGallery = function () {
+    PeliculasPage.prototype.cambiarIconoLike = function (fab, movieId) {
         var _this = this;
-        this.camera.getPicture({
-            sourceType: this.camera.PictureSourceType.SAVEDPHOTOALBUM,
-            destinationType: this.camera.DestinationType.DATA_URL
-        }).then(function (imageData) {
-            _this.perfilImg = 'data:image/jpeg;base64,' + imageData;
-            _this.trustedUrl = _this.sanitizer.bypassSecurityTrustUrl(_this.perfilImg);
+        this._movieProvider.likedMovie(this.token, movieId).subscribe(function (response) {
+            if (response.message === "Ya estás viendo esta película") {
+                fab.close();
+                _this.mensaje = 'This film is already in "Favourite Group';
+                _this.presentToast(_this.mensaje);
+            }
+            else {
+                fab.close();
+                _this.mensaje = 'This film has been added to "Favourite Group"';
+                _this.presentToast(_this.mensaje);
+            }
         }, function (err) {
             console.log(err);
         });
     };
-    PerfilPage.prototype.showMethods = function () {
+    PeliculasPage.prototype.presentToast = function (mensaje) {
+        var toast = this.toastCtrl.create({
+            message: mensaje,
+            duration: 4000,
+            position: 'bottom'
+        });
+        toast.onDidDismiss(function () {
+            console.log('Dismissed toast');
+        });
+        toast.present();
+    };
+    PeliculasPage.prototype.moreFilms = function () {
         var _this = this;
-        var confirm = this.alertCtrl.create({
-            title: 'Choose one method',
-            message: "Do you want to choose the photo from your mobile's galery or you prefer take a photo?",
-            buttons: [
-                {
-                    text: 'Galery',
-                    handler: function () {
-                        _this.accessGallery();
-                    }
-                },
-                {
-                    text: 'Take a Photo',
-                    handler: function () {
-                        _this.actionCamera();
-                    }
-                }
-            ]
+        console.log('Array de peliculas1: ', this.listMovie.length);
+        this.page = this.page + 1;
+        this._movieProvider.getAllMovies(localStorage.getItem('token'), this.page).subscribe(function (response) {
+            response.message.forEach(function (eleMovie) {
+                _this.listMovie.push(eleMovie);
+            });
+            if (response.message.length === 0) {
+                _this.alert();
+            }
         });
-        confirm.present();
+        console.log('Array de peliculas2: ', this.listMovie.length);
+        console.log('Contenido que trae el server: ', this.contador);
+        /*if(this.listMovie.length == this.contador){
+          this.alert();
+        }*/
     };
-    PerfilPage.prototype.ionViewDidLoad = function () {
-        if (!this.perfilImg) {
-            this.perfilImg = "assets/imgs/profileNull.png";
-        }
+    PeliculasPage.prototype.alert = function () {
+        this.alertCtrl.create({
+            title: 'There was a problem!',
+            subTitle: 'There are not more films in our Database',
+            buttons: ['OK']
+        }).present();
     };
-    PerfilPage.prototype.newEvent = function () {
-        this.event = true;
-    };
-    PerfilPage.prototype.addEvent = function () {
-        this.events.push({
-            start: new Date(this.fecha.element.value),
-            text: this.eventText || 'New Event',
-        });
-        this.eventText = '';
-        this.eventCal.instance.setVal(new Date(this.fecha.element.value));
-        this.event = false;
-    };
-    ;
-    PerfilPage.prototype.closeEvent = function () {
-        this.event = false;
-    };
-    // goToPeliculas() {
-    //   this.navCtrl.push(PeliculasPage, {
-    //     data: this.contenedor
-    //   });
-    // }
-    // goToInicio() {
-    //   this.navCtrl.push(InicioPage, {
-    //     data: this.contenedor
-    //   });
-    // }
-    PerfilPage.prototype.goToChat = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__chat_chat__["a" /* ChatPage */]);
-    };
-    PerfilPage.prototype.descriptionType = function () {
-        var _this = this;
-        var prompt = this.alertCtrl.create({
-            title: 'Description',
-            message: "Enter a description of yourself to add it to your profile",
-            inputs: [
-                {
-                    name: 'Description:',
-                    placeholder: 'Description'
-                },
-            ],
-            buttons: [
-                {
-                    text: 'Cancel',
-                    handler: function (data) {
-                        console.log('Cancel clicked');
-                    }
-                },
-                {
-                    text: 'Save',
-                    handler: function (data) {
-                        _this.descripcion = true;
-                        _this.contenidoDescripcion = [];
-                        for (var key in data) {
-                            _this.contenidoDescripcion.push(data[key]);
-                            //this.nuevoUser = [{description: this.contenidoDescripcion}];
-                            //this.updateUser(this.nuevoUser);
-                        }
-                    }
-                }
-            ]
-        });
-        prompt.present();
-    };
-    PerfilPage.prototype.nameType = function () {
-        var _this = this;
-        var prompt = this.alertCtrl.create({
-            title: 'Name',
-            message: "Enter your new name to add it to your profile",
-            inputs: [
-                {
-                    name: 'Name:',
-                    placeholder: 'Name'
-                },
-            ],
-            buttons: [
-                {
-                    text: 'Cancel',
-                    handler: function (data) {
-                        console.log('Cancel clicked');
-                    }
-                },
-                {
-                    text: 'Save',
-                    handler: function (data) {
-                        _this.nombre = [];
-                        for (var key in data) {
-                            _this.nombre.push(data[key]);
-                            _this.nuevoUser = [{ name: _this.nombre }];
-                            _this.updateUser(_this.nuevoUser);
-                        }
-                    }
-                }
-            ]
-        });
-        prompt.present();
-    };
-    PerfilPage.prototype.userType = function () {
-        var _this = this;
-        var prompt = this.alertCtrl.create({
-            title: 'Username',
-            message: "Enter your new username to add it to your profile",
-            inputs: [
-                {
-                    name: 'Username:',
-                    placeholder: 'Username'
-                },
-            ],
-            buttons: [
-                {
-                    text: 'Cancel',
-                    handler: function (data) {
-                        console.log('Cancel clicked');
-                    }
-                },
-                {
-                    text: 'Save',
-                    handler: function (data) {
-                        _this.nombreUsuario = [];
-                        for (var key in data) {
-                            _this.nombreUsuario.push(data[key]);
-                            _this.nuevoUser = [{ nickname: _this.nombreUsuario }];
-                            _this.updateUser(_this.nuevoUser);
-                        }
-                    }
-                }
-            ]
-        });
-        prompt.present();
-    };
-    PerfilPage.prototype.updateUser = function (user) {
-        console.log(user[0]);
-        this._userProvider.updateUser(user[0], localStorage.getItem('token'), this.comprobarLogin.getIdentity()._id)
-            .subscribe(function (response) {
-            console.log(response);
-        }, function (err) {
-            console.log(err);
-        });
-    };
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])('mbscRange'),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_4__mobiscroll_angular__["c" /* MbscRange */])
-    ], PerfilPage.prototype, "range", void 0);
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])('mbscEventCal'),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_4__mobiscroll_angular__["a" /* MbscEventcalendar */])
-    ], PerfilPage.prototype, "eventCal", void 0);
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])('fecha'),
-        __metadata("design:type", Object)
-    ], PerfilPage.prototype, "fecha", void 0);
-    PerfilPage = __decorate([
+    PeliculasPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-perfil',template:/*ion-inline-start:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\perfil\perfil.html"*/'<page-header></page-header>\n\n<ion-content>\n\n  <ion-list *ngIf="isSearchbarOpened">\n\n    <button ion-item *ngFor="let item of items" (click)="showDetail(item)">\n\n      {{ item }}\n\n    </button>\n\n  </ion-list>\n\n\n\n  <ion-card>\n\n    <ion-card-content>\n\n      <ion-grid>\n\n        <ion-row>\n\n          <ion-col col-12 *ngIf="trustedUrl">\n\n            <ion-thumbnail item-start>  \n\n              <img  [src]="trustedUrl">\n\n              <ion-fab top right col-3 #fab (click)="showMethods()">\n\n                <button ion-fab mini class="background">\n\n                  <ion-icon ios="ios-camera" md="md-camera"></ion-icon>\n\n                </button>\n\n              </ion-fab>\n\n            </ion-thumbnail>\n\n          </ion-col>\n\n        </ion-row>\n\n        \n\n        <ion-row>\n\n          <ion-col col-12>\n\n            <ion-grid class="center">\n\n              <ion-row>\n\n                <ion-col col-auto>\n\n                  <h2 class="bold">Name: </h2>\n\n                </ion-col>\n\n                <ion-col col-auto>\n\n                  <h2>{{ identity.name }} {{ identity.surname }}</h2>\n\n                </ion-col>\n\n                <ion-col col-auto>\n\n                  <a (click)="nameType()">\n\n                    <ion-icon ios="ios-create" md="md-create"></ion-icon>\n\n                  </a>\n\n                </ion-col>\n\n              </ion-row>\n\n            </ion-grid>\n\n          </ion-col>\n\n        </ion-row>\n\n\n\n        <ion-row>\n\n          <ion-col col-12>\n\n            <ion-grid class="center">\n\n              <ion-row>\n\n                <ion-col col-auto>\n\n                  <h2 class="bold">Username: </h2>\n\n                </ion-col>\n\n                <ion-col col-auto>\n\n                  <h2>{{ identity.nickname }}</h2>\n\n                </ion-col>\n\n                <ion-col col-auto>\n\n                  <a (click)="userType()">\n\n                    <ion-icon ios="ios-create" md="md-create"></ion-icon>\n\n                  </a>\n\n                </ion-col>\n\n              </ion-row>\n\n            </ion-grid>\n\n          </ion-col>\n\n        </ion-row>\n\n\n\n        <ion-row>\n\n          <ion-col col-12 class="center">\n\n            <ion-buttons>\n\n              <button ion-button icon-only clear class="center" *ngIf="!descripcion" (click)="descriptionType()">\n\n                Type your description\n\n              </button>\n\n            </ion-buttons>\n\n          </ion-col>\n\n        </ion-row>\n\n\n\n        <ion-row  *ngIf="descripcion">\n\n          <ion-col col-12>\n\n            <ion-grid class="center">\n\n              <ion-row>\n\n                <ion-col col-auto>\n\n                  <h2 class="center">{{ contenidoDescripcion }}</h2>\n\n                </ion-col>\n\n              </ion-row>\n\n            </ion-grid>\n\n          </ion-col>\n\n        </ion-row>\n\n\n\n      </ion-grid>\n\n    </ion-card-content>\n\n  </ion-card>\n\n  <ion-card>\n\n    <mbsc-eventcalendar [data]="events" [options]="eventSettings" #mbscEventCal="mobiscroll"></mbsc-eventcalendar>\n\n    <ion-row class="center">\n\n      <ion-col col-12 *ngIf="!event">\n\n        <ion-buttons>\n\n          <button ion-button outline (click)="newEvent()">\n\n            New Event\n\n          </button>\n\n        </ion-buttons>\n\n      </ion-col>\n\n    </ion-row>\n\n    <ion-row *ngIf="event" col-12>\n\n      <mbsc-form [options]="formSettings">\n\n        <div class="mbsc-form-group">\n\n          <ion-item class="label">\n\n            <ion-label>Title of the event</ion-label>\n\n            <ion-input [(ngModel)]="eventText">Title</ion-input>\n\n          </ion-item>\n\n          <ion-item class="label2">\n\n            <mbsc-datetime #fecha id="startDate">Date</mbsc-datetime>\n\n            <div [(ngModel)]="eventDate" mbsc-range [mbsc-options]="rangeSettings" #mbscRange="mobiscroll"></div>\n\n          </ion-item>\n\n        </div>\n\n      </mbsc-form>\n\n      <ion-col col-auto offset-2>\n\n        <ion-buttons>\n\n          <button ion-button outline (click)="addEvent()">\n\n            Add Event\n\n          </button>\n\n        </ion-buttons>\n\n      </ion-col>\n\n      <ion-col col-auto>\n\n        <ion-buttons>\n\n          <button ion-button outline (click)="addEvent()">\n\n            Cancel\n\n          </button>\n\n        </ion-buttons>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\perfil\perfil.html"*/,
-            providers: [__WEBPACK_IMPORTED_MODULE_5__providers_login_login__["a" /* LoginProvider */], __WEBPACK_IMPORTED_MODULE_7__providers_user_provider__["a" /* UserProvider */]]
+            selector: 'page-peliculas',template:/*ion-inline-start:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\peliculas\peliculas.html"*/'<page-header></page-header>\n\n<ion-content>\n\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n\n    <ion-refresher-content refreshingText="Refreshing...">\n\n    </ion-refresher-content>\n\n  </ion-refresher>\n\n  <ion-card >\n\n    <ion-row>\n\n      <ion-col col-12 class="center">\n\n        <ion-buttons padding-bottom>\n\n          <button ion-button icon-only outline *ngIf="!filter" (click)="filterType()" col-5>\n\n            Show Filters\n\n          </button>\n\n        </ion-buttons>\n\n      </ion-col>\n\n    </ion-row>\n\n\n\n    <ion-card *ngIf="filter">\n\n\n\n      <ion-item>\n\n        <ion-label>Year: </ion-label>\n\n        <ion-range dualKnobs="true" pin="true" min="1900" max="2020" step="5" snaps="true" [(ngModel)]="structure">\n\n          <ion-icon range-left small ios="ios-time" md="md-time"></ion-icon>\n\n          <ion-icon range-right ios="ios-time" md="md-time"></ion-icon>\n\n        </ion-range>\n\n      </ion-item>\n\n      \n\n      <ion-item>\n\n        <ion-label>Films Genre: </ion-label>\n\n        <ion-select [(ngModel)]="genre" interface="popover">\n\n          <ion-option value="All" selected="true">All</ion-option>\n\n          <ion-option value="Action" selected="true">Action</ion-option>\n\n          <ion-option value="Adventure">Adventure</ion-option>\n\n          <ion-option value="Comedy">Comedy</ion-option>\n\n          <ion-option value="Documentary">Documentary</ion-option>\n\n          <ion-option value="Drama">Drama</ion-option>\n\n          <ion-option value="Fantasy">Fantasy</ion-option>\n\n          <ion-option value="History">History</ion-option>\n\n          <ion-option value="Horror">Horror</ion-option>\n\n          <ion-option value="News">News</ion-option>\n\n          <ion-option value="Sci-Fi">Science fiction</ion-option>\n\n          <ion-option value="Short">Short</ion-option>\n\n        </ion-select>\n\n      </ion-item>\n\n      \n\n      <ion-row>\n\n        <ion-col col-12 class="center">\n\n          <ion-buttons>\n\n            <button ion-button icon-only outline class="center" *ngIf="filter" (click)="loginLoading()" col-5>\n\n              Accept\n\n            </button>\n\n          </ion-buttons>\n\n        </ion-col>\n\n      </ion-row>\n\n\n\n      <ion-row>\n\n        <ion-col col-12 class="center">\n\n          <ion-buttons>\n\n            <button ion-button icon-only outline class="center" *ngIf="filter" (click)="filterType2()" col-5>\n\n              Hide Filters\n\n            </button>\n\n          </ion-buttons>\n\n        </ion-col>\n\n      </ion-row>\n\n\n\n    </ion-card>\n\n    <ion-row>\n\n        <ion-col col-12 class="center" padding-bottom *ngIf="mensajeVacio">\n\n          <h4>{{mensajeVacio}}</h4>\n\n        </ion-col>\n\n      <ion-col col-6 class="center" *ngFor="let p of listMovie">\n\n        <ion-thumbnail item-start col-12>\n\n          <button (click)="goToInfo(p)" class="fotoPelicula" no-padding>\n\n            <img [src]="p.poster">\n\n          </button>\n\n          <h5 class="center">\n\n            {{ p.title }}\n\n            <ion-fab top right edge col-4 #fab>\n\n              <button ion-fab mini class="background">\n\n                <ion-icon [ios]="iconoIOS1" [md]="iconoAndroid1"></ion-icon>\n\n              </button>\n\n              <ion-fab-list>\n\n                <button ion-fab (click)="cambiarIconoSeen(fab, p._id)">\n\n                  <ion-icon ios="ios-eye-off" md="md-eye-off"></ion-icon>\n\n                </button>\n\n                <button ion-fab (click)="cambiarIconoLike(fab, p._id)">\n\n                  <ion-icon ios="ios-heart" md="md-heart"></ion-icon>\n\n                </button>\n\n              </ion-fab-list>\n\n            </ion-fab>\n\n          </h5>\n\n        </ion-thumbnail>\n\n      </ion-col>\n\n      <ion-col col-12 class="center" id="moreButton" *ngIf="more">\n\n        <button ion-button outline (click)="moreFilms()" col-auto>More</button>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\peliculas\peliculas.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
-            __WEBPACK_IMPORTED_MODULE_5__providers_login_login__["a" /* LoginProvider */],
-            __WEBPACK_IMPORTED_MODULE_6__angular_platform_browser__["c" /* DomSanitizer */],
-            __WEBPACK_IMPORTED_MODULE_7__providers_user_provider__["a" /* UserProvider */],
-            __WEBPACK_IMPORTED_MODULE_2__ionic_native_camera__["a" /* Camera */]])
-    ], PerfilPage);
-    return PerfilPage;
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_login_login__["a" /* LoginProvider */],
+            __WEBPACK_IMPORTED_MODULE_4__providers_movie_movie_provider__["a" /* MovieProvider */]])
+    ], PeliculasPage);
+    return PeliculasPage;
 }());
 
-//# sourceMappingURL=perfil.js.map
+//# sourceMappingURL=peliculas.js.map
 
 /***/ }),
 
-/***/ 94:
+/***/ 93:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_login_login__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__registro_registro__ = __webpack_require__(170);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__inicio_inicio__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__models_userLogin__ = __webpack_require__(420);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__registro_registro__ = __webpack_require__(171);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__inicio_inicio__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__models_userLogin__ = __webpack_require__(422);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_platform_browser__ = __webpack_require__(24);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2655,6 +2861,7 @@ var HomePage = (function () {
         this.login = [{ emailNick: this.emailAddress.value, password: this.currentPassword.value, gettoken: null }];
         this.comprobarLogin.loginUsers(this.login).subscribe(function (datos) {
             var contenedor = datos["user"];
+            console.log(contenedor);
             //Modificacion LOGIN Persistencia del usuario y recogida del token Parte I
             localStorage.setItem('user', JSON.stringify(contenedor));
             _this.getToken(contenedor, _this.login);
@@ -2754,5 +2961,5 @@ var HomePage = (function () {
 
 /***/ })
 
-},[379]);
+},[381]);
 //# sourceMappingURL=main.js.map

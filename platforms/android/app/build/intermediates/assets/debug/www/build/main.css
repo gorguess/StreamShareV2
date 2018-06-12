@@ -33366,6 +33366,64 @@ ion-header {
   z-index: 3 !important;
 }
 
+page-fullvideo ion-content {
+  background: #000 !important;
+}
+
+page-fullvideo .vertical-align-content > * {
+  display: -webkit-box !important;
+  display: -webkit-flex !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-align-content: center !important;
+  -ms-flex-line-pack: center !important;
+  align-content: center !important;
+  -webkit-box-align: center !important;
+  -webkit-align-items: center !important;
+  -ms-flex-align: center !important;
+  align-items: center !important;
+}
+
+page-fullvideo video {
+  width: 100%;
+}
+
+page-fullvideo #backArrow {
+  background: #353535;
+}
+
+page-header #posSearch {
+  max-height: 48px;
+  width: auto;
+}
+
+page-header #listSearch {
+  max-height: calc(80vh);
+  overflow-y: auto;
+  width: 100%;
+  z-index: 10;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5) !important;
+}
+
+page-header #listSearch > a {
+  cursor: pointer;
+}
+
+page-header .center {
+  display: -webkit-box !important;
+  display: -webkit-flex !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-align-content: center !important;
+  -ms-flex-line-pack: center !important;
+  align-content: center !important;
+  -webkit-box-align: center !important;
+  -webkit-align-items: center !important;
+  -ms-flex-align: center !important;
+  align-items: center !important;
+}
+
 page-home ion-content {
   background: url("../assets/imgs/home.jpg");
   background-attachment: fixed;
@@ -33398,6 +33456,10 @@ page-home .vertical-align-content > * {
   -webkit-align-items: center !important;
   -ms-flex-align: center !important;
   align-items: center !important;
+}
+
+page-home .scroll-content {
+  padding-bottom: 0px !important;
 }
 
 page-info ion-content {
@@ -33441,6 +33503,14 @@ page-info .titulo {
   font-weight: bolder;
 }
 
+page-info .bottom {
+  padding-bottom: 19% !important;
+}
+
+page-info .background {
+  background: #008080;
+}
+
 page-inicio ion-content {
   background: url("../assets/imgs/fondo.jpg");
   background-attachment: fixed;
@@ -33480,9 +33550,8 @@ page-inicio .usuarioIcono {
   color: white;
 }
 
-page-inicio ion-card {
-  height: 100% !important;
-  margin-bottom: 15% !important;
+page-inicio .bottom {
+  padding-bottom: 19% !important;
 }
 
 page-peliculas ion-content {
@@ -33597,6 +33666,10 @@ page-perfil .label2 * {
   padding-left: 0.3em !important;
 }
 
+page-perfil #bottom {
+  padding-bottom: 19%;
+}
+
 page-registro ion-content {
   background: url("../assets/imgs/home.jpg");
   background-attachment: fixed;
@@ -33696,6 +33769,10 @@ page-ver-todo .has-refresher > .scroll-content {
   border-top: 0px !important;
 }
 
+page-ver-todo .bottom {
+  padding-bottom: 19% !important;
+}
+
 page-videoplayer #videoplayer:-webkit-full-screen {
   background-color: rgba(255, 255, 255, 0) !important;
 }
@@ -33792,4 +33869,8 @@ page-videoplayer hr {
 
 page-videoplayer p {
   color: white;
+}
+
+page-videoplayer #backArrow {
+  background: #353535;
 }

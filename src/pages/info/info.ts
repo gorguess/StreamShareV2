@@ -139,7 +139,11 @@ export class InfoPage implements OnInit {
         // this.mensaje = 'This film has already been removed of "Favourite Group". Please refresh this view.';
         // this.presentToast(this.mensaje);
       });
+
+    setTimeout(() => {
       this.errores(this.primerError, this.segundoError);
+    }, 1250);
+      
     /*if (this.primerError) {
       if (this.segundoError) {
         this.mensaje = 'This film have not got a group. You can not remove a film of non-existent group.';
@@ -215,6 +219,17 @@ export class InfoPage implements OnInit {
       err => {
         console.log(err);
       });
+    this._linkProvider.getLinks(this.token, this.movie["_id"]).subscribe(response => {
+      this.links = [];
+      response.link.forEach(link => {
+        this.links.push(link.url);
+      });
+      this.showLinks(this.links);
+    },
+      err => {
+        console.log(err);
+      });
+    
   }
 
   presentToast(mensaje: string) {
@@ -238,8 +253,8 @@ export class InfoPage implements OnInit {
     for (let index = 0; index < this.links.length; index++) {
       alert.addInput({
         type: 'radio',
-        label: 'Blue',
-        value: links[index].value
+        label: 'Link ' + index,
+        value: links[index]
       });  
     }
 
@@ -247,8 +262,7 @@ export class InfoPage implements OnInit {
     alert.addButton({
       text: 'OK',
       handler: data => {
-        // this.testRadioOpen = false;
-        // this.testRadioResult = data;
+        this.navCtrl.push(VideoplayerPage, { movie: this.content, video: data });
       }
     });
     alert.present();
