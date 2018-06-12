@@ -139,9 +139,6 @@ export class InfoPage implements OnInit {
         // this.mensaje = 'This film has already been removed of "Favourite Group". Please refresh this view.';
         // this.presentToast(this.mensaje);
       });
-
-    console.log('Primero: ', this.primerError);
-    console.log('Segundo: ', this.segundoError);
       this.errores(this.primerError, this.segundoError);
     /*if (this.primerError) {
       if (this.segundoError) {
@@ -178,6 +175,8 @@ export class InfoPage implements OnInit {
   }
 
   errores(primerError = null, segundoError = null){
+    console.log('Primero: ', this.primerError);
+    console.log('Segundo: ', this.segundoError);
     if (this.primerError) {
       if (this.segundoError) {
         this.mensaje = 'This film have not got a group. You can not remove a film of non-existent group.';
