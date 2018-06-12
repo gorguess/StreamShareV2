@@ -205,26 +205,31 @@ export class InfoPage implements OnInit {
   }
 
   obtenerLinks(movieId) {
-    this._movieProvider.getLinks(this.token, movieId).subscribe(response => {
+    // this._movieProvider.getLinks(this.token, movieId).subscribe(response => {
+    //   if (response.message === "No existe el contenido") {
+    //     this.mensaje = "There are not links of this content yet";
+    //     this.presentToast(this.mensaje);
+    //   } else {
+    //     response.message.forEach(link => {
+    //       this.links.push(link);
+    //     });
+    //     this.showLinks(this.links);
+    //   }
+    // },
+    //   err => {
+    //     console.log(err);
+    //   });
+    this._linkProvider.getLinks(this.token, this.movie["_id"]).subscribe(response => {
       if (response.message === "No existe el contenido") {
         this.mensaje = "There are not links of this content yet";
         this.presentToast(this.mensaje);
       } else {
-        response.message.forEach(link => {
-          this.links.push(link);
+        this.links = [];
+        response.link.forEach(link => {
+          this.links.push(link.url);
         });
         this.showLinks(this.links);
       }
-    },
-      err => {
-        console.log(err);
-      });
-    this._linkProvider.getLinks(this.token, this.movie["_id"]).subscribe(response => {
-      this.links = [];
-      response.link.forEach(link => {
-        this.links.push(link.url);
-      });
-      this.showLinks(this.links);
     },
       err => {
         console.log(err);

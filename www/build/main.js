@@ -2178,26 +2178,32 @@ var InfoPage = (function () {
     };
     InfoPage.prototype.obtenerLinks = function (movieId) {
         var _this = this;
-        this._movieProvider.getLinks(this.token, movieId).subscribe(function (response) {
+        // this._movieProvider.getLinks(this.token, movieId).subscribe(response => {
+        //   if (response.message === "No existe el contenido") {
+        //     this.mensaje = "There are not links of this content yet";
+        //     this.presentToast(this.mensaje);
+        //   } else {
+        //     response.message.forEach(link => {
+        //       this.links.push(link);
+        //     });
+        //     this.showLinks(this.links);
+        //   }
+        // },
+        //   err => {
+        //     console.log(err);
+        //   });
+        this._linkProvider.getLinks(this.token, this.movie["_id"]).subscribe(function (response) {
             if (response.message === "No existe el contenido") {
                 _this.mensaje = "There are not links of this content yet";
                 _this.presentToast(_this.mensaje);
             }
             else {
-                response.message.forEach(function (link) {
-                    _this.links.push(link);
+                _this.links = [];
+                response.link.forEach(function (link) {
+                    _this.links.push(link.url);
                 });
                 _this.showLinks(_this.links);
             }
-        }, function (err) {
-            console.log(err);
-        });
-        this._linkProvider.getLinks(this.token, this.movie["_id"]).subscribe(function (response) {
-            _this.links = [];
-            response.link.forEach(function (link) {
-                _this.links.push(link.url);
-            });
-            _this.showLinks(_this.links);
         }, function (err) {
             console.log(err);
         });
