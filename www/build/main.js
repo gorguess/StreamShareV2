@@ -19,6 +19,48 @@ var Movie = (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FullvideoPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var FullvideoPage = (function () {
+    function FullvideoPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.movie = navParams.data['video'];
+    }
+    FullvideoPage.prototype.ionViewDidLoad = function () {
+    };
+    FullvideoPage.prototype.goToBack = function () {
+        this.navCtrl.pop();
+    };
+    FullvideoPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-fullvideo',template:/*ion-inline-start:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\fullvideo\fullvideo.html"*/'<ion-fab>\n\n  <button ion-fab mini (click)="goToBack()" id="backArrow"><ion-icon name="md-arrow-back"></ion-icon></button>\n\n</ion-fab>\n\n<ion-content class="vertical-align-content">\n\n  <video #videoplayer preload autoplay controls id="videoplayer">\n\n    <source [src]="movie" type="video/mp4">\n\n  </video>\n\n</ion-content>'/*ion-inline-end:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\fullvideo\fullvideo.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
+    ], FullvideoPage);
+    return FullvideoPage;
+}());
+
+//# sourceMappingURL=fullvideo.js.map
+
+/***/ }),
+
+/***/ 166:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChatPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
@@ -84,7 +126,7 @@ var ChatPage = (function () {
     ], ChatPage.prototype, "content", void 0);
     ChatPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-chat',template:/*ion-inline-start:"/Users/adriancejudo/Desktop/StreamShareV4/src/pages/chat/chat.html"*/'<!-- Cabecera de la pantalla donde pondremos el título, y el nombre de usuario que se ha conectado -->\n<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Chat Online\n      <ion-input placeholder="¿Quién eres?" [(ngModel)]="userName"></ion-input>\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<!-- En el contenido de la página, crearemos un "card" con el nombre de usuario y el mensaje enviado con un \nbucle for -->\n<ion-content #content padding>\n  <ion-card *ngFor="let message of messagesArray">\n    <ion-card-header>\n      <!-- En el header del card ponemos el nombre del usuario -->\n      {{message.nombre}}: <!-- Sacamos el contenido de la carpeta "nombre" (nombre de la carpeta guardada\n        en el repositorio), que se encuentra guardada en la variable "message", declarada en el archivo \n        Typescript de esta vista  -->\n    </ion-card-header>\n    <ion-card-content>\n      <!-- En el contenido del card ponemos el mensaje del usuario -->\n      {{message.mensaje}}\n    </ion-card-content>\n  </ion-card>\n  <!-- Este div sirve para saber en que posición se encuentra el último mensaje enviado -->\n  <div id="content-end"></div>\n</ion-content>\n\n<!-- En el footer ponemos un input donde escribir y un botón que envía lo escrito en el input -->\n<ion-footer>\n  <ion-toolbar>\n    <!-- Lo escrito en el input lo guardamos en la variable "message" usando ngModel (jQuery) -->\n    <ion-input placeholder="Escribir mensaje" [(ngModel)]="message"></ion-input>\n    <ion-buttons end>\n      <button ion-button icon-only clear (click)="sendMessage()">\n        Enviar\n        <ion-icon name="send"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-footer>'/*ion-inline-end:"/Users/adriancejudo/Desktop/StreamShareV4/src/pages/chat/chat.html"*/,
+            selector: 'page-chat',template:/*ion-inline-start:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\chat\chat.html"*/'<!-- Cabecera de la pantalla donde pondremos el título, y el nombre de usuario que se ha conectado -->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      Chat Online\n\n      <ion-input placeholder="¿Quién eres?" [(ngModel)]="userName"></ion-input>\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<!-- En el contenido de la página, crearemos un "card" con el nombre de usuario y el mensaje enviado con un \n\nbucle for -->\n\n<ion-content #content padding>\n\n  <ion-card *ngFor="let message of messagesArray">\n\n    <ion-card-header>\n\n      <!-- En el header del card ponemos el nombre del usuario -->\n\n      {{message.nombre}}: <!-- Sacamos el contenido de la carpeta "nombre" (nombre de la carpeta guardada\n\n        en el repositorio), que se encuentra guardada en la variable "message", declarada en el archivo \n\n        Typescript de esta vista  -->\n\n    </ion-card-header>\n\n    <ion-card-content>\n\n      <!-- En el contenido del card ponemos el mensaje del usuario -->\n\n      {{message.mensaje}}\n\n    </ion-card-content>\n\n  </ion-card>\n\n  <!-- Este div sirve para saber en que posición se encuentra el último mensaje enviado -->\n\n  <div id="content-end"></div>\n\n</ion-content>\n\n\n\n<!-- En el footer ponemos un input donde escribir y un botón que envía lo escrito en el input -->\n\n<ion-footer>\n\n  <ion-toolbar>\n\n    <!-- Lo escrito en el input lo guardamos en la variable "message" usando ngModel (jQuery) -->\n\n    <ion-input placeholder="Escribir mensaje" [(ngModel)]="message"></ion-input>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only clear (click)="sendMessage()">\n\n        Enviar\n\n        <ion-icon name="send"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-toolbar>\n\n</ion-footer>'/*ion-inline-end:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\chat\chat.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
     ], ChatPage);
@@ -95,19 +137,466 @@ var ChatPage = (function () {
 
 /***/ }),
 
-/***/ 166:
+/***/ 167:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VideoplayerPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_links_link_provider__ = __webpack_require__(237);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__fullvideo_fullvideo__ = __webpack_require__(165);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var VideoplayerPage = (function () {
+    function VideoplayerPage(navCtrl, navParams, sanitizer, _linkProvider) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.sanitizer = sanitizer;
+        this._linkProvider = _linkProvider;
+        this.status = 'play';
+        this.icono = 'ios-play-outline';
+        this.movie = navParams.data['movie'];
+        this.video = navParams.data['video'];
+        this.token = localStorage.getItem('token');
+    }
+    VideoplayerPage.prototype.ngOnInit = function () {
+        var _this = this;
+        this._linkProvider.getContent(this.token, this.video).subscribe(function (res) {
+            alert('we are ready');
+            _this.file = new Blob([res], { type: 'video/mp4' });
+            _this.fileURL = URL.createObjectURL(_this.file);
+            _this.trustedUrl = _this.sanitizer.bypassSecurityTrustUrl(_this.fileURL);
+            console.log(_this.trustedUrl);
+        }, function (err) {
+            console.log(err);
+        });
+    };
+    VideoplayerPage.prototype.toggleVideo = function (event) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__fullvideo_fullvideo__["a" /* FullvideoPage */], { video: this.trustedUrl });
+    };
+    VideoplayerPage.prototype.goToBack = function () {
+        this.navCtrl.pop();
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])('videoplayer'),
+        __metadata("design:type", Object)
+    ], VideoplayerPage.prototype, "videoplayer", void 0);
+    VideoplayerPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-videoplayer',template:/*ion-inline-start:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\videoplayer\videoplayer.html"*/'<ion-content>\n\n<ion-fab>\n\n  <button ion-fab mini (click)="goToBack()" id="backArrow"><ion-icon name="md-arrow-back"></ion-icon></button>\n\n</ion-fab>\n\n  <div id="coverPoster"></div>\n\n    <img [src]="movie.poster" id="backPoster" alt="">\n\n    <ion-grid>\n\n      <ion-row>\n\n        <ion-col col-12>\n\n          <video #videoplayer preload id="videoplayer" hidden>\n\n            <source [src]="trustedUrl" type="video/mp4">\n\n          </video>\n\n          <button (click)="toggleVideo()" id="myBtn"><img src="assets/imgs/play.svg" alt=""></button>\n\n        </ion-col>\n\n      </ion-row>\n\n      <ion-row id="infoPelicula">\n\n        <ion-col col>\n\n          <h2>{{movie.title}}</h2>\n\n          <hr><br>\n\n          <p>\n\n            {{movie.description}}\n\n          </p>\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-grid>\n\n</ion-content>'/*ion-inline-end:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\videoplayer\videoplayer.html"*/,
+            providers: [__WEBPACK_IMPORTED_MODULE_3__providers_links_link_provider__["a" /* LinkProvider */]]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["c" /* DomSanitizer */], __WEBPACK_IMPORTED_MODULE_3__providers_links_link_provider__["a" /* LinkProvider */]])
+    ], VideoplayerPage);
+    return VideoplayerPage;
+}());
+
+//# sourceMappingURL=videoplayer.js.map
+
+/***/ }),
+
+/***/ 168:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegistroPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_login_login__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home_home__ = __webpack_require__(92);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var RegistroPage = (function () {
+    function RegistroPage(navCtrl, navParams, loadingCtrl, alertCtrl, comprobarLogin) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.loadingCtrl = loadingCtrl;
+        this.alertCtrl = alertCtrl;
+        this.comprobarLogin = comprobarLogin;
+    }
+    RegistroPage.prototype.ngOnInit = function () {
+        this.formularioUsuario = new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormGroup */]({
+            name: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].required]),
+            surname: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].required]),
+            nickname: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].required]),
+            email: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')]),
+            pass: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].pattern(/^[a-z0-9_-]{5,18}$/)]),
+            pass2: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].required, this.equalto('pass')])
+        });
+    };
+    RegistroPage.prototype.gotoHome = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__home_home__["a" /* HomePage */]);
+    };
+    RegistroPage.prototype.equalto = function (field_name) {
+        return function (control) {
+            var input = control.value;
+            var isValid = control.root.value[field_name] == input;
+            if (!isValid)
+                return { 'equalTo': { isValid: isValid } };
+            else
+                return null;
+        };
+    };
+    RegistroPage.prototype.alert = function () {
+        this.alertCtrl.create({
+            title: 'There was a problem!',
+            subTitle: 'This user alredy exists',
+            buttons: ['OK']
+        }).present();
+    };
+    RegistroPage.prototype.registerUsers = function () {
+        var _this = this;
+        this.registro = [{
+                name: this.nombre.value,
+                surname: this.apellidos.value,
+                nickname: this.username.value,
+                email: this.emailAddress.value,
+                birthdate: this.birthday.value["day"] +
+                    '/' + this.birthday.value["month"] +
+                    '/' + this.birthday.value["year"],
+                password: this.currentPassword.value
+            }];
+        this.comprobarLogin.registerUsers(this.registro).subscribe(function (datos) {
+            console.log('Datos: ', datos);
+            if (datos['message'] == 'Este usuario ya existe') {
+                _this.alert();
+            }
+            else {
+                _this.loginLoading();
+            }
+        }, function (err) {
+            console.log(err["message"]);
+        });
+    };
+    RegistroPage.prototype.loginLoading = function () {
+        var _this = this;
+        this.ngOnInit();
+        var loading = this.loadingCtrl.create({
+            content: 'Please wait...',
+            duration: 2000,
+            dismissOnPageChange: true
+        });
+        loading.present();
+        setTimeout(function () {
+            _this.gotoHome();
+        }, 2000);
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])("name"),
+        __metadata("design:type", Object)
+    ], RegistroPage.prototype, "nombre", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])("surname"),
+        __metadata("design:type", Object)
+    ], RegistroPage.prototype, "apellidos", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])("nickname"),
+        __metadata("design:type", Object)
+    ], RegistroPage.prototype, "username", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])("birthday"),
+        __metadata("design:type", Object)
+    ], RegistroPage.prototype, "birthday", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])("emailad"),
+        __metadata("design:type", Object)
+    ], RegistroPage.prototype, "emailAddress", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])("password"),
+        __metadata("design:type", Object)
+    ], RegistroPage.prototype, "currentPassword", void 0);
+    RegistroPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-registro',template:/*ion-inline-start:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\registro\registro.html"*/'<ion-content>\n\n  <ion-grid>\n\n    <ion-row>\n\n      <ion-col col-12>\n\n        <ion-card>\n\n          <ion-card-header>\n\n            <p class="header">Registration</p>\n\n          </ion-card-header>\n\n          <ion-card-content>\n\n            <ion-list>\n\n              <form [formGroup]="formularioUsuario" novalidate>\n\n                <ion-item>\n\n                  <ion-label floating>Name *</ion-label>\n\n                  <ion-input formControlName="name" #name type="text"></ion-input>\n\n                </ion-item>\n\n                <ion-item *ngIf="formularioUsuario.get(\'name\').errors && formularioUsuario.get(\'name\').dirty">\n\n                  <p color="danger" ion-text *ngIf="formularioUsuario.get(\'name\').hasError(\'required\')">Your name is required</p>\n\n                </ion-item>\n\n                <ion-item>\n\n                  <ion-label floating>Surname *</ion-label>\n\n                  <ion-input formControlName="surname" #surname type="text"></ion-input>\n\n                </ion-item>\n\n                <ion-item *ngIf="formularioUsuario.get(\'surname\').errors && formularioUsuario.get(\'surname\').dirty">\n\n                  <p color="danger" ion-text *ngIf="formularioUsuario.get(\'surname\').hasError(\'required\')">Your surname is required</p>\n\n                </ion-item>\n\n                <ion-item>\n\n                  <ion-label floating>Nickname *</ion-label>\n\n                  <ion-input type="text" #nickname formControlName="nickname"></ion-input>\n\n                </ion-item>\n\n                <ion-item *ngIf="formularioUsuario.get(\'nickname\').errors && formularioUsuario.get(\'nickname\').dirty">\n\n                  <p color="danger" ion-text *ngIf="formularioUsuario.get(\'nickname\').hasError(\'required\')" class="error">\n\n                    nickname is required.\n\n                  </p>\n\n                </ion-item>\n\n                <ion-item>\n\n                  <ion-label floating>Birthday</ion-label>\n\n                  <ion-datetime #birthday displayFormat="MM/DD/YYYY"></ion-datetime>\n\n                </ion-item>\n\n                <ion-item>\n\n                  <ion-label floating>Email address *</ion-label>\n\n                  <ion-input type="email" #emailad formControlName="email"></ion-input>\n\n                </ion-item>\n\n                <!-- Control de errores de si está rellenando el campo "Password" y el usuario está vacío indique un error -->\n\n                <ion-item *ngIf="formularioUsuario.get(\'email\').errors && formularioUsuario.get(\'email\').dirty">\n\n                  <p color="danger" ion-text *ngIf="formularioUsuario.get(\'email\').hasError(\'required\')" class="error">\n\n                    Email is required.\n\n                  </p>\n\n                  <p color="danger" ion-text *ngIf="formularioUsuario.get(\'email\').hasError(\'pattern\')">\n\n                    It is not an email\n\n                  </p>\n\n                </ion-item>\n\n                <ion-item>\n\n                  <ion-label floating>Password *</ion-label>\n\n                  <!-- Creamos el input para la contraseña -->\n\n                  <ion-input type="password" name="pass" formControlName="pass"></ion-input>\n\n                </ion-item>\n\n                <!-- Control de errores de si está vacío, o tiene menos de 10 caracteres, indique un error -->\n\n                <ion-item *ngIf="formularioUsuario.get(\'pass\').errors && formularioUsuario.get(\'pass\').dirty">\n\n                  <p color="danger" ion-text *ngIf="formularioUsuario.get(\'pass\').hasError(\'pattern\')" class="error">\n\n                    It is not a strong password.\n\n                  </p>\n\n                </ion-item>\n\n\n\n                <ion-item>\n\n                  <ion-label floating>Confirm password *</ion-label>\n\n                  <!-- Creamos el input para la contraseña -->\n\n                  <ion-input type="password" #password formControlName="pass2"></ion-input>\n\n                </ion-item>\n\n                <!-- Control de errores de si está vacío, o tiene menos de 10 caracteres, indique un error -->\n\n                <ion-item *ngIf="(formularioUsuario.get(\'pass2\').hasError(\'equalTo\') || formularioUsuario.get(\'pass2\').hasError(\'required\')) && formularioUsuario.get(\'pass2\').touched">\n\n                  <p color="danger" ion-text *ngIf="formularioUsuario.get(\'pass2\').hasError(\'required\') && formularioUsuario.get(\'pass2\').touched" class="error">\n\n                    It is not a strong password.\n\n                  </p>\n\n                  <p color="danger" ion-text *ngIf="formularioUsuario.get(\'pass2\').hasError(\'equalTo\') && formularioUsuario.get(\'pass2\').touched" class="error">\n\n                    Passwords do not match\n\n                  </p>\n\n                </ion-item>\n\n\n\n                <br>\n\n                <!-- Creamos el botón de registro, que permanecerá desactivado, hasta que los campos del formulario\n\n              estén correctamente rellenos superando el control de errores -->\n\n                <ion-grid padding-top>\n\n                  <ion-row justify-content-center>\n\n                    <div class="col-1" align-self-center>\n\n                      <div>\n\n                        <button ion-button type="submit" [disabled]="!formularioUsuario.valid" (click)="registerUsers()">Sign Up</button>\n\n                      </div>\n\n                    </div>\n\n                  </ion-row>\n\n                </ion-grid>\n\n\n\n                <ion-grid>\n\n                  <ion-row justify-content-center padding-top>\n\n                    <div align-self-center>\n\n                      <div>Or</div>\n\n                    </div>\n\n                  </ion-row>\n\n                  <ion-row justify-content-center padding-top>\n\n                    <div align-self-center>\n\n                      <div>\n\n                        <!-- <a (click)="goToRegistry()"> -->\n\n                        <a (click)="gotoHome()">\n\n                          <strong>Go to Login Page!</strong>\n\n                        </a>\n\n                      </div>\n\n                    </div>\n\n                  </ion-row>\n\n                </ion-grid>\n\n              </form>\n\n\n\n            </ion-list>\n\n          </ion-card-content>\n\n        </ion-card>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n</ion-content>'/*ion-inline-end:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\registro\registro.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_login_login__["a" /* LoginProvider */]])
+    ], RegistroPage);
+    return RegistroPage;
+}());
+
+//# sourceMappingURL=registro.js.map
+
+/***/ }),
+
+/***/ 169:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VerTodoPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__info_info__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_movie_movie_provider__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_movie_movie__ = __webpack_require__(130);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var VerTodoPage = (function () {
+    function VerTodoPage(navCtrl, navParams, _movieProvider, toastCtrl) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this._movieProvider = _movieProvider;
+        this.toastCtrl = toastCtrl;
+        this.token = localStorage.getItem('token');
+        this.tipoContenido = navParams.data['tipo'];
+        this.list = navParams.data['array'];
+        this.movie = new __WEBPACK_IMPORTED_MODULE_4__providers_movie_movie__["a" /* Movie */]('', '', '', '', '', '', '', '', '', '', '', '');
+    }
+    VerTodoPage.prototype.ionViewDidLoad = function () {
+        var _this = this;
+        if (this.tipoContenido === 'visto') {
+            // Ponemos por defecto, el icono de visto
+            this.iconoIOS = 'ios-eye-off';
+            this.iconoAndroid = 'md-eye-off';
+            // Ponemos, que la segunda opción sea cambiarla a favoritos
+            this.iconoIOS2 = 'ios-heart';
+            this.iconoAndroid2 = 'md-heart';
+            this._movieProvider.getViewedMovie(this.token).subscribe(function (response) {
+                console.log(response);
+                _this.list = [];
+                response.views.forEach(function (eleMovie) {
+                    if (eleMovie.movieViewed) {
+                        _this.movie = eleMovie.movieViewed;
+                        _this.list.push(_this.movie);
+                    }
+                });
+            });
+        }
+        else if (this.tipoContenido === 'favorito') {
+            // Ponemos por defecto, el icono de favoritos
+            this.iconoIOS = 'ios-heart';
+            this.iconoAndroid = 'md-heart';
+            // Ponemos, que la segunda opción sea cambiarla a visto
+            this.iconoIOS2 = 'ios-eye-off';
+            this.iconoAndroid2 = 'md-eye-off';
+            this._movieProvider.getLikedMovie(this.token).subscribe(function (response) {
+                _this.list = [];
+                response.likeds.forEach(function (eleMovie) {
+                    if (eleMovie) {
+                        _this.movie = eleMovie.movieLiked;
+                        _this.list.push(_this.movie);
+                    }
+                });
+            }, function (err) {
+                console.log(err);
+            });
+        }
+    };
+    VerTodoPage.prototype.ngOnInit = function () { };
+    VerTodoPage.prototype.cambiarIcono = function (fab, movieId) {
+        var _this = this;
+        console.log(movieId);
+        if (this.iconoIOS2 === "ios-eye-off" && this.iconoAndroid2 === "md-eye-off") {
+            this._movieProvider.viewMovie(this.token, movieId).subscribe(function (response) {
+                if (response.message === "Ya estás viendo esta película") {
+                    fab.close();
+                    _this.mensaje = 'This film is already in "Seen Group"';
+                    _this.presentToast(_this.mensaje);
+                }
+                else {
+                    console.log(response);
+                    fab.close();
+                    _this.mensaje = 'This film has been added to "Seen Group"';
+                    _this.presentToast(_this.mensaje);
+                }
+            }, function (err) {
+                console.log(err);
+            });
+        }
+        else {
+            this._movieProvider.likedMovie(this.token, movieId).subscribe(function (response) {
+                if (response.message === "Ya estás viendo esta película") {
+                    fab.close();
+                    _this.mensaje = 'This film is already in "Favourite Group"';
+                    _this.presentToast(_this.mensaje);
+                }
+                else {
+                    console.log(response);
+                    fab.close();
+                    _this.mensaje = 'This film has been added to "Favourite Group"';
+                    _this.presentToast(_this.mensaje);
+                }
+            }, function (err) {
+                console.log(err);
+            });
+        }
+    };
+    VerTodoPage.prototype.deleteView = function (fab, movieId) {
+        var _this = this;
+        if (this.tipoContenido === 'visto') {
+            console.log(movieId);
+            this._movieProvider.deleteViewed(this.token, movieId).subscribe(function (response) {
+                fab.close();
+                _this.mensaje = 'This film has been removed of "Seen Group"';
+                _this.presentToast(_this.mensaje);
+                var index = 0;
+                _this.list.forEach(function (element) {
+                    if (element._id === movieId) {
+                        console.log(index);
+                        _this.list.splice(index, 1);
+                        console.log(_this.list);
+                    }
+                    index++;
+                });
+            }, function (err) {
+                fab.close();
+                _this.mensaje = 'This film has already been removed of "Seen Group". Please refresh this view.';
+                _this.presentToast(_this.mensaje);
+            });
+        }
+        else if (this.tipoContenido === 'favorito') {
+            this._movieProvider.dislikeMovie(this.token, movieId).subscribe(function (response) {
+                fab.close();
+                _this.mensaje = 'This film has been removed of "Favourite Group"';
+                _this.presentToast(_this.mensaje);
+                var index = 0;
+                _this.list.forEach(function (element) {
+                    if (element._id === movieId) {
+                        console.log(index);
+                        _this.list.splice(index, 1);
+                        console.log(_this.list);
+                    }
+                    index++;
+                });
+            }, function (err) {
+                fab.close();
+                _this.mensaje = 'This film has already been removed of "Favourite Group". Please refresh this view.';
+                _this.presentToast(_this.mensaje);
+            });
+        }
+    };
+    VerTodoPage.prototype.doRefresh = function (refresher) {
+        var _this = this;
+        if (this.tipoContenido === 'visto') {
+            // Ponemos por defecto, el icono de visto
+            this.iconoIOS = 'ios-eye-off';
+            this.iconoAndroid = 'md-eye-off';
+            // Ponemos, que la segunda opción sea cambiarla a favoritos
+            this.iconoIOS2 = 'ios-heart';
+            this.iconoAndroid2 = 'md-heart';
+            this._movieProvider.getViewedMovie(this.token).subscribe(function (response) {
+                console.log(response);
+                _this.list = [];
+                response.views.forEach(function (eleMovie) {
+                    if (eleMovie.movieViewed) {
+                        _this.movie = eleMovie.movieViewed;
+                        _this.list.push(_this.movie);
+                    }
+                });
+            });
+            refresher.complete();
+        }
+        else if (this.tipoContenido === 'favorito') {
+            // Ponemos por defecto, el icono de favoritos
+            this.iconoIOS = 'ios-heart';
+            this.iconoAndroid = 'md-heart';
+            // Ponemos, que la segunda opción sea cambiarla a visto
+            this.iconoIOS2 = 'ios-eye-off';
+            this.iconoAndroid2 = 'md-eye-off';
+            this._movieProvider.getLikedMovie(this.token).subscribe(function (response) {
+                _this.list = [];
+                response.likeds.forEach(function (eleMovie) {
+                    if (eleMovie) {
+                        _this.movie = eleMovie.movieLiked;
+                        _this.list.push(_this.movie);
+                    }
+                });
+            }, function (err) {
+                console.log(err);
+            });
+            refresher.complete();
+        }
+    };
+    VerTodoPage.prototype.presentToast = function (mensaje) {
+        var toast = this.toastCtrl.create({
+            message: mensaje,
+            duration: 4000,
+            position: 'bottom'
+        });
+        toast.onDidDismiss(function () {
+            console.log('Dismissed toast');
+        });
+        toast.present();
+    };
+    VerTodoPage.prototype.goToInfo = function (p) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__info_info__["a" /* InfoPage */], {
+            contenido: p,
+            data: this.contenedor
+        });
+    };
+    VerTodoPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-ver-todo',template:/*ion-inline-start:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\ver-todo\ver-todo.html"*/'<page-header></page-header>\n\n\n\n<ion-content>\n\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n\n    <ion-refresher-content refreshingText="Refreshing...">\n\n    </ion-refresher-content>\n\n  </ion-refresher>\n\n  <ion-card>\n\n    <ion-row>\n\n      <ion-col col-6 class="center" *ngFor="let p of list" style="padding-top: 5px">\n\n        <ion-thumbnail item-start col-12>\n\n          <button (click)="goToInfo(p)" class="fotoPelicula" no-padding>\n\n            <img [src]="p.poster">\n\n          </button>\n\n          <h5 class="center">\n\n            {{ p.title }}\n\n            <ion-fab top right col-4 #fab>\n\n              <button ion-fab mini class="background">\n\n                <ion-icon [ios]="iconoIOS" [md]="iconoAndroid"></ion-icon>\n\n              </button>\n\n              <ion-fab-list>\n\n                <button ion-fab (click)="cambiarIcono(fab, p._id)">\n\n                  <ion-icon [ios]="iconoIOS2" [md]="iconoAndroid2"></ion-icon>\n\n                </button>\n\n                <button ion-fab (click)="deleteView(fab, p._id)">\n\n                  <ion-icon ios="ios-trash" md="md-trash"></ion-icon>\n\n                </button>\n\n              </ion-fab-list>\n\n            </ion-fab>\n\n          </h5>\n\n        </ion-thumbnail>\n\n      </ion-col>\n\n    </ion-row>\n\n    <div class="bottom"></div>\n\n  </ion-card>\n\n</ion-content>\n\n\n\n'/*ion-inline-end:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\ver-todo\ver-todo.html"*/,
+            providers: [__WEBPACK_IMPORTED_MODULE_3__providers_movie_movie_provider__["a" /* MovieProvider */]]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_movie_movie_provider__["a" /* MovieProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */]])
+    ], VerTodoPage);
+    return VerTodoPage;
+}());
+
+//# sourceMappingURL=ver-todo.js.map
+
+/***/ }),
+
+/***/ 170:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PerfilPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_camera__ = __webpack_require__(233);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__chat_chat__ = __webpack_require__(165);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_camera__ = __webpack_require__(241);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__chat_chat__ = __webpack_require__(166);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mobiscroll_angular__ = __webpack_require__(185);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_login_login__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_platform_browser__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_user_provider__ = __webpack_require__(421);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_user_provider__ = __webpack_require__(422);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -393,7 +882,7 @@ var PerfilPage = (function () {
     ], PerfilPage.prototype, "fecha", void 0);
     PerfilPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-perfil',template:/*ion-inline-start:"/Users/adriancejudo/Desktop/StreamShareV4/src/pages/perfil/perfil.html"*/'<page-header></page-header>\n<ion-content>\n  <ion-list *ngIf="isSearchbarOpened">\n    <button ion-item *ngFor="let item of items" (click)="showDetail(item)">\n      {{ item }}\n    </button>\n  </ion-list>\n\n  <ion-card>\n    <ion-card-content>\n      <ion-grid>\n        <ion-row>\n          <ion-col col-12 *ngIf="trustedUrl">\n            <ion-thumbnail item-start>  \n              <img  [src]="trustedUrl">\n              <ion-fab top right col-3 #fab (click)="showMethods()">\n                <button ion-fab mini class="background">\n                  <ion-icon ios="ios-camera" md="md-camera"></ion-icon>\n                </button>\n              </ion-fab>\n            </ion-thumbnail>\n          </ion-col>\n        </ion-row>\n        \n        <ion-row>\n          <ion-col col-12>\n            <ion-grid class="center">\n              <ion-row>\n                <ion-col col-auto>\n                  <h2 class="bold">Name: </h2>\n                </ion-col>\n                <ion-col col-auto>\n                  <h2>{{ identity.name }} {{ identity.surname }}</h2>\n                </ion-col>\n                <ion-col col-auto>\n                  <a (click)="nameType()">\n                    <ion-icon ios="ios-create" md="md-create"></ion-icon>\n                  </a>\n                </ion-col>\n              </ion-row>\n            </ion-grid>\n          </ion-col>\n        </ion-row>\n\n        <ion-row>\n          <ion-col col-12>\n            <ion-grid class="center">\n              <ion-row>\n                <ion-col col-auto>\n                  <h2 class="bold">Username: </h2>\n                </ion-col>\n                <ion-col col-auto>\n                  <h2>{{ identity.nickname }}</h2>\n                </ion-col>\n                <ion-col col-auto>\n                  <a (click)="userType()">\n                    <ion-icon ios="ios-create" md="md-create"></ion-icon>\n                  </a>\n                </ion-col>\n              </ion-row>\n            </ion-grid>\n          </ion-col>\n        </ion-row>\n\n        <ion-row>\n          <ion-col col-12 class="center">\n            <ion-buttons>\n              <button ion-button icon-only clear class="center" *ngIf="!identity.description" (click)="descriptionType()">\n                Type your description\n              </button>\n            </ion-buttons>\n          </ion-col>\n        </ion-row>\n\n        <ion-row  *ngIf="identity.description">\n          <ion-col col-12>\n            <ion-grid class="center">\n              <ion-row>\n                <ion-col col-auto>\n                  <h2 class="center">{{ identity.description }}</h2>\n                </ion-col>\n              </ion-row>\n            </ion-grid>\n          </ion-col>\n        </ion-row>\n\n      </ion-grid>\n    </ion-card-content>\n  </ion-card>\n  <ion-card id="bottom">\n    <mbsc-eventcalendar [data]="events" [options]="eventSettings" #mbscEventCal="mobiscroll"></mbsc-eventcalendar>\n    <ion-row class="center">\n      <ion-col col-12 *ngIf="!event">\n        <ion-buttons>\n          <button ion-button outline (click)="newEvent()">\n            New Event\n          </button>\n        </ion-buttons>\n      </ion-col>\n    </ion-row>\n    <ion-row *ngIf="event" col-12>\n      <mbsc-form [options]="formSettings">\n        <div class="mbsc-form-group">\n          <ion-item class="label">\n            <ion-label>Title of the event</ion-label>\n            <ion-input [(ngModel)]="eventText">Title</ion-input>\n          </ion-item>\n          <ion-item class="label2">\n            <mbsc-datetime #fecha id="startDate">Date</mbsc-datetime>\n            <div [(ngModel)]="eventDate" mbsc-range [mbsc-options]="rangeSettings" #mbscRange="mobiscroll"></div>\n          </ion-item>\n        </div>\n      </mbsc-form>\n      <ion-col col-auto offset-2>\n        <ion-buttons>\n          <button ion-button outline (click)="addEvent()">\n            Add Event\n          </button>\n        </ion-buttons>\n      </ion-col>\n      <ion-col col-auto>\n        <ion-buttons>\n          <button ion-button outline (click)="addEvent()">\n            Cancel\n          </button>\n        </ion-buttons>\n      </ion-col>\n    </ion-row>\n  </ion-card>\n</ion-content>\n'/*ion-inline-end:"/Users/adriancejudo/Desktop/StreamShareV4/src/pages/perfil/perfil.html"*/,
+            selector: 'page-perfil',template:/*ion-inline-start:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\perfil\perfil.html"*/'<page-header></page-header>\n\n<ion-content>\n\n  <ion-list *ngIf="isSearchbarOpened">\n\n    <button ion-item *ngFor="let item of items" (click)="showDetail(item)">\n\n      {{ item }}\n\n    </button>\n\n  </ion-list>\n\n\n\n  <ion-card>\n\n    <ion-card-content>\n\n      <ion-grid>\n\n        <ion-row>\n\n          <ion-col col-12 *ngIf="trustedUrl">\n\n            <ion-thumbnail item-start>  \n\n              <img  [src]="trustedUrl">\n\n              <ion-fab top right col-3 #fab (click)="showMethods()">\n\n                <button ion-fab mini class="background">\n\n                  <ion-icon ios="ios-camera" md="md-camera"></ion-icon>\n\n                </button>\n\n              </ion-fab>\n\n            </ion-thumbnail>\n\n          </ion-col>\n\n        </ion-row>\n\n        \n\n        <ion-row>\n\n          <ion-col col-12>\n\n            <ion-grid class="center">\n\n              <ion-row>\n\n                <ion-col col-auto>\n\n                  <h2 class="bold">Name: </h2>\n\n                </ion-col>\n\n                <ion-col col-auto>\n\n                  <h2>{{ identity.name }} {{ identity.surname }}</h2>\n\n                </ion-col>\n\n                <ion-col col-auto>\n\n                  <a (click)="nameType()">\n\n                    <ion-icon ios="ios-create" md="md-create"></ion-icon>\n\n                  </a>\n\n                </ion-col>\n\n              </ion-row>\n\n            </ion-grid>\n\n          </ion-col>\n\n        </ion-row>\n\n\n\n        <ion-row>\n\n          <ion-col col-12>\n\n            <ion-grid class="center">\n\n              <ion-row>\n\n                <ion-col col-auto>\n\n                  <h2 class="bold">Username: </h2>\n\n                </ion-col>\n\n                <ion-col col-auto>\n\n                  <h2>{{ identity.nickname }}</h2>\n\n                </ion-col>\n\n                <ion-col col-auto>\n\n                  <a (click)="userType()">\n\n                    <ion-icon ios="ios-create" md="md-create"></ion-icon>\n\n                  </a>\n\n                </ion-col>\n\n              </ion-row>\n\n            </ion-grid>\n\n          </ion-col>\n\n        </ion-row>\n\n\n\n        <ion-row>\n\n          <ion-col col-12 class="center">\n\n            <ion-buttons>\n\n              <button ion-button icon-only clear class="center" *ngIf="!identity.description" (click)="descriptionType()">\n\n                Type your description\n\n              </button>\n\n            </ion-buttons>\n\n          </ion-col>\n\n        </ion-row>\n\n\n\n        <ion-row  *ngIf="identity.description">\n\n          <ion-col col-12>\n\n            <ion-grid class="center">\n\n              <ion-row>\n\n                <ion-col col-auto>\n\n                  <h2 class="center">{{ identity.description }}</h2>\n\n                </ion-col>\n\n              </ion-row>\n\n            </ion-grid>\n\n          </ion-col>\n\n        </ion-row>\n\n\n\n      </ion-grid>\n\n    </ion-card-content>\n\n  </ion-card>\n\n  <ion-card id="bottom">\n\n    <mbsc-eventcalendar [data]="events" [options]="eventSettings" #mbscEventCal="mobiscroll"></mbsc-eventcalendar>\n\n    <ion-row class="center">\n\n      <ion-col col-12 *ngIf="!event">\n\n        <ion-buttons>\n\n          <button ion-button outline (click)="newEvent()">\n\n            New Event\n\n          </button>\n\n        </ion-buttons>\n\n      </ion-col>\n\n    </ion-row>\n\n    <ion-row *ngIf="event" col-12>\n\n      <mbsc-form [options]="formSettings">\n\n        <div class="mbsc-form-group">\n\n          <ion-item class="label">\n\n            <ion-label>Title of the event</ion-label>\n\n            <ion-input [(ngModel)]="eventText">Title</ion-input>\n\n          </ion-item>\n\n          <ion-item class="label2">\n\n            <mbsc-datetime #fecha id="startDate">Date</mbsc-datetime>\n\n            <div [(ngModel)]="eventDate" mbsc-range [mbsc-options]="rangeSettings" #mbscRange="mobiscroll"></div>\n\n          </ion-item>\n\n        </div>\n\n      </mbsc-form>\n\n      <ion-col col-auto offset-2>\n\n        <ion-buttons>\n\n          <button ion-button outline (click)="addEvent()">\n\n            Add Event\n\n          </button>\n\n        </ion-buttons>\n\n      </ion-col>\n\n      <ion-col col-auto>\n\n        <ion-buttons>\n\n          <button ion-button outline (click)="addEvent()">\n\n            Cancel\n\n          </button>\n\n        </ion-buttons>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\perfil\perfil.html"*/,
             providers: [__WEBPACK_IMPORTED_MODULE_5__providers_login_login__["a" /* LoginProvider */], __WEBPACK_IMPORTED_MODULE_7__providers_user_provider__["a" /* UserProvider */]]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
@@ -412,121 +901,7 @@ var PerfilPage = (function () {
 
 /***/ }),
 
-/***/ 167:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VideoplayerPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_links_link_provider__ = __webpack_require__(240);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__fullvideo_fullvideo__ = __webpack_require__(168);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-var VideoplayerPage = (function () {
-    function VideoplayerPage(navCtrl, navParams, sanitizer, _linkProvider) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.sanitizer = sanitizer;
-        this._linkProvider = _linkProvider;
-        this.status = 'play';
-        this.icono = 'ios-play-outline';
-        this.movie = navParams.data['movie'];
-        this.video = navParams.data['video'];
-        this.token = localStorage.getItem('token');
-    }
-    VideoplayerPage.prototype.ngOnInit = function () {
-        var _this = this;
-        this._linkProvider.getContent(this.token, this.video).subscribe(function (res) {
-            alert('we are ready');
-            _this.file = new Blob([res], { type: 'video/mp4' });
-            _this.fileURL = URL.createObjectURL(_this.file);
-            _this.trustedUrl = _this.sanitizer.bypassSecurityTrustUrl(_this.fileURL);
-            console.log(_this.trustedUrl);
-        }, function (err) {
-            console.log(err);
-        });
-    };
-    VideoplayerPage.prototype.toggleVideo = function (event) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__fullvideo_fullvideo__["a" /* FullvideoPage */], { video: this.trustedUrl });
-    };
-    VideoplayerPage.prototype.goToBack = function () {
-        this.navCtrl.pop();
-    };
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])('videoplayer'),
-        __metadata("design:type", Object)
-    ], VideoplayerPage.prototype, "videoplayer", void 0);
-    VideoplayerPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-videoplayer',template:/*ion-inline-start:"/Users/adriancejudo/Desktop/StreamShareV4/src/pages/videoplayer/videoplayer.html"*/'<ion-content>\n<ion-fab>\n  <button ion-fab mini (click)="goToBack()" id="backArrow"><ion-icon name="md-arrow-back"></ion-icon></button>\n</ion-fab>\n  <div id="coverPoster"></div>\n    <img [src]="movie.poster" id="backPoster" alt="">\n    <ion-grid>\n      <ion-row>\n        <ion-col col-12>\n          <video #videoplayer preload id="videoplayer" hidden>\n            <source [src]="trustedUrl" type="video/mp4">\n          </video>\n          <button (click)="toggleVideo()" id="myBtn"><img src="assets/imgs/play.svg" alt=""></button>\n        </ion-col>\n      </ion-row>\n      <ion-row id="infoPelicula">\n        <ion-col col>\n          <h2>{{movie.title}}</h2>\n          <hr><br>\n          <p>\n            {{movie.description}}\n          </p>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n</ion-content>'/*ion-inline-end:"/Users/adriancejudo/Desktop/StreamShareV4/src/pages/videoplayer/videoplayer.html"*/,
-            providers: [__WEBPACK_IMPORTED_MODULE_3__providers_links_link_provider__["a" /* LinkProvider */]]
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["c" /* DomSanitizer */], __WEBPACK_IMPORTED_MODULE_3__providers_links_link_provider__["a" /* LinkProvider */]])
-    ], VideoplayerPage);
-    return VideoplayerPage;
-}());
-
-//# sourceMappingURL=videoplayer.js.map
-
-/***/ }),
-
-/***/ 168:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FullvideoPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var FullvideoPage = (function () {
-    function FullvideoPage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.movie = navParams.data['video'];
-    }
-    FullvideoPage.prototype.ionViewDidLoad = function () {
-    };
-    FullvideoPage.prototype.goToBack = function () {
-        this.navCtrl.pop();
-    };
-    FullvideoPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-fullvideo',template:/*ion-inline-start:"/Users/adriancejudo/Desktop/StreamShareV4/src/pages/fullvideo/fullvideo.html"*/'<ion-fab>\n  <button ion-fab mini (click)="goToBack()" id="backArrow"><ion-icon name="md-arrow-back"></ion-icon></button>\n</ion-fab>\n<ion-content class="vertical-align-content">\n  <video #videoplayer preload autoplay controls id="videoplayer">\n    <source [src]="movie" type="video/mp4">\n  </video>\n</ion-content>'/*ion-inline-end:"/Users/adriancejudo/Desktop/StreamShareV4/src/pages/fullvideo/fullvideo.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
-    ], FullvideoPage);
-    return FullvideoPage;
-}());
-
-//# sourceMappingURL=fullvideo.js.map
-
-/***/ }),
-
-/***/ 169:
+/***/ 171:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -536,7 +911,7 @@ var FullvideoPage = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_login_login__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__info_info__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_serie_serie_provider__ = __webpack_require__(79);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_serie_serie__ = __webpack_require__(241);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_serie_serie__ = __webpack_require__(240);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -703,7 +1078,7 @@ var SeriesPage = (function () {
     };
     SeriesPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-peliculas',template:/*ion-inline-start:"/Users/adriancejudo/Desktop/StreamShareV4/src/pages/series/series.html"*/'<page-header></page-header>\n<ion-content>\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n    <ion-refresher-content refreshingText="Refreshing...">\n    </ion-refresher-content>\n  </ion-refresher>\n  <ion-card>\n    <ion-row>\n      <ion-col col-12 class="center">\n        <ion-buttons padding-bottom>\n          <button ion-button icon-only outline *ngIf="!filter" (click)="filterType()" col-5>\n            Show Filters\n          </button>\n        </ion-buttons>\n      </ion-col>\n    </ion-row>\n\n    <ion-card *ngIf="filter">\n\n      <ion-item>\n        <ion-label>Year: </ion-label>\n        <ion-range dualKnobs="true" pin="true" min="1900" max="2020" step="5" snaps="true" [(ngModel)]="structure">\n          <ion-icon range-left small ios="ios-time" md="md-time"></ion-icon>\n          <ion-icon range-right ios="ios-time" md="md-time"></ion-icon>\n        </ion-range>\n      </ion-item>\n\n      <ion-item>\n        <ion-label>Films Genre: </ion-label>\n        <ion-select [(ngModel)]="genre" interface="popover">\n          <ion-option value="Genre: All" selected="true">All</ion-option>\n          <ion-option value="Genre: Action and adventure">Action and adventure</ion-option>\n          <ion-option value="Genre: Cartoon">Cartoon</ion-option>\n          <ion-option value="Genre: Comedy">Comedy</ion-option>\n          <ion-option value="Genre: Crime">Crime</ion-option>\n          <ion-option value="Genre: Documentary film">Documentary film</ion-option>\n          <ion-option value="Genre: Drama">Drama</ion-option>\n          <ion-option value="Genre: Fantasy">Fantasy</ion-option>\n          <ion-option value="Genre: Mistery">Mistery</ion-option>\n          <ion-option value="Genre: Science fiction">Science fiction</ion-option>\n          <ion-option value="Genre: Sports">Sports</ion-option>\n          <ion-option value="Genre: Terror">Terror</ion-option>\n          <ion-option value="Genre: Thriller">Thriller</ion-option>\n        </ion-select>\n      </ion-item>\n\n      <ion-item>\n        <ion-label>Video Language: </ion-label>\n        <ion-select [(ngModel)]="videoLanguage" interface="popover">\n          <ion-option value="Video Language: All" selected="true">All</ion-option>\n          <ion-option value="Video Language: English">English</ion-option>\n          <ion-option value="Video Language: French">French</ion-option>\n          <ion-option value="Video Language: German">German</ion-option>\n          <ion-option value="Video Language: Greek">Greek</ion-option>\n          <ion-option value="Video Language: Italian">Italian</ion-option>\n          <ion-option value="Video Language: Portuguese">Portuguese</ion-option>\n          <ion-option value="Video Language: Russian">Russian</ion-option>\n          <ion-option value="Video Language: Spanish">Spanish</ion-option>\n          <ion-option value="Video Language: Others">Others</ion-option>\n        </ion-select>\n      </ion-item>\n\n      <ion-item>\n        <ion-label>Subtitle Language: </ion-label>\n        <ion-select [(ngModel)]="subtitleLanguage" interface="popover">\n          <ion-option value="Subtitle Language: All" selected="true">All</ion-option>\n          <ion-option value="Subtitle Language: English">English</ion-option>\n          <ion-option value="Subtitle Language: French">French</ion-option>\n          <ion-option value="Subtitle Language: German">German</ion-option>\n          <ion-option value="Subtitle Language: Greek">Greek</ion-option>\n          <ion-option value="Subtitle Language: Italian">Italian</ion-option>\n          <ion-option value="Subtitle Language: Portuguese">Portuguese</ion-option>\n          <ion-option value="Subtitle Language: Russian">Russian</ion-option>\n          <ion-option value="Subtitle Language: Spanish">Spanish</ion-option>\n          <ion-option value="Subtitle Language: Others">Others</ion-option>\n        </ion-select>\n      </ion-item>\n\n      <ion-row>\n        <ion-col col-12 class="center">\n          <ion-buttons>\n            <button ion-button icon-only outline class="center" *ngIf="filter" (click)="loginLoading()" col-5>\n              Accept\n            </button>\n          </ion-buttons>\n        </ion-col>\n      </ion-row>\n\n      <ion-row>\n        <ion-col col-12 class="center">\n          <ion-buttons>\n            <button ion-button icon-only outline class="center" *ngIf="filter" (click)="filterType2()" col-5>\n              Hide Filters\n            </button>\n          </ion-buttons>\n        </ion-col>\n      </ion-row>\n\n    </ion-card>\n    <ion-row>\n      <ion-col col-12 class="center" padding-bottom *ngIf="mensajeVacio">\n        <h4>{{mensajeVacio}}</h4>\n      </ion-col>\n      \n      <ion-col col-6 class="center" *ngFor="let s of listSerie">\n        <ion-thumbnail item-start col-12>\n          <button (click)="goToInfo(p)" class="fotoPelicula" no-padding>\n            <img [src]="s.poster">\n          </button>\n          <h5 class="center">\n            {{ s.title }}\n            <ion-fab top right edge col-4 #fab>\n              <button ion-fab mini class="background">\n                <ion-icon [ios]="iconoIOS1" [md]="iconoAndroid1"></ion-icon>\n              </button>\n              <ion-fab-list>\n                <button ion-fab (click)="cambiarIconoSeen(fab, s._id)">\n                  <ion-icon ios="ios-eye-off" md="md-eye-off"></ion-icon>\n                </button>\n                <button ion-fab>\n                  <ion-icon ios="ios-heart" md="md-heart" (click)="cambiarIconoLike(fab)"></ion-icon>\n                </button>\n              </ion-fab-list>\n            </ion-fab>\n          </h5>\n        </ion-thumbnail>\n      </ion-col>\n      <ion-col col-12 class="center" id="moreButton" padding-bottom *ngIf="!mensajeVacio">\n        <button ion-button outline (click)="moreSeries()" col-auto>More</button>\n      </ion-col>\n    </ion-row>\n  </ion-card>\n</ion-content>'/*ion-inline-end:"/Users/adriancejudo/Desktop/StreamShareV4/src/pages/series/series.html"*/,
+            selector: 'page-peliculas',template:/*ion-inline-start:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\series\series.html"*/'<page-header></page-header>\n\n<ion-content>\n\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n\n    <ion-refresher-content refreshingText="Refreshing...">\n\n    </ion-refresher-content>\n\n  </ion-refresher>\n\n  <ion-card>\n\n    <ion-row>\n\n      <ion-col col-12 class="center">\n\n        <ion-buttons padding-bottom>\n\n          <button ion-button icon-only outline *ngIf="!filter" (click)="filterType()" col-5>\n\n            Show Filters\n\n          </button>\n\n        </ion-buttons>\n\n      </ion-col>\n\n    </ion-row>\n\n\n\n    <ion-card *ngIf="filter">\n\n\n\n      <ion-item>\n\n        <ion-label>Year: </ion-label>\n\n        <ion-range dualKnobs="true" pin="true" min="1900" max="2020" step="5" snaps="true" [(ngModel)]="structure">\n\n          <ion-icon range-left small ios="ios-time" md="md-time"></ion-icon>\n\n          <ion-icon range-right ios="ios-time" md="md-time"></ion-icon>\n\n        </ion-range>\n\n      </ion-item>\n\n\n\n      <ion-item>\n\n        <ion-label>Films Genre: </ion-label>\n\n        <ion-select [(ngModel)]="genre" interface="popover">\n\n          <ion-option value="Genre: All" selected="true">All</ion-option>\n\n          <ion-option value="Genre: Action and adventure">Action and adventure</ion-option>\n\n          <ion-option value="Genre: Cartoon">Cartoon</ion-option>\n\n          <ion-option value="Genre: Comedy">Comedy</ion-option>\n\n          <ion-option value="Genre: Crime">Crime</ion-option>\n\n          <ion-option value="Genre: Documentary film">Documentary film</ion-option>\n\n          <ion-option value="Genre: Drama">Drama</ion-option>\n\n          <ion-option value="Genre: Fantasy">Fantasy</ion-option>\n\n          <ion-option value="Genre: Mistery">Mistery</ion-option>\n\n          <ion-option value="Genre: Science fiction">Science fiction</ion-option>\n\n          <ion-option value="Genre: Sports">Sports</ion-option>\n\n          <ion-option value="Genre: Terror">Terror</ion-option>\n\n          <ion-option value="Genre: Thriller">Thriller</ion-option>\n\n        </ion-select>\n\n      </ion-item>\n\n\n\n      <ion-item>\n\n        <ion-label>Video Language: </ion-label>\n\n        <ion-select [(ngModel)]="videoLanguage" interface="popover">\n\n          <ion-option value="Video Language: All" selected="true">All</ion-option>\n\n          <ion-option value="Video Language: English">English</ion-option>\n\n          <ion-option value="Video Language: French">French</ion-option>\n\n          <ion-option value="Video Language: German">German</ion-option>\n\n          <ion-option value="Video Language: Greek">Greek</ion-option>\n\n          <ion-option value="Video Language: Italian">Italian</ion-option>\n\n          <ion-option value="Video Language: Portuguese">Portuguese</ion-option>\n\n          <ion-option value="Video Language: Russian">Russian</ion-option>\n\n          <ion-option value="Video Language: Spanish">Spanish</ion-option>\n\n          <ion-option value="Video Language: Others">Others</ion-option>\n\n        </ion-select>\n\n      </ion-item>\n\n\n\n      <ion-item>\n\n        <ion-label>Subtitle Language: </ion-label>\n\n        <ion-select [(ngModel)]="subtitleLanguage" interface="popover">\n\n          <ion-option value="Subtitle Language: All" selected="true">All</ion-option>\n\n          <ion-option value="Subtitle Language: English">English</ion-option>\n\n          <ion-option value="Subtitle Language: French">French</ion-option>\n\n          <ion-option value="Subtitle Language: German">German</ion-option>\n\n          <ion-option value="Subtitle Language: Greek">Greek</ion-option>\n\n          <ion-option value="Subtitle Language: Italian">Italian</ion-option>\n\n          <ion-option value="Subtitle Language: Portuguese">Portuguese</ion-option>\n\n          <ion-option value="Subtitle Language: Russian">Russian</ion-option>\n\n          <ion-option value="Subtitle Language: Spanish">Spanish</ion-option>\n\n          <ion-option value="Subtitle Language: Others">Others</ion-option>\n\n        </ion-select>\n\n      </ion-item>\n\n\n\n      <ion-row>\n\n        <ion-col col-12 class="center">\n\n          <ion-buttons>\n\n            <button ion-button icon-only outline class="center" *ngIf="filter" (click)="loginLoading()" col-5>\n\n              Accept\n\n            </button>\n\n          </ion-buttons>\n\n        </ion-col>\n\n      </ion-row>\n\n\n\n      <ion-row>\n\n        <ion-col col-12 class="center">\n\n          <ion-buttons>\n\n            <button ion-button icon-only outline class="center" *ngIf="filter" (click)="filterType2()" col-5>\n\n              Hide Filters\n\n            </button>\n\n          </ion-buttons>\n\n        </ion-col>\n\n      </ion-row>\n\n\n\n    </ion-card>\n\n    <ion-row>\n\n      <ion-col col-12 class="center" padding-bottom *ngIf="mensajeVacio">\n\n        <h4>{{mensajeVacio}}</h4>\n\n      </ion-col>\n\n      \n\n      <ion-col col-6 class="center" *ngFor="let s of listSerie">\n\n        <ion-thumbnail item-start col-12>\n\n          <button (click)="goToInfo(p)" class="fotoPelicula" no-padding>\n\n            <img [src]="s.poster">\n\n          </button>\n\n          <h5 class="center">\n\n            {{ s.title }}\n\n            <ion-fab top right edge col-4 #fab>\n\n              <button ion-fab mini class="background">\n\n                <ion-icon [ios]="iconoIOS1" [md]="iconoAndroid1"></ion-icon>\n\n              </button>\n\n              <ion-fab-list>\n\n                <button ion-fab (click)="cambiarIconoSeen(fab, s._id)">\n\n                  <ion-icon ios="ios-eye-off" md="md-eye-off"></ion-icon>\n\n                </button>\n\n                <button ion-fab>\n\n                  <ion-icon ios="ios-heart" md="md-heart" (click)="cambiarIconoLike(fab)"></ion-icon>\n\n                </button>\n\n              </ion-fab-list>\n\n            </ion-fab>\n\n          </h5>\n\n        </ion-thumbnail>\n\n      </ion-col>\n\n      <ion-col col-12 class="center" id="moreButton" padding-bottom *ngIf="!mensajeVacio">\n\n        <button ion-button outline (click)="moreSeries()" col-auto>More</button>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-card>\n\n</ion-content>'/*ion-inline-end:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\series\series.html"*/,
             providers: [__WEBPACK_IMPORTED_MODULE_4__providers_serie_serie_provider__["a" /* SerieProvider */]]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
@@ -718,381 +1093,6 @@ var SeriesPage = (function () {
 }());
 
 //# sourceMappingURL=series.js.map
-
-/***/ }),
-
-/***/ 170:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VerTodoPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__info_info__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_movie_movie_provider__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_movie_movie__ = __webpack_require__(130);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-var VerTodoPage = (function () {
-    function VerTodoPage(navCtrl, navParams, _movieProvider, toastCtrl) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this._movieProvider = _movieProvider;
-        this.toastCtrl = toastCtrl;
-        this.token = localStorage.getItem('token');
-        this.tipoContenido = navParams.data['tipo'];
-        this.list = navParams.data['array'];
-        this.movie = new __WEBPACK_IMPORTED_MODULE_4__providers_movie_movie__["a" /* Movie */]('', '', '', '', '', '', '', '', '', '', '', '');
-    }
-    VerTodoPage.prototype.ionViewDidLoad = function () {
-        var _this = this;
-        if (this.tipoContenido === 'visto') {
-            // Ponemos por defecto, el icono de visto
-            this.iconoIOS = 'ios-eye-off';
-            this.iconoAndroid = 'md-eye-off';
-            // Ponemos, que la segunda opción sea cambiarla a favoritos
-            this.iconoIOS2 = 'ios-heart';
-            this.iconoAndroid2 = 'md-heart';
-            this._movieProvider.getViewedMovie(this.token).subscribe(function (response) {
-                console.log(response);
-                _this.list = [];
-                response.views.forEach(function (eleMovie) {
-                    if (eleMovie.movieViewed) {
-                        _this.movie = eleMovie.movieViewed;
-                        _this.list.push(_this.movie);
-                    }
-                });
-            });
-        }
-        else if (this.tipoContenido === 'favorito') {
-            // Ponemos por defecto, el icono de favoritos
-            this.iconoIOS = 'ios-heart';
-            this.iconoAndroid = 'md-heart';
-            // Ponemos, que la segunda opción sea cambiarla a visto
-            this.iconoIOS2 = 'ios-eye-off';
-            this.iconoAndroid2 = 'md-eye-off';
-            this._movieProvider.getLikedMovie(this.token).subscribe(function (response) {
-                _this.list = [];
-                response.likeds.forEach(function (eleMovie) {
-                    if (eleMovie) {
-                        _this.movie = eleMovie.movieLiked;
-                        _this.list.push(_this.movie);
-                    }
-                });
-            }, function (err) {
-                console.log(err);
-            });
-        }
-    };
-    VerTodoPage.prototype.ngOnInit = function () { };
-    VerTodoPage.prototype.cambiarIcono = function (fab, movieId) {
-        var _this = this;
-        console.log(movieId);
-        if (this.iconoIOS2 === "ios-eye-off" && this.iconoAndroid2 === "md-eye-off") {
-            this._movieProvider.viewMovie(this.token, movieId).subscribe(function (response) {
-                if (response.message === "Ya estás viendo esta película") {
-                    fab.close();
-                    _this.mensaje = 'This film is already in "Seen Group"';
-                    _this.presentToast(_this.mensaje);
-                }
-                else {
-                    console.log(response);
-                    fab.close();
-                    _this.mensaje = 'This film has been added to "Seen Group"';
-                    _this.presentToast(_this.mensaje);
-                }
-            }, function (err) {
-                console.log(err);
-            });
-        }
-        else {
-            this._movieProvider.likedMovie(this.token, movieId).subscribe(function (response) {
-                if (response.message === "Ya estás viendo esta película") {
-                    fab.close();
-                    _this.mensaje = 'This film is already in "Favourite Group"';
-                    _this.presentToast(_this.mensaje);
-                }
-                else {
-                    console.log(response);
-                    fab.close();
-                    _this.mensaje = 'This film has been added to "Favourite Group"';
-                    _this.presentToast(_this.mensaje);
-                }
-            }, function (err) {
-                console.log(err);
-            });
-        }
-    };
-    VerTodoPage.prototype.deleteView = function (fab, movieId) {
-        var _this = this;
-        if (this.tipoContenido === 'visto') {
-            console.log(movieId);
-            this._movieProvider.deleteViewed(this.token, movieId).subscribe(function (response) {
-                fab.close();
-                _this.mensaje = 'This film has been removed of "Seen Group"';
-                _this.presentToast(_this.mensaje);
-                var index = 0;
-                _this.list.forEach(function (element) {
-                    if (element._id === movieId) {
-                        console.log(index);
-                        _this.list.splice(index, 1);
-                        console.log(_this.list);
-                    }
-                    index++;
-                });
-            }, function (err) {
-                fab.close();
-                _this.mensaje = 'This film has already been removed of "Seen Group". Please refresh this view.';
-                _this.presentToast(_this.mensaje);
-            });
-        }
-        else if (this.tipoContenido === 'favorito') {
-            this._movieProvider.dislikeMovie(this.token, movieId).subscribe(function (response) {
-                fab.close();
-                _this.mensaje = 'This film has been removed of "Favourite Group"';
-                _this.presentToast(_this.mensaje);
-                var index = 0;
-                _this.list.forEach(function (element) {
-                    if (element._id === movieId) {
-                        console.log(index);
-                        _this.list.splice(index, 1);
-                        console.log(_this.list);
-                    }
-                    index++;
-                });
-            }, function (err) {
-                fab.close();
-                _this.mensaje = 'This film has already been removed of "Favourite Group". Please refresh this view.';
-                _this.presentToast(_this.mensaje);
-            });
-        }
-    };
-    VerTodoPage.prototype.doRefresh = function (refresher) {
-        var _this = this;
-        if (this.tipoContenido === 'visto') {
-            // Ponemos por defecto, el icono de visto
-            this.iconoIOS = 'ios-eye-off';
-            this.iconoAndroid = 'md-eye-off';
-            // Ponemos, que la segunda opción sea cambiarla a favoritos
-            this.iconoIOS2 = 'ios-heart';
-            this.iconoAndroid2 = 'md-heart';
-            this._movieProvider.getViewedMovie(this.token).subscribe(function (response) {
-                console.log(response);
-                _this.list = [];
-                response.views.forEach(function (eleMovie) {
-                    if (eleMovie.movieViewed) {
-                        _this.movie = eleMovie.movieViewed;
-                        _this.list.push(_this.movie);
-                    }
-                });
-            });
-            refresher.complete();
-        }
-        else if (this.tipoContenido === 'favorito') {
-            // Ponemos por defecto, el icono de favoritos
-            this.iconoIOS = 'ios-heart';
-            this.iconoAndroid = 'md-heart';
-            // Ponemos, que la segunda opción sea cambiarla a visto
-            this.iconoIOS2 = 'ios-eye-off';
-            this.iconoAndroid2 = 'md-eye-off';
-            this._movieProvider.getLikedMovie(this.token).subscribe(function (response) {
-                _this.list = [];
-                response.likeds.forEach(function (eleMovie) {
-                    if (eleMovie) {
-                        _this.movie = eleMovie.movieLiked;
-                        _this.list.push(_this.movie);
-                    }
-                });
-            }, function (err) {
-                console.log(err);
-            });
-            refresher.complete();
-        }
-    };
-    VerTodoPage.prototype.presentToast = function (mensaje) {
-        var toast = this.toastCtrl.create({
-            message: mensaje,
-            duration: 4000,
-            position: 'bottom'
-        });
-        toast.onDidDismiss(function () {
-            console.log('Dismissed toast');
-        });
-        toast.present();
-    };
-    VerTodoPage.prototype.goToInfo = function (p) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__info_info__["a" /* InfoPage */], {
-            contenido: p,
-            data: this.contenedor
-        });
-    };
-    VerTodoPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-ver-todo',template:/*ion-inline-start:"/Users/adriancejudo/Desktop/StreamShareV4/src/pages/ver-todo/ver-todo.html"*/'<page-header></page-header>\n\n<ion-content>\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n    <ion-refresher-content refreshingText="Refreshing...">\n    </ion-refresher-content>\n  </ion-refresher>\n  <ion-card>\n    <ion-row>\n      <ion-col col-6 class="center" *ngFor="let p of list" style="padding-top: 5px">\n        <ion-thumbnail item-start col-12>\n          <button (click)="goToInfo(p)" class="fotoPelicula" no-padding>\n            <img [src]="p.poster">\n          </button>\n          <h5 class="center">\n            {{ p.title }}\n            <ion-fab top right col-4 #fab>\n              <button ion-fab mini class="background">\n                <ion-icon [ios]="iconoIOS" [md]="iconoAndroid"></ion-icon>\n              </button>\n              <ion-fab-list>\n                <button ion-fab (click)="cambiarIcono(fab, p._id)">\n                  <ion-icon [ios]="iconoIOS2" [md]="iconoAndroid2"></ion-icon>\n                </button>\n                <button ion-fab (click)="deleteView(fab, p._id)">\n                  <ion-icon ios="ios-trash" md="md-trash"></ion-icon>\n                </button>\n              </ion-fab-list>\n            </ion-fab>\n          </h5>\n        </ion-thumbnail>\n      </ion-col>\n    </ion-row>\n    <div class="bottom"></div>\n  </ion-card>\n</ion-content>\n\n'/*ion-inline-end:"/Users/adriancejudo/Desktop/StreamShareV4/src/pages/ver-todo/ver-todo.html"*/,
-            providers: [__WEBPACK_IMPORTED_MODULE_3__providers_movie_movie_provider__["a" /* MovieProvider */]]
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_3__providers_movie_movie_provider__["a" /* MovieProvider */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */]])
-    ], VerTodoPage);
-    return VerTodoPage;
-}());
-
-//# sourceMappingURL=ver-todo.js.map
-
-/***/ }),
-
-/***/ 171:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegistroPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_login_login__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home_home__ = __webpack_require__(93);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-var RegistroPage = (function () {
-    function RegistroPage(navCtrl, navParams, loadingCtrl, alertCtrl, comprobarLogin) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.loadingCtrl = loadingCtrl;
-        this.alertCtrl = alertCtrl;
-        this.comprobarLogin = comprobarLogin;
-    }
-    RegistroPage.prototype.ngOnInit = function () {
-        this.formularioUsuario = new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormGroup */]({
-            name: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].required]),
-            surname: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].required]),
-            nickname: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].required]),
-            email: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')]),
-            pass: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].pattern(/^[a-z0-9_-]{5,18}$/)]),
-            pass2: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].required, this.equalto('pass')])
-        });
-    };
-    RegistroPage.prototype.gotoHome = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__home_home__["a" /* HomePage */]);
-    };
-    RegistroPage.prototype.equalto = function (field_name) {
-        return function (control) {
-            var input = control.value;
-            var isValid = control.root.value[field_name] == input;
-            if (!isValid)
-                return { 'equalTo': { isValid: isValid } };
-            else
-                return null;
-        };
-    };
-    RegistroPage.prototype.alert = function () {
-        this.alertCtrl.create({
-            title: 'There was a problem!',
-            subTitle: 'This user alredy exists',
-            buttons: ['OK']
-        }).present();
-    };
-    RegistroPage.prototype.registerUsers = function () {
-        var _this = this;
-        this.registro = [{
-                name: this.nombre.value,
-                surname: this.apellidos.value,
-                nickname: this.username.value,
-                email: this.emailAddress.value,
-                birthdate: this.birthday.value["day"] +
-                    '/' + this.birthday.value["month"] +
-                    '/' + this.birthday.value["year"],
-                password: this.currentPassword.value
-            }];
-        this.comprobarLogin.registerUsers(this.registro).subscribe(function (datos) {
-            console.log('Datos: ', datos);
-            if (datos['message'] == 'Este usuario ya existe') {
-                _this.alert();
-            }
-            else {
-                _this.loginLoading();
-            }
-        }, function (err) {
-            console.log(err["message"]);
-        });
-    };
-    RegistroPage.prototype.loginLoading = function () {
-        var _this = this;
-        this.ngOnInit();
-        var loading = this.loadingCtrl.create({
-            content: 'Please wait...',
-            duration: 2000,
-            dismissOnPageChange: true
-        });
-        loading.present();
-        setTimeout(function () {
-            _this.gotoHome();
-        }, 2000);
-    };
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])("name"),
-        __metadata("design:type", Object)
-    ], RegistroPage.prototype, "nombre", void 0);
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])("surname"),
-        __metadata("design:type", Object)
-    ], RegistroPage.prototype, "apellidos", void 0);
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])("nickname"),
-        __metadata("design:type", Object)
-    ], RegistroPage.prototype, "username", void 0);
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])("birthday"),
-        __metadata("design:type", Object)
-    ], RegistroPage.prototype, "birthday", void 0);
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])("emailad"),
-        __metadata("design:type", Object)
-    ], RegistroPage.prototype, "emailAddress", void 0);
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])("password"),
-        __metadata("design:type", Object)
-    ], RegistroPage.prototype, "currentPassword", void 0);
-    RegistroPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-registro',template:/*ion-inline-start:"/Users/adriancejudo/Desktop/StreamShareV4/src/pages/registro/registro.html"*/'<ion-content>\n  <ion-grid>\n    <ion-row>\n      <ion-col col-12>\n        <ion-card>\n          <ion-card-header>\n            <p class="header">Registration</p>\n          </ion-card-header>\n          <ion-card-content>\n            <ion-list>\n              <form [formGroup]="formularioUsuario" novalidate>\n                <ion-item>\n                  <ion-label floating>Name *</ion-label>\n                  <ion-input formControlName="name" #name type="text"></ion-input>\n                </ion-item>\n                <ion-item *ngIf="formularioUsuario.get(\'name\').errors && formularioUsuario.get(\'name\').dirty">\n                  <p color="danger" ion-text *ngIf="formularioUsuario.get(\'name\').hasError(\'required\')">Your name is required</p>\n                </ion-item>\n                <ion-item>\n                  <ion-label floating>Surname *</ion-label>\n                  <ion-input formControlName="surname" #surname type="text"></ion-input>\n                </ion-item>\n                <ion-item *ngIf="formularioUsuario.get(\'surname\').errors && formularioUsuario.get(\'surname\').dirty">\n                  <p color="danger" ion-text *ngIf="formularioUsuario.get(\'surname\').hasError(\'required\')">Your surname is required</p>\n                </ion-item>\n                <ion-item>\n                  <ion-label floating>Nickname *</ion-label>\n                  <ion-input type="text" #nickname formControlName="nickname"></ion-input>\n                </ion-item>\n                <ion-item *ngIf="formularioUsuario.get(\'nickname\').errors && formularioUsuario.get(\'nickname\').dirty">\n                  <p color="danger" ion-text *ngIf="formularioUsuario.get(\'nickname\').hasError(\'required\')" class="error">\n                    nickname is required.\n                  </p>\n                </ion-item>\n                <ion-item>\n                  <ion-label floating>Birthday</ion-label>\n                  <ion-datetime #birthday displayFormat="MM/DD/YYYY"></ion-datetime>\n                </ion-item>\n                <ion-item>\n                  <ion-label floating>Email address *</ion-label>\n                  <ion-input type="email" #emailad formControlName="email"></ion-input>\n                </ion-item>\n                <!-- Control de errores de si está rellenando el campo "Password" y el usuario está vacío indique un error -->\n                <ion-item *ngIf="formularioUsuario.get(\'email\').errors && formularioUsuario.get(\'email\').dirty">\n                  <p color="danger" ion-text *ngIf="formularioUsuario.get(\'email\').hasError(\'required\')" class="error">\n                    Email is required.\n                  </p>\n                  <p color="danger" ion-text *ngIf="formularioUsuario.get(\'email\').hasError(\'pattern\')">\n                    It is not an email\n                  </p>\n                </ion-item>\n                <ion-item>\n                  <ion-label floating>Password *</ion-label>\n                  <!-- Creamos el input para la contraseña -->\n                  <ion-input type="password" name="pass" formControlName="pass"></ion-input>\n                </ion-item>\n                <!-- Control de errores de si está vacío, o tiene menos de 10 caracteres, indique un error -->\n                <ion-item *ngIf="formularioUsuario.get(\'pass\').errors && formularioUsuario.get(\'pass\').dirty">\n                  <p color="danger" ion-text *ngIf="formularioUsuario.get(\'pass\').hasError(\'pattern\')" class="error">\n                    It is not a strong password.\n                  </p>\n                </ion-item>\n\n                <ion-item>\n                  <ion-label floating>Confirm password *</ion-label>\n                  <!-- Creamos el input para la contraseña -->\n                  <ion-input type="password" #password formControlName="pass2"></ion-input>\n                </ion-item>\n                <!-- Control de errores de si está vacío, o tiene menos de 10 caracteres, indique un error -->\n                <ion-item *ngIf="(formularioUsuario.get(\'pass2\').hasError(\'equalTo\') || formularioUsuario.get(\'pass2\').hasError(\'required\')) && formularioUsuario.get(\'pass2\').touched">\n                  <p color="danger" ion-text *ngIf="formularioUsuario.get(\'pass2\').hasError(\'required\') && formularioUsuario.get(\'pass2\').touched" class="error">\n                    It is not a strong password.\n                  </p>\n                  <p color="danger" ion-text *ngIf="formularioUsuario.get(\'pass2\').hasError(\'equalTo\') && formularioUsuario.get(\'pass2\').touched" class="error">\n                    Passwords do not match\n                  </p>\n                </ion-item>\n\n                <br>\n                <!-- Creamos el botón de registro, que permanecerá desactivado, hasta que los campos del formulario\n              estén correctamente rellenos superando el control de errores -->\n                <ion-grid padding-top>\n                  <ion-row justify-content-center>\n                    <div class="col-1" align-self-center>\n                      <div>\n                        <button ion-button type="submit" [disabled]="!formularioUsuario.valid" (click)="registerUsers()">Sign Up</button>\n                      </div>\n                    </div>\n                  </ion-row>\n                </ion-grid>\n\n                <ion-grid>\n                  <ion-row justify-content-center padding-top>\n                    <div align-self-center>\n                      <div>Or</div>\n                    </div>\n                  </ion-row>\n                  <ion-row justify-content-center padding-top>\n                    <div align-self-center>\n                      <div>\n                        <!-- <a (click)="goToRegistry()"> -->\n                        <a (click)="gotoHome()">\n                          <strong>Go to Login Page!</strong>\n                        </a>\n                      </div>\n                    </div>\n                  </ion-row>\n                </ion-grid>\n              </form>\n\n            </ion-list>\n          </ion-card-content>\n        </ion-card>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>'/*ion-inline-end:"/Users/adriancejudo/Desktop/StreamShareV4/src/pages/registro/registro.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
-            __WEBPACK_IMPORTED_MODULE_3__providers_login_login__["a" /* LoginProvider */]])
-    ], RegistroPage);
-    return RegistroPage;
-}());
-
-//# sourceMappingURL=registro.js.map
 
 /***/ }),
 
@@ -1126,15 +1126,15 @@ var map = {
 		14
 	],
 	"../pages/edit-event/edit-event.module": [
-		726,
+		739,
 		13
 	],
 	"../pages/fullvideo/fullvideo.module": [
-		729,
+		726,
 		12
 	],
 	"../pages/header/header.module": [
-		728,
+		733,
 		11
 	],
 	"../pages/home/home.module": [
@@ -1142,23 +1142,23 @@ var map = {
 		10
 	],
 	"../pages/info/info.module": [
-		740,
+		728,
 		9
 	],
 	"../pages/inicio/inicio.module": [
-		732,
+		737,
 		8
 	],
 	"../pages/list/list.module": [
-		731,
+		729,
 		7
 	],
 	"../pages/menu/menu.module": [
-		733,
+		731,
 		6
 	],
 	"../pages/peliculas/peliculas.module": [
-		736,
+		732,
 		5
 	],
 	"../pages/perfil/perfil.module": [
@@ -1166,19 +1166,19 @@ var map = {
 		4
 	],
 	"../pages/registro/registro.module": [
-		734,
+		740,
 		3
 	],
 	"../pages/series/series.module": [
-		738,
+		736,
 		2
 	],
 	"../pages/ver-todo/ver-todo.module": [
-		739,
+		734,
 		1
 	],
 	"../pages/videoplayer/videoplayer.module": [
-		737,
+		738,
 		0
 	]
 };
@@ -1198,7 +1198,7 @@ module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 240:
+/***/ 237:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1243,7 +1243,7 @@ var LinkProvider = (function () {
 
 /***/ }),
 
-/***/ 241:
+/***/ 240:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1292,7 +1292,7 @@ var AddEventPage = (function () {
     };
     AddEventPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-add-event',template:/*ion-inline-start:"/Users/adriancejudo/Desktop/StreamShareV4/src/pages/add-event/add-event.html"*/'<!--\n  Generated template for the AddEventPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>add-event</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/adriancejudo/Desktop/StreamShareV4/src/pages/add-event/add-event.html"*/,
+            selector: 'page-add-event',template:/*ion-inline-start:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\add-event\add-event.html"*/'<!--\n\n  Generated template for the AddEventPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>add-event</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\add-event\add-event.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
     ], AddEventPage);
@@ -1307,7 +1307,7 @@ var AddEventPage = (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EditEventPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ListPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1321,30 +1321,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-/**
- * Generated class for the EditEventPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var EditEventPage = (function () {
-    function EditEventPage(navCtrl, navParams) {
+var ListPage = (function () {
+    function ListPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
     }
-    EditEventPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad EditEventPage');
-    };
-    EditEventPage = __decorate([
+    ListPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-edit-event',template:/*ion-inline-start:"/Users/adriancejudo/Desktop/StreamShareV4/src/pages/edit-event/edit-event.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>edit-event</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/adriancejudo/Desktop/StreamShareV4/src/pages/edit-event/edit-event.html"*/,
+            selector: 'page-list',template:/*ion-inline-start:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\list\list.html"*/''/*ion-inline-end:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\list\list.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
-    ], EditEventPage);
-    return EditEventPage;
+    ], ListPage);
+    return ListPage;
 }());
 
-//# sourceMappingURL=edit-event.js.map
+//# sourceMappingURL=list.js.map
 
 /***/ }),
 
@@ -1352,14 +1343,75 @@ var EditEventPage = (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MenuPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__inicio_inicio__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__peliculas_peliculas__ = __webpack_require__(93);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var MenuPage = (function () {
+    function MenuPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.rootPage = __WEBPACK_IMPORTED_MODULE_2__inicio_inicio__["a" /* InicioPage */];
+        if (this.destino == "Peliculas") {
+            this.rootPage = __WEBPACK_IMPORTED_MODULE_2__inicio_inicio__["a" /* InicioPage */];
+            this.pages = [
+                { title: 'Películas', component: __WEBPACK_IMPORTED_MODULE_3__peliculas_peliculas__["a" /* PeliculasPage */] }
+                // { title: 'Series', component: GeneralPage },
+                // { title: 'Perfil', component: ClimaPage }
+                // { title: 'Monuments', component: MonumentsPage },
+                // { title: 'Festivities', component: FestPage },
+                // { title: 'Transport', component: TransportPage },
+                // { title: 'Typical food', component: FoodPage }
+            ];
+        }
+    }
+    MenuPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad MenuPage');
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Nav */]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Nav */])
+    ], MenuPage.prototype, "nav", void 0);
+    MenuPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-menu',template:/*ion-inline-start:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\menu\menu.html"*/'<ion-menu [content]="content">\n\n  <ion-header>\n\n    <ion-toolbar>\n\n      <ion-title>Menu</ion-title>\n\n    </ion-toolbar>\n\n  </ion-header>\n\n\n\n  <ion-content right>\n\n    <ion-list>\n\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n\n        {{p.title}}\n\n      </button>\n\n    </ion-list>\n\n  </ion-content>\n\n\n\n</ion-menu>\n\n\n\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\menu\menu.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
+    ], MenuPage);
+    return MenuPage;
+}());
+
+//# sourceMappingURL=menu.js.map
+
+/***/ }),
+
+/***/ 379:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HeaderPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__perfil_perfil__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__perfil_perfil__ = __webpack_require__(170);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_login_login__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__peliculas_peliculas__ = __webpack_require__(92);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__series_series__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__peliculas_peliculas__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__series_series__ = __webpack_require__(171);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__inicio_inicio__ = __webpack_require__(68);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_movie_movie_provider__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_serie_serie_provider__ = __webpack_require__(79);
@@ -1442,7 +1494,7 @@ var HeaderPage = (function () {
     };
     HeaderPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-header',template:/*ion-inline-start:"/Users/adriancejudo/Desktop/StreamShareV4/src/pages/header/header.html"*/'<ion-header *ngIf="identity" class="vista">\n  <ion-navbar hideBackButton="true">\n\n    <ion-grid *ngIf="!isSearchbarOpened">\n      <ion-row>\n        <ion-col col-auto>\n          <ion-buttons>\n            <button ion-button icon-only (click)="goToInicio()">\n              Home\n            </button>\n          </ion-buttons>\n        </ion-col>\n\n        <ion-col col-auto>\n          <ion-buttons>\n            <button ion-button icon-only (click)="goToPeliculas()">\n              Films\n            </button>\n          </ion-buttons>\n        </ion-col>\n\n        <ion-col col-auto>\n          <ion-buttons>\n            <button ion-button icon-only (click)="goToSeries()">\n              Series\n            </button>\n          </ion-buttons>\n        </ion-col>\n\n        <ion-col col-auto>\n          <ion-buttons>\n            <button ion-button icon-only (click)="goToPerfil()">\n              {{ identity.nickname }}\n              <ion-avatar item-start>\n                <img class="userAvatar" [src]="trustedUrl">\n              </ion-avatar>\n            </button>\n          </ion-buttons>\n        </ion-col>\n\n        <ion-col col-1>\n          <ion-buttons>\n            <button ion-button icon-only (click)="isSearchbarOpened=true">\n              <ion-icon name="search"></ion-icon>\n            </button>\n          </ion-buttons>\n        </ion-col>\n\n      </ion-row>\n    </ion-grid>\n\n    <ion-searchbar *ngIf="isSearchbarOpened" showCancelButton="true" (ionCancel)="isSearchbarOpened=false" (ionInput)="getItems($event)">\n    </ion-searchbar>\n    <ion-list *ngIf="isSearchbarOpened">\n      <button ion-item *ngFor="let item of items" (click)="showDetail(item)">\n        {{ item }}\n      </button>\n    </ion-list>\n  </ion-navbar>\n</ion-header>\n\n<ion-list id="listSearch" *ngIf="searchRes">\n  <a (click)="goToInfo(m)" *ngFor="let m of searchRes.movies">\n    <ion-item>\n      <ion-row>\n        <ion-col col-auto>\n          <img [src]="m.poster" id="posSearch">\n        </ion-col>\n        <ion-col col-auto class="center">\n          <p>{{m.title}}</p>\n        </ion-col>\n      </ion-row>\n    </ion-item>\n  </a>\n</ion-list>'/*ion-inline-end:"/Users/adriancejudo/Desktop/StreamShareV4/src/pages/header/header.html"*/,
+            selector: 'page-header',template:/*ion-inline-start:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\header\header.html"*/'<ion-header *ngIf="identity" class="vista">\n\n  <ion-navbar hideBackButton="true">\n\n\n\n    <ion-grid *ngIf="!isSearchbarOpened">\n\n      <ion-row>\n\n        <ion-col col-auto>\n\n          <ion-buttons>\n\n            <button ion-button icon-only (click)="goToInicio()">\n\n              Home\n\n            </button>\n\n          </ion-buttons>\n\n        </ion-col>\n\n\n\n        <ion-col col-auto>\n\n          <ion-buttons>\n\n            <button ion-button icon-only (click)="goToPeliculas()">\n\n              Films\n\n            </button>\n\n          </ion-buttons>\n\n        </ion-col>\n\n\n\n        <ion-col col-auto>\n\n          <ion-buttons>\n\n            <button ion-button icon-only (click)="goToSeries()">\n\n              Series\n\n            </button>\n\n          </ion-buttons>\n\n        </ion-col>\n\n\n\n        <ion-col col-auto>\n\n          <ion-buttons>\n\n            <button ion-button icon-only (click)="goToPerfil()">\n\n              {{ identity.nickname }}\n\n              <ion-avatar item-start>\n\n                <img class="userAvatar" [src]="trustedUrl">\n\n              </ion-avatar>\n\n            </button>\n\n          </ion-buttons>\n\n        </ion-col>\n\n\n\n        <ion-col col-1>\n\n          <ion-buttons>\n\n            <button ion-button icon-only (click)="isSearchbarOpened=true">\n\n              <ion-icon name="search"></ion-icon>\n\n            </button>\n\n          </ion-buttons>\n\n        </ion-col>\n\n\n\n      </ion-row>\n\n    </ion-grid>\n\n\n\n    <ion-searchbar *ngIf="isSearchbarOpened" showCancelButton="true" (ionCancel)="isSearchbarOpened=false" (ionInput)="getItems($event)">\n\n    </ion-searchbar>\n\n    <ion-list *ngIf="isSearchbarOpened">\n\n      <button ion-item *ngFor="let item of items" (click)="showDetail(item)">\n\n        {{ item }}\n\n      </button>\n\n    </ion-list>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-list id="listSearch" *ngIf="searchRes">\n\n  <a (click)="goToInfo(m)" *ngFor="let m of searchRes.movies">\n\n    <ion-item>\n\n      <ion-row>\n\n        <ion-col col-auto>\n\n          <img [src]="m.poster" id="posSearch">\n\n        </ion-col>\n\n        <ion-col col-auto class="center">\n\n          <p>{{m.title}}</p>\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-item>\n\n  </a>\n\n</ion-list>'/*ion-inline-end:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\header\header.html"*/,
             providers: [__WEBPACK_IMPORTED_MODULE_3__providers_login_login__["a" /* LoginProvider */], __WEBPACK_IMPORTED_MODULE_9__providers_serie_serie_provider__["a" /* SerieProvider */], __WEBPACK_IMPORTED_MODULE_8__providers_movie_movie_provider__["a" /* MovieProvider */]]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
@@ -1459,51 +1511,13 @@ var HeaderPage = (function () {
 
 /***/ }),
 
-/***/ 379:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ListPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var ListPage = (function () {
-    function ListPage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-    }
-    ListPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-list',template:/*ion-inline-start:"/Users/adriancejudo/Desktop/StreamShareV4/src/pages/list/list.html"*/''/*ion-inline-end:"/Users/adriancejudo/Desktop/StreamShareV4/src/pages/list/list.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
-    ], ListPage);
-    return ListPage;
-}());
-
-//# sourceMappingURL=list.js.map
-
-/***/ }),
-
 /***/ 380:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MenuPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EditEventPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__inicio_inicio__ = __webpack_require__(68);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__peliculas_peliculas__ = __webpack_require__(92);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1515,44 +1529,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-
-
-
-var MenuPage = (function () {
-    function MenuPage(navCtrl, navParams) {
+/**
+ * Generated class for the EditEventPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var EditEventPage = (function () {
+    function EditEventPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.rootPage = __WEBPACK_IMPORTED_MODULE_2__inicio_inicio__["a" /* InicioPage */];
-        if (this.destino == "Peliculas") {
-            this.rootPage = __WEBPACK_IMPORTED_MODULE_2__inicio_inicio__["a" /* InicioPage */];
-            this.pages = [
-                { title: 'Películas', component: __WEBPACK_IMPORTED_MODULE_3__peliculas_peliculas__["a" /* PeliculasPage */] }
-                // { title: 'Series', component: GeneralPage },
-                // { title: 'Perfil', component: ClimaPage }
-                // { title: 'Monuments', component: MonumentsPage },
-                // { title: 'Festivities', component: FestPage },
-                // { title: 'Transport', component: TransportPage },
-                // { title: 'Typical food', component: FoodPage }
-            ];
-        }
     }
-    MenuPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad MenuPage');
+    EditEventPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad EditEventPage');
     };
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Nav */]),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Nav */])
-    ], MenuPage.prototype, "nav", void 0);
-    MenuPage = __decorate([
+    EditEventPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-menu',template:/*ion-inline-start:"/Users/adriancejudo/Desktop/StreamShareV4/src/pages/menu/menu.html"*/'<ion-menu [content]="content">\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content right>\n    <ion-list>\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n        {{p.title}}\n      </button>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"/Users/adriancejudo/Desktop/StreamShareV4/src/pages/menu/menu.html"*/,
+            selector: 'page-edit-event',template:/*ion-inline-start:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\edit-event\edit-event.html"*/'<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>edit-event</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\edit-event\edit-event.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
-    ], MenuPage);
-    return MenuPage;
+    ], EditEventPage);
+    return EditEventPage;
 }());
 
-//# sourceMappingURL=menu.js.map
+//# sourceMappingURL=edit-event.js.map
 
 /***/ }),
 
@@ -1583,31 +1583,31 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(440);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angularfire2__ = __webpack_require__(283);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_angularfire2_auth__ = __webpack_require__(718);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_streaming_media__ = __webpack_require__(239);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_streaming_media__ = __webpack_require__(233);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_ionic2_rating__ = __webpack_require__(721);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__angular_common_http__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__providers_movie_movie_provider__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_status_bar__ = __webpack_require__(281);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_splash_screen__ = __webpack_require__(282);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__angular_http__ = __webpack_require__(723);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_native_camera__ = __webpack_require__(233);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_home_home__ = __webpack_require__(93);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_registro_registro__ = __webpack_require__(171);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_native_camera__ = __webpack_require__(241);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_home_home__ = __webpack_require__(92);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_registro_registro__ = __webpack_require__(168);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_inicio_inicio__ = __webpack_require__(68);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_menu_menu__ = __webpack_require__(380);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_ver_todo_ver_todo__ = __webpack_require__(170);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_peliculas_peliculas__ = __webpack_require__(92);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_perfil_perfil__ = __webpack_require__(166);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_chat_chat__ = __webpack_require__(165);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_menu_menu__ = __webpack_require__(378);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_ver_todo_ver_todo__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_peliculas_peliculas__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_perfil_perfil__ = __webpack_require__(170);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_chat_chat__ = __webpack_require__(166);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_add_event_add_event__ = __webpack_require__(376);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_edit_event_edit_event__ = __webpack_require__(377);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_edit_event_edit_event__ = __webpack_require__(380);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_info_info__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_series_series__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_series_series__ = __webpack_require__(171);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__providers_login_login__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_header_header__ = __webpack_require__(378);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_header_header__ = __webpack_require__(379);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_videoplayer_videoplayer__ = __webpack_require__(167);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__pages_list_list__ = __webpack_require__(379);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__pages_fullvideo_fullvideo__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__pages_list_list__ = __webpack_require__(377);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__pages_fullvideo_fullvideo__ = __webpack_require__(165);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__ionic_native_screen_orientation__ = __webpack_require__(724);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1690,21 +1690,21 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */], {}, {
                     links: [
                         { loadChildren: '../pages/add-event/add-event.module#AddEventPageModule', name: 'AddEventPage', segment: 'add-event', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/edit-event/edit-event.module#EditEventPageModule', name: 'EditEventPage', segment: 'edit-event', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/chat/chat.module#ChatPageModule', name: 'ChatPage', segment: 'chat', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/header/header.module#HeaderPageModule', name: 'HeaderPage', segment: 'header', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/fullvideo/fullvideo.module#FullvideoPageModule', name: 'FullvideoPage', segment: 'fullvideo', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/home/home.module#HomePageModule', name: 'HomePage', segment: 'home', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/chat/chat.module#ChatPageModule', name: 'ChatPage', segment: 'chat', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/info/info.module#InfoPageModule', name: 'InfoPage', segment: 'info', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/list/list.module#ListPageModule', name: 'ListPage', segment: 'list', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/inicio/inicio.module#InicioPageModule', name: 'InicioPage', segment: 'inicio', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/home/home.module#HomePageModule', name: 'HomePage', segment: 'home', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/menu/menu.module#MenuPageModule', name: 'MenuPage', segment: 'menu', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/registro/registro.module#RegistroPageModule', name: 'RegistroPage', segment: 'registro', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/perfil/perfil.module#PerfilPageModule', name: 'PerfilPage', segment: 'perfil', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/peliculas/peliculas.module#PeliculasPageModule', name: 'PeliculasPage', segment: 'peliculas', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/videoplayer/videoplayer.module#VideoplayerPageModule', name: 'VideoplayerPage', segment: 'videoplayer', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/series/series.module#SeriesPageModule', name: 'SeriesPage', segment: 'series', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/header/header.module#HeaderPageModule', name: 'HeaderPage', segment: 'header', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/ver-todo/ver-todo.module#VerTodoPageModule', name: 'VerTodoPage', segment: 'ver-todo', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/info/info.module#InfoPageModule', name: 'InfoPage', segment: 'info', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/perfil/perfil.module#PerfilPageModule', name: 'PerfilPage', segment: 'perfil', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/series/series.module#SeriesPageModule', name: 'SeriesPage', segment: 'series', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/inicio/inicio.module#InicioPageModule', name: 'InicioPage', segment: 'inicio', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/videoplayer/videoplayer.module#VideoplayerPageModule', name: 'VideoplayerPage', segment: 'videoplayer', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/edit-event/edit-event.module#EditEventPageModule', name: 'EditEventPage', segment: 'edit-event', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/registro/registro.module#RegistroPageModule', name: 'RegistroPage', segment: 'registro', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_6_angularfire2__["a" /* AngularFireModule */].initializeApp(firebaseAuth),
@@ -1859,6 +1859,25 @@ var LoginProvider = (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserLogin; });
+var UserLogin = (function () {
+    function UserLogin(_id, emailNick, password, gettoken) {
+        this._id = _id;
+        this.emailNick = emailNick;
+        this.password = password;
+        this.gettoken = gettoken;
+    }
+    return UserLogin;
+}());
+
+//# sourceMappingURL=userLogin.js.map
+
+/***/ }),
+
+/***/ 422:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
@@ -1904,25 +1923,6 @@ var UserProvider = (function () {
 
 /***/ }),
 
-/***/ 422:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserLogin; });
-var UserLogin = (function () {
-    function UserLogin(_id, emailNick, password, gettoken) {
-        this._id = _id;
-        this.emailNick = emailNick;
-        this.password = password;
-        this.gettoken = gettoken;
-    }
-    return UserLogin;
-}());
-
-//# sourceMappingURL=userLogin.js.map
-
-/***/ }),
-
 /***/ 440:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1934,7 +1934,7 @@ var UserLogin = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(282);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_firebase__ = __webpack_require__(230);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_firebase__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_home_home__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_home_home__ = __webpack_require__(92);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1972,7 +1972,7 @@ var MyApp = (function () {
         __WEBPACK_IMPORTED_MODULE_4_firebase___default.a.initializeApp(config);
     }
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/adriancejudo/Desktop/StreamShareV4/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>'/*ion-inline-end:"/Users/adriancejudo/Desktop/StreamShareV4/src/app/app.html"*/,
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>'/*ion-inline-end:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\app\app.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
@@ -1990,9 +1990,9 @@ var MyApp = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InfoPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_streaming_media__ = __webpack_require__(239);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_streaming_media__ = __webpack_require__(233);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__videoplayer_videoplayer__ = __webpack_require__(167);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_links_link_provider__ = __webpack_require__(240);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_links_link_provider__ = __webpack_require__(237);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_movie_movie_provider__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_serie_serie_provider__ = __webpack_require__(79);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -2224,7 +2224,7 @@ var InfoPage = (function () {
     };
     InfoPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-info',template:/*ion-inline-start:"/Users/adriancejudo/Desktop/StreamShareV4/src/pages/info/info.html"*/'<page-header></page-header>\n<ion-content>\n  <ion-card>\n    <ion-card-content class="backgroundCard">\n      <ion-row class="center">\n        <ion-col col-8 offset-2>\n          <img [src]="movie.poster">\n          <ion-fab top right col-4 #fab>\n            <button ion-fab mini class="background">\n              <ion-icon ios="ios-arrow-dropdown" md="md-arrow-dropdown"></ion-icon>\n            </button>\n            <ion-fab-list>\n              <button ion-fab (click)="cambiarIconoSeen(fab, movie._id)">\n                <ion-icon ios="ios-eye-off" md="md-eye-off"></ion-icon>\n              </button>\n              <button ion-fab (click)="cambiarIconoLike(fab, movie._id)">\n                <ion-icon ios="ios-heart" md="md-heart"></ion-icon>\n              </button>\n              <button ion-fab (click)="deleteView(fab, movie._id)">\n                <ion-icon ios="ios-trash" md="md-trash"></ion-icon>\n              </button>\n            </ion-fab-list>\n          </ion-fab>\n        </ion-col>\n        <ion-col col-6 offset-3 style="text-align: center;">\n          <h1>{{ movie.title }}</h1>\n        </ion-col>\n        <ion-col col-10>\n          <ul class="rating" (keydown)="onKeyDown($event)">\n            <li *ngFor="let starIndex of starIndexes" tappable (click)="rate(starIndex + 1)">\n              <ion-icon [name]="getStarIconName(starIndex)">\n              </ion-icon>\n            </li>\n          </ul>\n        </ion-col>\n        <ion-col col-6 offset-3>\n          <ion-buttons>\n            <button ion-button icon-only outline col-12 class="center" (click)="gotoreproductor()">\n              Watch Trailer\n            </button>\n            <button ion-button icon-only outline col-12 class="center" (click)="obtenerLinks(movie._id)">\n              See Links\n            </button>\n          </ion-buttons>\n        </ion-col>\n        <ion-col col-6 style="text-align: center;">\n          <ion-label class="titulo">GENRE: </ion-label>\n          <h3>{{ movie.genre }}</h3>\n        </ion-col>\n        <ion-col col-6 style="text-align: center;">\n          <ion-label class="titulo">YEAR: </ion-label>\n          <h3>{{ movie.year }}</h3>\n        </ion-col>\n        <ion-col col-12 style="text-align: center;">\n          <ion-label class="titulo">DESCRIPTION: </ion-label>\n          <h3>{{ movie.description }}</h3>\n        </ion-col>\n      </ion-row>\n      <div class="bottom"></div>\n    </ion-card-content>\n  </ion-card>\n</ion-content>\n'/*ion-inline-end:"/Users/adriancejudo/Desktop/StreamShareV4/src/pages/info/info.html"*/,
+            selector: 'page-info',template:/*ion-inline-start:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\info\info.html"*/'<page-header></page-header>\n\n<ion-content>\n\n  <ion-card>\n\n    <ion-card-content class="backgroundCard">\n\n      <ion-row class="center">\n\n        <ion-col col-8 offset-2>\n\n          <img [src]="movie.poster">\n\n          <ion-fab top right col-4 #fab>\n\n            <button ion-fab mini class="background">\n\n              <ion-icon ios="ios-arrow-dropdown" md="md-arrow-dropdown"></ion-icon>\n\n            </button>\n\n            <ion-fab-list>\n\n              <button ion-fab (click)="cambiarIconoSeen(fab, movie._id)">\n\n                <ion-icon ios="ios-eye-off" md="md-eye-off"></ion-icon>\n\n              </button>\n\n              <button ion-fab (click)="cambiarIconoLike(fab, movie._id)">\n\n                <ion-icon ios="ios-heart" md="md-heart"></ion-icon>\n\n              </button>\n\n              <button ion-fab (click)="deleteView(fab, movie._id)">\n\n                <ion-icon ios="ios-trash" md="md-trash"></ion-icon>\n\n              </button>\n\n            </ion-fab-list>\n\n          </ion-fab>\n\n        </ion-col>\n\n        <ion-col col-6 offset-3 style="text-align: center;">\n\n          <h1>{{ movie.title }}</h1>\n\n        </ion-col>\n\n        <ion-col col-10>\n\n          <ul class="rating" (keydown)="onKeyDown($event)">\n\n            <li *ngFor="let starIndex of starIndexes" tappable (click)="rate(starIndex + 1)">\n\n              <ion-icon [name]="getStarIconName(starIndex)">\n\n              </ion-icon>\n\n            </li>\n\n          </ul>\n\n        </ion-col>\n\n        <ion-col col-6 offset-3>\n\n          <ion-buttons>\n\n            <button ion-button icon-only outline col-12 class="center" (click)="gotoreproductor()">\n\n              Watch Trailer\n\n            </button>\n\n            <button ion-button icon-only outline col-12 class="center" (click)="obtenerLinks(movie._id)">\n\n              See Links\n\n            </button>\n\n          </ion-buttons>\n\n        </ion-col>\n\n        <ion-col col-6 style="text-align: center;">\n\n          <ion-label class="titulo">GENRE: </ion-label>\n\n          <h3>{{ movie.genre }}</h3>\n\n        </ion-col>\n\n        <ion-col col-6 style="text-align: center;">\n\n          <ion-label class="titulo">YEAR: </ion-label>\n\n          <h3>{{ movie.year }}</h3>\n\n        </ion-col>\n\n        <ion-col col-12 style="text-align: center;">\n\n          <ion-label class="titulo">DESCRIPTION: </ion-label>\n\n          <h3>{{ movie.description }}</h3>\n\n        </ion-col>\n\n      </ion-row>\n\n      <div class="bottom"></div>\n\n    </ion-card-content>\n\n  </ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\info\info.html"*/,
             providers: [__WEBPACK_IMPORTED_MODULE_4__providers_links_link_provider__["a" /* LinkProvider */], __WEBPACK_IMPORTED_MODULE_5__providers_movie_movie_provider__["a" /* MovieProvider */], __WEBPACK_IMPORTED_MODULE_6__providers_serie_serie_provider__["a" /* SerieProvider */]]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
@@ -2359,14 +2359,14 @@ var GLOBAL = {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InicioPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ver_todo_ver_todo__ = __webpack_require__(170);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ver_todo_ver_todo__ = __webpack_require__(169);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_login_login__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__info_info__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_movie_movie_provider__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_movie_movie__ = __webpack_require__(130);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_serie_serie_provider__ = __webpack_require__(79);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_serie_serie__ = __webpack_require__(241);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_serie_serie__ = __webpack_require__(240);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2517,7 +2517,7 @@ var InicioPage = (function () {
     };
     InicioPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-inicio',template:/*ion-inline-start:"/Users/adriancejudo/Desktop/StreamShareV4/src/pages/inicio/inicio.html"*/'<page-header></page-header>\n<ion-content>\n  <ion-list *ngIf="isSearchbarOpened">\n    <button ion-item *ngFor="let item of items" (click)="showDetail(item)">\n      {{ item }}\n    </button>\n  </ion-list>\n\n  <ion-card id="bottom">\n    <ion-card-header>\n      <ion-grid>\n        <ion-row>\n          <ion-col col-12>\n            <h1 class="titulo">\n               Welcome, {{ identity.nickname }}!\n            </h1>\n          </ion-col>\n        </ion-row>\n      </ion-grid>\n    </ion-card-header>\n\n    <ion-card-content>\n      <ion-grid>\n        <ion-row>\n          <ion-col col-12>\n            <h3 class="titulo">Movies seen:</h3>\n            <a *ngIf="seeAllMovies" class="alinearDerecha" (click)="goToSeeAll(\'visto\', listMovieVieweds)">see all</a>\n            <ion-grid>\n              <ion-row>\n                <ion-col col-4 *ngFor="let p of listMovieVieweds">\n                <ion-row>\n                    \n                        <button (click)="goToInfo(p)" class="fotoPelicula" no-padding>\n                          <ion-thumbnail item-start>\n                            <img [src]="p.poster">\n                          </ion-thumbnail>\n                        </button>\n                      \n                </ion-row>\n                <ion-row>\n                        <h4 class="center">{{ p.title }}</h4>\n                </ion-row>\n                </ion-col>\n              </ion-row>\n              <ion-row *ngIf="mensajePeliculas">\n                <ion-col>\n                  <h2 class="center">{{ mensajeViewP }}</h2>\n                </ion-col>\n              </ion-row>\n            </ion-grid>\n\n            <h3 class="titulo2">Series seen:</h3>\n            <a *ngIf="seeAllSeries" class="alinearDerecha" (click)="goToSeeAll(\'visto\', listMovieLikeds)">see all</a>\n            <ion-grid>\n                <ion-row>\n                  <ion-col col-4 *ngFor="let s of mostrarSeries">\n                  <ion-row>\n                      \n                          <button (click)="goToInfo(s)" class="fotoPelicula" no-padding>\n                            <ion-thumbnail item-start>\n                              <img [src]="s.poster">\n                            </ion-thumbnail>\n                          </button>\n                        \n                  </ion-row>\n                  <ion-row>\n                          <h4 class="center">{{ s.title }}</h4>\n                  </ion-row>\n                  </ion-col>\n                </ion-row>\n                <ion-row *ngIf="mensajeSeries">\n                  <ion-col>\n                    <h2 class="center">{{ mensajeViewS }}</h2>\n                  </ion-col>\n                </ion-row>\n  \n              </ion-grid>\n          \n          <h3 class="titulo2">Favourites films and series:</h3>\n          <a *ngIf="seeAllF" class="alinearDerecha" (click)="goToSeeAll(\'favorito\', listMovieLikeds)">see all</a>\n          <ion-grid>\n            <ion-row>\n              <ion-col col-4 *ngFor="let p of listMovieLikeds">\n                <ion-row>\n          \n                  <button (click)="goToInfo(p)" class="fotoPelicula" no-padding>\n                    <ion-thumbnail item-start>\n                      <img [src]="p.poster">\n                    </ion-thumbnail>\n                  </button>\n          \n                </ion-row>\n                <ion-row>\n                  <h4 class="center">{{ p.title }}</h4>\n                </ion-row>\n              </ion-col>\n            </ion-row>\n            <ion-row *ngIf="mensajeF">\n              <ion-col>\n                <h2 class="center">{{ mensajeViewPS }}</h2>\n              </ion-col>\n            </ion-row>\n          \n          </ion-grid>\n  \n          </ion-col>\n        </ion-row>\n      </ion-grid>\n    </ion-card-content>\n    <div class="bottom"></div>\n  </ion-card>\n</ion-content>'/*ion-inline-end:"/Users/adriancejudo/Desktop/StreamShareV4/src/pages/inicio/inicio.html"*/,
+            selector: 'page-inicio',template:/*ion-inline-start:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\inicio\inicio.html"*/'<page-header></page-header>\n\n<ion-content>\n\n  <ion-list *ngIf="isSearchbarOpened">\n\n    <button ion-item *ngFor="let item of items" (click)="showDetail(item)">\n\n      {{ item }}\n\n    </button>\n\n  </ion-list>\n\n\n\n  <ion-card id="bottom">\n\n    <ion-card-header>\n\n      <ion-grid>\n\n        <ion-row>\n\n          <ion-col col-12>\n\n            <h1 class="titulo">\n\n               Welcome, {{ identity.nickname }}!\n\n            </h1>\n\n          </ion-col>\n\n        </ion-row>\n\n      </ion-grid>\n\n    </ion-card-header>\n\n\n\n    <ion-card-content>\n\n      <ion-grid>\n\n        <ion-row>\n\n          <ion-col col-12>\n\n            <h3 class="titulo">Movies seen:</h3>\n\n            <a *ngIf="seeAllMovies" class="alinearDerecha" (click)="goToSeeAll(\'visto\', listMovieVieweds)">see all</a>\n\n            <ion-grid>\n\n              <ion-row>\n\n                <ion-col col-4 *ngFor="let p of listMovieVieweds">\n\n                <ion-row>\n\n                    \n\n                        <button (click)="goToInfo(p)" class="fotoPelicula" no-padding>\n\n                          <ion-thumbnail item-start>\n\n                            <img [src]="p.poster">\n\n                          </ion-thumbnail>\n\n                        </button>\n\n                      \n\n                </ion-row>\n\n                <ion-row>\n\n                        <h4 class="center">{{ p.title }}</h4>\n\n                </ion-row>\n\n                </ion-col>\n\n              </ion-row>\n\n              <ion-row *ngIf="mensajePeliculas">\n\n                <ion-col>\n\n                  <h2 class="center">{{ mensajeViewP }}</h2>\n\n                </ion-col>\n\n              </ion-row>\n\n            </ion-grid>\n\n\n\n            <h3 class="titulo2">Series seen:</h3>\n\n            <a *ngIf="seeAllSeries" class="alinearDerecha" (click)="goToSeeAll(\'visto\', listMovieLikeds)">see all</a>\n\n            <ion-grid>\n\n                <ion-row>\n\n                  <ion-col col-4 *ngFor="let s of mostrarSeries">\n\n                  <ion-row>\n\n                      \n\n                          <button (click)="goToInfo(s)" class="fotoPelicula" no-padding>\n\n                            <ion-thumbnail item-start>\n\n                              <img [src]="s.poster">\n\n                            </ion-thumbnail>\n\n                          </button>\n\n                        \n\n                  </ion-row>\n\n                  <ion-row>\n\n                          <h4 class="center">{{ s.title }}</h4>\n\n                  </ion-row>\n\n                  </ion-col>\n\n                </ion-row>\n\n                <ion-row *ngIf="mensajeSeries">\n\n                  <ion-col>\n\n                    <h2 class="center">{{ mensajeViewS }}</h2>\n\n                  </ion-col>\n\n                </ion-row>\n\n  \n\n              </ion-grid>\n\n          \n\n          <h3 class="titulo2">Favourites films and series:</h3>\n\n          <a *ngIf="seeAllF" class="alinearDerecha" (click)="goToSeeAll(\'favorito\', listMovieLikeds)">see all</a>\n\n          <ion-grid>\n\n            <ion-row>\n\n              <ion-col col-4 *ngFor="let p of listMovieLikeds">\n\n                <ion-row>\n\n          \n\n                  <button (click)="goToInfo(p)" class="fotoPelicula" no-padding>\n\n                    <ion-thumbnail item-start>\n\n                      <img [src]="p.poster">\n\n                    </ion-thumbnail>\n\n                  </button>\n\n          \n\n                </ion-row>\n\n                <ion-row>\n\n                  <h4 class="center">{{ p.title }}</h4>\n\n                </ion-row>\n\n              </ion-col>\n\n            </ion-row>\n\n            <ion-row *ngIf="mensajeF">\n\n              <ion-col>\n\n                <h2 class="center">{{ mensajeViewPS }}</h2>\n\n              </ion-col>\n\n            </ion-row>\n\n          \n\n          </ion-grid>\n\n  \n\n          </ion-col>\n\n        </ion-row>\n\n      </ion-grid>\n\n    </ion-card-content>\n\n    <div class="bottom"></div>\n\n  </ion-card>\n\n</ion-content>'/*ion-inline-end:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\inicio\inicio.html"*/,
             providers: [__WEBPACK_IMPORTED_MODULE_3__providers_login_login__["a" /* LoginProvider */], __WEBPACK_IMPORTED_MODULE_6__providers_movie_movie_provider__["a" /* MovieProvider */], __WEBPACK_IMPORTED_MODULE_8__providers_serie_serie_provider__["a" /* SerieProvider */]]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
@@ -2594,218 +2594,14 @@ var SerieProvider = (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PeliculasPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_login_login__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__info_info__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_movie_movie_provider__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_movie_movie__ = __webpack_require__(130);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-var PeliculasPage = (function () {
-    function PeliculasPage(navCtrl, loadingCtrl, navParams, alertCtrl, toastCtrl, contenedorFilms, _movieProvider) {
-        this.navCtrl = navCtrl;
-        this.loadingCtrl = loadingCtrl;
-        this.navParams = navParams;
-        this.alertCtrl = alertCtrl;
-        this.toastCtrl = toastCtrl;
-        this.contenedorFilms = contenedorFilms;
-        this._movieProvider = _movieProvider;
-        this.structure = { lower: 1990, upper: 2018 };
-        this.filter = false;
-        this.genre = 'Genre: All';
-        this.videoLanguage = 'Video Language: All';
-        this.subtitleLanguage = 'Subtitle Language: All';
-        this.page = 1;
-        this.isSearchbarOpened = false;
-        this.iconoIOS1 = 'ios-arrow-dropdown';
-        this.iconoAndroid1 = 'md-arrow-dropdown';
-        this.iconoIOS = 'ios-arrow-dropdown';
-        this.iconoAndroid = 'md-arrow-dropdown';
-        this.movie = new __WEBPACK_IMPORTED_MODULE_5__providers_movie_movie__["a" /* Movie */]('', '', '', '', '', '', '', '', '', '', '', '');
-        this.token = localStorage.getItem('token');
-    }
-    PeliculasPage.prototype.ngOnInit = function () {
-        var _this = this;
-        this._movieProvider.getAllMovies(localStorage.getItem('token'), this.page).subscribe(function (response) {
-            _this.listMovie = [];
-            if (response.message.length === 0) {
-                _this.mensajeVacio = 'No hay peliculas aún';
-            }
-            else {
-                response.message.forEach(function (eleMovie) {
-                    _this.listMovie.push(eleMovie);
-                });
-                console.log(_this.listMovie);
-            }
-        }, function (error) {
-            console.log(error);
-        });
-    };
-    PeliculasPage.prototype.goToInfo = function (p) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__info_info__["a" /* InfoPage */], {
-            contenido: p,
-            tipo: 'movie'
-        });
-    };
-    PeliculasPage.prototype.filterType = function () {
-        this.filter = true;
-    };
-    PeliculasPage.prototype.filterType2 = function () {
-        this.filter = false;
-    };
-    PeliculasPage.prototype.loginLoading = function () {
-        var _this = this;
-        this.filter = false;
-        var loading = this.loadingCtrl.create({
-            content: 'Years between ' + this.structure.lower + ' and ' + this.structure.upper +
-                '<br>' + this.genre + '<br>' + this.videoLanguage + '<br>' + this.subtitleLanguage,
-            duration: 5000,
-            dismissOnPageChange: true
-        });
-        this._movieProvider.getMoviesGenre(this.token, this.genre, this.structure.lower, this.structure.upper).subscribe(function (response) {
-            _this.listMovie = [];
-            if (response.movie.length === 0) {
-                _this.mensajeVacio = 'No hay peliculas aún';
-            }
-            else {
-                response.movie.forEach(function (eleMovie) {
-                    _this.listMovie.push(eleMovie);
-                });
-                console.log(_this.listMovie);
-            }
-        }, function (err) {
-            console.log(err);
-        });
-        loading.present();
-        setTimeout(function () {
-        }, 2000);
-    };
-    PeliculasPage.prototype.doRefresh = function (refresher) {
-        var _this = this;
-        this._movieProvider.getAllMovies(localStorage.getItem('token'), this.page).subscribe(function (response) {
-            _this.listMovie = [];
-            response.message.forEach(function (eleMovie) {
-                _this.listMovie.push(eleMovie);
-            });
-            refresher.complete();
-        });
-    };
-    PeliculasPage.prototype.cambiarIconoSeen = function (fab, movieId) {
-        var _this = this;
-        this._movieProvider.viewMovie(this.token, movieId).subscribe(function (response) {
-            if (response.message === "Ya estás viendo esta película") {
-                fab.close();
-                _this.mensaje = 'This film is already in "Seen Group';
-                _this.presentToast(_this.mensaje);
-            }
-            else {
-                fab.close();
-                _this.mensaje = 'This film has been added to "Seen Group"';
-                _this.presentToast(_this.mensaje);
-            }
-        }, function (err) {
-            console.log(err);
-        });
-    };
-    PeliculasPage.prototype.cambiarIconoLike = function (fab, movieId) {
-        var _this = this;
-        this._movieProvider.likedMovie(this.token, movieId).subscribe(function (response) {
-            if (response.message === "Ya estás viendo esta película") {
-                fab.close();
-                _this.mensaje = 'This film is already in "Favourite Group';
-                _this.presentToast(_this.mensaje);
-            }
-            else {
-                fab.close();
-                _this.mensaje = 'This film has been added to "Favourite Group"';
-                _this.presentToast(_this.mensaje);
-            }
-        }, function (err) {
-            console.log(err);
-        });
-    };
-    PeliculasPage.prototype.presentToast = function (mensaje) {
-        var toast = this.toastCtrl.create({
-            message: mensaje,
-            duration: 4000,
-            position: 'bottom'
-        });
-        toast.onDidDismiss(function () {
-            console.log('Dismissed toast');
-        });
-        toast.present();
-    };
-    PeliculasPage.prototype.moreFilms = function () {
-        var _this = this;
-        console.log('Array de peliculas1: ', this.listMovie.length);
-        this.page = this.page + 1;
-        this._movieProvider.getAllMovies(localStorage.getItem('token'), this.page).subscribe(function (response) {
-            response.message.forEach(function (eleMovie) {
-                _this.listMovie.push(eleMovie);
-            });
-            if (response.message.length === 0) {
-                _this.alert();
-            }
-        });
-        console.log('Array de peliculas2: ', this.listMovie.length);
-        console.log('Contenido que trae el server: ', this.contador);
-        /*if(this.listMovie.length == this.contador){
-          this.alert();
-        }*/
-    };
-    PeliculasPage.prototype.alert = function () {
-        this.alertCtrl.create({
-            title: 'There was a problem!',
-            subTitle: 'There are not more films in our Database',
-            buttons: ['OK']
-        }).present();
-    };
-    PeliculasPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-peliculas',template:/*ion-inline-start:"/Users/adriancejudo/Desktop/StreamShareV4/src/pages/peliculas/peliculas.html"*/'<page-header></page-header>\n<ion-content>\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n    <ion-refresher-content refreshingText="Refreshing...">\n    </ion-refresher-content>\n  </ion-refresher>\n  <ion-card >\n    <ion-row>\n      <ion-col col-12 class="center">\n        <ion-buttons padding-bottom>\n          <button ion-button icon-only outline *ngIf="!filter" (click)="filterType()" col-5>\n            Show Filters\n          </button>\n        </ion-buttons>\n      </ion-col>\n    </ion-row>\n\n    <ion-card *ngIf="filter">\n\n      <ion-item>\n        <ion-label>Year: </ion-label>\n        <ion-range dualKnobs="true" pin="true" min="1900" max="2020" step="5" snaps="true" [(ngModel)]="structure">\n          <ion-icon range-left small ios="ios-time" md="md-time"></ion-icon>\n          <ion-icon range-right ios="ios-time" md="md-time"></ion-icon>\n        </ion-range>\n      </ion-item>\n      \n      <ion-item>\n        <ion-label>Films Genre: </ion-label>\n        <ion-select [(ngModel)]="genre" interface="popover">\n          <ion-option value="Genre: All" selected="true">All</ion-option>\n          <ion-option value="Action, Adventure, Fantasy" selected="true">Action, Adventure, Fantasy</ion-option>\n          <ion-option value="Genre: Action and adventure">Action and adventure</ion-option>\n          <ion-option value="Genre: Cartoon">Cartoon</ion-option>\n          <ion-option value="Genre: Comedy">Comedy</ion-option>\n          <ion-option value="Genre: Crime">Crime</ion-option>\n          <ion-option value="Genre: Documentary film">Documentary film</ion-option>\n          <ion-option value="Genre: Drama">Drama</ion-option>\n          <ion-option value="Genre: Fantasy">Fantasy</ion-option>\n          <ion-option value="Genre: Mistery">Mistery</ion-option>\n          <ion-option value="Genre: Science fiction">Science fiction</ion-option>\n          <ion-option value="Genre: Sports">Sports</ion-option>\n          <ion-option value="Genre: Terror">Terror</ion-option>\n          <ion-option value="Genre: Thriller">Thriller</ion-option>\n        </ion-select>\n      </ion-item>\n      \n      <ion-item>\n        <ion-label>Video Language: </ion-label>\n        <ion-select [(ngModel)]="videoLanguage" interface="popover">\n          <ion-option value="Video Language: All" selected="true">All</ion-option>\n          <ion-option value="Video Language: English">English</ion-option>\n          <ion-option value="Video Language: French">French</ion-option>\n          <ion-option value="Video Language: German">German</ion-option>\n          <ion-option value="Video Language: Greek">Greek</ion-option>\n          <ion-option value="Video Language: Italian">Italian</ion-option>\n          <ion-option value="Video Language: Portuguese">Portuguese</ion-option>\n          <ion-option value="Video Language: Russian">Russian</ion-option>\n          <ion-option value="Video Language: Spanish">Spanish</ion-option>\n          <ion-option value="Video Language: Others">Others</ion-option>\n        </ion-select>\n      </ion-item>\n      \n      <ion-item>\n        <ion-label>Subtitle Language: </ion-label>\n        <ion-select [(ngModel)]="subtitleLanguage" interface="popover">\n          <ion-option value="Subtitle Language: All" selected="true">All</ion-option>\n          <ion-option value="Subtitle Language: English">English</ion-option>\n          <ion-option value="Subtitle Language: French">French</ion-option>\n          <ion-option value="Subtitle Language: German">German</ion-option>\n          <ion-option value="Subtitle Language: Greek">Greek</ion-option>\n          <ion-option value="Subtitle Language: Italian">Italian</ion-option>\n          <ion-option value="Subtitle Language: Portuguese">Portuguese</ion-option>\n          <ion-option value="Subtitle Language: Russian">Russian</ion-option>\n          <ion-option value="Subtitle Language: Spanish">Spanish</ion-option>\n          <ion-option value="Subtitle Language: Others">Others</ion-option>\n        </ion-select>\n      </ion-item>\n      \n      <ion-row>\n        <ion-col col-12 class="center">\n          <ion-buttons>\n            <button ion-button icon-only outline class="center" *ngIf="filter" (click)="loginLoading()" col-5>\n              Accept\n            </button>\n          </ion-buttons>\n        </ion-col>\n      </ion-row>\n\n      <ion-row>\n        <ion-col col-12 class="center">\n          <ion-buttons>\n            <button ion-button icon-only outline class="center" *ngIf="filter" (click)="filterType2()" col-5>\n              Hide Filters\n            </button>\n          </ion-buttons>\n        </ion-col>\n      </ion-row>\n\n    </ion-card>\n    <ion-row>\n        <ion-col col-12 class="center" padding-bottom *ngIf="mensajeVacio">\n          <h4>{{mensajeVacio}}</h4>\n        </ion-col>\n      <ion-col col-6 class="center" *ngFor="let p of listMovie">\n        <ion-thumbnail item-start col-12>\n          <button (click)="goToInfo(p)" class="fotoPelicula" no-padding>\n            <img [src]="p.poster">\n          </button>\n          <h5 class="center">\n            {{ p.title }}\n            <ion-fab top right edge col-4 #fab>\n              <button ion-fab mini class="background">\n                <ion-icon [ios]="iconoIOS1" [md]="iconoAndroid1"></ion-icon>\n              </button>\n              <ion-fab-list>\n                <button ion-fab (click)="cambiarIconoSeen(fab, p._id)">\n                  <ion-icon ios="ios-eye-off" md="md-eye-off"></ion-icon>\n                </button>\n                <button ion-fab (click)="cambiarIconoLike(fab, p._id)">\n                  <ion-icon ios="ios-heart" md="md-heart"></ion-icon>\n                </button>\n              </ion-fab-list>\n            </ion-fab>\n          </h5>\n        </ion-thumbnail>\n      </ion-col>\n      <ion-col col-12 class="center" id="moreButton" *ngIf="!mensajeVacio">\n        <button ion-button outline (click)="moreFilms()" col-auto>More</button>\n      </ion-col>\n    </ion-row>\n  </ion-card>\n</ion-content>\n'/*ion-inline-end:"/Users/adriancejudo/Desktop/StreamShareV4/src/pages/peliculas/peliculas.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */],
-            __WEBPACK_IMPORTED_MODULE_2__providers_login_login__["a" /* LoginProvider */],
-            __WEBPACK_IMPORTED_MODULE_4__providers_movie_movie_provider__["a" /* MovieProvider */]])
-    ], PeliculasPage);
-    return PeliculasPage;
-}());
-
-//# sourceMappingURL=peliculas.js.map
-
-/***/ }),
-
-/***/ 93:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_login_login__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__registro_registro__ = __webpack_require__(171);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__registro_registro__ = __webpack_require__(168);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__inicio_inicio__ = __webpack_require__(68);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__models_userLogin__ = __webpack_require__(422);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__models_userLogin__ = __webpack_require__(421);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_platform_browser__ = __webpack_require__(24);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2941,7 +2737,7 @@ var HomePage = (function () {
     ], HomePage.prototype, "currentPassword", void 0);
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/Users/adriancejudo/Desktop/StreamShareV4/src/pages/home/home.html"*/'<ion-content class="vertical-align-content">\n  <ion-grid>\n  <ion-row>\n    <ion-col col-12>\n      <!-- Creamos una "tarjeta" en la que vendrá diseñado nuestro formulario de inicio de sesión -->\n      <ion-card>\n        <!-- Cabecera -->\n        <ion-card-header>\n          <p class="header">Sign Up</p>\n        </ion-card-header>\n        <!-- Contenido de nuestro formulario -->\n        <ion-card-content>\n          <ion-list>\n            <!-- Creamos nuestra etiqueta para nuestro formulario, asignándole un nombre de grupo (ID) y una llamada \n            a una función de carga mientras comprueba las credenciales (loginLoading)-->\n            <form [formGroup]="formularioUsuario" novalidate>\n              <ion-item>\n                <ion-label floating>Email address</ion-label>\n                <!-- Creamos el input para añadir el usuario, y poniendo un id de formulario para sacar el contenido \n                de éste-->\n                <ion-input type="text" #emailad [(ngModel)]="userLogin.emailNick" name="emailNick" formControlName="email"></ion-input>\n              </ion-item>\n              <!-- Control de errores de si está rellenando el campo "Password" y el usuario está vacío indique un error -->\n              <ion-item *ngIf="formularioUsuario.get(\'email\').errors && formularioUsuario.get(\'email\').dirty">\n                <p color="danger" ion-text *ngIf="formularioUsuario.get(\'email\').hasError(\'required\')" class="error">\n                  Email is required.\n                </p>\n                <p color="danger" ion-text *ngIf="formularioUsuario.get(\'email\').hasError(\'pattern\')">\n                  It is not an email\n                </p>\n              </ion-item>\n            \n              <ion-item>\n                <ion-label floating>Password</ion-label>\n                <!-- Creamos el input para la contraseña -->\n                <ion-input type="password" #password [(ngModel)]="userLogin.password" name="password" formControlName="pass"></ion-input>\n              </ion-item>\n              <!-- Control de errores de si está vacío, o tiene menos de 10 caracteres, indique un error -->\n              <ion-item *ngIf="formularioUsuario.get(\'pass\').errors && formularioUsuario.get(\'pass\').dirty">\n                <p color="danger" ion-text *ngIf="formularioUsuario.get(\'pass\').hasError(\'pattern\')" class="error">\n                  It is not a strong password.\n                </p>\n              </ion-item>\n\n\n              <br>\n              <!-- Creamos el botón de inicio de sesión, que permanecerá desactivado, hasta que los campos del formulario\n              estén correctamente rellenos superando el control de errores -->\n              <ion-grid padding-top>\n                <ion-row justify-content-center>\n                  <div class="col-1" align-self-center>\n                    <div>\n                      <button ion-button type="submit" [disabled]="!formularioUsuario.valid" (click)="goToInicio()">Submit</button>\n                    </div>\n                  </div>\n                </ion-row>\n              </ion-grid>\n\n              <ion-grid>\n                <ion-row justify-content-center padding-top>\n                  <div align-self-center>\n                    <div>Or</div>\n                  </div>\n                </ion-row>\n                <ion-row justify-content-center padding-top>\n                  <div align-self-center>\n                    <div>\n                      <!-- <a (click)="goToRegistry()"> -->\n                      <a (click)="goToRegistro()">\n                        <strong>Sign Up Now!</strong>\n                      </a>\n                    </div>\n                  </div>\n                </ion-row>\n              </ion-grid>\n            </form>\n          \n          </ion-list>\n        </ion-card-content>\n      </ion-card>\n    </ion-col>\n  </ion-row>\n  </ion-grid>\n</ion-content>\n'/*ion-inline-end:"/Users/adriancejudo/Desktop/StreamShareV4/src/pages/home/home.html"*/,
+            selector: 'page-home',template:/*ion-inline-start:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\home\home.html"*/'<ion-content class="vertical-align-content">\n\n  <ion-grid>\n\n  <ion-row>\n\n    <ion-col col-12>\n\n      <!-- Creamos una "tarjeta" en la que vendrá diseñado nuestro formulario de inicio de sesión -->\n\n      <ion-card>\n\n        <!-- Cabecera -->\n\n        <ion-card-header>\n\n          <p class="header">Sign Up</p>\n\n        </ion-card-header>\n\n        <!-- Contenido de nuestro formulario -->\n\n        <ion-card-content>\n\n          <ion-list>\n\n            <!-- Creamos nuestra etiqueta para nuestro formulario, asignándole un nombre de grupo (ID) y una llamada \n\n            a una función de carga mientras comprueba las credenciales (loginLoading)-->\n\n            <form [formGroup]="formularioUsuario" novalidate>\n\n              <ion-item>\n\n                <ion-label floating>Email address</ion-label>\n\n                <!-- Creamos el input para añadir el usuario, y poniendo un id de formulario para sacar el contenido \n\n                de éste-->\n\n                <ion-input type="text" #emailad [(ngModel)]="userLogin.emailNick" name="emailNick" formControlName="email"></ion-input>\n\n              </ion-item>\n\n              <!-- Control de errores de si está rellenando el campo "Password" y el usuario está vacío indique un error -->\n\n              <ion-item *ngIf="formularioUsuario.get(\'email\').errors && formularioUsuario.get(\'email\').dirty">\n\n                <p color="danger" ion-text *ngIf="formularioUsuario.get(\'email\').hasError(\'required\')" class="error">\n\n                  Email is required.\n\n                </p>\n\n                <p color="danger" ion-text *ngIf="formularioUsuario.get(\'email\').hasError(\'pattern\')">\n\n                  It is not an email\n\n                </p>\n\n              </ion-item>\n\n            \n\n              <ion-item>\n\n                <ion-label floating>Password</ion-label>\n\n                <!-- Creamos el input para la contraseña -->\n\n                <ion-input type="password" #password [(ngModel)]="userLogin.password" name="password" formControlName="pass"></ion-input>\n\n              </ion-item>\n\n              <!-- Control de errores de si está vacío, o tiene menos de 10 caracteres, indique un error -->\n\n              <ion-item *ngIf="formularioUsuario.get(\'pass\').errors && formularioUsuario.get(\'pass\').dirty">\n\n                <p color="danger" ion-text *ngIf="formularioUsuario.get(\'pass\').hasError(\'pattern\')" class="error">\n\n                  It is not a strong password.\n\n                </p>\n\n              </ion-item>\n\n\n\n\n\n              <br>\n\n              <!-- Creamos el botón de inicio de sesión, que permanecerá desactivado, hasta que los campos del formulario\n\n              estén correctamente rellenos superando el control de errores -->\n\n              <ion-grid padding-top>\n\n                <ion-row justify-content-center>\n\n                  <div class="col-1" align-self-center>\n\n                    <div>\n\n                      <button ion-button type="submit" [disabled]="!formularioUsuario.valid" (click)="goToInicio()">Submit</button>\n\n                    </div>\n\n                  </div>\n\n                </ion-row>\n\n              </ion-grid>\n\n\n\n              <ion-grid>\n\n                <ion-row justify-content-center padding-top>\n\n                  <div align-self-center>\n\n                    <div>Or</div>\n\n                  </div>\n\n                </ion-row>\n\n                <ion-row justify-content-center padding-top>\n\n                  <div align-self-center>\n\n                    <div>\n\n                      <!-- <a (click)="goToRegistry()"> -->\n\n                      <a (click)="goToRegistro()">\n\n                        <strong>Sign Up Now!</strong>\n\n                      </a>\n\n                    </div>\n\n                  </div>\n\n                </ion-row>\n\n              </ion-grid>\n\n            </form>\n\n          \n\n          </ion-list>\n\n        </ion-card-content>\n\n      </ion-card>\n\n    </ion-col>\n\n  </ion-row>\n\n  </ion-grid>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\home\home.html"*/,
             providers: [__WEBPACK_IMPORTED_MODULE_3__providers_login_login__["a" /* LoginProvider */]]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
@@ -2955,6 +2751,208 @@ var HomePage = (function () {
 }());
 
 //# sourceMappingURL=home.js.map
+
+/***/ }),
+
+/***/ 93:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PeliculasPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_login_login__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__info_info__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_movie_movie_provider__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_movie_movie__ = __webpack_require__(130);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var PeliculasPage = (function () {
+    function PeliculasPage(navCtrl, loadingCtrl, navParams, alertCtrl, toastCtrl, contenedorFilms, _movieProvider) {
+        this.navCtrl = navCtrl;
+        this.loadingCtrl = loadingCtrl;
+        this.navParams = navParams;
+        this.alertCtrl = alertCtrl;
+        this.toastCtrl = toastCtrl;
+        this.contenedorFilms = contenedorFilms;
+        this._movieProvider = _movieProvider;
+        this.structure = { lower: 1990, upper: 2018 };
+        this.filter = false;
+        this.genre = 'Genre: All';
+        this.videoLanguage = 'Video Language: All';
+        this.subtitleLanguage = 'Subtitle Language: All';
+        this.page = 1;
+        this.more = true;
+        this.isSearchbarOpened = false;
+        this.iconoIOS1 = 'ios-arrow-dropdown';
+        this.iconoAndroid1 = 'md-arrow-dropdown';
+        this.iconoIOS = 'ios-arrow-dropdown';
+        this.iconoAndroid = 'md-arrow-dropdown';
+        this.movie = new __WEBPACK_IMPORTED_MODULE_5__providers_movie_movie__["a" /* Movie */]('', '', '', '', '', '', '', '', '', '', '', '');
+        this.token = localStorage.getItem('token');
+    }
+    PeliculasPage.prototype.ngOnInit = function () {
+        var _this = this;
+        this._movieProvider.getAllMovies(localStorage.getItem('token'), this.page).subscribe(function (response) {
+            _this.listMovie = [];
+            if (response.message.length === 0) {
+                _this.mensajeVacio = 'No hay peliculas aún';
+            }
+            else {
+                response.message.forEach(function (eleMovie) {
+                    _this.listMovie.push(eleMovie);
+                });
+                console.log(_this.listMovie);
+            }
+        }, function (error) {
+            console.log(error);
+        });
+    };
+    PeliculasPage.prototype.goToInfo = function (p) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__info_info__["a" /* InfoPage */], {
+            contenido: p,
+            tipo: 'movie'
+        });
+    };
+    PeliculasPage.prototype.filterType = function () {
+        this.filter = true;
+    };
+    PeliculasPage.prototype.filterType2 = function () {
+        this.filter = false;
+    };
+    PeliculasPage.prototype.loginLoading = function () {
+        var _this = this;
+        this.filter = false;
+        this.more = false;
+        this.mensajeVacio = '';
+        var loading = this.loadingCtrl.create({
+            content: 'Years between ' + this.structure.lower + ' and ' + this.structure.upper +
+                '<br>' + 'Genre: ' + this.genre,
+            duration: 4000,
+            dismissOnPageChange: true
+        });
+        this._movieProvider.getMoviesGenre(this.token, this.genre, this.structure.lower, this.structure.upper).subscribe(function (response) {
+            _this.listMovie = [];
+            if (response.movie.length === 0) {
+                _this.mensajeVacio = 'There are not films of your filter parameters.';
+            }
+            else {
+                response.movie.forEach(function (eleMovie) {
+                    _this.listMovie.push(eleMovie);
+                });
+                console.log(response);
+            }
+        }, function (err) {
+            console.log(err);
+        });
+        loading.present();
+        setTimeout(function () {
+        }, 2000);
+    };
+    PeliculasPage.prototype.doRefresh = function (refresher) {
+        var _this = this;
+        this._movieProvider.getAllMovies(localStorage.getItem('token'), this.page).subscribe(function (response) {
+            _this.listMovie = [];
+            response.message.forEach(function (eleMovie) {
+                _this.listMovie.push(eleMovie);
+            });
+            refresher.complete();
+        });
+    };
+    PeliculasPage.prototype.cambiarIconoSeen = function (fab, movieId) {
+        var _this = this;
+        this._movieProvider.viewMovie(this.token, movieId).subscribe(function (response) {
+            if (response.message === "Ya estás viendo esta película") {
+                fab.close();
+                _this.mensaje = 'This film is already in "Seen Group';
+                _this.presentToast(_this.mensaje);
+            }
+            else {
+                fab.close();
+                _this.mensaje = 'This film has been added to "Seen Group"';
+                _this.presentToast(_this.mensaje);
+            }
+        }, function (err) {
+            console.log(err);
+        });
+    };
+    PeliculasPage.prototype.cambiarIconoLike = function (fab, movieId) {
+        var _this = this;
+        this._movieProvider.likedMovie(this.token, movieId).subscribe(function (response) {
+            if (response.message === "Ya estás viendo esta película") {
+                fab.close();
+                _this.mensaje = 'This film is already in "Favourite Group';
+                _this.presentToast(_this.mensaje);
+            }
+            else {
+                fab.close();
+                _this.mensaje = 'This film has been added to "Favourite Group"';
+                _this.presentToast(_this.mensaje);
+            }
+        }, function (err) {
+            console.log(err);
+        });
+    };
+    PeliculasPage.prototype.presentToast = function (mensaje) {
+        var toast = this.toastCtrl.create({
+            message: mensaje,
+            duration: 4000,
+            position: 'bottom'
+        });
+        toast.onDidDismiss(function () {
+            console.log('Dismissed toast');
+        });
+        toast.present();
+    };
+    PeliculasPage.prototype.moreFilms = function () {
+        var _this = this;
+        console.log('Array de peliculas1: ', this.listMovie.length);
+        this.page = this.page + 1;
+        this._movieProvider.getAllMovies(localStorage.getItem('token'), this.page).subscribe(function (response) {
+            response.message.forEach(function (eleMovie) {
+                _this.listMovie.push(eleMovie);
+            });
+            if (response.message.length === 0) {
+                _this.alert();
+            }
+        });
+        console.log('Array de peliculas2: ', this.listMovie.length);
+        console.log('Contenido que trae el server: ', this.contador);
+        /*if(this.listMovie.length == this.contador){
+          this.alert();
+        }*/
+    };
+    PeliculasPage.prototype.alert = function () {
+        this.alertCtrl.create({
+            title: 'There was a problem!',
+            subTitle: 'There are not more films in our Database',
+            buttons: ['OK']
+        }).present();
+    };
+    PeliculasPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-peliculas',template:/*ion-inline-start:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\peliculas\peliculas.html"*/'<page-header></page-header>\n\n<ion-content>\n\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n\n    <ion-refresher-content refreshingText="Refreshing...">\n\n    </ion-refresher-content>\n\n  </ion-refresher>\n\n  <ion-card >\n\n    <ion-row>\n\n      <ion-col col-12 class="center">\n\n        <ion-buttons padding-bottom>\n\n          <button ion-button icon-only outline *ngIf="!filter" (click)="filterType()" col-5>\n\n            Show Filters\n\n          </button>\n\n        </ion-buttons>\n\n      </ion-col>\n\n    </ion-row>\n\n\n\n    <ion-card *ngIf="filter">\n\n\n\n      <ion-item>\n\n        <ion-label>Year: </ion-label>\n\n        <ion-range dualKnobs="true" pin="true" min="1900" max="2020" step="5" snaps="true" [(ngModel)]="structure">\n\n          <ion-icon range-left small ios="ios-time" md="md-time"></ion-icon>\n\n          <ion-icon range-right ios="ios-time" md="md-time"></ion-icon>\n\n        </ion-range>\n\n      </ion-item>\n\n      \n\n      <ion-item>\n\n        <ion-label>Films Genre: </ion-label>\n\n        <ion-select [(ngModel)]="genre" interface="popover">\n\n          <ion-option value="All" selected="true">All</ion-option>\n\n          <ion-option value="Action" selected="true">Action</ion-option>\n\n          <ion-option value="Adventure">Adventure</ion-option>\n\n          <ion-option value="Comedy">Comedy</ion-option>\n\n          <ion-option value="Documentary">Documentary</ion-option>\n\n          <ion-option value="Drama">Drama</ion-option>\n\n          <ion-option value="Fantasy">Fantasy</ion-option>\n\n          <ion-option value="History">History</ion-option>\n\n          <ion-option value="Horror">Horror</ion-option>\n\n          <ion-option value="News">News</ion-option>\n\n          <ion-option value="Sci-Fi">Science fiction</ion-option>\n\n          <ion-option value="Short">Short</ion-option>\n\n        </ion-select>\n\n      </ion-item>\n\n      \n\n      <ion-row>\n\n        <ion-col col-12 class="center">\n\n          <ion-buttons>\n\n            <button ion-button icon-only outline class="center" *ngIf="filter" (click)="loginLoading()" col-5>\n\n              Accept\n\n            </button>\n\n          </ion-buttons>\n\n        </ion-col>\n\n      </ion-row>\n\n\n\n      <ion-row>\n\n        <ion-col col-12 class="center">\n\n          <ion-buttons>\n\n            <button ion-button icon-only outline class="center" *ngIf="filter" (click)="filterType2()" col-5>\n\n              Hide Filters\n\n            </button>\n\n          </ion-buttons>\n\n        </ion-col>\n\n      </ion-row>\n\n\n\n    </ion-card>\n\n    <ion-row>\n\n        <ion-col col-12 class="center" padding-bottom *ngIf="mensajeVacio">\n\n          <h4>{{mensajeVacio}}</h4>\n\n        </ion-col>\n\n      <ion-col col-6 class="center" *ngFor="let p of listMovie">\n\n        <ion-thumbnail item-start col-12>\n\n          <button (click)="goToInfo(p)" class="fotoPelicula" no-padding>\n\n            <img [src]="p.poster">\n\n          </button>\n\n          <h5 class="center">\n\n            {{ p.title }}\n\n            <ion-fab top right edge col-4 #fab>\n\n              <button ion-fab mini class="background">\n\n                <ion-icon [ios]="iconoIOS1" [md]="iconoAndroid1"></ion-icon>\n\n              </button>\n\n              <ion-fab-list>\n\n                <button ion-fab (click)="cambiarIconoSeen(fab, p._id)">\n\n                  <ion-icon ios="ios-eye-off" md="md-eye-off"></ion-icon>\n\n                </button>\n\n                <button ion-fab (click)="cambiarIconoLike(fab, p._id)">\n\n                  <ion-icon ios="ios-heart" md="md-heart"></ion-icon>\n\n                </button>\n\n              </ion-fab-list>\n\n            </ion-fab>\n\n          </h5>\n\n        </ion-thumbnail>\n\n      </ion-col>\n\n      <ion-col col-12 class="center" id="moreButton" *ngIf="more">\n\n        <button ion-button outline (click)="moreFilms()" col-auto>More</button>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Usuario\Desktop\ProyectoFinalv5\src\pages\peliculas\peliculas.html"*/,
+        }),
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_2__providers_login_login__["a" /* LoginProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_login_login__["a" /* LoginProvider */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_4__providers_movie_movie_provider__["a" /* MovieProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__providers_movie_movie_provider__["a" /* MovieProvider */]) === "function" && _g || Object])
+    ], PeliculasPage);
+    return PeliculasPage;
+    var _a, _b, _c, _d, _e, _f, _g;
+}());
+
+//# sourceMappingURL=peliculas.js.map
 
 /***/ })
 

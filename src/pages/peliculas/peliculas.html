@@ -28,52 +28,18 @@
       <ion-item>
         <ion-label>Films Genre: </ion-label>
         <ion-select [(ngModel)]="genre" interface="popover">
-          <ion-option value="Genre: All" selected="true">All</ion-option>
-          <ion-option value="Action, Adventure, Fantasy" selected="true">Action, Adventure, Fantasy</ion-option>
-          <ion-option value="Genre: Action and adventure">Action and adventure</ion-option>
-          <ion-option value="Genre: Cartoon">Cartoon</ion-option>
-          <ion-option value="Genre: Comedy">Comedy</ion-option>
-          <ion-option value="Genre: Crime">Crime</ion-option>
-          <ion-option value="Genre: Documentary film">Documentary film</ion-option>
-          <ion-option value="Genre: Drama">Drama</ion-option>
-          <ion-option value="Genre: Fantasy">Fantasy</ion-option>
-          <ion-option value="Genre: Mistery">Mistery</ion-option>
-          <ion-option value="Genre: Science fiction">Science fiction</ion-option>
-          <ion-option value="Genre: Sports">Sports</ion-option>
-          <ion-option value="Genre: Terror">Terror</ion-option>
-          <ion-option value="Genre: Thriller">Thriller</ion-option>
-        </ion-select>
-      </ion-item>
-      
-      <ion-item>
-        <ion-label>Video Language: </ion-label>
-        <ion-select [(ngModel)]="videoLanguage" interface="popover">
-          <ion-option value="Video Language: All" selected="true">All</ion-option>
-          <ion-option value="Video Language: English">English</ion-option>
-          <ion-option value="Video Language: French">French</ion-option>
-          <ion-option value="Video Language: German">German</ion-option>
-          <ion-option value="Video Language: Greek">Greek</ion-option>
-          <ion-option value="Video Language: Italian">Italian</ion-option>
-          <ion-option value="Video Language: Portuguese">Portuguese</ion-option>
-          <ion-option value="Video Language: Russian">Russian</ion-option>
-          <ion-option value="Video Language: Spanish">Spanish</ion-option>
-          <ion-option value="Video Language: Others">Others</ion-option>
-        </ion-select>
-      </ion-item>
-      
-      <ion-item>
-        <ion-label>Subtitle Language: </ion-label>
-        <ion-select [(ngModel)]="subtitleLanguage" interface="popover">
-          <ion-option value="Subtitle Language: All" selected="true">All</ion-option>
-          <ion-option value="Subtitle Language: English">English</ion-option>
-          <ion-option value="Subtitle Language: French">French</ion-option>
-          <ion-option value="Subtitle Language: German">German</ion-option>
-          <ion-option value="Subtitle Language: Greek">Greek</ion-option>
-          <ion-option value="Subtitle Language: Italian">Italian</ion-option>
-          <ion-option value="Subtitle Language: Portuguese">Portuguese</ion-option>
-          <ion-option value="Subtitle Language: Russian">Russian</ion-option>
-          <ion-option value="Subtitle Language: Spanish">Spanish</ion-option>
-          <ion-option value="Subtitle Language: Others">Others</ion-option>
+          <ion-option value="All" selected="true">All</ion-option>
+          <ion-option value="Action" selected="true">Action</ion-option>
+          <ion-option value="Adventure">Adventure</ion-option>
+          <ion-option value="Comedy">Comedy</ion-option>
+          <ion-option value="Documentary">Documentary</ion-option>
+          <ion-option value="Drama">Drama</ion-option>
+          <ion-option value="Fantasy">Fantasy</ion-option>
+          <ion-option value="History">History</ion-option>
+          <ion-option value="Horror">Horror</ion-option>
+          <ion-option value="News">News</ion-option>
+          <ion-option value="Sci-Fi">Science fiction</ion-option>
+          <ion-option value="Short">Short</ion-option>
         </ion-select>
       </ion-item>
       
@@ -125,7 +91,7 @@
           </h5>
         </ion-thumbnail>
       </ion-col>
-      <ion-col col-12 class="center" id="moreButton" *ngIf="!mensajeVacio">
+      <ion-col col-12 class="center" id="moreButton" *ngIf="more">
         <button ion-button outline (click)="moreFilms()" col-auto>More</button>
       </ion-col>
     </ion-row>

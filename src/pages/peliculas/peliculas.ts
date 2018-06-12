@@ -32,6 +32,7 @@ export class PeliculasPage {
   contador: any;
   mensajeVacio: any;
   token;
+  more: boolean = true;
 
   public isSearchbarOpened = false;
   constructor(
@@ -99,22 +100,24 @@ export class PeliculasPage {
 
   loginLoading() {
     this.filter = false;
+    this.more = false;
+    this.mensajeVacio = '';
     let loading = this.loadingCtrl.create({
       content: 'Years between ' + this.structure.lower + ' and ' + this.structure.upper+
-        '<br>' + this.genre + '<br>' + this.videoLanguage + '<br>' + this.subtitleLanguage,
-      duration: 5000,
+        '<br>' + 'Genre: ' + this.genre,
+      duration: 4000,
       dismissOnPageChange: true
     });
 
     this._movieProvider.getMoviesGenre(this.token, this.genre, this.structure.lower, this.structure.upper).subscribe(response=>{
         this.listMovie = [];
         if(response.movie.length===0){
-          this.mensajeVacio = 'No hay peliculas aún';
+          this.mensajeVacio = 'There are not films of your filter parameters.';
         }else{
           response.movie.forEach(eleMovie => {
           this.listMovie.push(eleMovie);
           });
-          console.log(this.listMovie);
+          console.log(response);
         }
       },
         err=>{

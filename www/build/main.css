@@ -33458,6 +33458,10 @@ page-home .vertical-align-content > * {
   align-items: center !important;
 }
 
+page-home .scroll-content {
+  padding-bottom: 0px !important;
+}
+
 page-info ion-content {
   background: url("../assets/imgs/fondo.jpg");
   background-attachment: fixed;
