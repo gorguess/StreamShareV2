@@ -1,6 +1,6 @@
 webpackJsonp([1],{
 
-/***/ 738:
+/***/ 739:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -27,7 +27,7 @@ var VerTodoPageModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_2__ver_todo__["a" /* VerTodoPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__ver_todo__["a" /* VerTodoPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__ver_todo__["a" /* VerTodoPage */]),
             ],
         })
     ], VerTodoPageModule);
