@@ -254,13 +254,15 @@ export class InfoPage implements OnInit {
   showLinks(links: any) {
     let alert = this.alertCtrl.create();
     alert.setTitle('Select the link');
+    var cont = 1;
 
     for (let index = 0; index < this.links.length; index++) {
       alert.addInput({
         type: 'radio',
-        label: 'Link ' + index,
+        label: 'Link ' + cont,
         value: links[index]
       });  
+      cont = cont +1;
     }
 
     alert.addButton('Cancel');

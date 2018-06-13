@@ -18,9 +18,7 @@ export class PeliculasPage {
 
   structure: any = { lower: 1990, upper: 2018 };
   filter = false;
-  genre: any = 'Genre: All';
-  videoLanguage: any = 'Video Language: All';
-  subtitleLanguage: any = 'Subtitle Language: All';
+  genre: any = 'all';
   iconoIOS1;
   iconoAndroid1;
   iconoIOS;
