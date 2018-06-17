@@ -49,7 +49,7 @@
       </ion-row>
     </ion-grid>
 
-    <ion-searchbar *ngIf="isSearchbarOpened" showCancelButton="true" (ionCancel)="isSearchbarOpened=false" (ionInput)="getItems($event)">
+    <ion-searchbar *ngIf="isSearchbarOpened" showCancelButton="true" (ionCancel)="cancelSearch(); isSearchbarOpened=false" (ionInput)="getItems($event)">
     </ion-searchbar>
     <ion-list *ngIf="isSearchbarOpened">
       <button ion-item *ngFor="let item of items" (click)="showDetail(item)">

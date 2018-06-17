@@ -217,6 +217,14 @@ module.exports = [
         "clobbers": [
             "streamingMedia"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-screen-orientation/www/screenorientation.js",
+        "id": "cordova-plugin-screen-orientation.screenorientation",
+        "pluginId": "cordova-plugin-screen-orientation",
+        "clobbers": [
+            "cordova.plugins.screenorientation"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -230,7 +238,8 @@ module.exports.metadata =
     "cordova-plugin-splashscreen": "5.0.2",
     "cordova-plugin-whitelist": "1.3.3",
     "com.moust.cordova.videoplayer": "1.0.1",
-    "com.hutchind.cordova.plugins.streamingmedia": "0.1.4"
+    "com.hutchind.cordova.plugins.streamingmedia": "0.1.4",
+    "cordova-plugin-screen-orientation": "3.0.1"
 }
 // BOTTOM OF METADATA
 });

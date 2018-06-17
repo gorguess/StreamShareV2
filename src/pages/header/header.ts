@@ -86,6 +86,10 @@ export class HeaderPage implements OnInit, DoCheck{
     this.navCtrl.push(SeriesPage);
   }
 
+  cancelSearch() {
+    this.searchRes = null;
+  }
+
   goToInfo(p: Array<any>) {
     this.navCtrl.push(InfoPage, {
       contenido: p,

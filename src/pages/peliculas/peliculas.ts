@@ -130,6 +130,7 @@ export class PeliculasPage {
   }
 
   doRefresh(refresher) {
+    this.page = 1;
     this._movieProvider.getAllMovies(localStorage.getItem('token'), this.page).subscribe(response => {
       this.listMovie = [];
       response.message.forEach(eleMovie => {

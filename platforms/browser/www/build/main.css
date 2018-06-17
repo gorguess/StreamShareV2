@@ -33352,6 +33352,78 @@ ion-navbar.toolbar {
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
 
+.userAvatar {
+  border-radius: 50%;
+  max-height: 32px;
+}
+
+.ion-page > ion-content {
+  position: relative !important;
+}
+
+ion-header {
+  position: relative !important;
+  z-index: 3 !important;
+}
+
+page-fullvideo ion-content {
+  background: #000 !important;
+}
+
+page-fullvideo .vertical-align-content > * {
+  display: -webkit-box !important;
+  display: -webkit-flex !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-align-content: center !important;
+  -ms-flex-line-pack: center !important;
+  align-content: center !important;
+  -webkit-box-align: center !important;
+  -webkit-align-items: center !important;
+  -ms-flex-align: center !important;
+  align-items: center !important;
+}
+
+page-fullvideo video {
+  width: 100%;
+}
+
+page-fullvideo #backArrow {
+  background: #353535;
+}
+
+page-header #posSearch {
+  max-height: 48px;
+  width: auto;
+}
+
+page-header #listSearch {
+  max-height: calc(80vh);
+  overflow-y: auto;
+  width: 100%;
+  z-index: 10;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5) !important;
+}
+
+page-header #listSearch > a {
+  cursor: pointer;
+}
+
+page-header .center {
+  display: -webkit-box !important;
+  display: -webkit-flex !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-align-content: center !important;
+  -ms-flex-line-pack: center !important;
+  align-content: center !important;
+  -webkit-box-align: center !important;
+  -webkit-align-items: center !important;
+  -ms-flex-align: center !important;
+  align-items: center !important;
+}
+
 page-home ion-content {
   background: url("../assets/imgs/home.jpg");
   background-attachment: fixed;
@@ -33386,6 +33458,10 @@ page-home .vertical-align-content > * {
   align-items: center !important;
 }
 
+page-home .scroll-content {
+  padding-bottom: 0px !important;
+}
+
 page-info ion-content {
   background: url("../assets/imgs/fondo.jpg");
   background-attachment: fixed;
@@ -33410,6 +33486,29 @@ page-info .vertical-align-content > * {
 page-info .backgroundCard {
   background: -webkit-gradient(linear, left top, left bottom, from(#515A5A), to(#D5DBDB));
   background: linear-gradient(to bottom, #515A5A 0%, #D5DBDB 100%);
+}
+
+page-info .center {
+  text-align: center;
+  -webkit-align-content: center !important;
+  -ms-flex-line-pack: center !important;
+  align-content: center !important;
+  -webkit-box-align: center !important;
+  -webkit-align-items: center !important;
+  -ms-flex-align: center !important;
+  align-items: center !important;
+}
+
+page-info .titulo {
+  font-weight: bolder;
+}
+
+page-info .bottom {
+  padding-bottom: 19% !important;
+}
+
+page-info .background {
+  background: #008080;
 }
 
 page-inicio ion-content {
@@ -33441,6 +33540,23 @@ page-inicio .titulo2 {
 
 page-inicio .center {
   text-align: center;
+}
+
+page-inicio .nombreUsuario {
+  color: #E57373;
+}
+
+page-inicio .usuarioIcono {
+  color: white;
+}
+
+page-inicio .bottom {
+  padding-bottom: 19% !important;
+}
+
+page-inicio img {
+  min-width: 100%;
+  min-height: 100%;
 }
 
 page-peliculas ion-content {
@@ -33489,11 +33605,27 @@ page-peliculas .background {
   background: #008080;
 }
 
+page-peliculas .scroll-content {
+  background: url("../assets/imgs/fondo.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+page-peliculas .has-refresher > .scroll-content {
+  border-top: 0px !important;
+}
+
+page-peliculas #moreButton {
+  padding-bottom: 19% !important;
+}
+
 page-perfil ion-content {
   background: url("../assets/imgs/fondo.jpg");
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
+  margin-bottom: 20% !important;
 }
 
 page-perfil .center {
@@ -33523,6 +33655,28 @@ page-perfil .vertical-align-content > * {
   -webkit-align-items: center !important;
   -ms-flex-align: center !important;
   align-items: center !important;
+}
+
+page-perfil .background {
+  background: #008080;
+}
+
+page-perfil .label * {
+  color: #020202 !important;
+  padding-left: 0.5em !important;
+}
+
+page-perfil .label2 * {
+  color: #020202 !important;
+  padding-left: 0.3em !important;
+}
+
+page-perfil #bottom {
+  padding-bottom: 19%;
+}
+
+page-perfil .cierre {
+  padding-top: 3% !important;
 }
 
 page-registro ion-content {
@@ -33561,4 +33715,176 @@ page-registro .vertical-align-content > * {
   -webkit-align-items: center !important;
   -ms-flex-align: center !important;
   align-items: center !important;
+}
+
+page-series #moreButton {
+  padding-bottom: 19% !important;
+}
+
+page-ver-todo ion-content {
+  background: url("../assets/imgs/fondo.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+page-ver-todo .vertical-align-content > * {
+  display: -webkit-box !important;
+  display: -webkit-flex !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-align-content: left !important;
+  -ms-flex-line-pack: left !important;
+  align-content: left !important;
+  -webkit-box-align: left !important;
+  -webkit-align-items: left !important;
+  -ms-flex-align: left !important;
+  align-items: left !important;
+}
+
+page-ver-todo .bold {
+  font-weight: bolder;
+}
+
+page-ver-todo .padding {
+  padding-right: auto;
+  padding-left: none;
+  padding-top: none;
+}
+
+page-ver-todo .center {
+  text-align: center;
+  -webkit-align-content: center !important;
+  -ms-flex-line-pack: center !important;
+  align-content: center !important;
+  -webkit-box-align: center !important;
+  -webkit-align-items: center !important;
+  -ms-flex-align: center !important;
+  align-items: center !important;
+}
+
+page-ver-todo .background {
+  background: #008080;
+}
+
+page-ver-todo .scroll-content {
+  background: url("../assets/imgs/fondo.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+page-ver-todo .has-refresher > .scroll-content {
+  border-top: 0px !important;
+}
+
+page-ver-todo .bottom {
+  padding-bottom: 19% !important;
+}
+
+page-ver-todo img {
+  min-width: 100%;
+  min-height: 100%;
+}
+
+page-videoplayer #videoplayer:-webkit-full-screen {
+  background-color: rgba(255, 255, 255, 0) !important;
+}
+
+page-videoplayer #videoplayer:-moz-full-screen {
+  background-color: rgba(255, 255, 255, 0) !important;
+}
+
+page-videoplayer #videoplayer:-ms-fullscreen {
+  background-color: rgba(255, 255, 255, 0) !important;
+}
+
+page-videoplayer #videoplayer:fullscreen {
+  background-color: rgba(255, 255, 255, 0) !important;
+}
+
+page-videoplayer #videoplayer:-webkit-full-screen {
+  background-color: rgba(255, 255, 255, 0) !important;
+}
+
+page-videoplayer #videoplayer:-moz-full-screen {
+  background-color: rgba(255, 255, 255, 0) !important;
+}
+
+page-videoplayer .grid, page-videoplayer .row {
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 100%;
+}
+
+page-videoplayer #videoplayer {
+  width: 100% !important;
+  position: absolute;
+  padding: 0 !important;
+  margin: 0 !important;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+page-videoplayer #myBtn {
+  position: absolute;
+  top: 50%;
+  z-index: 10000;
+  left: 37.5%;
+  text-align: center;
+  background: transparent;
+  width: 25%;
+}
+
+page-videoplayer #backPoster {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: calc(100vh);
+  width: 100%;
+  z-index: -1;
+}
+
+page-videoplayer #coverPoster {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: calc(100vh);
+  width: 100%;
+  z-index: 1;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,1+60 */
+  /* FF3.6-15 */
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(55%, rgba(0, 0, 0, 0.8)), to(black));
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.8) 55%, black 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 );
+  /* IE6-9 */
+}
+
+page-videoplayer #infoPelicula {
+  z-index: 2;
+}
+
+page-videoplayer h2 {
+  color: #2eff98;
+}
+
+page-videoplayer hr {
+  background-color: #2eff98 !important;
+  width: 85% !important;
+  float: left;
+}
+
+page-videoplayer p {
+  color: white;
+}
+
+page-videoplayer #backArrow {
+  background: #353535;
 }
