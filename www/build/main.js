@@ -141,15 +141,462 @@ var FullvideoPage = (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegistroPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_login_login__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home_home__ = __webpack_require__(68);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var RegistroPage = (function () {
+    function RegistroPage(navCtrl, navParams, loadingCtrl, alertCtrl, comprobarLogin) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.loadingCtrl = loadingCtrl;
+        this.alertCtrl = alertCtrl;
+        this.comprobarLogin = comprobarLogin;
+    }
+    RegistroPage.prototype.ngOnInit = function () {
+        this.formularioUsuario = new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormGroup */]({
+            name: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].required]),
+            surname: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].required]),
+            nickname: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].required]),
+            email: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')]),
+            pass: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].pattern(/^[a-z0-9_-]{5,18}$/)]),
+            pass2: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].required, this.equalto('pass')])
+        });
+    };
+    RegistroPage.prototype.gotoHome = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__home_home__["a" /* HomePage */]);
+    };
+    RegistroPage.prototype.equalto = function (field_name) {
+        return function (control) {
+            var input = control.value;
+            var isValid = control.root.value[field_name] == input;
+            if (!isValid)
+                return { 'equalTo': { isValid: isValid } };
+            else
+                return null;
+        };
+    };
+    RegistroPage.prototype.alert = function () {
+        this.alertCtrl.create({
+            title: 'There was a problem!',
+            subTitle: 'This user alredy exists',
+            buttons: ['OK']
+        }).present();
+    };
+    RegistroPage.prototype.registerUsers = function () {
+        var _this = this;
+        this.registro = [{
+                name: this.nombre.value,
+                surname: this.apellidos.value,
+                nickname: this.username.value,
+                email: this.emailAddress.value,
+                birthdate: this.birthday.value["day"] +
+                    '/' + this.birthday.value["month"] +
+                    '/' + this.birthday.value["year"],
+                password: this.currentPassword.value
+            }];
+        this.comprobarLogin.registerUsers(this.registro).subscribe(function (datos) {
+            console.log('Datos: ', datos);
+            if (datos['message'] == 'Este usuario ya existe') {
+                _this.alert();
+            }
+            else {
+                _this.loginLoading();
+            }
+        }, function (err) {
+            console.log(err["message"]);
+        });
+    };
+    RegistroPage.prototype.loginLoading = function () {
+        var _this = this;
+        this.ngOnInit();
+        var loading = this.loadingCtrl.create({
+            content: 'Please wait...',
+            duration: 2000,
+            dismissOnPageChange: true
+        });
+        loading.present();
+        setTimeout(function () {
+            _this.gotoHome();
+        }, 2000);
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])("name"),
+        __metadata("design:type", Object)
+    ], RegistroPage.prototype, "nombre", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])("surname"),
+        __metadata("design:type", Object)
+    ], RegistroPage.prototype, "apellidos", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])("nickname"),
+        __metadata("design:type", Object)
+    ], RegistroPage.prototype, "username", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])("birthday"),
+        __metadata("design:type", Object)
+    ], RegistroPage.prototype, "birthday", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])("emailad"),
+        __metadata("design:type", Object)
+    ], RegistroPage.prototype, "emailAddress", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])("password"),
+        __metadata("design:type", Object)
+    ], RegistroPage.prototype, "currentPassword", void 0);
+    RegistroPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-registro',template:/*ion-inline-start:"/Users/adriancejudo/Desktop/appFinal/src/pages/registro/registro.html"*/'<ion-content>\n  <ion-grid>\n    <ion-row>\n      <ion-col col-12>\n        <ion-card>\n          <ion-card-header>\n            <p class="header">Registration</p>\n          </ion-card-header>\n          <ion-card-content>\n            <ion-list>\n              <form [formGroup]="formularioUsuario" novalidate>\n                <ion-item>\n                  <ion-label floating>Name *</ion-label>\n                  <ion-input formControlName="name" #name type="text"></ion-input>\n                </ion-item>\n                <ion-item *ngIf="formularioUsuario.get(\'name\').errors && formularioUsuario.get(\'name\').dirty">\n                  <p color="danger" ion-text *ngIf="formularioUsuario.get(\'name\').hasError(\'required\')">Your name is required</p>\n                </ion-item>\n                <ion-item>\n                  <ion-label floating>Surname *</ion-label>\n                  <ion-input formControlName="surname" #surname type="text"></ion-input>\n                </ion-item>\n                <ion-item *ngIf="formularioUsuario.get(\'surname\').errors && formularioUsuario.get(\'surname\').dirty">\n                  <p color="danger" ion-text *ngIf="formularioUsuario.get(\'surname\').hasError(\'required\')">Your surname is required</p>\n                </ion-item>\n                <ion-item>\n                  <ion-label floating>Nickname *</ion-label>\n                  <ion-input type="text" #nickname formControlName="nickname"></ion-input>\n                </ion-item>\n                <ion-item *ngIf="formularioUsuario.get(\'nickname\').errors && formularioUsuario.get(\'nickname\').dirty">\n                  <p color="danger" ion-text *ngIf="formularioUsuario.get(\'nickname\').hasError(\'required\')" class="error">\n                    nickname is required.\n                  </p>\n                </ion-item>\n                <ion-item>\n                  <ion-label floating>Birthday</ion-label>\n                  <ion-datetime #birthday displayFormat="MM/DD/YYYY"></ion-datetime>\n                </ion-item>\n                <ion-item>\n                  <ion-label floating>Email address *</ion-label>\n                  <ion-input type="email" #emailad formControlName="email"></ion-input>\n                </ion-item>\n                <!-- Control de errores de si está rellenando el campo "Password" y el usuario está vacío indique un error -->\n                <ion-item *ngIf="formularioUsuario.get(\'email\').errors && formularioUsuario.get(\'email\').dirty">\n                  <p color="danger" ion-text *ngIf="formularioUsuario.get(\'email\').hasError(\'required\')" class="error">\n                    Email is required.\n                  </p>\n                  <p color="danger" ion-text *ngIf="formularioUsuario.get(\'email\').hasError(\'pattern\')">\n                    It is not an email\n                  </p>\n                </ion-item>\n                <ion-item>\n                  <ion-label floating>Password *</ion-label>\n                  <!-- Creamos el input para la contraseña -->\n                  <ion-input type="password" name="pass" formControlName="pass"></ion-input>\n                </ion-item>\n                <!-- Control de errores de si está vacío, o tiene menos de 10 caracteres, indique un error -->\n                <ion-item *ngIf="formularioUsuario.get(\'pass\').errors && formularioUsuario.get(\'pass\').dirty">\n                  <p color="danger" ion-text *ngIf="formularioUsuario.get(\'pass\').hasError(\'pattern\')" class="error">\n                    It is not a strong password.\n                  </p>\n                </ion-item>\n\n                <ion-item>\n                  <ion-label floating>Confirm password *</ion-label>\n                  <!-- Creamos el input para la contraseña -->\n                  <ion-input type="password" #password formControlName="pass2"></ion-input>\n                </ion-item>\n                <!-- Control de errores de si está vacío, o tiene menos de 10 caracteres, indique un error -->\n                <ion-item *ngIf="(formularioUsuario.get(\'pass2\').hasError(\'equalTo\') || formularioUsuario.get(\'pass2\').hasError(\'required\')) && formularioUsuario.get(\'pass2\').touched">\n                  <p color="danger" ion-text *ngIf="formularioUsuario.get(\'pass2\').hasError(\'required\') && formularioUsuario.get(\'pass2\').touched" class="error">\n                    It is not a strong password.\n                  </p>\n                  <p color="danger" ion-text *ngIf="formularioUsuario.get(\'pass2\').hasError(\'equalTo\') && formularioUsuario.get(\'pass2\').touched" class="error">\n                    Passwords do not match\n                  </p>\n                </ion-item>\n\n                <br>\n                <!-- Creamos el botón de registro, que permanecerá desactivado, hasta que los campos del formulario\n              estén correctamente rellenos superando el control de errores -->\n                <ion-grid padding-top>\n                  <ion-row justify-content-center>\n                    <div class="col-1" align-self-center>\n                      <div>\n                        <button ion-button type="submit" [disabled]="!formularioUsuario.valid" (click)="registerUsers()">Sign Up</button>\n                      </div>\n                    </div>\n                  </ion-row>\n                </ion-grid>\n\n                <ion-grid>\n                  <ion-row justify-content-center padding-top>\n                    <div align-self-center>\n                      <div>Or</div>\n                    </div>\n                  </ion-row>\n                  <ion-row justify-content-center padding-top>\n                    <div align-self-center>\n                      <div>\n                        <!-- <a (click)="goToRegistry()"> -->\n                        <a (click)="gotoHome()">\n                          <strong>Go to Login Page!</strong>\n                        </a>\n                      </div>\n                    </div>\n                  </ion-row>\n                </ion-grid>\n              </form>\n\n            </ion-list>\n          </ion-card-content>\n        </ion-card>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>'/*ion-inline-end:"/Users/adriancejudo/Desktop/appFinal/src/pages/registro/registro.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_login_login__["a" /* LoginProvider */]])
+    ], RegistroPage);
+    return RegistroPage;
+}());
+
+//# sourceMappingURL=registro.js.map
+
+/***/ }),
+
+/***/ 168:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VerTodoPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__info_info__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_movie_movie_provider__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_movie_movie__ = __webpack_require__(130);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var VerTodoPage = (function () {
+    function VerTodoPage(navCtrl, navParams, _movieProvider, toastCtrl) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this._movieProvider = _movieProvider;
+        this.toastCtrl = toastCtrl;
+        this.token = localStorage.getItem('token');
+        this.tipoContenido = navParams.data['tipo'];
+        this.list = navParams.data['array'];
+        this.movie = new __WEBPACK_IMPORTED_MODULE_4__providers_movie_movie__["a" /* Movie */]('', '', '', '', '', '', '', '', '', '', '', '');
+    }
+    VerTodoPage.prototype.ionViewDidLoad = function () {
+        var _this = this;
+        if (this.tipoContenido === 'visto') {
+            // Ponemos por defecto, el icono de visto
+            this.iconoIOS = 'ios-eye-off';
+            this.iconoAndroid = 'md-eye-off';
+            // Ponemos, que la segunda opción sea cambiarla a favoritos
+            this.iconoIOS2 = 'ios-heart';
+            this.iconoAndroid2 = 'md-heart';
+            this._movieProvider.getViewedMovie(this.token).subscribe(function (response) {
+                console.log(response);
+                _this.list = [];
+                response.views.forEach(function (eleMovie) {
+                    if (eleMovie.movieViewed) {
+                        _this.movie = eleMovie.movieViewed;
+                        _this.list.push(_this.movie);
+                    }
+                });
+            });
+        }
+        else if (this.tipoContenido === 'favorito') {
+            // Ponemos por defecto, el icono de favoritos
+            this.iconoIOS = 'ios-heart';
+            this.iconoAndroid = 'md-heart';
+            // Ponemos, que la segunda opción sea cambiarla a visto
+            this.iconoIOS2 = 'ios-eye-off';
+            this.iconoAndroid2 = 'md-eye-off';
+            this._movieProvider.getLikedMovie(this.token).subscribe(function (response) {
+                _this.list = [];
+                response.likeds.forEach(function (eleMovie) {
+                    if (eleMovie) {
+                        _this.movie = eleMovie.movieLiked;
+                        _this.list.push(_this.movie);
+                    }
+                });
+            }, function (err) {
+                console.log(err);
+            });
+        }
+    };
+    VerTodoPage.prototype.ngOnInit = function () { };
+    VerTodoPage.prototype.cambiarIcono = function (fab, movieId) {
+        var _this = this;
+        console.log(movieId);
+        if (this.iconoIOS2 === "ios-eye-off" && this.iconoAndroid2 === "md-eye-off") {
+            this._movieProvider.viewMovie(this.token, movieId).subscribe(function (response) {
+                if (response.message === "Ya estás viendo esta película") {
+                    fab.close();
+                    _this.mensaje = 'This film is already in "Seen Group"';
+                    _this.presentToast(_this.mensaje);
+                }
+                else {
+                    console.log(response);
+                    fab.close();
+                    _this.mensaje = 'This film has been added to "Seen Group"';
+                    _this.presentToast(_this.mensaje);
+                }
+            }, function (err) {
+                console.log(err);
+            });
+        }
+        else {
+            this._movieProvider.likedMovie(this.token, movieId).subscribe(function (response) {
+                if (response.message === "Ya estás viendo esta película") {
+                    fab.close();
+                    _this.mensaje = 'This film is already in "Favourite Group"';
+                    _this.presentToast(_this.mensaje);
+                }
+                else {
+                    console.log(response);
+                    fab.close();
+                    _this.mensaje = 'This film has been added to "Favourite Group"';
+                    _this.presentToast(_this.mensaje);
+                }
+            }, function (err) {
+                console.log(err);
+            });
+        }
+    };
+    VerTodoPage.prototype.deleteView = function (fab, movieId) {
+        var _this = this;
+        if (this.tipoContenido === 'visto') {
+            console.log(movieId);
+            this._movieProvider.deleteViewed(this.token, movieId).subscribe(function (response) {
+                fab.close();
+                _this.mensaje = 'This film has been removed of "Seen Group"';
+                _this.presentToast(_this.mensaje);
+                var index = 0;
+                _this.list.forEach(function (element) {
+                    if (element._id === movieId) {
+                        console.log(index);
+                        _this.list.splice(index, 1);
+                        console.log(_this.list);
+                    }
+                    index++;
+                });
+            }, function (err) {
+                fab.close();
+                _this.mensaje = 'This film has already been removed of "Seen Group". Please refresh this view.';
+                _this.presentToast(_this.mensaje);
+            });
+        }
+        else if (this.tipoContenido === 'favorito') {
+            this._movieProvider.dislikeMovie(this.token, movieId).subscribe(function (response) {
+                fab.close();
+                _this.mensaje = 'This film has been removed of "Favourite Group"';
+                _this.presentToast(_this.mensaje);
+                var index = 0;
+                _this.list.forEach(function (element) {
+                    if (element._id === movieId) {
+                        console.log(index);
+                        _this.list.splice(index, 1);
+                        console.log(_this.list);
+                    }
+                    index++;
+                });
+            }, function (err) {
+                fab.close();
+                _this.mensaje = 'This film has already been removed of "Favourite Group". Please refresh this view.';
+                _this.presentToast(_this.mensaje);
+            });
+        }
+    };
+    VerTodoPage.prototype.doRefresh = function (refresher) {
+        var _this = this;
+        if (this.tipoContenido === 'visto') {
+            // Ponemos por defecto, el icono de visto
+            this.iconoIOS = 'ios-eye-off';
+            this.iconoAndroid = 'md-eye-off';
+            // Ponemos, que la segunda opción sea cambiarla a favoritos
+            this.iconoIOS2 = 'ios-heart';
+            this.iconoAndroid2 = 'md-heart';
+            this._movieProvider.getViewedMovie(this.token).subscribe(function (response) {
+                console.log(response);
+                _this.list = [];
+                response.views.forEach(function (eleMovie) {
+                    if (eleMovie.movieViewed) {
+                        _this.movie = eleMovie.movieViewed;
+                        _this.list.push(_this.movie);
+                    }
+                });
+            });
+            refresher.complete();
+        }
+        else if (this.tipoContenido === 'favorito') {
+            // Ponemos por defecto, el icono de favoritos
+            this.iconoIOS = 'ios-heart';
+            this.iconoAndroid = 'md-heart';
+            // Ponemos, que la segunda opción sea cambiarla a visto
+            this.iconoIOS2 = 'ios-eye-off';
+            this.iconoAndroid2 = 'md-eye-off';
+            this._movieProvider.getLikedMovie(this.token).subscribe(function (response) {
+                _this.list = [];
+                response.likeds.forEach(function (eleMovie) {
+                    if (eleMovie) {
+                        _this.movie = eleMovie.movieLiked;
+                        _this.list.push(_this.movie);
+                    }
+                });
+            }, function (err) {
+                console.log(err);
+            });
+            refresher.complete();
+        }
+    };
+    VerTodoPage.prototype.presentToast = function (mensaje) {
+        var toast = this.toastCtrl.create({
+            message: mensaje,
+            duration: 4000,
+            position: 'bottom'
+        });
+        toast.onDidDismiss(function () {
+            console.log('Dismissed toast');
+        });
+        toast.present();
+    };
+    VerTodoPage.prototype.goToInfo = function (p) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__info_info__["a" /* InfoPage */], {
+            contenido: p,
+            data: this.contenedor
+        });
+    };
+    VerTodoPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-ver-todo',template:/*ion-inline-start:"/Users/adriancejudo/Desktop/appFinal/src/pages/ver-todo/ver-todo.html"*/'<page-header></page-header>\n\n<ion-content>\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n    <ion-refresher-content refreshingText="Refreshing...">\n    </ion-refresher-content>\n  </ion-refresher>\n  <ion-card>\n    <ion-row>\n      <ion-col col-6 class="center" *ngFor="let p of list" style="padding-top: 5px">\n        <ion-thumbnail item-start col-12>\n          <button (click)="goToInfo(p)" class="fotoPelicula" no-padding>\n            <img [src]="p.poster">\n          </button>\n          <h5 class="center">\n            {{ p.title }}\n            <ion-fab top right col-4 #fab>\n              <button ion-fab mini class="background">\n                <ion-icon [ios]="iconoIOS" [md]="iconoAndroid"></ion-icon>\n              </button>\n              <ion-fab-list>\n                <button ion-fab (click)="cambiarIcono(fab, p._id)">\n                  <ion-icon [ios]="iconoIOS2" [md]="iconoAndroid2"></ion-icon>\n                </button>\n                <button ion-fab (click)="deleteView(fab, p._id)">\n                  <ion-icon ios="ios-trash" md="md-trash"></ion-icon>\n                </button>\n              </ion-fab-list>\n            </ion-fab>\n          </h5>\n        </ion-thumbnail>\n      </ion-col>\n    </ion-row>\n    <div class="bottom"></div>\n  </ion-card>\n</ion-content>\n\n'/*ion-inline-end:"/Users/adriancejudo/Desktop/appFinal/src/pages/ver-todo/ver-todo.html"*/,
+            providers: [__WEBPACK_IMPORTED_MODULE_3__providers_movie_movie_provider__["a" /* MovieProvider */]]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_movie_movie_provider__["a" /* MovieProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */]])
+    ], VerTodoPage);
+    return VerTodoPage;
+}());
+
+//# sourceMappingURL=ver-todo.js.map
+
+/***/ }),
+
+/***/ 169:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VideoplayerPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_links_link_provider__ = __webpack_require__(239);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__fullvideo_fullvideo__ = __webpack_require__(166);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var VideoplayerPage = (function () {
+    function VideoplayerPage(navCtrl, navParams, sanitizer, _linkProvider) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.sanitizer = sanitizer;
+        this._linkProvider = _linkProvider;
+        this.status = 'play';
+        this.icono = 'ios-play-outline';
+        this.movie = navParams.data['movie'];
+        this.video = navParams.data['video'];
+        this.token = localStorage.getItem('token');
+    }
+    VideoplayerPage.prototype.ngOnInit = function () {
+        var _this = this;
+        this._linkProvider.getContent(this.token, this.video).subscribe(function (res) {
+            alert('we are ready');
+            _this.file = new Blob([res], { type: 'video/mp4' });
+            _this.fileURL = URL.createObjectURL(_this.file);
+            _this.trustedUrl = _this.sanitizer.bypassSecurityTrustUrl(_this.fileURL);
+            console.log(_this.trustedUrl);
+        }, function (err) {
+            console.log(err);
+        });
+    };
+    VideoplayerPage.prototype.toggleVideo = function (event) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__fullvideo_fullvideo__["a" /* FullvideoPage */], { video: this.trustedUrl });
+    };
+    VideoplayerPage.prototype.goToBack = function () {
+        this.navCtrl.pop();
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])('videoplayer'),
+        __metadata("design:type", Object)
+    ], VideoplayerPage.prototype, "videoplayer", void 0);
+    VideoplayerPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-videoplayer',template:/*ion-inline-start:"/Users/adriancejudo/Desktop/appFinal/src/pages/videoplayer/videoplayer.html"*/'<ion-content>\n<ion-fab>\n  <button ion-fab mini (click)="goToBack()" id="backArrow"><ion-icon name="md-arrow-back"></ion-icon></button>\n</ion-fab>\n  <div id="coverPoster"></div>\n    <img [src]="movie.poster" id="backPoster" alt="">\n    <ion-grid>\n      <ion-row>\n        <ion-col col-12>\n          <video #videoplayer preload id="videoplayer" hidden>\n            <source [src]="trustedUrl" type="video/mp4">\n          </video>\n          <button (click)="toggleVideo()" id="myBtn"><img src="assets/imgs/play.svg" alt=""></button>\n        </ion-col>\n      </ion-row>\n      <ion-row id="infoPelicula">\n        <ion-col col>\n          <h2>{{movie.title}}</h2>\n          <hr><br>\n          <p>\n            {{movie.description}}\n          </p>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n</ion-content>'/*ion-inline-end:"/Users/adriancejudo/Desktop/appFinal/src/pages/videoplayer/videoplayer.html"*/,
+            providers: [__WEBPACK_IMPORTED_MODULE_3__providers_links_link_provider__["a" /* LinkProvider */]]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["c" /* DomSanitizer */], __WEBPACK_IMPORTED_MODULE_3__providers_links_link_provider__["a" /* LinkProvider */]])
+    ], VideoplayerPage);
+    return VideoplayerPage;
+}());
+
+//# sourceMappingURL=videoplayer.js.map
+
+/***/ }),
+
+/***/ 170:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PerfilPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_camera__ = __webpack_require__(233);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_camera__ = __webpack_require__(241);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__chat_chat__ = __webpack_require__(165);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mobiscroll_angular__ = __webpack_require__(185);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_login_login__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_platform_browser__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_user_provider__ = __webpack_require__(421);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_user_provider__ = __webpack_require__(422);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__home_home__ = __webpack_require__(68);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -223,6 +670,7 @@ var PerfilPage = (function () {
             //la imagen va a estar codificada (base64)
             _this.perfilImg = 'data:image/png;base64,' + imageData;
             _this.trustedUrl = _this.sanitizer.bypassSecurityTrustUrl(_this.perfilImg);
+            localStorage.setItem('avatar', _this.perfilImg);
         }, function (err) {
             console.log(err);
         });
@@ -462,453 +910,6 @@ var PerfilPage = (function () {
 
 /***/ }),
 
-/***/ 168:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegistroPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_login_login__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home_home__ = __webpack_require__(68);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-var RegistroPage = (function () {
-    function RegistroPage(navCtrl, navParams, loadingCtrl, alertCtrl, comprobarLogin) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.loadingCtrl = loadingCtrl;
-        this.alertCtrl = alertCtrl;
-        this.comprobarLogin = comprobarLogin;
-    }
-    RegistroPage.prototype.ngOnInit = function () {
-        this.formularioUsuario = new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormGroup */]({
-            name: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].required]),
-            surname: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].required]),
-            nickname: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].required]),
-            email: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')]),
-            pass: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].pattern(/^[a-z0-9_-]{5,18}$/)]),
-            pass2: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].required, this.equalto('pass')])
-        });
-    };
-    RegistroPage.prototype.gotoHome = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__home_home__["a" /* HomePage */]);
-    };
-    RegistroPage.prototype.equalto = function (field_name) {
-        return function (control) {
-            var input = control.value;
-            var isValid = control.root.value[field_name] == input;
-            if (!isValid)
-                return { 'equalTo': { isValid: isValid } };
-            else
-                return null;
-        };
-    };
-    RegistroPage.prototype.alert = function () {
-        this.alertCtrl.create({
-            title: 'There was a problem!',
-            subTitle: 'This user alredy exists',
-            buttons: ['OK']
-        }).present();
-    };
-    RegistroPage.prototype.registerUsers = function () {
-        var _this = this;
-        this.registro = [{
-                name: this.nombre.value,
-                surname: this.apellidos.value,
-                nickname: this.username.value,
-                email: this.emailAddress.value,
-                birthdate: this.birthday.value["day"] +
-                    '/' + this.birthday.value["month"] +
-                    '/' + this.birthday.value["year"],
-                password: this.currentPassword.value
-            }];
-        this.comprobarLogin.registerUsers(this.registro).subscribe(function (datos) {
-            console.log('Datos: ', datos);
-            if (datos['message'] == 'Este usuario ya existe') {
-                _this.alert();
-            }
-            else {
-                _this.loginLoading();
-            }
-        }, function (err) {
-            console.log(err["message"]);
-        });
-    };
-    RegistroPage.prototype.loginLoading = function () {
-        var _this = this;
-        this.ngOnInit();
-        var loading = this.loadingCtrl.create({
-            content: 'Please wait...',
-            duration: 2000,
-            dismissOnPageChange: true
-        });
-        loading.present();
-        setTimeout(function () {
-            _this.gotoHome();
-        }, 2000);
-    };
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])("name"),
-        __metadata("design:type", Object)
-    ], RegistroPage.prototype, "nombre", void 0);
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])("surname"),
-        __metadata("design:type", Object)
-    ], RegistroPage.prototype, "apellidos", void 0);
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])("nickname"),
-        __metadata("design:type", Object)
-    ], RegistroPage.prototype, "username", void 0);
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])("birthday"),
-        __metadata("design:type", Object)
-    ], RegistroPage.prototype, "birthday", void 0);
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])("emailad"),
-        __metadata("design:type", Object)
-    ], RegistroPage.prototype, "emailAddress", void 0);
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])("password"),
-        __metadata("design:type", Object)
-    ], RegistroPage.prototype, "currentPassword", void 0);
-    RegistroPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-registro',template:/*ion-inline-start:"/Users/adriancejudo/Desktop/appFinal/src/pages/registro/registro.html"*/'<ion-content>\n  <ion-grid>\n    <ion-row>\n      <ion-col col-12>\n        <ion-card>\n          <ion-card-header>\n            <p class="header">Registration</p>\n          </ion-card-header>\n          <ion-card-content>\n            <ion-list>\n              <form [formGroup]="formularioUsuario" novalidate>\n                <ion-item>\n                  <ion-label floating>Name *</ion-label>\n                  <ion-input formControlName="name" #name type="text"></ion-input>\n                </ion-item>\n                <ion-item *ngIf="formularioUsuario.get(\'name\').errors && formularioUsuario.get(\'name\').dirty">\n                  <p color="danger" ion-text *ngIf="formularioUsuario.get(\'name\').hasError(\'required\')">Your name is required</p>\n                </ion-item>\n                <ion-item>\n                  <ion-label floating>Surname *</ion-label>\n                  <ion-input formControlName="surname" #surname type="text"></ion-input>\n                </ion-item>\n                <ion-item *ngIf="formularioUsuario.get(\'surname\').errors && formularioUsuario.get(\'surname\').dirty">\n                  <p color="danger" ion-text *ngIf="formularioUsuario.get(\'surname\').hasError(\'required\')">Your surname is required</p>\n                </ion-item>\n                <ion-item>\n                  <ion-label floating>Nickname *</ion-label>\n                  <ion-input type="text" #nickname formControlName="nickname"></ion-input>\n                </ion-item>\n                <ion-item *ngIf="formularioUsuario.get(\'nickname\').errors && formularioUsuario.get(\'nickname\').dirty">\n                  <p color="danger" ion-text *ngIf="formularioUsuario.get(\'nickname\').hasError(\'required\')" class="error">\n                    nickname is required.\n                  </p>\n                </ion-item>\n                <ion-item>\n                  <ion-label floating>Birthday</ion-label>\n                  <ion-datetime #birthday displayFormat="MM/DD/YYYY"></ion-datetime>\n                </ion-item>\n                <ion-item>\n                  <ion-label floating>Email address *</ion-label>\n                  <ion-input type="email" #emailad formControlName="email"></ion-input>\n                </ion-item>\n                <!-- Control de errores de si está rellenando el campo "Password" y el usuario está vacío indique un error -->\n                <ion-item *ngIf="formularioUsuario.get(\'email\').errors && formularioUsuario.get(\'email\').dirty">\n                  <p color="danger" ion-text *ngIf="formularioUsuario.get(\'email\').hasError(\'required\')" class="error">\n                    Email is required.\n                  </p>\n                  <p color="danger" ion-text *ngIf="formularioUsuario.get(\'email\').hasError(\'pattern\')">\n                    It is not an email\n                  </p>\n                </ion-item>\n                <ion-item>\n                  <ion-label floating>Password *</ion-label>\n                  <!-- Creamos el input para la contraseña -->\n                  <ion-input type="password" name="pass" formControlName="pass"></ion-input>\n                </ion-item>\n                <!-- Control de errores de si está vacío, o tiene menos de 10 caracteres, indique un error -->\n                <ion-item *ngIf="formularioUsuario.get(\'pass\').errors && formularioUsuario.get(\'pass\').dirty">\n                  <p color="danger" ion-text *ngIf="formularioUsuario.get(\'pass\').hasError(\'pattern\')" class="error">\n                    It is not a strong password.\n                  </p>\n                </ion-item>\n\n                <ion-item>\n                  <ion-label floating>Confirm password *</ion-label>\n                  <!-- Creamos el input para la contraseña -->\n                  <ion-input type="password" #password formControlName="pass2"></ion-input>\n                </ion-item>\n                <!-- Control de errores de si está vacío, o tiene menos de 10 caracteres, indique un error -->\n                <ion-item *ngIf="(formularioUsuario.get(\'pass2\').hasError(\'equalTo\') || formularioUsuario.get(\'pass2\').hasError(\'required\')) && formularioUsuario.get(\'pass2\').touched">\n                  <p color="danger" ion-text *ngIf="formularioUsuario.get(\'pass2\').hasError(\'required\') && formularioUsuario.get(\'pass2\').touched" class="error">\n                    It is not a strong password.\n                  </p>\n                  <p color="danger" ion-text *ngIf="formularioUsuario.get(\'pass2\').hasError(\'equalTo\') && formularioUsuario.get(\'pass2\').touched" class="error">\n                    Passwords do not match\n                  </p>\n                </ion-item>\n\n                <br>\n                <!-- Creamos el botón de registro, que permanecerá desactivado, hasta que los campos del formulario\n              estén correctamente rellenos superando el control de errores -->\n                <ion-grid padding-top>\n                  <ion-row justify-content-center>\n                    <div class="col-1" align-self-center>\n                      <div>\n                        <button ion-button type="submit" [disabled]="!formularioUsuario.valid" (click)="registerUsers()">Sign Up</button>\n                      </div>\n                    </div>\n                  </ion-row>\n                </ion-grid>\n\n                <ion-grid>\n                  <ion-row justify-content-center padding-top>\n                    <div align-self-center>\n                      <div>Or</div>\n                    </div>\n                  </ion-row>\n                  <ion-row justify-content-center padding-top>\n                    <div align-self-center>\n                      <div>\n                        <!-- <a (click)="goToRegistry()"> -->\n                        <a (click)="gotoHome()">\n                          <strong>Go to Login Page!</strong>\n                        </a>\n                      </div>\n                    </div>\n                  </ion-row>\n                </ion-grid>\n              </form>\n\n            </ion-list>\n          </ion-card-content>\n        </ion-card>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>'/*ion-inline-end:"/Users/adriancejudo/Desktop/appFinal/src/pages/registro/registro.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
-            __WEBPACK_IMPORTED_MODULE_3__providers_login_login__["a" /* LoginProvider */]])
-    ], RegistroPage);
-    return RegistroPage;
-}());
-
-//# sourceMappingURL=registro.js.map
-
-/***/ }),
-
-/***/ 169:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VerTodoPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__info_info__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_movie_movie_provider__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_movie_movie__ = __webpack_require__(130);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-var VerTodoPage = (function () {
-    function VerTodoPage(navCtrl, navParams, _movieProvider, toastCtrl) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this._movieProvider = _movieProvider;
-        this.toastCtrl = toastCtrl;
-        this.token = localStorage.getItem('token');
-        this.tipoContenido = navParams.data['tipo'];
-        this.list = navParams.data['array'];
-        this.movie = new __WEBPACK_IMPORTED_MODULE_4__providers_movie_movie__["a" /* Movie */]('', '', '', '', '', '', '', '', '', '', '', '');
-    }
-    VerTodoPage.prototype.ionViewDidLoad = function () {
-        var _this = this;
-        if (this.tipoContenido === 'visto') {
-            // Ponemos por defecto, el icono de visto
-            this.iconoIOS = 'ios-eye-off';
-            this.iconoAndroid = 'md-eye-off';
-            // Ponemos, que la segunda opción sea cambiarla a favoritos
-            this.iconoIOS2 = 'ios-heart';
-            this.iconoAndroid2 = 'md-heart';
-            this._movieProvider.getViewedMovie(this.token).subscribe(function (response) {
-                console.log(response);
-                _this.list = [];
-                response.views.forEach(function (eleMovie) {
-                    if (eleMovie.movieViewed) {
-                        _this.movie = eleMovie.movieViewed;
-                        _this.list.push(_this.movie);
-                    }
-                });
-            });
-        }
-        else if (this.tipoContenido === 'favorito') {
-            // Ponemos por defecto, el icono de favoritos
-            this.iconoIOS = 'ios-heart';
-            this.iconoAndroid = 'md-heart';
-            // Ponemos, que la segunda opción sea cambiarla a visto
-            this.iconoIOS2 = 'ios-eye-off';
-            this.iconoAndroid2 = 'md-eye-off';
-            this._movieProvider.getLikedMovie(this.token).subscribe(function (response) {
-                _this.list = [];
-                response.likeds.forEach(function (eleMovie) {
-                    if (eleMovie) {
-                        _this.movie = eleMovie.movieLiked;
-                        _this.list.push(_this.movie);
-                    }
-                });
-            }, function (err) {
-                console.log(err);
-            });
-        }
-    };
-    VerTodoPage.prototype.ngOnInit = function () { };
-    VerTodoPage.prototype.cambiarIcono = function (fab, movieId) {
-        var _this = this;
-        console.log(movieId);
-        if (this.iconoIOS2 === "ios-eye-off" && this.iconoAndroid2 === "md-eye-off") {
-            this._movieProvider.viewMovie(this.token, movieId).subscribe(function (response) {
-                if (response.message === "Ya estás viendo esta película") {
-                    fab.close();
-                    _this.mensaje = 'This film is already in "Seen Group"';
-                    _this.presentToast(_this.mensaje);
-                }
-                else {
-                    console.log(response);
-                    fab.close();
-                    _this.mensaje = 'This film has been added to "Seen Group"';
-                    _this.presentToast(_this.mensaje);
-                }
-            }, function (err) {
-                console.log(err);
-            });
-        }
-        else {
-            this._movieProvider.likedMovie(this.token, movieId).subscribe(function (response) {
-                if (response.message === "Ya estás viendo esta película") {
-                    fab.close();
-                    _this.mensaje = 'This film is already in "Favourite Group"';
-                    _this.presentToast(_this.mensaje);
-                }
-                else {
-                    console.log(response);
-                    fab.close();
-                    _this.mensaje = 'This film has been added to "Favourite Group"';
-                    _this.presentToast(_this.mensaje);
-                }
-            }, function (err) {
-                console.log(err);
-            });
-        }
-    };
-    VerTodoPage.prototype.deleteView = function (fab, movieId) {
-        var _this = this;
-        if (this.tipoContenido === 'visto') {
-            console.log(movieId);
-            this._movieProvider.deleteViewed(this.token, movieId).subscribe(function (response) {
-                fab.close();
-                _this.mensaje = 'This film has been removed of "Seen Group"';
-                _this.presentToast(_this.mensaje);
-                var index = 0;
-                _this.list.forEach(function (element) {
-                    if (element._id === movieId) {
-                        console.log(index);
-                        _this.list.splice(index, 1);
-                        console.log(_this.list);
-                    }
-                    index++;
-                });
-            }, function (err) {
-                fab.close();
-                _this.mensaje = 'This film has already been removed of "Seen Group". Please refresh this view.';
-                _this.presentToast(_this.mensaje);
-            });
-        }
-        else if (this.tipoContenido === 'favorito') {
-            this._movieProvider.dislikeMovie(this.token, movieId).subscribe(function (response) {
-                fab.close();
-                _this.mensaje = 'This film has been removed of "Favourite Group"';
-                _this.presentToast(_this.mensaje);
-                var index = 0;
-                _this.list.forEach(function (element) {
-                    if (element._id === movieId) {
-                        console.log(index);
-                        _this.list.splice(index, 1);
-                        console.log(_this.list);
-                    }
-                    index++;
-                });
-            }, function (err) {
-                fab.close();
-                _this.mensaje = 'This film has already been removed of "Favourite Group". Please refresh this view.';
-                _this.presentToast(_this.mensaje);
-            });
-        }
-    };
-    VerTodoPage.prototype.doRefresh = function (refresher) {
-        var _this = this;
-        if (this.tipoContenido === 'visto') {
-            // Ponemos por defecto, el icono de visto
-            this.iconoIOS = 'ios-eye-off';
-            this.iconoAndroid = 'md-eye-off';
-            // Ponemos, que la segunda opción sea cambiarla a favoritos
-            this.iconoIOS2 = 'ios-heart';
-            this.iconoAndroid2 = 'md-heart';
-            this._movieProvider.getViewedMovie(this.token).subscribe(function (response) {
-                console.log(response);
-                _this.list = [];
-                response.views.forEach(function (eleMovie) {
-                    if (eleMovie.movieViewed) {
-                        _this.movie = eleMovie.movieViewed;
-                        _this.list.push(_this.movie);
-                    }
-                });
-            });
-            refresher.complete();
-        }
-        else if (this.tipoContenido === 'favorito') {
-            // Ponemos por defecto, el icono de favoritos
-            this.iconoIOS = 'ios-heart';
-            this.iconoAndroid = 'md-heart';
-            // Ponemos, que la segunda opción sea cambiarla a visto
-            this.iconoIOS2 = 'ios-eye-off';
-            this.iconoAndroid2 = 'md-eye-off';
-            this._movieProvider.getLikedMovie(this.token).subscribe(function (response) {
-                _this.list = [];
-                response.likeds.forEach(function (eleMovie) {
-                    if (eleMovie) {
-                        _this.movie = eleMovie.movieLiked;
-                        _this.list.push(_this.movie);
-                    }
-                });
-            }, function (err) {
-                console.log(err);
-            });
-            refresher.complete();
-        }
-    };
-    VerTodoPage.prototype.presentToast = function (mensaje) {
-        var toast = this.toastCtrl.create({
-            message: mensaje,
-            duration: 4000,
-            position: 'bottom'
-        });
-        toast.onDidDismiss(function () {
-            console.log('Dismissed toast');
-        });
-        toast.present();
-    };
-    VerTodoPage.prototype.goToInfo = function (p) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__info_info__["a" /* InfoPage */], {
-            contenido: p,
-            data: this.contenedor
-        });
-    };
-    VerTodoPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-ver-todo',template:/*ion-inline-start:"/Users/adriancejudo/Desktop/appFinal/src/pages/ver-todo/ver-todo.html"*/'<page-header></page-header>\n\n<ion-content>\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n    <ion-refresher-content refreshingText="Refreshing...">\n    </ion-refresher-content>\n  </ion-refresher>\n  <ion-card>\n    <ion-row>\n      <ion-col col-6 class="center" *ngFor="let p of list" style="padding-top: 5px">\n        <ion-thumbnail item-start col-12>\n          <button (click)="goToInfo(p)" class="fotoPelicula" no-padding>\n            <img [src]="p.poster">\n          </button>\n          <h5 class="center">\n            {{ p.title }}\n            <ion-fab top right col-4 #fab>\n              <button ion-fab mini class="background">\n                <ion-icon [ios]="iconoIOS" [md]="iconoAndroid"></ion-icon>\n              </button>\n              <ion-fab-list>\n                <button ion-fab (click)="cambiarIcono(fab, p._id)">\n                  <ion-icon [ios]="iconoIOS2" [md]="iconoAndroid2"></ion-icon>\n                </button>\n                <button ion-fab (click)="deleteView(fab, p._id)">\n                  <ion-icon ios="ios-trash" md="md-trash"></ion-icon>\n                </button>\n              </ion-fab-list>\n            </ion-fab>\n          </h5>\n        </ion-thumbnail>\n      </ion-col>\n    </ion-row>\n    <div class="bottom"></div>\n  </ion-card>\n</ion-content>\n\n'/*ion-inline-end:"/Users/adriancejudo/Desktop/appFinal/src/pages/ver-todo/ver-todo.html"*/,
-            providers: [__WEBPACK_IMPORTED_MODULE_3__providers_movie_movie_provider__["a" /* MovieProvider */]]
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_3__providers_movie_movie_provider__["a" /* MovieProvider */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */]])
-    ], VerTodoPage);
-    return VerTodoPage;
-}());
-
-//# sourceMappingURL=ver-todo.js.map
-
-/***/ }),
-
-/***/ 170:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VideoplayerPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_links_link_provider__ = __webpack_require__(240);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__fullvideo_fullvideo__ = __webpack_require__(166);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-var VideoplayerPage = (function () {
-    function VideoplayerPage(navCtrl, navParams, sanitizer, _linkProvider) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.sanitizer = sanitizer;
-        this._linkProvider = _linkProvider;
-        this.status = 'play';
-        this.icono = 'ios-play-outline';
-        this.movie = navParams.data['movie'];
-        this.video = navParams.data['video'];
-        this.token = localStorage.getItem('token');
-    }
-    VideoplayerPage.prototype.ngOnInit = function () {
-        var _this = this;
-        this._linkProvider.getContent(this.token, this.video).subscribe(function (res) {
-            alert('we are ready');
-            _this.file = new Blob([res], { type: 'video/mp4' });
-            _this.fileURL = URL.createObjectURL(_this.file);
-            _this.trustedUrl = _this.sanitizer.bypassSecurityTrustUrl(_this.fileURL);
-            console.log(_this.trustedUrl);
-        }, function (err) {
-            console.log(err);
-        });
-    };
-    VideoplayerPage.prototype.toggleVideo = function (event) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__fullvideo_fullvideo__["a" /* FullvideoPage */], { video: this.trustedUrl });
-    };
-    VideoplayerPage.prototype.goToBack = function () {
-        this.navCtrl.pop();
-    };
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])('videoplayer'),
-        __metadata("design:type", Object)
-    ], VideoplayerPage.prototype, "videoplayer", void 0);
-    VideoplayerPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-videoplayer',template:/*ion-inline-start:"/Users/adriancejudo/Desktop/appFinal/src/pages/videoplayer/videoplayer.html"*/'<ion-content>\n<ion-fab>\n  <button ion-fab mini (click)="goToBack()" id="backArrow"><ion-icon name="md-arrow-back"></ion-icon></button>\n</ion-fab>\n  <div id="coverPoster"></div>\n    <img [src]="movie.poster" id="backPoster" alt="">\n    <ion-grid>\n      <ion-row>\n        <ion-col col-12>\n          <video #videoplayer preload id="videoplayer" hidden>\n            <source [src]="trustedUrl" type="video/mp4">\n          </video>\n          <button (click)="toggleVideo()" id="myBtn"><img src="assets/imgs/play.svg" alt=""></button>\n        </ion-col>\n      </ion-row>\n      <ion-row id="infoPelicula">\n        <ion-col col>\n          <h2>{{movie.title}}</h2>\n          <hr><br>\n          <p>\n            {{movie.description}}\n          </p>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n</ion-content>'/*ion-inline-end:"/Users/adriancejudo/Desktop/appFinal/src/pages/videoplayer/videoplayer.html"*/,
-            providers: [__WEBPACK_IMPORTED_MODULE_3__providers_links_link_provider__["a" /* LinkProvider */]]
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["c" /* DomSanitizer */], __WEBPACK_IMPORTED_MODULE_3__providers_links_link_provider__["a" /* LinkProvider */]])
-    ], VideoplayerPage);
-    return VideoplayerPage;
-}());
-
-//# sourceMappingURL=videoplayer.js.map
-
-/***/ }),
-
 /***/ 171:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -919,7 +920,7 @@ var VideoplayerPage = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_login_login__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__info_info__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_serie_serie_provider__ = __webpack_require__(80);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_serie_serie__ = __webpack_require__(241);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_serie_serie__ = __webpack_require__(240);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1142,11 +1143,11 @@ var map = {
 		12
 	],
 	"../pages/header/header.module": [
-		729,
+		730,
 		11
 	],
 	"../pages/home/home.module": [
-		730,
+		729,
 		10
 	],
 	"../pages/info/info.module": [
@@ -1158,11 +1159,11 @@ var map = {
 		8
 	],
 	"../pages/list/list.module": [
-		732,
+		733,
 		7
 	],
 	"../pages/menu/menu.module": [
-		733,
+		732,
 		6
 	],
 	"../pages/peliculas/peliculas.module": [
@@ -1206,14 +1207,14 @@ module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 240:
+/***/ 239:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LinkProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__global_global__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__global_global__ = __webpack_require__(60);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1251,7 +1252,7 @@ var LinkProvider = (function () {
 
 /***/ }),
 
-/***/ 241:
+/***/ 240:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1363,7 +1364,7 @@ var EditEventPage = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HeaderPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__perfil_perfil__ = __webpack_require__(167);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__perfil_perfil__ = __webpack_require__(170);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_login_login__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__peliculas_peliculas__ = __webpack_require__(93);
@@ -1453,7 +1454,7 @@ var HeaderPage = (function () {
     };
     HeaderPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-header',template:/*ion-inline-start:"/Users/adriancejudo/Desktop/appFinal/src/pages/header/header.html"*/'<ion-header *ngIf="identity" class="vista">\n  <ion-navbar hideBackButton="true">\n\n    <ion-grid *ngIf="!isSearchbarOpened">\n      <ion-row>\n        <ion-col col-auto>\n          <ion-buttons>\n            <button ion-button icon-only (click)="goToInicio()">\n              Home\n            </button>\n          </ion-buttons>\n        </ion-col>\n\n        <ion-col col-auto>\n          <ion-buttons>\n            <button ion-button icon-only (click)="goToPeliculas()">\n              Films\n            </button>\n          </ion-buttons>\n        </ion-col>\n\n        <ion-col col-auto>\n          <ion-buttons>\n            <button ion-button icon-only (click)="goToSeries()">\n              Series\n            </button>\n          </ion-buttons>\n        </ion-col>\n\n        <ion-col col-auto>\n          <ion-buttons>\n            <button ion-button icon-only (click)="goToPerfil()">\n              {{ identity.nickname }}\n              <ion-avatar item-start>\n                <img class="userAvatar" [src]="trustedUrl">\n              </ion-avatar>\n            </button>\n          </ion-buttons>\n        </ion-col>\n\n        <ion-col col-1>\n          <ion-buttons>\n            <button ion-button icon-only right (click)="isSearchbarOpened=true">\n              <ion-icon name="search"></ion-icon>\n            </button>\n          </ion-buttons>\n        </ion-col>\n\n      </ion-row>\n    </ion-grid>\n\n    <ion-searchbar *ngIf="isSearchbarOpened" showCancelButton="true" (ionCancel)="cancelSearch(); isSearchbarOpened=false" (ionInput)="getItems($event)">\n    </ion-searchbar>\n    <ion-list *ngIf="isSearchbarOpened">\n      <button ion-item *ngFor="let item of items" (click)="showDetail(item)">\n        {{ item }}\n      </button>\n    </ion-list>\n  </ion-navbar>\n</ion-header>\n\n<ion-list id="listSearch" *ngIf="searchRes">\n  <a (click)="goToInfo(m)" *ngFor="let m of searchRes.movies">\n    <ion-item>\n      <ion-row>\n        <ion-col col-auto>\n          <img [src]="m.poster" id="posSearch">\n        </ion-col>\n        <ion-col col-auto class="center">\n          <p>{{m.title}}</p>\n        </ion-col>\n      </ion-row>\n    </ion-item>\n  </a>\n</ion-list>'/*ion-inline-end:"/Users/adriancejudo/Desktop/appFinal/src/pages/header/header.html"*/,
+            selector: 'page-header',template:/*ion-inline-start:"/Users/adriancejudo/Desktop/appFinal/src/pages/header/header.html"*/'<ion-header *ngIf="identity" class="vista">\n  <ion-navbar hideBackButton="true">\n\n    <ion-grid *ngIf="!isSearchbarOpened">\n      <ion-row>\n        <ion-col col-auto>\n          <ion-buttons>\n            <button ion-button icon-only (click)="goToInicio()">\n              Home\n            </button>\n          </ion-buttons>\n        </ion-col>\n\n        <ion-col col-auto>\n          <ion-buttons>\n            <button ion-button icon-only (click)="goToPeliculas()">\n              Films\n            </button>\n          </ion-buttons>\n        </ion-col>\n\n        <ion-col col-auto>\n          <ion-buttons>\n            <button ion-button icon-only (click)="goToSeries()">\n              Series\n            </button>\n          </ion-buttons>\n        </ion-col>\n\n        <ion-col col-auto>\n          <ion-buttons>\n            <button ion-button icon-only class="nameProfile" (click)="goToPerfil()">\n              {{ identity.nickname }}\n              <ion-avatar item-start>\n                <img class="userAvatar" [src]="trustedUrl">\n              </ion-avatar>\n            </button>\n          </ion-buttons>\n        </ion-col>\n\n        <ion-col col-1>\n          <ion-buttons>\n            <button ion-button icon-only right (click)="isSearchbarOpened=true">\n              <ion-icon name="search"></ion-icon>\n            </button>\n          </ion-buttons>\n        </ion-col>\n\n      </ion-row>\n    </ion-grid>\n\n    <ion-searchbar *ngIf="isSearchbarOpened" showCancelButton="true" (ionCancel)="cancelSearch(); isSearchbarOpened=false" (ionInput)="getItems($event)">\n    </ion-searchbar>\n    <ion-list *ngIf="isSearchbarOpened">\n      <button ion-item *ngFor="let item of items" (click)="showDetail(item)">\n        {{ item }}\n      </button>\n    </ion-list>\n  </ion-navbar>\n</ion-header>\n\n<ion-list id="listSearch" *ngIf="searchRes">\n  <a (click)="goToInfo(m)" *ngFor="let m of searchRes.movies">\n    <ion-item>\n      <ion-row>\n        <ion-col col-auto>\n          <img [src]="m.poster" id="posSearch">\n        </ion-col>\n        <ion-col col-auto class="center">\n          <p>{{m.title}}</p>\n        </ion-col>\n      </ion-row>\n    </ion-item>\n  </a>\n</ion-list>'/*ion-inline-end:"/Users/adriancejudo/Desktop/appFinal/src/pages/header/header.html"*/,
             providers: [__WEBPACK_IMPORTED_MODULE_3__providers_login_login__["a" /* LoginProvider */], __WEBPACK_IMPORTED_MODULE_9__providers_serie_serie_provider__["a" /* SerieProvider */], __WEBPACK_IMPORTED_MODULE_8__providers_movie_movie_provider__["a" /* MovieProvider */]]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */],
@@ -1471,42 +1472,6 @@ var HeaderPage = (function () {
 /***/ }),
 
 /***/ 379:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ListPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var ListPage = (function () {
-    function ListPage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-    }
-    ListPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-list',template:/*ion-inline-start:"/Users/adriancejudo/Desktop/appFinal/src/pages/list/list.html"*/''/*ion-inline-end:"/Users/adriancejudo/Desktop/appFinal/src/pages/list/list.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */]])
-    ], ListPage);
-    return ListPage;
-}());
-
-//# sourceMappingURL=list.js.map
-
-/***/ }),
-
-/***/ 380:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1567,6 +1532,42 @@ var MenuPage = (function () {
 
 /***/ }),
 
+/***/ 380:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ListPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var ListPage = (function () {
+    function ListPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+    }
+    ListPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-list',template:/*ion-inline-start:"/Users/adriancejudo/Desktop/appFinal/src/pages/list/list.html"*/''/*ion-inline-end:"/Users/adriancejudo/Desktop/appFinal/src/pages/list/list.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */]])
+    ], ListPage);
+    return ListPage;
+}());
+
+//# sourceMappingURL=list.js.map
+
+/***/ }),
+
 /***/ 381:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1594,21 +1595,21 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(440);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angularfire2__ = __webpack_require__(283);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_angularfire2_auth__ = __webpack_require__(718);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_streaming_media__ = __webpack_require__(239);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_streaming_media__ = __webpack_require__(235);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_ionic2_rating__ = __webpack_require__(721);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__angular_common_http__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__providers_movie_movie_provider__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_status_bar__ = __webpack_require__(281);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_splash_screen__ = __webpack_require__(282);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__angular_http__ = __webpack_require__(723);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_native_camera__ = __webpack_require__(233);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_native_camera__ = __webpack_require__(241);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_home_home__ = __webpack_require__(68);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_registro_registro__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_registro_registro__ = __webpack_require__(167);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_inicio_inicio__ = __webpack_require__(69);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_menu_menu__ = __webpack_require__(380);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_ver_todo_ver_todo__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_menu_menu__ = __webpack_require__(379);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_ver_todo_ver_todo__ = __webpack_require__(168);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_peliculas_peliculas__ = __webpack_require__(93);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_perfil_perfil__ = __webpack_require__(167);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_perfil_perfil__ = __webpack_require__(170);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_chat_chat__ = __webpack_require__(165);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_add_event_add_event__ = __webpack_require__(376);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_edit_event_edit_event__ = __webpack_require__(377);
@@ -1616,8 +1617,8 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_series_series__ = __webpack_require__(171);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__providers_login_login__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_header_header__ = __webpack_require__(378);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_videoplayer_videoplayer__ = __webpack_require__(170);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__pages_list_list__ = __webpack_require__(379);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_videoplayer_videoplayer__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__pages_list_list__ = __webpack_require__(380);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__pages_fullvideo_fullvideo__ = __webpack_require__(166);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__ionic_native_screen_orientation__ = __webpack_require__(724);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1704,11 +1705,11 @@ var AppModule = (function () {
                         { loadChildren: '../pages/chat/chat.module#ChatPageModule', name: 'ChatPage', segment: 'chat', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/edit-event/edit-event.module#EditEventPageModule', name: 'EditEventPage', segment: 'edit-event', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/fullvideo/fullvideo.module#FullvideoPageModule', name: 'FullvideoPage', segment: 'fullvideo', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/header/header.module#HeaderPageModule', name: 'HeaderPage', segment: 'header', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/home/home.module#HomePageModule', name: 'HomePage', segment: 'home', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/header/header.module#HeaderPageModule', name: 'HeaderPage', segment: 'header', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/inicio/inicio.module#InicioPageModule', name: 'InicioPage', segment: 'inicio', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/list/list.module#ListPageModule', name: 'ListPage', segment: 'list', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/menu/menu.module#MenuPageModule', name: 'MenuPage', segment: 'menu', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/list/list.module#ListPageModule', name: 'ListPage', segment: 'list', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/peliculas/peliculas.module#PeliculasPageModule', name: 'PeliculasPage', segment: 'peliculas', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/perfil/perfil.module#PerfilPageModule', name: 'PerfilPage', segment: 'perfil', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/registro/registro.module#RegistroPageModule', name: 'RegistroPage', segment: 'registro', priority: 'low', defaultHistory: [] },
@@ -1769,7 +1770,7 @@ var AppModule = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__global_global__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__global_global__ = __webpack_require__(60);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1870,10 +1871,29 @@ var LoginProvider = (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserLogin; });
+var UserLogin = (function () {
+    function UserLogin(_id, emailNick, password, gettoken) {
+        this._id = _id;
+        this.emailNick = emailNick;
+        this.password = password;
+        this.gettoken = gettoken;
+    }
+    return UserLogin;
+}());
+
+//# sourceMappingURL=userLogin.js.map
+
+/***/ }),
+
+/***/ 422:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__global_global__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__global_global__ = __webpack_require__(60);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1912,25 +1932,6 @@ var UserProvider = (function () {
 }());
 
 //# sourceMappingURL=user.provider.js.map
-
-/***/ }),
-
-/***/ 422:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserLogin; });
-var UserLogin = (function () {
-    function UserLogin(_id, emailNick, password, gettoken) {
-        this._id = _id;
-        this.emailNick = emailNick;
-        this.password = password;
-        this.gettoken = gettoken;
-    }
-    return UserLogin;
-}());
-
-//# sourceMappingURL=userLogin.js.map
 
 /***/ }),
 
@@ -2001,9 +2002,9 @@ var MyApp = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InfoPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_streaming_media__ = __webpack_require__(239);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__videoplayer_videoplayer__ = __webpack_require__(170);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_links_link_provider__ = __webpack_require__(240);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_streaming_media__ = __webpack_require__(235);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__videoplayer_videoplayer__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_links_link_provider__ = __webpack_require__(239);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_movie_movie_provider__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_serie_serie_provider__ = __webpack_require__(80);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -2280,7 +2281,7 @@ var InfoPage = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MovieProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__global_global__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__global_global__ = __webpack_require__(60);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2370,7 +2371,7 @@ var MovieProvider = (function () {
 
 /***/ }),
 
-/***/ 61:
+/***/ 60:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2391,9 +2392,9 @@ var GLOBAL = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_login_login__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__registro_registro__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__registro_registro__ = __webpack_require__(167);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__inicio_inicio__ = __webpack_require__(69);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__models_userLogin__ = __webpack_require__(422);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__models_userLogin__ = __webpack_require__(421);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_platform_browser__ = __webpack_require__(24);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2553,14 +2554,14 @@ var HomePage = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InicioPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ver_todo_ver_todo__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ver_todo_ver_todo__ = __webpack_require__(168);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_login_login__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__info_info__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_movie_movie_provider__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_movie_movie__ = __webpack_require__(130);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_serie_serie_provider__ = __webpack_require__(80);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_serie_serie__ = __webpack_require__(241);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_serie_serie__ = __webpack_require__(240);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2737,7 +2738,7 @@ var InicioPage = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SerieProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__global_global__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__global_global__ = __webpack_require__(60);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);

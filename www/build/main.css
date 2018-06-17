@@ -33424,6 +33424,15 @@ page-header .center {
   align-items: center !important;
 }
 
+page-header .userAvatar {
+  width: 32px !important;
+  height: 32px !important;
+}
+
+page-header .nameProfile {
+  color: #FF5733;
+}
+
 page-home ion-content {
   background: url("../assets/imgs/home.jpg");
   background-attachment: fixed;

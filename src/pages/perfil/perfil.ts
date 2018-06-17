@@ -10,7 +10,7 @@ import {
   MbscEventcalendar
 } from '@mobiscroll/angular';
 import { LoginProvider } from '../../providers/login/login';
-import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { DomSanitizer } from '@angular/platform-browser';
 import { UserProvider } from '../../providers/user.provider';
 import { HomePage } from '../home/home';
 
@@ -86,6 +86,7 @@ export class PerfilPage implements OnInit {
       //la imagen va a estar codificada (base64)
       this.perfilImg = 'data:image/png;base64,' + imageData;
       this.trustedUrl = this.sanitizer.bypassSecurityTrustUrl(this.perfilImg);
+      localStorage.setItem('avatar', this.perfilImg);
     }, (err) => {
       console.log(err);
     })

@@ -27,7 +27,7 @@ var EditEventPageModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_2__edit_event__["a" /* EditEventPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__edit_event__["a" /* EditEventPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__edit_event__["a" /* EditEventPage */]),
             ],
         })
     ], EditEventPageModule);
